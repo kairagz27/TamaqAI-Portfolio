@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="eaten_portion">Қанша жедіңіз?</string>
+    <string name="portion_all">Барлығын</string>
+    <string name="portion_half">Жартысын</string>
+    <string name="portion_quarter">Төрттен бірін</string>
+    <string name="portion_other">Басқа</string>
+    <string name="eaten_percent">Жеген үлесі, %</string>
+    <string name="eaten_percent_hint">100% — бастапқы порцияның барлығы. Тағамға 5%-дан 2000%-ға дейін рұқсат.</string>
+    <string name="component_percent_hint">100% — компоненттің барлығы. 0% — бұл компонентті жемедіңіз.</string>
+    <string name="portion_local_hint">Тағам үлесі барлық компонентке қолданылады. Төменде әрқайсысын қайта талдаусыз жеке өзгертуге болады.</string>
+    <string name="component_amount">%1$d-компоненттің мөлшері</string>
+    <string name="estimated_mass_label">Болжамды массасы, г</string>
+    <string name="mass_correction_hint">Массаны өзгерту бастапқы баға мен қоректік мәндерді түзетеді. Жеген үлесі бөлек өзгереді.</string>
+    <string name="review_title">Нәтижені тексеру</string>
+    <string name="daily_subtitle">Күніңіз тепе-теңдікте</string>
+    <string name="empty_first_meal">Алғашқы ас қабылдауды қосу</string>
+    <string name="add_sheet_title">Ас қабылдауды қосу</string>
+    <string name="add_sheet_hint">Қолайлы тәсілді таңдаңыз</string>
+    <string name="camera_option_hint">Құрамды фото арқылы бағалау</string>
+    <string name="gallery_option_hint">Дайын фотоны таңдау</string>
+    <string name="manual_option_hint">Құрамды өзіңіз енгізу</string>
+    <string name="favorite_option_hint">Сақталған тағамды қайталау</string>
+    <string name="progress_ring_label">Күндік мақсаттың %1$d%%</string>
+    <string name="goal_not_set">Мақсат әлі қойылмаған</string>
+    <string name="hero_goal">күндік %1$d ккал-дан</string>
+</resources>

@@ -1,0 +1,1603 @@
+{
+  "checked_at": "2026-10-20",
+  "source_namespace": "openfoodfacts",
+  "attribution": "Contains information from Open Food Facts, available under ODbL.",
+  "database_license": "https://opendatacommons.org/licenses/odbl/1-0/",
+  "contents_license": "https://opendatacommons.org/licenses/dbcl/1-0/",
+  "verification_scope": "Reviewed official API facts, GTIN checksum, explicit basis, complete four nutrients, named product and brand, KZ sale tag. Community records, not independently verified manufacturer labels or physical packages.",
+  "network": {
+    "read_only_search_requests": 5,
+    "single_product_requests": 0,
+    "retries": 0,
+    "images_downloaded": 0,
+    "user_agent": "Withheld: historical retrieval identified the original private project; not replaced with the portfolio URL",
+    "endpoint": "https://world.openfoodfacts.org/api/v2/search",
+    "common_filter": {
+      "countries_tags_en": "Kazakhstan"
+    },
+    "queries": [
+      {
+        "page": 1,
+        "page_size": 100
+      },
+      {
+        "page": 2,
+        "page_size": 100
+      },
+      {
+        "categories_tags_en": "dairies",
+        "page": 1,
+        "page_size": 60
+      },
+      {
+        "categories_tags_en": "cereals-and-potatoes",
+        "page": 1,
+        "page_size": 60
+      },
+      {
+        "categories_tags_en": "breads",
+        "page": 1,
+        "page_size": 60
+      }
+    ],
+    "response_evidence": [
+      {
+        "file": "off-kz-breads.json",
+        "sha256": "9cdc5143ec9be1f4e52f4779cae3856985da31c3a33df3ac8fff55a24438abba",
+        "returned": 5,
+        "reported_total": 5
+      },
+      {
+        "file": "off-kz-cereals-and-potatoes.json",
+        "sha256": "55f9b1402a74972132e11b2c331f406c6ee2ebeea02a4df47caa8eaf7232fa1c",
+        "returned": 26,
+        "reported_total": 26
+      },
+      {
+        "file": "off-kz-dairies.json",
+        "sha256": "1a5afda8a249dc13d8fb73760259bdebc1a7c06f6e99b26fd0cee89b7159e927",
+        "returned": 60,
+        "reported_total": 62
+      },
+      {
+        "file": "off-kz-page-1.json",
+        "sha256": "d5c8fdaf163d4b7c573b1438774a422ea435ec870f151636564b6450d0432ca1",
+        "returned": 100,
+        "reported_total": 947
+      },
+      {
+        "file": "off-kz-page-2.json",
+        "sha256": "f8684ec5be491a2739ba64e4473aa7a7f71119de31c0f98729ffdca35cdcbc9c",
+        "returned": 100,
+        "reported_total": 947
+      }
+    ],
+    "unique_records_observed": 265
+  },
+  "import_selection": {
+    "existing_preserved": 2,
+    "new_selected": 37,
+    "total_off_entries": 39,
+    "new_by_group": {
+      "dairy": 17,
+      "grains_pasta_bread": 10,
+      "drinks": 5,
+      "snacks": 5
+    },
+    "review_examples_not_imported": [
+      {
+        "code": "4870055002696",
+        "reason": "Milk: basis 100g but package amount absent; label needed before presenting a mass or volume variant."
+      },
+      {
+        "code": "4870055002689",
+        "reason": "Milk: basis 100g and no package amount; do not silently assume per100ml."
+      },
+      {
+        "code": "4607016245348",
+        "reason": "Five cereal flakes: 85 kcal/100g; dry/prepared state is unclear. No substitution with typical dry cereal values."
+      },
+      {
+        "code": "4607124320401",
+        "reason": "OFF flags energy very low for category; hold for label review despite internally plausible macros."
+      },
+      {
+        "code": "4690388110277",
+        "reason": "2190 kcal/100g and OFF nutrition errors; not converted or guessed from kJ."
+      },
+      {
+        "code": "8801062267675",
+        "reason": "OFF flags energy mismatch; hold for label review."
+      },
+      {
+        "code": "4870007490274",
+        "reason": "OFF flags protein category anomaly; hold for label review rather than count it toward fifty."
+      },
+      {
+        "code": "4870036001205",
+        "reason": "Potential overlap with existing manufacturer chocolate facts; do not infer identity/GTIN association solely from matching macros."
+      },
+      {
+        "code": "4870003431646",
+        "reason": "Excluded: the official API qualifies protein, fat and carbohydrate values as lower bounds (>). The catalogue model currently stores exact scalar nutrients and cannot preserve those qualifiers. Do not import them as exact numbers; inspect the current label or add a qualified-value model first."
+      }
+    ]
+  },
+  "products": [
+    {
+      "id": "off:5449000000439",
+      "code": "5449000000439",
+      "source_url": "https://world.openfoodfacts.org/product/5449000000439",
+      "checked_at": "2026-10-20",
+      "group": "existing_drink",
+      "source_names": {
+        "product_name": "Coca Cola Original taste",
+        "product_name_ru": "кола 1.5л",
+        "product_name_en": "Coca-Cola"
+      },
+      "source_brands": "Coca-Cola",
+      "source_quantity": "1.5 L",
+      "source_serving_size": "100 ml",
+      "source_countries_tags": [
+        "en:albania",
+        "en:algeria",
+        "en:austria",
+        "en:belgium",
+        "en:cote-d-ivoire",
+        "en:croatia",
+        "en:czech-republic",
+        "en:democratic-republic-of-the-congo",
+        "en:france",
+        "en:georgia",
+        "en:germany",
+        "en:greece",
+        "en:italy",
+        "en:kazakhstan",
+        "en:madagascar",
+        "en:morocco",
+        "en:poland",
+        "en:reunion",
+        "en:slovenia",
+        "en:south-africa",
+        "en:sweden",
+        "en:switzerland",
+        "en:tunisia",
+        "en:ukraine",
+        "en:united-kingdom",
+        "en:united-states"
+      ],
+      "source_nutrition_data_per": "100ml",
+      "source_nutriments": {
+        "energy-kcal_100g": 45,
+        "proteins_100g": 0,
+        "fat_100g": 0,
+        "carbohydrates_100g": 11.2
+      },
+      "source_quality_errors": [],
+      "source_quality_warnings": [
+        "en:ingredients-pl-ending-comma",
+        "en:ingredients-it-ending-comma",
+        "en:environmental-score-production-system-no-label"
+      ],
+      "source_last_modified_t": 1789930326,
+      "review": "Accepted API record with explicit basis. Compare the physical label, brand, flavour and package amount before confirming a scanned package.",
+      "source_nutrient_modifiers": {}
+    },
+    {
+      "id": "off:5449000004840",
+      "code": "5449000004840",
+      "source_url": "https://world.openfoodfacts.org/product/5449000004840",
+      "checked_at": "2026-10-20",
+      "group": "existing_drink",
+      "source_names": {
+        "product_name": "Fanta Naranja",
+        "product_name_ru": null,
+        "product_name_en": "Fanta Orange"
+      },
+      "source_brands": "COCA-COLA SERVICES SA/NV",
+      "source_quantity": "2L",
+      "source_serving_size": "250ml",
+      "source_countries_tags": [
+        "en:bosnia-and-herzegovina",
+        "en:bulgaria",
+        "en:croatia",
+        "en:czech-republic",
+        "en:france",
+        "en:georgia",
+        "en:germany",
+        "en:kazakhstan",
+        "en:romania",
+        "en:spain",
+        "en:united-kingdom"
+      ],
+      "source_nutrition_data_per": "100ml",
+      "source_nutriments": {
+        "energy-kcal_100g": 44,
+        "proteins_100g": 0,
+        "fat_100g": 0,
+        "carbohydrates_100g": 10.7
+      },
+      "source_quality_errors": [],
+      "source_quality_warnings": [
+        "en:ingredients-es-ending-comma",
+        "en:ingredients-en-ending-comma",
+        "en:environmental-score-packaging-unscored-material",
+        "en:environmental-score-production-system-no-label"
+      ],
+      "source_last_modified_t": 1790680338,
+      "review": "Accepted API record with explicit basis. Compare the physical label, brand, flavour and package amount before confirming a scanned package.",
+      "source_nutrient_modifiers": {}
+    },
+    {
+      "id": "off:4870055000852",
+      "code": "4870055000852",
+      "source_url": "https://world.openfoodfacts.org/product/4870055000852",
+      "checked_at": "2026-10-20",
+      "group": "dairy",
+      "source_names": {
+        "product_name": "Кефир 2,5%",
+        "product_name_ru": "Кефир 2,5%",
+        "product_name_en": "Food master"
+      },
+      "source_brands": "FoodMaster",
+      "source_quantity": "1000г",
+      "source_serving_size": null,
+      "source_countries_tags": [
+        "en:kazakhstan"
+      ],
+      "source_nutrition_data_per": "100g",
+      "source_nutriments": {
+        "energy-kcal_100g": 52,
+        "proteins_100g": 2.8,
+        "fat_100g": 2.5,
+        "carbohydrates_100g": 4.6
+      },
+      "source_quality_errors": [],
+      "source_quality_warnings": [
+        "en:ingredients-50-percent-unknown",
+        "en:environmental-score-origins-of-ingredients-origins-are-100-percent-unknown",
+        "en:environmental-score-packaging-packaging-data-missing",
+        "en:environmental-score-production-system-no-label"
+      ],
+      "source_last_modified_t": 1762338833,
+      "review": "Accepted API record with explicit basis. Compare the physical label, brand, flavour and package amount before confirming a scanned package.",
+      "source_nutrient_modifiers": {}
+    },
+    {
+      "id": "off:4870007490243",
+      "code": "4870007490243",
+      "source_url": "https://world.openfoodfacts.org/product/4870007490243",
+      "checked_at": "2026-10-20",
+      "group": "dairy",
+      "source_names": {
+        "product_name": "Творог",
+        "product_name_ru": "Творог",
+        "product_name_en": null
+      },
+      "source_brands": "МолКом",
+      "source_quantity": "190 г",
+      "source_serving_size": null,
+      "source_countries_tags": [
+        "en:kazakhstan"
+      ],
+      "source_nutrition_data_per": "100g",
+      "source_nutriments": {
+        "energy-kcal_100g": 169,
+        "proteins_100g": 18,
+        "fat_100g": 9,
+        "carbohydrates_100g": 3
+      },
+      "source_quality_errors": [],
+      "source_quality_warnings": [
+        "en:ingredients-unknown-score-above-0",
+        "en:ingredients-100-percent-unknown",
+        "en:environmental-score-origins-of-ingredients-origins-are-100-percent-unknown",
+        "en:environmental-score-packaging-packaging-data-missing",
+        "en:environmental-score-production-system-no-label"
+      ],
+      "source_last_modified_t": 1739185416,
+      "review": "Accepted API record with explicit basis. Compare the physical label, brand, flavour and package amount before confirming a scanned package.",
+      "source_nutrient_modifiers": {}
+    },
+    {
+      "id": "off:4870207310426",
+      "code": "4870207310426",
+      "source_url": "https://world.openfoodfacts.org/product/4870207310426",
+      "checked_at": "2026-10-20",
+      "group": "dairy",
+      "source_names": {
+        "product_name": "Творог Домашний Рассыпчатый 9%",
+        "product_name_ru": "Творог Домашний Рассыпчатый 9%",
+        "product_name_en": null
+      },
+      "source_brands": "President",
+      "source_quantity": null,
+      "source_serving_size": null,
+      "source_countries_tags": [
+        "en:kazakhstan"
+      ],
+      "source_nutrition_data_per": "100g",
+      "source_nutriments": {
+        "energy-kcal_100g": 135,
+        "proteins_100g": 12,
+        "fat_100g": 9,
+        "carbohydrates_100g": 1.5
+      },
+      "source_quality_errors": [],
+      "source_quality_warnings": [
+        "en:ingredients-unknown-score-above-0",
+        "en:ingredients-60-percent-unknown",
+        "en:environmental-score-origins-of-ingredients-origins-are-100-percent-unknown",
+        "en:environmental-score-packaging-packaging-data-missing",
+        "en:environmental-score-production-system-no-label"
+      ],
+      "source_last_modified_t": 1759908102,
+      "review": "Accepted API record with explicit basis. Compare the physical label, brand, flavour and package amount before confirming a scanned package.",
+      "source_nutrient_modifiers": {}
+    },
+    {
+      "id": "off:4870055002672",
+      "code": "4870055002672",
+      "source_url": "https://world.openfoodfacts.org/product/4870055002672",
+      "checked_at": "2026-10-20",
+      "group": "dairy",
+      "source_names": {
+        "product_name": "Lait",
+        "product_name_ru": "Молоко с витамином D3",
+        "product_name_en": null
+      },
+      "source_brands": "Lactel",
+      "source_quantity": "1 литр",
+      "source_serving_size": null,
+      "source_countries_tags": [
+        "en:kazakhstan"
+      ],
+      "source_nutrition_data_per": "100ml",
+      "source_nutriments": {
+        "energy-kcal_100g": 43,
+        "proteins_100g": 2.8,
+        "fat_100g": 1.5,
+        "carbohydrates_100g": 4.6
+      },
+      "source_quality_errors": [],
+      "source_quality_warnings": [
+        "en:ingredients-50-percent-unknown",
+        "en:environmental-score-origins-of-ingredients-origins-are-100-percent-unknown",
+        "en:environmental-score-packaging-packaging-data-missing",
+        "en:environmental-score-production-system-no-label"
+      ],
+      "source_last_modified_t": 1767530332,
+      "review": "Accepted API record with explicit basis. Compare the physical label, brand, flavour and package amount before confirming a scanned package.",
+      "source_nutrient_modifiers": {}
+    },
+    {
+      "id": "off:4870207313281",
+      "code": "4870207313281",
+      "source_url": "https://world.openfoodfacts.org/product/4870207313281",
+      "checked_at": "2026-10-20",
+      "group": "dairy",
+      "source_names": {
+        "product_name": "«Живой» йогурт питьевой со вкусом клубники",
+        "product_name_ru": "«Живой» йогурт питьевой со вкусом клубники",
+        "product_name_en": null
+      },
+      "source_brands": "FoodMaster",
+      "source_quantity": "900 г",
+      "source_serving_size": null,
+      "source_countries_tags": [
+        "en:kazakhstan"
+      ],
+      "source_nutrition_data_per": "100g",
+      "source_nutriments": {
+        "energy-kcal_100g": 77.2,
+        "proteins_100g": 2.8,
+        "fat_100g": 2,
+        "carbohydrates_100g": 12
+      },
+      "source_quality_errors": [],
+      "source_quality_warnings": [
+        "en:environmental-score-origins-of-ingredients-origins-are-100-percent-unknown",
+        "en:environmental-score-packaging-packaging-data-missing",
+        "en:environmental-score-production-system-no-label"
+      ],
+      "source_last_modified_t": 1773317062,
+      "review": "Accepted API record with explicit basis. Compare the physical label, brand, flavour and package amount before confirming a scanned package.",
+      "source_nutrient_modifiers": {}
+    },
+    {
+      "id": "off:4870007492872",
+      "code": "4870007492872",
+      "source_url": "https://world.openfoodfacts.org/product/4870007492872",
+      "checked_at": "2026-10-20",
+      "group": "dairy",
+      "source_names": {
+        "product_name": "Продукт кисломолочный, йогурт с фруктовым наполнителем «Лесные ягоды»",
+        "product_name_ru": "Продукт кисломолочный, йогурт с фруктовым наполнителем «Лесные ягоды»",
+        "product_name_en": null
+      },
+      "source_brands": "МолКом",
+      "source_quantity": "0,45 кг",
+      "source_serving_size": null,
+      "source_countries_tags": [
+        "en:kazakhstan"
+      ],
+      "source_nutrition_data_per": "100g",
+      "source_nutriments": {
+        "energy-kcal_100g": 78,
+        "proteins_100g": 2.9,
+        "fat_100g": 2.5,
+        "carbohydrates_100g": 11
+      },
+      "source_quality_errors": [],
+      "source_quality_warnings": [
+        "en:ingredients-unknown-score-above-0",
+        "en:ingredients-80-percent-unknown",
+        "en:environmental-score-origins-of-ingredients-origins-are-100-percent-unknown",
+        "en:environmental-score-packaging-packaging-data-missing",
+        "en:environmental-score-production-system-no-label"
+      ],
+      "source_last_modified_t": 1773318561,
+      "review": "Accepted API record with explicit basis. Compare the physical label, brand, flavour and package amount before confirming a scanned package.",
+      "source_nutrient_modifiers": {}
+    },
+    {
+      "id": "off:4870207313328",
+      "code": "4870207313328",
+      "source_url": "https://world.openfoodfacts.org/product/4870207313328",
+      "checked_at": "2026-10-20",
+      "group": "dairy",
+      "source_names": {
+        "product_name": "Greek yogurt",
+        "product_name_ru": "Greek yogurt",
+        "product_name_en": "Greek yogurt"
+      },
+      "source_brands": "FoodMaster",
+      "source_quantity": "130 gr",
+      "source_serving_size": "100 gr",
+      "source_countries_tags": [
+        "en:kazakhstan"
+      ],
+      "source_nutrition_data_per": "100g",
+      "source_nutriments": {
+        "energy-kcal_100g": 122.4,
+        "proteins_100g": 4.8,
+        "fat_100g": 8.4,
+        "carbohydrates_100g": 6.9
+      },
+      "source_quality_errors": [],
+      "source_quality_warnings": [
+        "en:ingredients-unknown-score-above-30",
+        "en:ingredients-90-percent-unknown",
+        "en:ingredients-ingredient-tag-length-greater-than-50",
+        "en:environmental-score-origins-of-ingredients-origins-are-100-percent-unknown",
+        "en:environmental-score-packaging-packaging-data-missing",
+        "en:environmental-score-production-system-no-label"
+      ],
+      "source_last_modified_t": 1773320794,
+      "review": "Accepted API record with explicit basis. Compare the physical label, brand, flavour and package amount before confirming a scanned package.",
+      "source_nutrient_modifiers": {}
+    },
+    {
+      "id": "off:4870207314202",
+      "code": "4870207314202",
+      "source_url": "https://world.openfoodfacts.org/product/4870207314202",
+      "checked_at": "2026-10-20",
+      "group": "dairy",
+      "source_names": {
+        "product_name": "Йогурт питьевой со вкусом лесных ягод",
+        "product_name_ru": "Йогурт питьевой со вкусом лесных ягод",
+        "product_name_en": null
+      },
+      "source_brands": "FoodMaster",
+      "source_quantity": "450 г",
+      "source_serving_size": null,
+      "source_countries_tags": [
+        "en:kazakhstan"
+      ],
+      "source_nutrition_data_per": "100g",
+      "source_nutriments": {
+        "energy-kcal_100g": 77.2,
+        "proteins_100g": 2.8,
+        "fat_100g": 2,
+        "carbohydrates_100g": 12
+      },
+      "source_quality_errors": [],
+      "source_quality_warnings": [
+        "en:environmental-score-origins-of-ingredients-origins-are-100-percent-unknown",
+        "en:environmental-score-packaging-packaging-data-missing",
+        "en:environmental-score-production-system-no-label"
+      ],
+      "source_last_modified_t": 1773320740,
+      "review": "Accepted API record with explicit basis. Compare the physical label, brand, flavour and package amount before confirming a scanned package.",
+      "source_nutrient_modifiers": {}
+    },
+    {
+      "id": "off:4870207314196",
+      "code": "4870207314196",
+      "source_url": "https://world.openfoodfacts.org/product/4870207314196",
+      "checked_at": "2026-10-20",
+      "group": "dairy",
+      "source_names": {
+        "product_name": "Живой йогурт питьевой со вкусом лесных ягод",
+        "product_name_ru": "Живой йогурт питьевой со вкусом лесных ягод",
+        "product_name_en": null
+      },
+      "source_brands": "FoodMaster",
+      "source_quantity": "900 г",
+      "source_serving_size": null,
+      "source_countries_tags": [
+        "en:kazakhstan"
+      ],
+      "source_nutrition_data_per": "100g",
+      "source_nutriments": {
+        "energy-kcal_100g": 77.2,
+        "proteins_100g": 2.8,
+        "fat_100g": 2,
+        "carbohydrates_100g": 12
+      },
+      "source_quality_errors": [],
+      "source_quality_warnings": [
+        "en:environmental-score-origins-of-ingredients-origins-are-100-percent-unknown",
+        "en:environmental-score-packaging-packaging-data-missing",
+        "en:environmental-score-production-system-no-label"
+      ],
+      "source_last_modified_t": 1773317062,
+      "review": "Accepted API record with explicit basis. Compare the physical label, brand, flavour and package amount before confirming a scanned package.",
+      "source_nutrient_modifiers": {}
+    },
+    {
+      "id": "off:4870144003948",
+      "code": "4870144003948",
+      "source_url": "https://world.openfoodfacts.org/product/4870144003948",
+      "checked_at": "2026-10-20",
+      "group": "dairy",
+      "source_names": {
+        "product_name": "Йогурт обогащенный бифидобактериями с фруктовым джемом клубника",
+        "product_name_ru": "Йогурт обогащенный бифидобактериями с фруктовым джемом клубника",
+        "product_name_en": null
+      },
+      "source_brands": "dep",
+      "source_quantity": "",
+      "source_serving_size": null,
+      "source_countries_tags": [
+        "en:kazakhstan"
+      ],
+      "source_nutrition_data_per": "100g",
+      "source_nutriments": {
+        "energy-kcal_100g": 88,
+        "proteins_100g": 2.8,
+        "fat_100g": 2.5,
+        "carbohydrates_100g": 13.5
+      },
+      "source_quality_errors": [],
+      "source_quality_warnings": [
+        "en:ingredients-ingredient-tag-length-greater-than-50",
+        "en:environmental-score-origins-of-ingredients-origins-are-100-percent-unknown",
+        "en:environmental-score-packaging-packaging-data-missing",
+        "en:environmental-score-production-system-no-label"
+      ],
+      "source_last_modified_t": 1773325046,
+      "review": "Accepted API record with explicit basis. Compare the physical label, brand, flavour and package amount before confirming a scanned package.",
+      "source_nutrient_modifiers": {}
+    },
+    {
+      "id": "off:4870003750556",
+      "code": "4870003750556",
+      "source_url": "https://world.openfoodfacts.org/product/4870003750556",
+      "checked_at": "2026-10-20",
+      "group": "dairy",
+      "source_names": {
+        "product_name": "Творог 5%",
+        "product_name_ru": "Творог 5%",
+        "product_name_en": null
+      },
+      "source_brands": "Natige",
+      "source_quantity": "200 g",
+      "source_serving_size": null,
+      "source_countries_tags": [
+        "en:kazakhstan"
+      ],
+      "source_nutrition_data_per": "100g",
+      "source_nutriments": {
+        "energy-kcal_100g": 119,
+        "proteins_100g": 17,
+        "fat_100g": 5,
+        "carbohydrates_100g": 1.4
+      },
+      "source_quality_errors": [],
+      "source_quality_warnings": [
+        "en:ingredients-50-percent-unknown",
+        "en:ingredients-ingredient-tag-length-greater-than-50",
+        "en:ecoscore-origins-of-ingredients-origins-are-100-percent-unknown",
+        "en:ecoscore-packaging-packaging-data-missing",
+        "en:ecoscore-production-system-no-label"
+      ],
+      "source_last_modified_t": 1680958112,
+      "review": "Accepted API record with explicit basis. Compare the physical label, brand, flavour and package amount before confirming a scanned package.",
+      "source_nutrient_modifiers": {}
+    },
+    {
+      "id": "off:4870207314394",
+      "code": "4870207314394",
+      "source_url": "https://world.openfoodfacts.org/product/4870207314394",
+      "checked_at": "2026-10-20",
+      "group": "dairy",
+      "source_names": {
+        "product_name": "Греческий йогурт натуральный",
+        "product_name_ru": "Греческий йогурт натуральный",
+        "product_name_en": "Greek yoghurt"
+      },
+      "source_brands": "FoodMaster",
+      "source_quantity": "300 г",
+      "source_serving_size": "1 tsp (5.83 g)",
+      "source_countries_tags": [
+        "en:kazakhstan"
+      ],
+      "source_nutrition_data_per": "100g",
+      "source_nutriments": {
+        "energy-kcal_100g": 119,
+        "proteins_100g": 4.5,
+        "fat_100g": 8.4,
+        "carbohydrates_100g": 6.4
+      },
+      "source_quality_errors": [],
+      "source_quality_warnings": [
+        "en:environmental-score-origins-of-ingredients-origins-are-100-percent-unknown",
+        "en:environmental-score-packaging-packaging-data-missing",
+        "en:environmental-score-production-system-no-label"
+      ],
+      "source_last_modified_t": 1773318209,
+      "review": "Accepted API record with explicit basis. Compare the physical label, brand, flavour and package amount before confirming a scanned package.",
+      "source_nutrient_modifiers": {}
+    },
+    {
+      "id": "off:4870207313298",
+      "code": "4870207313298",
+      "source_url": "https://world.openfoodfacts.org/product/4870207313298",
+      "checked_at": "2026-10-20",
+      "group": "dairy",
+      "source_names": {
+        "product_name": "Йогурт питьевой со вкусом абрикоса",
+        "product_name_ru": "Йогурт питьевой со вкусом абрикоса",
+        "product_name_en": ""
+      },
+      "source_brands": "FoodMaster",
+      "source_quantity": "900 г",
+      "source_serving_size": null,
+      "source_countries_tags": [
+        "en:kazakhstan"
+      ],
+      "source_nutrition_data_per": "100g",
+      "source_nutriments": {
+        "energy-kcal_100g": 77.4,
+        "proteins_100g": 2.8,
+        "fat_100g": 2,
+        "carbohydrates_100g": 12
+      },
+      "source_quality_errors": [],
+      "source_quality_warnings": [
+        "en:environmental-score-origins-of-ingredients-origins-are-100-percent-unknown",
+        "en:environmental-score-packaging-packaging-data-missing",
+        "en:environmental-score-production-system-no-label"
+      ],
+      "source_last_modified_t": 1773320790,
+      "review": "Accepted API record with explicit basis. Compare the physical label, brand, flavour and package amount before confirming a scanned package.",
+      "source_nutrient_modifiers": {}
+    },
+    {
+      "id": "off:4870004970038",
+      "code": "4870004970038",
+      "source_url": "https://world.openfoodfacts.org/product/4870004970038",
+      "checked_at": "2026-10-20",
+      "group": "dairy",
+      "source_names": {
+        "product_name": "Молоко питьевое ультрапастеризованное. 2,5%",
+        "product_name_ru": "Молоко питьевое ультрапастеризованное. 2,5%",
+        "product_name_en": null
+      },
+      "source_brands": "Барские продукты",
+      "source_quantity": "0,9л",
+      "source_serving_size": null,
+      "source_countries_tags": [
+        "en:kazakhstan"
+      ],
+      "source_nutrition_data_per": "100ml",
+      "source_nutriments": {
+        "energy-kcal_100g": 54,
+        "proteins_100g": 2.9,
+        "fat_100g": 2.5,
+        "carbohydrates_100g": 4.8
+      },
+      "source_quality_errors": [],
+      "source_quality_warnings": [
+        "en:nutrition-value-very-low-for-category-salt",
+        "en:environmental-score-origins-of-ingredients-origins-are-100-percent-unknown",
+        "en:environmental-score-packaging-packaging-data-missing",
+        "en:environmental-score-production-system-no-label"
+      ],
+      "source_last_modified_t": 1762244884,
+      "review": "Accepted API record with explicit basis. Compare the physical label, brand, flavour and package amount before confirming a scanned package.",
+      "source_nutrient_modifiers": {}
+    },
+    {
+      "id": "off:4870144006352",
+      "code": "4870144006352",
+      "source_url": "https://world.openfoodfacts.org/product/4870144006352",
+      "checked_at": "2026-10-20",
+      "group": "dairy",
+      "source_names": {
+        "product_name": "Молоко питьевое низколактозное 2,5℅",
+        "product_name_ru": "Молоко питьевое низколактозное 2,5℅",
+        "product_name_en": null
+      },
+      "source_brands": "dep",
+      "source_quantity": "500 г",
+      "source_serving_size": null,
+      "source_countries_tags": [
+        "en:kazakhstan"
+      ],
+      "source_nutrition_data_per": "100g",
+      "source_nutriments": {
+        "energy-kcal_100g": 53,
+        "proteins_100g": 2.8,
+        "fat_100g": 2.5,
+        "carbohydrates_100g": 4.7
+      },
+      "source_quality_errors": [],
+      "source_quality_warnings": [
+        "en:environmental-score-origins-of-ingredients-origins-are-100-percent-unknown",
+        "en:environmental-score-packaging-packaging-data-missing",
+        "en:environmental-score-production-system-no-label"
+      ],
+      "source_last_modified_t": 1767528247,
+      "review": "Accepted API record with explicit basis. Compare the physical label, brand, flavour and package amount before confirming a scanned package.",
+      "source_nutrient_modifiers": {}
+    },
+    {
+      "id": "off:4870055000043",
+      "code": "4870055000043",
+      "source_url": "https://world.openfoodfacts.org/product/4870055000043",
+      "checked_at": "2026-10-20",
+      "group": "dairy",
+      "source_names": {
+        "product_name": "Ряженка",
+        "product_name_ru": "Ряженка",
+        "product_name_en": null
+      },
+      "source_brands": "FoodMaster",
+      "source_quantity": "500 г",
+      "source_serving_size": null,
+      "source_countries_tags": [
+        "en:kazakhstan"
+      ],
+      "source_nutrition_data_per": "100g",
+      "source_nutriments": {
+        "energy-kcal_100g": 52,
+        "proteins_100g": 2.8,
+        "fat_100g": 2.5,
+        "carbohydrates_100g": 4.6
+      },
+      "source_quality_errors": [],
+      "source_quality_warnings": [
+        "en:ecoscore-origins-of-ingredients-origins-are-100-percent-unknown",
+        "en:ecoscore-packaging-packaging-data-missing",
+        "en:ecoscore-production-system-no-label"
+      ],
+      "source_last_modified_t": 1682080205,
+      "review": "Accepted API record with explicit basis. Compare the physical label, brand, flavour and package amount before confirming a scanned package.",
+      "source_nutrient_modifiers": {}
+    },
+    {
+      "id": "off:4870144006291",
+      "code": "4870144006291",
+      "source_url": "https://world.openfoodfacts.org/product/4870144006291",
+      "checked_at": "2026-10-20",
+      "group": "dairy",
+      "source_names": {
+        "product_name": "Ряженка &quot;Малиновое варенье&quot;",
+        "product_name_ru": "Ряженка &quot;Малиновое варенье&quot;",
+        "product_name_en": null
+      },
+      "source_brands": "dep",
+      "source_quantity": "500 г",
+      "source_serving_size": null,
+      "source_countries_tags": [
+        "en:kazakhstan"
+      ],
+      "source_nutrition_data_per": "100g",
+      "source_nutriments": {
+        "energy-kcal_100g": 63,
+        "proteins_100g": 2.8,
+        "fat_100g": 2.5,
+        "carbohydrates_100g": 7.2
+      },
+      "source_quality_errors": [],
+      "source_quality_warnings": [
+        "en:ecoscore-origins-of-ingredients-origins-are-100-percent-unknown",
+        "en:ecoscore-packaging-packaging-data-missing",
+        "en:ecoscore-production-system-no-label"
+      ],
+      "source_last_modified_t": 1681041436,
+      "review": "Accepted API record with explicit basis. Compare the physical label, brand, flavour and package amount before confirming a scanned package.",
+      "source_nutrient_modifiers": {}
+    },
+    {
+      "id": "off:4870002960031",
+      "code": "4870002960031",
+      "source_url": "https://world.openfoodfacts.org/product/4870002960031",
+      "checked_at": "2026-10-20",
+      "group": "grains_pasta_bread",
+      "source_names": {
+        "product_name": "Крупа гречневая ядрица",
+        "product_name_ru": "Крупа гречневая ядрица",
+        "product_name_en": null
+      },
+      "source_brands": "Eurasia Foods",
+      "source_quantity": "1 кг",
+      "source_serving_size": null,
+      "source_countries_tags": [
+        "en:kazakhstan"
+      ],
+      "source_nutrition_data_per": "100g",
+      "source_nutriments": {
+        "energy-kcal_100g": 335,
+        "proteins_100g": 12.6,
+        "fat_100g": 3.3,
+        "carbohydrates_100g": 63.2
+      },
+      "source_quality_errors": [],
+      "source_quality_warnings": [
+        "en:environmental-score-origins-of-ingredients-origins-are-100-percent-unknown",
+        "en:environmental-score-packaging-packaging-data-missing",
+        "en:environmental-score-production-system-no-label",
+        "en:environmental-score-threatened-species-ingredients-missing"
+      ],
+      "source_last_modified_t": 1762141186,
+      "review": "Accepted API record with explicit basis. Compare the physical label, brand, flavour and package amount before confirming a scanned package.",
+      "source_nutrient_modifiers": {}
+    },
+    {
+      "id": "off:4607120230988",
+      "code": "4607120230988",
+      "source_url": "https://world.openfoodfacts.org/product/4607120230988",
+      "checked_at": "2026-10-20",
+      "group": "grains_pasta_bread",
+      "source_names": {
+        "product_name": "Рис Краснодарский",
+        "product_name_ru": "Рис Краснодарский",
+        "product_name_en": null
+      },
+      "source_brands": "Гудвилл",
+      "source_quantity": null,
+      "source_serving_size": null,
+      "source_countries_tags": [
+        "en:kazakhstan"
+      ],
+      "source_nutrition_data_per": "100g",
+      "source_nutriments": {
+        "energy-kcal_100g": 333,
+        "proteins_100g": 7,
+        "fat_100g": 1,
+        "carbohydrates_100g": 74
+      },
+      "source_quality_errors": [],
+      "source_quality_warnings": [
+        "en:environmental-score-origins-of-ingredients-origins-are-100-percent-unknown",
+        "en:environmental-score-packaging-packaging-data-missing",
+        "en:environmental-score-production-system-no-label",
+        "en:environmental-score-threatened-species-ingredients-missing"
+      ],
+      "source_last_modified_t": 1762237447,
+      "review": "Accepted API record with explicit basis. Compare the physical label, brand, flavour and package amount before confirming a scanned package.",
+      "source_nutrient_modifiers": {}
+    },
+    {
+      "id": "off:4870091000748",
+      "code": "4870091000748",
+      "source_url": "https://world.openfoodfacts.org/product/4870091000748",
+      "checked_at": "2026-10-20",
+      "group": "grains_pasta_bread",
+      "source_names": {
+        "product_name": "Макаронные изделия рожки 8",
+        "product_name_ru": "Макаронные изделия рожки 8",
+        "product_name_en": null
+      },
+      "source_brands": "Sultan, Сұлтан",
+      "source_quantity": "400g",
+      "source_serving_size": null,
+      "source_countries_tags": [
+        "en:kazakhstan"
+      ],
+      "source_nutrition_data_per": "100g",
+      "source_nutriments": {
+        "energy-kcal_100g": 344,
+        "proteins_100g": 10.5,
+        "fat_100g": 1.1,
+        "carbohydrates_100g": 71.5
+      },
+      "source_quality_errors": [],
+      "source_quality_warnings": [
+        "en:ingredients-unknown-score-above-0",
+        "en:ingredients-60-percent-unknown",
+        "en:environmental-score-origins-of-ingredients-origins-are-100-percent-unknown",
+        "en:environmental-score-packaging-packaging-data-missing",
+        "en:environmental-score-production-system-no-label"
+      ],
+      "source_last_modified_t": 1762224932,
+      "review": "Accepted API record with explicit basis. Compare the physical label, brand, flavour and package amount before confirming a scanned package.",
+      "source_nutrient_modifiers": {}
+    },
+    {
+      "id": "off:8007290231208",
+      "code": "8007290231208",
+      "source_url": "https://world.openfoodfacts.org/product/8007290231208",
+      "checked_at": "2026-10-20",
+      "group": "grains_pasta_bread",
+      "source_names": {
+        "product_name": "Lasagne all uovo ( aux oeufs)",
+        "product_name_ru": "Lasagne all uovo ( aux oeufs)",
+        "product_name_en": null
+      },
+      "source_brands": "Granoro",
+      "source_quantity": "500 g e",
+      "source_serving_size": "500 g",
+      "source_countries_tags": [
+        "en:france",
+        "en:kazakhstan"
+      ],
+      "source_nutrition_data_per": "100g",
+      "source_nutriments": {
+        "energy-kcal_100g": 367,
+        "proteins_100g": 13.5,
+        "fat_100g": 3.8,
+        "carbohydrates_100g": 68
+      },
+      "source_quality_errors": [],
+      "source_quality_warnings": [
+        "en:environmental-score-origins-of-ingredients-origins-are-100-percent-unknown",
+        "en:environmental-score-production-system-no-label",
+        "en:environmental-score-threatened-species-ingredients-missing"
+      ],
+      "source_last_modified_t": 1774341021,
+      "review": "Accepted API record with explicit basis. Compare the physical label, brand, flavour and package amount before confirming a scanned package.",
+      "source_nutrient_modifiers": {}
+    },
+    {
+      "id": "off:4870203893657",
+      "code": "4870203893657",
+      "source_url": "https://world.openfoodfacts.org/product/4870203893657",
+      "checked_at": "2026-10-20",
+      "group": "grains_pasta_bread",
+      "source_names": {
+        "product_name": "Хлеб ржаной",
+        "product_name_ru": "Хлеб ржаной",
+        "product_name_en": null
+      },
+      "source_brands": "Группа ИНТЕР",
+      "source_quantity": "0,3 кг",
+      "source_serving_size": null,
+      "source_countries_tags": [
+        "en:kazakhstan"
+      ],
+      "source_nutrition_data_per": "100g",
+      "source_nutriments": {
+        "energy-kcal_100g": 259,
+        "proteins_100g": 8.5,
+        "fat_100g": 3.3,
+        "carbohydrates_100g": 42.5
+      },
+      "source_quality_errors": [],
+      "source_quality_warnings": [
+        "en:environmental-score-origins-of-ingredients-origins-are-100-percent-unknown",
+        "en:environmental-score-packaging-packaging-data-missing",
+        "en:environmental-score-production-system-no-label"
+      ],
+      "source_last_modified_t": 1762490071,
+      "review": "Accepted API record with explicit basis. Compare the physical label, brand, flavour and package amount before confirming a scanned package.",
+      "source_nutrient_modifiers": {}
+    },
+    {
+      "id": "off:4870203893664",
+      "code": "4870203893664",
+      "source_url": "https://world.openfoodfacts.org/product/4870203893664",
+      "checked_at": "2026-10-20",
+      "group": "grains_pasta_bread",
+      "source_names": {
+        "product_name": "Хлеб ржаной",
+        "product_name_ru": "Хлеб ржаной",
+        "product_name_en": null
+      },
+      "source_brands": "Группа ИНТЕР",
+      "source_quantity": "0,35 кг",
+      "source_serving_size": null,
+      "source_countries_tags": [
+        "en:kazakhstan"
+      ],
+      "source_nutrition_data_per": "100g",
+      "source_nutriments": {
+        "energy-kcal_100g": 259,
+        "proteins_100g": 8.5,
+        "fat_100g": 3.3,
+        "carbohydrates_100g": 42.5
+      },
+      "source_quality_errors": [],
+      "source_quality_warnings": [
+        "en:environmental-score-origins-of-ingredients-origins-are-100-percent-unknown",
+        "en:environmental-score-packaging-packaging-data-missing",
+        "en:environmental-score-production-system-no-label"
+      ],
+      "source_last_modified_t": 1790321847,
+      "review": "Accepted API record with explicit basis. Compare the physical label, brand, flavour and package amount before confirming a scanned package.",
+      "source_nutrient_modifiers": {}
+    },
+    {
+      "id": "off:4870001373221",
+      "code": "4870001373221",
+      "source_url": "https://world.openfoodfacts.org/product/4870001373221",
+      "checked_at": "2026-10-20",
+      "group": "grains_pasta_bread",
+      "source_names": {
+        "product_name": "Цельнозерновой Хлеб",
+        "product_name_ru": "Цельнозерновой Хлеб",
+        "product_name_en": null
+      },
+      "source_brands": "Vitalnan",
+      "source_quantity": null,
+      "source_serving_size": "1 portion (100 g)",
+      "source_countries_tags": [
+        "en:kazakhstan"
+      ],
+      "source_nutrition_data_per": "100g",
+      "source_nutriments": {
+        "energy-kcal_100g": 242,
+        "proteins_100g": 7.5,
+        "fat_100g": 6.2,
+        "carbohydrates_100g": 39.2
+      },
+      "source_quality_errors": [],
+      "source_quality_warnings": [
+        "en:serving-quantity-defined-but-quantity-undefined",
+        "en:environmental-score-origins-of-ingredients-origins-are-100-percent-unknown",
+        "en:environmental-score-packaging-packaging-data-missing",
+        "en:environmental-score-production-system-no-label",
+        "en:environmental-score-threatened-species-ingredients-missing"
+      ],
+      "source_last_modified_t": 1762243641,
+      "review": "Accepted API record with explicit basis. Compare the physical label, brand, flavour and package amount before confirming a scanned package.",
+      "source_nutrient_modifiers": {}
+    },
+    {
+      "id": "off:4870209690359",
+      "code": "4870209690359",
+      "source_url": "https://world.openfoodfacts.org/product/4870209690359",
+      "checked_at": "2026-10-20",
+      "group": "grains_pasta_bread",
+      "source_names": {
+        "product_name": "Багет",
+        "product_name_ru": "Багет",
+        "product_name_en": null
+      },
+      "source_brands": "Столичный хлеб",
+      "source_quantity": "350 г",
+      "source_serving_size": null,
+      "source_countries_tags": [
+        "en:kazakhstan"
+      ],
+      "source_nutrition_data_per": "100g",
+      "source_nutriments": {
+        "energy-kcal_100g": 245,
+        "proteins_100g": 7.8,
+        "fat_100g": 2.4,
+        "carbohydrates_100g": 53.5
+      },
+      "source_quality_errors": [],
+      "source_quality_warnings": [
+        "en:ecoscore-origins-of-ingredients-origins-are-100-percent-unknown",
+        "en:ecoscore-packaging-packaging-data-missing",
+        "en:ecoscore-production-system-no-label"
+      ],
+      "source_last_modified_t": 1674483378,
+      "review": "Accepted API record with explicit basis. Compare the physical label, brand, flavour and package amount before confirming a scanned package.",
+      "source_nutrient_modifiers": {}
+    },
+    {
+      "id": "off:4870069000602",
+      "code": "4870069000602",
+      "source_url": "https://world.openfoodfacts.org/product/4870069000602",
+      "checked_at": "2026-10-20",
+      "group": "grains_pasta_bread",
+      "source_names": {
+        "product_name": "Цельнозерновые Хлебцы Их Бурого Риса",
+        "product_name_ru": "Цельнозерновые Хлебцы Их Бурого Риса",
+        "product_name_en": null
+      },
+      "source_brands": "Аям",
+      "source_quantity": null,
+      "source_serving_size": "1 slice (9 g)",
+      "source_countries_tags": [
+        "en:kazakhstan"
+      ],
+      "source_nutrition_data_per": "100g",
+      "source_nutriments": {
+        "energy-kcal_100g": 390,
+        "proteins_100g": 8.3,
+        "fat_100g": 3,
+        "carbohydrates_100g": 80
+      },
+      "source_quality_errors": [],
+      "source_quality_warnings": [
+        "en:serving-quantity-defined-but-quantity-undefined",
+        "en:environmental-score-origins-of-ingredients-origins-are-100-percent-unknown",
+        "en:environmental-score-packaging-packaging-data-missing",
+        "en:environmental-score-production-system-no-label",
+        "en:environmental-score-threatened-species-ingredients-missing"
+      ],
+      "source_last_modified_t": 1753449261,
+      "review": "Accepted API record with explicit basis. Compare the physical label, brand, flavour and package amount before confirming a scanned package.",
+      "source_nutrient_modifiers": {}
+    },
+    {
+      "id": "off:4870235042382",
+      "code": "4870235042382",
+      "source_url": "https://world.openfoodfacts.org/product/4870235042382",
+      "checked_at": "2026-10-20",
+      "group": "grains_pasta_bread",
+      "source_names": {
+        "product_name": "Сушка Ванильная",
+        "product_name_ru": "Сушка Ванильная",
+        "product_name_en": null
+      },
+      "source_brands": "Fine Bakery",
+      "source_quantity": null,
+      "source_serving_size": null,
+      "source_countries_tags": [
+        "en:kazakhstan"
+      ],
+      "source_nutrition_data_per": "100g",
+      "source_nutriments": {
+        "energy-kcal_100g": 356.5,
+        "proteins_100g": 10.2,
+        "fat_100g": 4.7,
+        "carbohydrates_100g": 68.7
+      },
+      "source_quality_errors": [],
+      "source_quality_warnings": [
+        "en:environmental-score-origins-of-ingredients-origins-are-100-percent-unknown",
+        "en:environmental-score-packaging-packaging-data-missing",
+        "en:environmental-score-production-system-no-label",
+        "en:environmental-score-threatened-species-ingredients-missing"
+      ],
+      "source_last_modified_t": 1751633359,
+      "review": "Accepted API record with explicit basis. Compare the physical label, brand, flavour and package amount before confirming a scanned package.",
+      "source_nutrient_modifiers": {}
+    },
+    {
+      "id": "off:4860019001346",
+      "code": "4860019001346",
+      "source_url": "https://world.openfoodfacts.org/product/4860019001346",
+      "checked_at": "2026-10-20",
+      "group": "drinks",
+      "source_names": {
+        "product_name": "BORJOMI",
+        "product_name_ru": null,
+        "product_name_en": ""
+      },
+      "source_brands": "Borjomi",
+      "source_quantity": "0.5 l",
+      "source_serving_size": null,
+      "source_countries_tags": [
+        "en:georgia",
+        "en:kazakhstan",
+        "en:moldova",
+        "en:ukraine"
+      ],
+      "source_nutrition_data_per": "100ml",
+      "source_nutriments": {
+        "energy-kcal_100g": 0,
+        "proteins_100g": 0,
+        "fat_100g": 0,
+        "carbohydrates_100g": 0
+      },
+      "source_quality_errors": [],
+      "source_quality_warnings": [
+        "en:ingredients-unknown-score-above-0",
+        "en:ingredients-100-percent-unknown",
+        "en:ingredients-over-30-percent-digits",
+        "en:ingredients-ar-over-30-percent-digits",
+        "en:environmental-score-origins-of-ingredients-origins-are-100-percent-unknown",
+        "en:environmental-score-packaging-packaging-data-missing",
+        "en:environmental-score-production-system-no-label"
+      ],
+      "source_last_modified_t": 1785397984,
+      "review": "Accepted API record with explicit basis. Compare the physical label, brand, flavour and package amount before confirming a scanned package.",
+      "source_nutrient_modifiers": {}
+    },
+    {
+      "id": "off:5449000189332",
+      "code": "5449000189332",
+      "source_url": "https://world.openfoodfacts.org/product/5449000189332",
+      "checked_at": "2026-10-20",
+      "group": "drinks",
+      "source_names": {
+        "product_name": "Негазированный безалкогольный напиток с экстрактом чая и со вкусом персика",
+        "product_name_ru": "Негазированный безалкогольный напиток с экстрактом чая и со вкусом персика",
+        "product_name_en": "Fuse tea 1 litre şeftali"
+      },
+      "source_brands": "Fuse Tea",
+      "source_quantity": "1 л",
+      "source_serving_size": null,
+      "source_countries_tags": [
+        "en:kazakhstan",
+        "en:kyrgyzstan"
+      ],
+      "source_nutrition_data_per": "100ml",
+      "source_nutriments": {
+        "energy-kcal_100g": 29,
+        "proteins_100g": 0,
+        "fat_100g": 0,
+        "carbohydrates_100g": 6.9
+      },
+      "source_quality_errors": [],
+      "source_quality_warnings": [
+        "en:environmental-score-origins-of-ingredients-origins-are-100-percent-unknown",
+        "en:environmental-score-packaging-packaging-data-missing",
+        "en:environmental-score-production-system-no-label"
+      ],
+      "source_last_modified_t": 1787441542,
+      "review": "Accepted API record with explicit basis. Compare the physical label, brand, flavour and package amount before confirming a scanned package.",
+      "source_nutrient_modifiers": {}
+    },
+    {
+      "id": "off:5449000236029",
+      "code": "5449000236029",
+      "source_url": "https://world.openfoodfacts.org/product/5449000236029",
+      "checked_at": "2026-10-20",
+      "group": "drinks",
+      "source_names": {
+        "product_name": "FuzeTea",
+        "product_name_ru": "Fuse Tea со вкусом лайма и мяты",
+        "product_name_en": null
+      },
+      "source_brands": "Fuse Tea, Fuze Tea",
+      "source_quantity": "500 ml",
+      "source_serving_size": null,
+      "source_countries_tags": [
+        "en:france",
+        "en:germany",
+        "en:kazakhstan"
+      ],
+      "source_nutrition_data_per": "100ml",
+      "source_nutriments": {
+        "energy-kcal_100g": 19,
+        "proteins_100g": 0,
+        "fat_100g": 0,
+        "carbohydrates_100g": 4.5
+      },
+      "source_quality_errors": [],
+      "source_quality_warnings": [
+        "en:environmental-score-origins-of-ingredients-origins-are-100-percent-unknown",
+        "en:environmental-score-packaging-packaging-data-missing",
+        "en:environmental-score-production-system-no-label"
+      ],
+      "source_last_modified_t": 1786861350,
+      "review": "Accepted API record with explicit basis. Compare the physical label, brand, flavour and package amount before confirming a scanned package.",
+      "source_nutrient_modifiers": {}
+    },
+    {
+      "id": "off:5449000200853",
+      "code": "5449000200853",
+      "source_url": "https://world.openfoodfacts.org/product/5449000200853",
+      "checked_at": "2026-10-20",
+      "group": "drinks",
+      "source_names": {
+        "product_name": "fuse tea со вкусом клубники и дыни",
+        "product_name_ru": "fuse tea со вкусом клубники и дыни",
+        "product_name_en": null
+      },
+      "source_brands": "fuse tea",
+      "source_quantity": "1 л",
+      "source_serving_size": null,
+      "source_countries_tags": [
+        "en:azerbaijan",
+        "en:kazakhstan"
+      ],
+      "source_nutrition_data_per": "100ml",
+      "source_nutriments": {
+        "energy-kcal_100g": 34,
+        "proteins_100g": 0,
+        "fat_100g": 0,
+        "carbohydrates_100g": 8.2
+      },
+      "source_quality_errors": [],
+      "source_quality_warnings": [
+        "en:environmental-score-origins-of-ingredients-origins-are-100-percent-unknown",
+        "en:environmental-score-packaging-packaging-data-missing",
+        "en:environmental-score-production-system-no-label"
+      ],
+      "source_last_modified_t": 1788529461,
+      "review": "Accepted API record with explicit basis. Compare the physical label, brand, flavour and package amount before confirming a scanned package.",
+      "source_nutrient_modifiers": {}
+    },
+    {
+      "id": "off:5449000216335",
+      "code": "5449000216335",
+      "source_url": "https://world.openfoodfacts.org/product/5449000216335",
+      "checked_at": "2026-10-20",
+      "group": "drinks",
+      "source_names": {
+        "product_name": "Fuse tea 1,5 litre mango ananas",
+        "product_name_ru": null,
+        "product_name_en": null
+      },
+      "source_brands": "Fuzetea",
+      "source_quantity": "1,5 l,",
+      "source_serving_size": null,
+      "source_countries_tags": [
+        "en:bulgaria",
+        "en:kazakhstan",
+        "en:romania"
+      ],
+      "source_nutrition_data_per": "100ml",
+      "source_nutriments": {
+        "energy-kcal_100g": 20,
+        "proteins_100g": 0,
+        "fat_100g": 0,
+        "carbohydrates_100g": 4.6
+      },
+      "source_quality_errors": [],
+      "source_quality_warnings": [
+        "en:environmental-score-origins-of-ingredients-origins-are-100-percent-unknown",
+        "en:environmental-score-packaging-unspecified-shape",
+        "en:environmental-score-production-system-no-label"
+      ],
+      "source_last_modified_t": 1771272276,
+      "review": "Accepted API record with explicit basis. Compare the physical label, brand, flavour and package amount before confirming a scanned package.",
+      "source_nutrient_modifiers": {}
+    },
+    {
+      "id": "off:4680021880490",
+      "code": "4680021880490",
+      "source_url": "https://world.openfoodfacts.org/product/4680021880490",
+      "checked_at": "2026-10-20",
+      "group": "snacks",
+      "source_names": {
+        "product_name": "jaskino",
+        "product_name_ru": "Яшкино Американское печенье",
+        "product_name_en": "jaskino"
+      },
+      "source_brands": "KDV, Яшкино",
+      "source_quantity": "200g",
+      "source_serving_size": "100 g",
+      "source_countries_tags": [
+        "en:azerbaijan",
+        "en:georgia",
+        "en:kazakhstan",
+        "en:kyrgyzstan",
+        "en:russia",
+        "en:serbia",
+        "en:uzbekistan"
+      ],
+      "source_nutrition_data_per": "100g",
+      "source_nutriments": {
+        "energy-kcal_100g": 470,
+        "proteins_100g": 5.5,
+        "fat_100g": 23,
+        "carbohydrates_100g": 61
+      },
+      "source_quality_errors": [],
+      "source_quality_warnings": [
+        "en:ingredients-unknown-score-above-10",
+        "en:ingredients-90-percent-unknown",
+        "en:environmental-score-production-system-no-label"
+      ],
+      "source_last_modified_t": 1791826078,
+      "review": "Accepted API record with explicit basis. Compare the physical label, brand, flavour and package amount before confirming a scanned package.",
+      "source_nutrient_modifiers": {}
+    },
+    {
+      "id": "off:7622210750495",
+      "code": "7622210750495",
+      "source_url": "https://world.openfoodfacts.org/product/7622210750495",
+      "checked_at": "2026-10-20",
+      "group": "snacks",
+      "source_names": {
+        "product_name": "MMMAX Oreo",
+        "product_name_ru": "",
+        "product_name_en": null
+      },
+      "source_brands": "Milka",
+      "source_quantity": "300 g",
+      "source_serving_size": null,
+      "source_countries_tags": [
+        "en:armenia",
+        "en:azerbaijan",
+        "en:belarus",
+        "en:georgia",
+        "en:germany",
+        "en:kazakhstan",
+        "en:kyrgyzstan",
+        "en:spain",
+        "en:turkey",
+        "en:united-states"
+      ],
+      "source_nutrition_data_per": "100g",
+      "source_nutriments": {
+        "energy-kcal_100g": 557,
+        "proteins_100g": 4.8,
+        "fat_100g": 34,
+        "carbohydrates_100g": 56
+      },
+      "source_quality_errors": [],
+      "source_quality_warnings": [
+        "en:ingredients-unknown-score-above-0",
+        "en:ingredients-50-percent-unknown",
+        "en:environmental-score-packaging-packaging-data-missing",
+        "en:environmental-score-production-system-no-label"
+      ],
+      "source_last_modified_t": 1787443563,
+      "review": "Accepted API record with explicit basis. Compare the physical label, brand, flavour and package amount before confirming a scanned package.",
+      "source_nutrient_modifiers": {}
+    },
+    {
+      "id": "off:4607109843741",
+      "code": "4607109843741",
+      "source_url": "https://world.openfoodfacts.org/product/4607109843741",
+      "checked_at": "2026-10-20",
+      "group": "snacks",
+      "source_names": {
+        "product_name": "Батончик Чио Рио",
+        "product_name_ru": "Батончик Чио Рио",
+        "product_name_en": "Chio Rio"
+      },
+      "source_brands": "KDV",
+      "source_quantity": "30 г/g",
+      "source_serving_size": "30g",
+      "source_countries_tags": [
+        "en:japan",
+        "en:kazakhstan",
+        "en:russia"
+      ],
+      "source_nutrition_data_per": "100g",
+      "source_nutriments": {
+        "energy-kcal_100g": 510,
+        "proteins_100g": 3.5,
+        "fat_100g": 29,
+        "carbohydrates_100g": 59
+      },
+      "source_quality_errors": [],
+      "source_quality_warnings": [
+        "en:environmental-score-packaging-packaging-data-missing",
+        "en:environmental-score-production-system-no-label",
+        "en:environmental-score-threatened-species-ingredients-missing"
+      ],
+      "source_last_modified_t": 1772047245,
+      "review": "Accepted API record with explicit basis. Compare the physical label, brand, flavour and package amount before confirming a scanned package.",
+      "source_nutrient_modifiers": {}
+    },
+    {
+      "id": "off:4823077621154",
+      "code": "4823077621154",
+      "source_url": "https://world.openfoodfacts.org/product/4823077621154",
+      "checked_at": "2026-10-20",
+      "group": "snacks",
+      "source_names": {
+        "product_name": "Шоколадний батон &quot;Dark Chocolate with Cocoa Fondant&quot;",
+        "product_name_ru": null,
+        "product_name_en": "Dark Chocolate with Cocoa Fondant"
+      },
+      "source_brands": "Roshen",
+      "source_quantity": "43g",
+      "source_serving_size": "43 g",
+      "source_countries_tags": [
+        "en:bulgaria",
+        "en:georgia",
+        "en:germany",
+        "en:kazakhstan",
+        "en:poland",
+        "en:romania",
+        "en:ukraine"
+      ],
+      "source_nutrition_data_per": "100g",
+      "source_nutriments": {
+        "energy-kcal_100g": 456,
+        "proteins_100g": 3.3,
+        "fat_100g": 19.3,
+        "carbohydrates_100g": 63.6
+      },
+      "source_quality_errors": [],
+      "source_quality_warnings": [
+        "en:ingredients-unknown-score-above-0",
+        "en:ingredients-50-percent-unknown",
+        "en:ingredients-ro-ending-comma",
+        "en:ingredients-en-ending-comma",
+        "en:environmental-score-packaging-unspecified-shape",
+        "en:environmental-score-production-system-no-label"
+      ],
+      "source_last_modified_t": 1787976445,
+      "review": "Accepted API record with explicit basis. Compare the physical label, brand, flavour and package amount before confirming a scanned package.",
+      "source_nutrient_modifiers": {}
+    },
+    {
+      "id": "off:4607117892113",
+      "code": "4607117892113",
+      "source_url": "https://world.openfoodfacts.org/product/4607117892113",
+      "checked_at": "2026-10-20",
+      "group": "snacks",
+      "source_names": {
+        "product_name": "Алёнка",
+        "product_name_ru": "Алёнка",
+        "product_name_en": ""
+      },
+      "source_brands": "Красный Октябрь",
+      "source_quantity": "100 g",
+      "source_serving_size": null,
+      "source_countries_tags": [
+        "en:azerbaijan",
+        "en:kazakhstan",
+        "en:kyrgyzstan",
+        "en:russia"
+      ],
+      "source_nutrition_data_per": "100g",
+      "source_nutriments": {
+        "energy-kcal_100g": 571,
+        "proteins_100g": 8,
+        "fat_100g": 38,
+        "carbohydrates_100g": 46
+      },
+      "source_quality_errors": [],
+      "source_quality_warnings": [
+        "en:ingredients-ingredient-tag-length-greater-than-50",
+        "en:ingredients-percent-analysis-not-ok",
+        "en:nutrition-value-very-low-for-category-sugars",
+        "en:ecoscore-origins-of-ingredients-origins-are-100-percent-unknown",
+        "en:ecoscore-packaging-packaging-data-missing",
+        "en:ecoscore-production-system-no-label"
+      ],
+      "source_last_modified_t": 1633945079,
+      "review": "Accepted API record with explicit basis. Compare the physical label, brand, flavour and package amount before confirming a scanned package.",
+      "source_nutrient_modifiers": {}
+    }
+  ],
+  "excluded_products": [
+    {
+      "id": "off:4870003431646",
+      "code": "4870003431646",
+      "source_url": "https://world.openfoodfacts.org/product/4870003431646",
+      "checked_at": "2026-10-20",
+      "group": "dairy",
+      "source_names": {
+        "product_name": "Питьевое молоко ультрапастеризованное",
+        "product_name_ru": "Питьевое молоко ультрапастеризованное",
+        "product_name_en": null
+      },
+      "source_brands": "Айналайын",
+      "source_quantity": "1л",
+      "source_serving_size": null,
+      "source_countries_tags": [
+        "en:kazakhstan"
+      ],
+      "source_nutrition_data_per": "100ml",
+      "source_nutriments": {
+        "energy-kcal_100g": 52.5,
+        "proteins_100g": 2.8,
+        "fat_100g": 2.5,
+        "carbohydrates_100g": 4.7
+      },
+      "source_quality_errors": [],
+      "source_quality_warnings": [
+        "en:environmental-score-origins-of-ingredients-origins-are-100-percent-unknown",
+        "en:environmental-score-packaging-packaging-data-missing",
+        "en:environmental-score-production-system-no-label"
+      ],
+      "source_last_modified_t": 1767531574,
+      "review": "Excluded: the official API qualifies protein, fat and carbohydrate values as lower bounds (>). The catalogue model currently stores exact scalar nutrients and cannot preserve those qualifiers. Do not import them as exact numbers; inspect the current label or add a qualified-value model first.",
+      "selection_status": "excluded_qualification",
+      "source_nutrient_modifiers": {
+        "proteins_modifier": ">",
+        "fat_modifier": ">",
+        "carbohydrates_modifier": ">"
+      }
+    }
+  ],
+  "portfolio_export_note": "Retrieval facts are preserved from 2026-10-20; historical private-project contact metadata is withheld in this export."
+}

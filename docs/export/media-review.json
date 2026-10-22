@@ -1,0 +1,499 @@
+{
+  "source_commit": "4d1473f8a34e230f0b0203d5f036bdb955eed603",
+  "decision": "Allow only listed tracked media and separately listed reviewed release video; omit legacy/reference material.",
+  "approved_tracked_media_count": 23,
+  "approved_tracked_media": [
+    {
+      "path": "app/src/main/res/drawable/ic_launcher.xml",
+      "git_blob": "64918e6b8ad72723737abb5a75475c542d624aa2",
+      "sha256": "88d452ac6a834553cc40121307ea55d99c3b64bff022661466ae977b1e92665e",
+      "bytes": 854,
+      "decision": "allow",
+      "kind": "original-vector",
+      "licence": "MIT (original code/artwork)",
+      "source": "Repository original XML primitive paths",
+      "source_basis": "Five local vector paths and local colour references; no bitmap/image/network resource embedded.",
+      "notices": [
+        {
+          "path": "LICENSE",
+          "git_blob": "81455a32cb094097d9e73c9081aa8ae6e7847f4e",
+          "sha256": "793c2a66d12eef068e63306b48261b05886c955d6731c994525a535f426f0050",
+          "bytes": 1077
+        }
+      ]
+    },
+    {
+      "path": "app/src/main/res/font/bodoni_moda.ttf",
+      "git_blob": "c5d582f8003ae692761dd8e9ce69de23cb9fea53",
+      "sha256": "550f5e34ee0a828d7941b1fe9bc58b34e5260d3f33a61532e6d0a0114e79a5cf",
+      "bytes": 162104,
+      "decision": "allow",
+      "kind": "bundled-font",
+      "licence": "SIL OFL 1.1",
+      "source": "https://raw.githubusercontent.com/google/fonts/main/ofl/bodonimoda/BodoniModa%5Bopsz,wght%5D.ttf",
+      "source_basis": "Exact snapshot bytes and current local bytes match recorded official upstream SHA-256; upstream was not fetched again.",
+      "inventory_match": true,
+      "working_tree_match": true,
+      "unmodified_upstream_record": true,
+      "notices": [
+        {
+          "path": "app/src/main/assets/font-licenses/bodoni_moda-OFL.txt",
+          "git_blob": "0f7d4ec6f03df6399f7b03b38d0382f0da890cac",
+          "sha256": "97e32fdfa86a9aa79b85ce20b63b8618a8bf3e1110a0e631fac7f73983417b55",
+          "bytes": 4399
+        }
+      ],
+      "reserved_font_name": null,
+      "preserve_notices": true
+    },
+    {
+      "path": "app/src/main/res/font/inter.ttf",
+      "git_blob": "047c92f6e2212473dc436020afed689527076d44",
+      "sha256": "29160a80ff49ddcab2c97711247e08b1fab27a484a329ce8b813d820dc559031",
+      "bytes": 876576,
+      "decision": "allow",
+      "kind": "bundled-font",
+      "licence": "SIL OFL 1.1",
+      "source": "https://raw.githubusercontent.com/google/fonts/main/ofl/inter/Inter%5Bopsz,wght%5D.ttf",
+      "source_basis": "Exact snapshot bytes and current local bytes match recorded official upstream SHA-256; upstream was not fetched again.",
+      "inventory_match": true,
+      "working_tree_match": true,
+      "unmodified_upstream_record": true,
+      "notices": [
+        {
+          "path": "app/src/main/assets/font-licenses/inter-OFL.txt",
+          "git_blob": "909a6bf9cfb4849d4468a723cc16ffb7a183bd09",
+          "sha256": "5dd548d31a85f756e01d63e00d7faf1e324103ed3e9102fcbbabf2cc2db6dd39",
+          "bytes": 4376
+        }
+      ],
+      "reserved_font_name": null,
+      "preserve_notices": true
+    },
+    {
+      "path": "app/src/main/res/font/lora.ttf",
+      "git_blob": "ee1914c3746140523de2940d267ec2215bd85d5b",
+      "sha256": "822a6621ccbe8d97d20ac88c1c41f5615c9c2c202eaa75f272cd452aac6475a7",
+      "bytes": 212196,
+      "decision": "allow",
+      "kind": "bundled-font",
+      "licence": "SIL OFL 1.1",
+      "source": "https://raw.githubusercontent.com/google/fonts/main/ofl/lora/Lora%5Bwght%5D.ttf",
+      "source_basis": "Exact snapshot bytes and current local bytes match recorded official upstream SHA-256; upstream was not fetched again.",
+      "inventory_match": true,
+      "working_tree_match": true,
+      "unmodified_upstream_record": true,
+      "notices": [
+        {
+          "path": "app/src/main/assets/font-licenses/Lora-OFL.txt",
+          "git_blob": "0d1f1e19a5cdad99a2bceed6b04237e4a4ccc020",
+          "sha256": "6d6bc7bbb828514925dabcaf89e4771398d12c60dd1cb2bbb90eea129535d0f4",
+          "bytes": 4422
+        }
+      ],
+      "reserved_font_name": "Lora",
+      "preserve_notices": true
+    },
+    {
+      "path": "app/src/main/res/font/noto_sans.ttf",
+      "git_blob": "75575046c015ff623a848096a15779867ba71453",
+      "sha256": "bfb7bb691513f12e734dc346c03a03f784912432d7e3fa8e56efcf906fe86b3d",
+      "bytes": 2049096,
+      "decision": "allow",
+      "kind": "bundled-font",
+      "licence": "SIL OFL 1.1",
+      "source": "https://raw.githubusercontent.com/google/fonts/main/ofl/notosans/NotoSans%5Bwdth,wght%5D.ttf",
+      "source_basis": "Exact snapshot bytes and current local bytes match recorded official upstream SHA-256; upstream was not fetched again.",
+      "inventory_match": true,
+      "working_tree_match": true,
+      "unmodified_upstream_record": true,
+      "notices": [
+        {
+          "path": "app/src/main/assets/font-licenses/NotoSans-OFL.txt",
+          "git_blob": "7d7fbd8f759f04ce523b623abe68f2eee27b1d72",
+          "sha256": "e2e177a32561584d4fc13aaa3cd8e53758a12910f013fe9ca125419111722029",
+          "bytes": 4395
+        }
+      ],
+      "reserved_font_name": null,
+      "preserve_notices": true
+    },
+    {
+      "path": "docs/screenshots/portfolio/catalog-light.png",
+      "git_blob": "4fabe28cd25388871949c62eb289269b2655d0de",
+      "bytes": 132657,
+      "sha256": "edf5a21b2e69d684ea2bb902aea5da352b283e323471194904a4803adbab14f7",
+      "size": [
+        540,
+        1200
+      ],
+      "metadata_keys": [],
+      "decision": "allow",
+      "kind": "synthetic-application-screen-capture",
+      "provenance": "Actual com.tamaqai.demo emulator capture; persistent fake/local banner; synthetic example-domain identity and native Canvas plate; visually reviewed plus offline English/Russian OCR.",
+      "licence": "Original application capture; preserve root MIT, bundled font OFL, AndroidX/Material Apache notices and separate Open Food Facts attribution for catalogue text."
+    },
+    {
+      "path": "docs/screenshots/portfolio/confirmed-light.png",
+      "git_blob": "0d24e2f3dbd5ab4463eb732894281ff3e8eb86e4",
+      "bytes": 143193,
+      "sha256": "a8ef492b4e074706860416326bf460541411fe68a7fdb9a17fbe4a93f68d35aa",
+      "size": [
+        540,
+        1200
+      ],
+      "metadata_keys": [],
+      "decision": "allow",
+      "kind": "synthetic-application-screen-capture",
+      "provenance": "Actual com.tamaqai.demo emulator capture; persistent fake/local banner; synthetic example-domain identity and native Canvas plate; visually reviewed plus offline English/Russian OCR.",
+      "licence": "Original application capture; preserve root MIT, bundled font OFL, AndroidX/Material Apache notices and separate Open Food Facts attribution for catalogue text."
+    },
+    {
+      "path": "docs/screenshots/portfolio/drawer-dark.png",
+      "git_blob": "e22d8f6f12cf44500c64efa18bf700d1ab71559d",
+      "bytes": 144236,
+      "sha256": "1b0077f0d92c04e672c27e6bc81cc0089195694d22116e9d5c3a8d23cae45682",
+      "size": [
+        540,
+        1200
+      ],
+      "metadata_keys": [],
+      "decision": "allow",
+      "kind": "synthetic-application-screen-capture",
+      "provenance": "Actual com.tamaqai.demo emulator capture; persistent fake/local banner; synthetic example-domain identity and native Canvas plate; visually reviewed plus offline English/Russian OCR.",
+      "licence": "Original application capture; preserve root MIT, bundled font OFL, AndroidX/Material Apache notices and separate Open Food Facts attribution for catalogue text."
+    },
+    {
+      "path": "docs/screenshots/portfolio/drawer-light.png",
+      "git_blob": "e45ca9e25066063006373341c7da887fba3fbf4f",
+      "bytes": 140318,
+      "sha256": "217e531d253c021304a98d318a19a13f9ec19e6d187fec706a89f86c040cb60e",
+      "size": [
+        540,
+        1200
+      ],
+      "metadata_keys": [],
+      "decision": "allow",
+      "kind": "synthetic-application-screen-capture",
+      "provenance": "Actual com.tamaqai.demo emulator capture; persistent fake/local banner; synthetic example-domain identity and native Canvas plate; visually reviewed plus offline English/Russian OCR.",
+      "licence": "Original application capture; preserve root MIT, bundled font OFL, AndroidX/Material Apache notices and separate Open Food Facts attribution for catalogue text."
+    },
+    {
+      "path": "docs/screenshots/portfolio/editor-light.png",
+      "git_blob": "d5ec7014559b6a5ff4ad68e8d02cdeed39cb43c4",
+      "bytes": 124790,
+      "sha256": "f988522e6bc2f7c4f98fe45dc58740475eb6f7f8d6317c2d50a72a48019c7e14",
+      "size": [
+        540,
+        1200
+      ],
+      "metadata_keys": [],
+      "decision": "allow",
+      "kind": "synthetic-application-screen-capture",
+      "provenance": "Actual com.tamaqai.demo emulator capture; persistent fake/local banner; synthetic example-domain identity and native Canvas plate; visually reviewed plus offline English/Russian OCR.",
+      "licence": "Original application capture; preserve root MIT, bundled font OFL, AndroidX/Material Apache notices and separate Open Food Facts attribution for catalogue text."
+    },
+    {
+      "path": "docs/screenshots/portfolio/history-dark.png",
+      "git_blob": "bc850159bd31828b9b859923d96ca2ccc1c4aedc",
+      "bytes": 131599,
+      "sha256": "60be4f4d7717990a9a4ff508329872d1b5f55057a3edb1f2625ebad968e8b93f",
+      "size": [
+        540,
+        1200
+      ],
+      "metadata_keys": [],
+      "decision": "allow",
+      "kind": "synthetic-application-screen-capture",
+      "provenance": "Actual com.tamaqai.demo emulator capture; persistent fake/local banner; synthetic example-domain identity and native Canvas plate; visually reviewed plus offline English/Russian OCR.",
+      "licence": "Original application capture; preserve root MIT, bundled font OFL, AndroidX/Material Apache notices and separate Open Food Facts attribution for catalogue text."
+    },
+    {
+      "path": "docs/screenshots/portfolio/history-light.png",
+      "git_blob": "861934c8258b7eb15c7910a4f09c5acd6076a327",
+      "bytes": 127541,
+      "sha256": "f1c16ffdd7bf6bcdb2beb0ba95990cc6121ad9eb04ff6de590be083bf6c8c36b",
+      "size": [
+        540,
+        1200
+      ],
+      "metadata_keys": [],
+      "decision": "allow",
+      "kind": "synthetic-application-screen-capture",
+      "provenance": "Actual com.tamaqai.demo emulator capture; persistent fake/local banner; synthetic example-domain identity and native Canvas plate; visually reviewed plus offline English/Russian OCR.",
+      "licence": "Original application capture; preserve root MIT, bundled font OFL, AndroidX/Material Apache notices and separate Open Food Facts attribution for catalogue text."
+    },
+    {
+      "path": "docs/screenshots/portfolio/home-dark.png",
+      "git_blob": "e2f5774caf23d22178503bf29ec8291117e45844",
+      "bytes": 148533,
+      "sha256": "f8dbfdbe94237781c779c11139679c34eb76f9388635ed5d8648ca07709867bb",
+      "size": [
+        540,
+        1200
+      ],
+      "metadata_keys": [],
+      "decision": "allow",
+      "kind": "synthetic-application-screen-capture",
+      "provenance": "Actual com.tamaqai.demo emulator capture; persistent fake/local banner; synthetic example-domain identity and native Canvas plate; visually reviewed plus offline English/Russian OCR.",
+      "licence": "Original application capture; preserve root MIT, bundled font OFL, AndroidX/Material Apache notices and separate Open Food Facts attribution for catalogue text."
+    },
+    {
+      "path": "docs/screenshots/portfolio/home-light.png",
+      "git_blob": "ac17b352cac6182895c4f7ea0dd97662f7e1a255",
+      "bytes": 142299,
+      "sha256": "df13fc3dfda5a5a3bf1f9b53c5e1f3cdea1cbaf3a8e3654087d24579a8599840",
+      "size": [
+        540,
+        1200
+      ],
+      "metadata_keys": [],
+      "decision": "allow",
+      "kind": "synthetic-application-screen-capture",
+      "provenance": "Actual com.tamaqai.demo emulator capture; persistent fake/local banner; synthetic example-domain identity and native Canvas plate; visually reviewed plus offline English/Russian OCR.",
+      "licence": "Original application capture; preserve root MIT, bundled font OFL, AndroidX/Material Apache notices and separate Open Food Facts attribution for catalogue text."
+    },
+    {
+      "path": "docs/screenshots/portfolio/login.png",
+      "git_blob": "3542adfa9d449468dcbb478a11d18cb84b04edd1",
+      "bytes": 77118,
+      "sha256": "67e2bf12d7042e7eb76de0c66c4bba539e3f44f7bc7bcd8ea1f95bede3e12318",
+      "size": [
+        540,
+        1200
+      ],
+      "metadata_keys": [],
+      "decision": "allow",
+      "kind": "synthetic-application-screen-capture",
+      "provenance": "Actual com.tamaqai.demo emulator capture; persistent fake/local banner; synthetic example-domain identity and native Canvas plate; visually reviewed plus offline English/Russian OCR.",
+      "licence": "Original application capture; preserve root MIT, bundled font OFL, AndroidX/Material Apache notices and separate Open Food Facts attribution for catalogue text."
+    },
+    {
+      "path": "docs/screenshots/portfolio/macros-light.png",
+      "git_blob": "2957627c285075f0415aff84f9a45dc63e5cc599",
+      "bytes": 166513,
+      "sha256": "42131cfedd6d7a2e1d9603bc49c80c3a23f10659b13892d01cf43dd2d7b594fb",
+      "size": [
+        540,
+        1200
+      ],
+      "metadata_keys": [],
+      "decision": "allow",
+      "kind": "synthetic-application-screen-capture",
+      "provenance": "Actual com.tamaqai.demo emulator capture; persistent fake/local banner; synthetic example-domain identity and native Canvas plate; visually reviewed plus offline English/Russian OCR.",
+      "licence": "Original application capture; preserve root MIT, bundled font OFL, AndroidX/Material Apache notices and separate Open Food Facts attribution for catalogue text."
+    },
+    {
+      "path": "docs/screenshots/portfolio/photo-draft-light.png",
+      "git_blob": "06638de82586a7e2729fe282b7cbef49a601c2d0",
+      "bytes": 139016,
+      "sha256": "77e8416b33ac8a64895b6b97e10c8777d821b26b980f0688c04606de2f88b1f5",
+      "size": [
+        540,
+        1200
+      ],
+      "metadata_keys": [],
+      "decision": "allow",
+      "kind": "synthetic-application-screen-capture",
+      "provenance": "Actual com.tamaqai.demo emulator capture; persistent fake/local banner; synthetic example-domain identity and native Canvas plate; visually reviewed plus offline English/Russian OCR.",
+      "licence": "Original application capture; preserve root MIT, bundled font OFL, AndroidX/Material Apache notices and separate Open Food Facts attribution for catalogue text."
+    },
+    {
+      "path": "docs/screenshots/portfolio/plan-light.png",
+      "git_blob": "75d93d114af5da069227cb1b8ba958888fc69226",
+      "bytes": 144228,
+      "sha256": "ccbcedbece4f5e52caca626e5fde6ffbc36a0ffddeab927c8a04f4710396df9c",
+      "size": [
+        540,
+        1200
+      ],
+      "metadata_keys": [],
+      "decision": "allow",
+      "kind": "synthetic-application-screen-capture",
+      "provenance": "Actual com.tamaqai.demo emulator capture; persistent fake/local banner; synthetic example-domain identity and native Canvas plate; visually reviewed plus offline English/Russian OCR.",
+      "licence": "Original application capture; preserve root MIT, bundled font OFL, AndroidX/Material Apache notices and separate Open Food Facts attribution for catalogue text."
+    },
+    {
+      "path": "docs/screenshots/portfolio/portion-half-light.png",
+      "git_blob": "5a7301234959d41ac45dce2d35ba10eea44689ea",
+      "bytes": 127095,
+      "sha256": "eedf323d48614c1c4dbd01f8edbe305a6f4686e17d99422b1f1fdf2cba4adbee",
+      "size": [
+        540,
+        1200
+      ],
+      "metadata_keys": [],
+      "decision": "allow",
+      "kind": "synthetic-application-screen-capture",
+      "provenance": "Actual com.tamaqai.demo emulator capture; persistent fake/local banner; synthetic example-domain identity and native Canvas plate; visually reviewed plus offline English/Russian OCR.",
+      "licence": "Original application capture; preserve root MIT, bundled font OFL, AndroidX/Material Apache notices and separate Open Food Facts attribution for catalogue text."
+    },
+    {
+      "path": "docs/screenshots/portfolio/profile-dark.png",
+      "git_blob": "fca1ee4a4ae81b746865a16969385e8bcaf64ecc",
+      "bytes": 127385,
+      "sha256": "9e1958e95421d7d136678eb24cbe40a57a3e71abbc25d1442210c84965578c93",
+      "size": [
+        540,
+        1200
+      ],
+      "metadata_keys": [],
+      "decision": "allow",
+      "kind": "synthetic-application-screen-capture",
+      "provenance": "Actual com.tamaqai.demo emulator capture; persistent fake/local banner; synthetic example-domain identity and native Canvas plate; visually reviewed plus offline English/Russian OCR.",
+      "licence": "Original application capture; preserve root MIT, bundled font OFL, AndroidX/Material Apache notices and separate Open Food Facts attribution for catalogue text."
+    },
+    {
+      "path": "docs/screenshots/portfolio/profile-light.png",
+      "git_blob": "b7afebbaed3ea4d3e07a64026ce108e8cc85dadc",
+      "bytes": 124646,
+      "sha256": "dc1119539b68cd1addbb38c8601d9a670e10dc029187c6180e75b35ea2459361",
+      "size": [
+        540,
+        1200
+      ],
+      "metadata_keys": [],
+      "decision": "allow",
+      "kind": "synthetic-application-screen-capture",
+      "provenance": "Actual com.tamaqai.demo emulator capture; persistent fake/local banner; synthetic example-domain identity and native Canvas plate; visually reviewed plus offline English/Russian OCR.",
+      "licence": "Original application capture; preserve root MIT, bundled font OFL, AndroidX/Material Apache notices and separate Open Food Facts attribution for catalogue text."
+    },
+    {
+      "path": "docs/screenshots/portfolio/settings-dark.png",
+      "git_blob": "845933cc29bece3f77d16a4f173bb03c5d66c9bf",
+      "bytes": 77585,
+      "sha256": "3e5c9216a56bcdfa0901fac8cf364d18b79b163c417c3521f5e406f09f5a637f",
+      "size": [
+        540,
+        1200
+      ],
+      "metadata_keys": [],
+      "decision": "allow",
+      "kind": "synthetic-application-screen-capture",
+      "provenance": "Actual com.tamaqai.demo emulator capture; persistent fake/local banner; synthetic example-domain identity and native Canvas plate; visually reviewed plus offline English/Russian OCR.",
+      "licence": "Original application capture; preserve root MIT, bundled font OFL, AndroidX/Material Apache notices and separate Open Food Facts attribution for catalogue text."
+    },
+    {
+      "path": "docs/screenshots/portfolio/settings-light.png",
+      "git_blob": "d05fe9da4c5c4a40c6c3d8a3e3820960cecfad67",
+      "bytes": 75339,
+      "sha256": "b60d17c598663984e07539912ce3c37740f67697dfec21d0184062d0591cf152",
+      "size": [
+        540,
+        1200
+      ],
+      "metadata_keys": [],
+      "decision": "allow",
+      "kind": "synthetic-application-screen-capture",
+      "provenance": "Actual com.tamaqai.demo emulator capture; persistent fake/local banner; synthetic example-domain identity and native Canvas plate; visually reviewed plus offline English/Russian OCR.",
+      "licence": "Original application capture; preserve root MIT, bundled font OFL, AndroidX/Material Apache notices and separate Open Food Facts attribution for catalogue text."
+    }
+  ],
+  "approved_release_video": {
+    "distribution": "Release attachment; keep video binary out of source history",
+    "sha256": "d04e531bd964564e7f84dea689724f67e76e699b41b3aa56cde903f75b5f3bdc",
+    "bytes": 3060836,
+    "duration_seconds": 79.62,
+    "codec": "h264",
+    "dimensions": [
+      720,
+      1600
+    ],
+    "decoded_frames": 164,
+    "independent_native_frame_checksums": 164,
+    "all_frames_visually_reviewed_in_five_contacts": true,
+    "all_native_frames_ocr_reviewed": 164,
+    "ocr_languages": [
+      "en-US",
+      "ru"
+    ],
+    "ocr_passes": 328,
+    "ocr_risk_flag_records": 0,
+    "audio_stream_present": false,
+    "container_metadata_keys": [
+      "major_brand",
+      "minor_version",
+      "compatible_brands",
+      "com.android.version",
+      "encoder"
+    ],
+    "strong_credential_pattern_count": 0,
+    "observed_content": "Synthetic Portfolio Demo identity and reserved example-domain email. Password masked throughout login. Native plate and demo diary/plan. No real photograph, visible token/invitation, personal data, foreign app, OS error/notification overlay or plaintext password observed. Android keyboard/status bar present.",
+    "decision": "allow-reviewed-demo-video",
+    "licence": "Original application capture with application font/dependency/data notices; retain fake-analysis and synthetic-data context.",
+    "release_filename": "tamaqai-demo-fake-ai.mp4"
+  },
+  "remaining_uncertainty": [
+    "Legacy media/reference rights and privacy remain unreviewed and are excluded; filenames and historical reports do not establish safety.",
+    "Font bytes match previously recorded official upstream SHA-256 and complete OFL notices; upstream files were not fetched again.",
+    "Original Canvas/vector authorship rests on current repository source and original-code licensing, not an independent historical certification.",
+    "OCR is imperfect; every decoded frame state and all gallery images were additionally inspected visually. No issue was observed in the explicit allowlist."
+  ],
+  "gallery_review": {
+    "images": 18,
+    "dimensions": [
+      540,
+      1200
+    ],
+    "metadata_absent": true,
+    "offline_ocr_passes": 36,
+    "ocr_risk_flag_records": 0,
+    "contact_sheet_visually_reviewed": true
+  },
+  "preserve_original_rendering_sources": [
+    {
+      "path": "app/src/main/java/com/tamaqai/ui/components/MatteSurfaces.kt",
+      "git_blob": "bc41b48922c987689ab640ad5b20fedc3effa867",
+      "sha256": "8bec9608d0fa170189bfd0f82ebb19cd16baa729210ab39fdce2642402723726",
+      "bytes": 23143,
+      "decision": "allow-original-rendering-source",
+      "licence": "MIT (original repository code)",
+      "source": "CeramicIllustration uses local circles, arcs, ovals and rectangles; documented original decorative Canvas artwork.",
+      "source_basis": "Source inspection plus THIRD_PARTY_NOTICES.md and docs/design/MATTE_ASSETS.md; not an independent historical authorship certification.",
+      "notices": [
+        {
+          "path": "LICENSE",
+          "git_blob": "81455a32cb094097d9e73c9081aa8ae6e7847f4e",
+          "sha256": "793c2a66d12eef068e63306b48261b05886c955d6731c994525a535f426f0050",
+          "bytes": 1077
+        }
+      ]
+    },
+    {
+      "path": "app/src/main/java/com/tamaqai/ui/components/HomeOverview.kt",
+      "git_blob": "accb97910e19c98e01259214a6fa5664c8cd2ee2",
+      "sha256": "509a67c11a7a549ec2eaeef9fa9a81950217e4cdcbcc43d666675989a41e9748",
+      "bytes": 8314,
+      "decision": "allow-original-rendering-source",
+      "licence": "MIT (original repository code)",
+      "source": "PlanPlate uses local Canvas circles and ovals; no raster reference or downloaded artwork.",
+      "source_basis": "Source inspection plus THIRD_PARTY_NOTICES.md and docs/design/MATTE_ASSETS.md; not an independent historical authorship certification.",
+      "notices": [
+        {
+          "path": "LICENSE",
+          "git_blob": "81455a32cb094097d9e73c9081aa8ae6e7847f4e",
+          "sha256": "793c2a66d12eef068e63306b48261b05886c955d6731c994525a535f426f0050",
+          "bytes": 1077
+        }
+      ]
+    },
+    {
+      "path": "app/src/androidTest/java/com/tamaqai/ui/VisualFoodFixture.kt",
+      "git_blob": "7239fbacd570b3cf5759c8c299abb5f9c0436cbe",
+      "sha256": "e07be2eb8a40d63394fdfbfdaa54b2754e745b5ab67bb7de9971aa6e2714d144",
+      "bytes": 1136,
+      "decision": "allow-original-rendering-source",
+      "licence": "MIT (original repository code)",
+      "source": "Synthetic 600x480 Bitmap JPEG fixture drawn from circles and rounded rectangles; no external photo source.",
+      "source_basis": "Source inspection plus THIRD_PARTY_NOTICES.md and docs/design/MATTE_ASSETS.md; not an independent historical authorship certification.",
+      "notices": [
+        {
+          "path": "LICENSE",
+          "git_blob": "81455a32cb094097d9e73c9081aa8ae6e7847f4e",
+          "sha256": "793c2a66d12eef068e63306b48261b05886c955d6731c994525a535f426f0050",
+          "bytes": 1077
+        }
+      ]
+    }
+  ]
+}

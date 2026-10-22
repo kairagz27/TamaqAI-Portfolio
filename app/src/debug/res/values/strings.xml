@@ -1,0 +1,5 @@
+<resources>
+    <string name="demo_meal_name">DEMO: test portion</string>
+    <string name="demo_component_name">DEMO component</string>
+    <string name="demo_explanation">Synthetic data: this photo was not analysed.</string>
+</resources>

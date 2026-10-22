@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="catalog_values_label">Catalogue values</string>
+    <string name="catalog_product_option">Find a product</string>
+    <string name="catalog_product_hint">Label values and sources</string>
+    <string name="catalog_restaurant_option">From a restaurant</string>
+    <string name="catalog_restaurant_hint">City, menu and portion</string>
+    <string name="catalog_barcode_title">Scan barcode</string>
+    <string name="catalog_barcode_hint">Place the barcode horizontally and take a photo. Decoding stays on this device.</string>
+    <string name="catalog_barcode_missing">No barcode was read. Try again or search for the product; manual entry is available from Add food.</string>
+    <string name="catalog_open_search">Search products</string>
+    <string name="catalog_add_failed">Could not save the draft. Please try again.</string>
+    <string name="catalog_unknown_manual">Nutritional values are not published. Enter all four values manually; they will be marked as your own, not restaurant data.</string>
+    <string name="catalog_match_title">Possible catalogue matches</string>
+    <string name="catalog_match_hint">Photo values are estimates. Catalogue candidates require your confirmation; appearance does not identify a brand or restaurant.</string>
+    <string name="catalog_match_error">Catalogue matching is unavailable. The photo estimate remains editable.</string>
+    <string name="catalog_receipt_source">Original catalogue reference</string>
+    <string name="catalog_receipt_amount">Selected amount: %1$s %2$s</string>
+    <string name="catalog_loading">Loading…</string>
+</resources>

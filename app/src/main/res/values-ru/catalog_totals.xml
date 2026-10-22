@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="catalog_totals_incomplete">Итог неполный</string>
+    <string name="catalog_totals_known_only">Известная часть</string>
+    <string name="catalog_totals_partial_day">Неполный итог</string>
+    <plurals name="catalog_totals_missing_records">
+        <item quantity="one">%d запись каталога без пищевой ценности не учтена. Числа включают только подтверждённые записи с известными значениями.</item>
+        <item quantity="few">%d записи каталога без пищевой ценности не учтены. Числа включают только подтверждённые записи с известными значениями.</item>
+        <item quantity="many">%d записей каталога без пищевой ценности не учтены. Числа включают только подтверждённые записи с известными значениями.</item>
+        <item quantity="other">%d записи каталога без пищевой ценности не учтены. Числа включают только подтверждённые записи с известными значениями.</item>
+    </plurals>
+</resources>

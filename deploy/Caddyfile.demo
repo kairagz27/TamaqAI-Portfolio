@@ -1,0 +1,10 @@
+{
+    auto_https off
+    admin off
+}
+:8000 {
+    reverse_proxy backend:8000
+}
+:8025 {
+    reverse_proxy mailpit:8025
+}

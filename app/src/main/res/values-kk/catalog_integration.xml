@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="catalog_values_label">Каталог деректері</string>
+    <string name="catalog_product_option">Өнім іздеу</string>
+    <string name="catalog_product_hint">Заттаңба және дереккөз</string>
+    <string name="catalog_restaurant_option">Мекемеден</string>
+    <string name="catalog_restaurant_hint">Қала, мәзір және үлес</string>
+    <string name="catalog_barcode_title">Штрихкодты сканерлеу</string>
+    <string name="catalog_barcode_hint">Штрихкодты көлденең орналастырып, суретке түсіріңіз. Тану құрылғыда орындалады.</string>
+    <string name="catalog_barcode_missing">Штрихкод танылмады. Қайталаңыз немесе өнімді іздеңіз; тағам қосу мәзірінде қолмен енгізуге болады.</string>
+    <string name="catalog_open_search">Өнімдерді іздеу</string>
+    <string name="catalog_add_failed">Жобаны сақтау мүмкін болмады. Қайталап көріңіз.</string>
+    <string name="catalog_unknown_manual">Тағамдық құндылық жарияланбаған. Төрт мәнді де қолмен енгізіңіз: олар мекеменің емес, сіздің деректеріңіз болады.</string>
+    <string name="catalog_match_title">Каталогтағы ықтимал сәйкестіктер</string>
+    <string name="catalog_match_hint">Фото бойынша мәндер — бағалау. Каталогтағы сәйкестікті сіз растайсыз; сыртқы көрініс брендті не мекемені анықтамайды.</string>
+    <string name="catalog_match_error">Сәйкестіктерді іздеу қолжетімсіз. Фото бағалауын өңдеуге болады.</string>
+    <string name="catalog_receipt_source">Каталогтың бастапқы жазбасы</string>
+    <string name="catalog_receipt_amount">Таңдалған мөлшер: %1$s %2$s</string>
+    <string name="catalog_loading">Жүктелуде…</string>
+</resources>

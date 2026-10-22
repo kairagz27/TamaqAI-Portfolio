@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="period_scroll_hint">Кезең · көлденең сырғытыңыз</string>
+    <string name="single_weight_hint">Әзірге бір өлшем. Нүкте сол күнгі салмақты көрсетеді.</string>
+    <string name="previous_month">Алдыңғы ай</string>
+    <string name="next_month">Келесі ай</string>
+    <string name="history_day_accessibility">%1$s. Жазбалар: %2$d</string>
+    <string name="history_calendar_hint">Күн астындағы сан — жазба саны. Ас қабылдауларын көру үшін күнді түртіңіз.</string>
+    <string name="whole_month">Бүкіл ай</string>
+    <string name="open_day">Күнді ашу</string>
+    <string name="history_search">Атауы бойынша іздеу</string>
+    <string name="history_empty_title">Жазбалар табылмады</string>
+    <string name="history_empty_body">Басқа күн не айды таңдаңыз немесе іздеуді өзгертіңіз.</string>
+</resources>

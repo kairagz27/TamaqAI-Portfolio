@@ -1,0 +1,9 @@
+<resources>
+    <!-- Launch/system-window colors mirror the Compose wellness palette. -->
+    <color name="wellness_background">#F7F2EA</color>
+    <color name="wellness_accent">#6B4F3A</color>
+    <color name="wellness_card">#FFFCF7</color>
+    <color name="wellness_fat">#805327</color>
+    <color name="wellness_carbs">#66503D</color>
+    <color name="wellness_protein">#82606B</color>
+</resources>

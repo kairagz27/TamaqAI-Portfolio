@@ -1,0 +1,6 @@
+<resources>
+    <plurals name="meal_count">
+        <item quantity="one">%d жазба</item>
+        <item quantity="other">%d жазба</item>
+    </plurals>
+</resources>

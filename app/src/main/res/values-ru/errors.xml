@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="ui_error_001">Не удалось прочитать дневник. Данные не удалены.</string>
+    <string name="ui_error_002">Не удалось создать черновик.</string>
+    <string name="ui_error_003">Не удалось открыть запись.</string>
+    <string name="ui_error_004">Введите число в каждом поле БЖУ и калорий.</string>
+    <string name="ui_error_005">Запись удалена.</string>
+    <string name="ui_error_006">Не удалось открыть запись. Данные не удалены.</string>
+    <string name="ui_error_007" formatted="false">Проверьте съеденную долю: для блюда от 5% до 2000%, для компонента от 0% до 2000%.</string>
+    <string name="ui_error_008">Черновик не записан. Повторите сохранение.</string>
+    <string name="ui_error_009">Не удалось подтвердить запись. Данные сохранены в черновике.</string>
+    <string name="ui_error_010">Не удалось удалить черновик.</string>
+    <string name="ui_error_011">Не удалось сохранить демо.</string>
+    <string name="ui_error_012">Еда не распознана. Можно заполнить запись вручную.</string>
+    <string name="ui_error_013">Анализ прерван. Исход запроса может быть неизвестен; автоматического повтора нет.</string>
+    <string name="ui_error_014">Анализ не завершён.</string>
+    <string name="ui_error_015">Сеть недоступна или ожидание истекло. Фото сохранено для повторной доставки.</string>
+    <string name="ui_error_016">Для backend требуется HTTPS.</string>
+    <string name="ui_error_017">Введите код доступа к пилоту.</string>
+    <string name="ui_error_018">Некорректный ответ backend.</string>
+    <string name="ui_error_019">Не удалось сохранить доступ к пилоту.</string>
+    <string name="ui_error_020">Демонстрационный ответ запрещён в release.</string>
+    <string name="ui_error_021">Ответ backend слишком большой.</string>
+    <string name="ui_error_022">Проверьте код доступа к пилоту.</string>
+    <string name="ui_error_023">Срок доступа истёк. Введите свой код пилота и повторите доставку того же снимка.</string>
+    <string name="ui_error_024">Пилот остановлен. Запись можно заполнить вручную.</string>
+    <string name="ui_error_025">Лимит выдачи доступа достигнут. Подождите или заполните запись вручную.</string>
+    <string name="ui_error_026">Лимит анализа достигнут. Запись можно заполнить вручную.</string>
+    <string name="ui_error_027">Модель недоступна или backend не настроен.</string>
+    <string name="ui_error_028">Модель отказалась анализировать это фото. Заполните запись вручную.</string>
+    <string name="ui_error_029">Снимок слишком большой или повреждён. Сделайте новый снимок.</string>
+    <string name="ui_error_030">Модель вернула неполную оценку. Заполните запись вручную.</string>
+    <string name="ui_error_031">Этот запрос уже связан с другим снимком. Сделайте новое фото.</string>
+    <string name="ui_error_032">Исход анализа неизвестен. Повторная доставка этого запроса не запускает новый анализ. Можно заполнить запись вручную.</string>
+    <string name="ui_error_033">Backend не вернул пригодную оценку. Попробуйте позже или заполните вручную.</string>
+    <string name="ui_error_034">Backend не настроен. Можно заполнить дневник вручную или сохранить фото для анализа позже.</string>
+    <string name="ui_error_035">Введите название (до 120 символов).</string>
+    <string name="ui_error_036">Нужно от 1 до 20 компонентов.</string>
+    <string name="ui_error_037">Введите название компонента.</string>
+    <string name="ui_error_038">Проверьте массу в граммах.</string>
+    <string name="ui_error_039">БЖУ и калории должны быть конечными и неотрицательными.</string>
+    <string name="ui_error_040">Проверьте значения компонента.</string>
+    <string name="ui_error_041">Общая масса превышает 10 кг.</string>
+    <string name="ui_error_042">Значения превышают допустимый размер приёма пищи.</string>
+    <string name="ui_error_043">Не удалось сохранить фото.</string>
+    <string name="ui_error_044">Фото истекло или удалено. Сделайте новый снимок.</string>
+    <string name="ui_error_045">Фото слишком большое.</string>
+    <string name="ui_error_046">Размер фото не поддерживается.</string>
+    <string name="ui_error_047">Размеры фото не поддерживаются.</string>
+    <string name="ui_error_048">Фото слишком большое для анализа.</string>
+    <string name="ui_error_049">Используйте подтверждение для записи дневника.</string>
+    <string name="ui_error_050">Дождитесь завершения анализа.</string>
+    <string name="ui_error_051">Исходная запись удалена.</string>
+</resources>

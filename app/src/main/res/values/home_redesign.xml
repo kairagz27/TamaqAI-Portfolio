@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="home_morning">Good morning</string>
+    <string name="home_afternoon">Good afternoon</string>
+    <string name="home_evening">Good evening</string>
+    <string name="home_night">Good night</string>
+    <string name="home_named_greeting">%1$s, %2$s</string>
+    <string name="home_daily_goal">Daily goal</string>
+    <string name="home_details">Details</string>
+    <string name="home_macro_no_goal">No goal</string>
+    <string name="home_scan_food">Scan food</string>
+    <string name="home_plan_empty">Make a plan for the selected day</string>
+    <string name="home_plan_draft">Empty draft · ready to edit</string>
+    <string name="home_plan_local">Meals: %1$d · on this device</string>
+    <string name="home_plan_synced">Meals: %1$d · synced</string>
+    <string name="home_plan_pending">Pending request · open your plan</string>
+    <string name="home_empty_hint">Every meal starts with a photo or a few words.</string>
+</resources>

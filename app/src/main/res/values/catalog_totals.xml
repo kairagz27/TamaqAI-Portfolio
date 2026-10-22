@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="catalog_totals_incomplete">Incomplete total</string>
+    <string name="catalog_totals_known_only">Known records</string>
+    <string name="catalog_totals_partial_day">Partial total</string>
+    <plurals name="catalog_totals_missing_records">
+        <item quantity="one">%d catalogue record has no nutritional values and is excluded. Numbers include only confirmed records with known values.</item>
+        <item quantity="other">%d catalogue records have no nutritional values and are excluded. Numbers include only confirmed records with known values.</item>
+    </plurals>
+</resources>

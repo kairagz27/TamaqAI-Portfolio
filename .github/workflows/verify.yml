@@ -1,0 +1,131 @@
+name: Verify
+on:
+  push:
+    branches: [main, 'codex/**']
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: verify-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  backend:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    services:
+      postgres:
+        image: postgres:18-bookworm
+        env:
+          POSTGRES_DB: tamaq_ci
+          POSTGRES_USER: postgres
+          # Disposable CI-only fixture, never a production credential.
+          POSTGRES_PASSWORD: ci-only-not-a-production-password
+        ports: ['5432:5432']
+        options: >-
+          --health-cmd "pg_isready -U postgres -d tamaq_ci"
+          --health-interval 5s --health-timeout 3s --health-retries 20
+    env:
+      TAMAQ_DATABASE_URL: postgresql://postgres:ci-only-not-a-production-password@127.0.0.1:5432/tamaq_ci
+      OPENAI_API_KEY: ''
+      TAMAQ_ENV: development
+      TAMAQ_PROVIDER: fake
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with: {fetch-depth: 0, persist-credentials: false}
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
+        with: {python-version: '3.12'}
+      - run: python -m pip install -r backend/requirements.lock.txt -r tools/requirements-docs.txt
+      - run: python -m unittest discover -s backend/tests
+        env: {PYTHONPATH: backend}
+      - run: python tools/test_warm_glass_tools.py && python tools/test_publication_history.py && python tools/test_record_portfolio_demo.py && python tools/test_snapshot.py
+      - run: python docs/design/presentation/verify_assets.py && python tools/check_readme.py && python tools/check_publication_docs.py && python tools/check_snapshot.py
+      - name: Audit reachable Git objects without printing values
+        run: |
+          python tools/audit_publication_history.py --out .android/ci/history.json
+          python - <<'PY'
+          import json
+          audit=json.load(open('.android/ci/history.json'))
+          blocked={'credential-pattern','private-key-material','forbidden-file-type'}
+          assert not any(blocked.intersection(item['types']) for item in audit['findings']), 'Review audit locations; values are withheld'
+          PY
+      - run: git diff --exit-code
+  android:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+        with: {persist-credentials: false}
+      - uses: actions/setup-java@b6effb05e454b25005698d916606bdc6ffcbf961 # v5
+        with: {distribution: temurin, java-version: '21'}
+      - name: Reclaim unused toolchain space on the disposable hosted runner
+        run: sudo rm -rf /usr/share/dotnet
+      - uses: android-actions/setup-android@be39fa834029ff78f1a44aa3bb0819b8fc2bd8fd # v4
+        with: {packages: platform-tools}
+      - run: sdkmanager 'platforms;android-36' 'build-tools;36.0.0'
+      - run: chmod +x gradlew
+      - name: Build real configurations and the isolated demo
+        run: >-
+          ./gradlew assembleDebug assembleRelease assembleDemo testDebugUnitTest lintDebug lintRelease lintDemo
+          -PtamaqEnvironment=usb -PtamaqReleaseBackendUrl=https://pilot.example.com
+          --no-daemon --no-parallel --max-workers=2
+          -Pkotlin.compiler.execution.strategy=in-process
+          '-Dorg.gradle.jvmargs=-Xmx2g -Dfile.encoding=UTF-8'
+      - uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6
+        with:
+          name: portfolio-demo-apk
+          path: app/build/outputs/apk/demo/app-demo.apk
+          retention-days: 14
+          if-no-files-found: error
+  android-instrumented:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+        with: {persist-credentials: false}
+      - uses: actions/setup-java@b6effb05e454b25005698d916606bdc6ffcbf961
+        with: {distribution: temurin, java-version: '21'}
+      - name: Reclaim unused toolchain space on the disposable hosted runner
+        run: sudo rm -rf /usr/share/dotnet
+      - uses: android-actions/setup-android@be39fa834029ff78f1a44aa3bb0819b8fc2bd8fd
+        with: {packages: platform-tools}
+      - name: Enable KVM for the isolated runner
+        run: |
+          echo 'KERNEL=="kvm", GROUP="kvm", MODE="0666", OPTIONS+="static_node=kvm"' | sudo tee /etc/udev/rules.d/99-kvm4all.rules
+          sudo udevadm control --reload-rules
+          sudo udevadm trigger --name-match=kvm
+          chmod +x gradlew
+      - uses: ReactiveCircus/android-emulator-runner@a421e43855164a8197daf9d8d40fe71c6996bb0d # v2
+        with:
+          api-level: 36
+          target: google_apis
+          arch: x86_64
+          profile: pixel_6
+          # Pixel 6 defaults exceed free disk on some hosted runners.
+          disk-size: 4096M
+          ram-size: 2048M
+          emulator-options: -no-window -gpu swiftshader_indirect -no-snapshot -noaudio -no-boot-anim -camera-back none
+          script: >-
+            ./gradlew connectedDemoAndroidTest -PtamaqDemoTest=true
+            --no-daemon --no-parallel --max-workers=2
+            -Pkotlin.compiler.execution.strategy=in-process
+            '-Dorg.gradle.jvmargs=-Xmx2g -Dfile.encoding=UTF-8'
+            -Pandroid.testInstrumentationRunnerArguments.class=com.tamaqai.data.NetworkCancellationTest,com.tamaqai.data.SecureSessionTest,com.tamaqai.data.DiaryPersistenceTest,com.tamaqai.data.DailyPersistenceTest,com.tamaqai.data.NutritionPersistenceTest,com.tamaqai.data.AccountIsolationTest,com.tamaqai.data.CatalogPersistenceTest
+      - name: Require the selected core tests to execute without skips
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import xml.etree.ElementTree as ET
+          cases = [case for path in Path('app/build/outputs/androidTest-results/connected/demo').rglob('*.xml')
+                   for case in ET.parse(path).getroot().iter('testcase')]
+          assert cases, 'No Android core test results found'
+          assert not any(case.find('skipped') is not None for case in cases), 'Selected core tests were skipped'
+          assert not any(case.find('failure') is not None or case.find('error') is not None for case in cases), 'Android core test failed'
+          print({'executed': len(cases), 'skipped': 0, 'failures': 0})
+          PY
+      - uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f
+        if: always()
+        with:
+          name: android-test-results
+          path: app/build/outputs/androidTest-results/connected/demo/
+          retention-days: 14

@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="eaten_portion">Сколько съел?</string>
+    <string name="portion_all">Всё</string>
+    <string name="portion_half">Половину</string>
+    <string name="portion_quarter">Четверть</string>
+    <string name="portion_other">Другое</string>
+    <string name="eaten_percent">Съедено, %</string>
+    <string name="eaten_percent_hint">100% — вся исходная порция. Для блюда допустимо от 5% до 2000%.</string>
+    <string name="component_percent_hint">100% — весь компонент. 0% — не съел этот компонент.</string>
+    <string name="portion_local_hint">Доля блюда применяется ко всем компонентам. Ниже можно изменить каждый отдельно — без повторного анализа.</string>
+    <string name="component_amount">Количество компонента %1$d</string>
+    <string name="estimated_mass_label">Оценочная масса, г</string>
+    <string name="mass_correction_hint">Исправление массы уточняет исходную оценку и БЖУ. Съеденная доля меняется отдельно.</string>
+    <string name="review_title">Проверка результата</string>
+    <string name="daily_subtitle">Ваш день в балансе</string>
+    <string name="empty_first_meal">Добавить первый приём пищи</string>
+    <string name="add_sheet_title">Добавить приём пищи</string>
+    <string name="add_sheet_hint">Выберите удобный способ</string>
+    <string name="camera_option_hint">Оценка состава по фотографии</string>
+    <string name="gallery_option_hint">Выбрать готовый снимок</string>
+    <string name="manual_option_hint">Указать состав самостоятельно</string>
+    <string name="favorite_option_hint">Повторить сохранённое блюдо</string>
+    <string name="progress_ring_label">%1$d%% дневной цели</string>
+    <string name="goal_not_set">Цель пока не задана</string>
+    <string name="hero_goal">из %1$d ккал на день</string>
+</resources>

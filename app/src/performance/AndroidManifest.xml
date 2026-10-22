@@ -1,0 +1,8 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools">
+    <application android:label="TamaqAI Glass QA" android:networkSecurityConfig="@xml/debug_network_security" tools:replace="android:label">
+        <profileable android:shell="true" />
+    </application>
+    <instrumentation android:name="com.tamaqai.benchmark.WarmGlassFrameInstrumentation"
+        android:targetPackage="${applicationId}" android:functionalTest="true"
+        android:handleProfiling="false" android:label="Isolated native glass frame probe" />
+</manifest>

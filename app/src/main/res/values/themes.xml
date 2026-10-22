@@ -1,0 +1,12 @@
+<resources>
+    <style name="Base.Theme.TamaqAI" parent="Theme.AppCompat.DayNight.NoActionBar">
+        <item name="android:fontFamily">@font/noto_sans</item>
+        <item name="android:colorAccent">@color/wellness_accent</item>
+        <item name="android:statusBarColor">@color/wellness_background</item>
+        <item name="android:navigationBarColor">@color/wellness_background</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:windowActionModeOverlay">true</item>
+        <item name="android:windowBackground">@color/wellness_background</item>
+    </style>
+    <style name="Theme.TamaqAI" parent="Base.Theme.TamaqAI" />
+</resources>

@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="period_scroll_hint">Period · swipe horizontally</string>
+    <string name="single_weight_hint">One measurement so far. The point shows weight on that date.</string>
+    <string name="previous_month">Previous month</string>
+    <string name="next_month">Next month</string>
+    <string name="history_day_accessibility">%1$s. Entries: %2$d</string>
+    <string name="history_calendar_hint">The number below a date is its entry count. Tap a day to see its meals.</string>
+    <string name="whole_month">Whole month</string>
+    <string name="open_day">Open day</string>
+    <string name="history_search">Search by name</string>
+    <string name="history_empty_title">No entries found</string>
+    <string name="history_empty_body">Choose another day or month, or change your search.</string>
+</resources>

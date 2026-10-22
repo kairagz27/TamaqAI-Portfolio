@@ -1,0 +1,157 @@
+{
+  "palettes": {
+    "Light": {
+      "ratios": {
+        "TextPrimary/PageBackground": 12.584,
+        "TextPrimary/CardSurface": 13.703,
+        "TextPrimary/SecondarySurface": 11.068,
+        "TextPrimary/SelectedSurface": 10.086,
+        "TextPrimary/DisabledSurface": 10.552,
+        "TextSecondary/PageBackground": 5.995,
+        "TextSecondary/CardSurface": 6.528,
+        "TextSecondary/SecondarySurface": 5.273,
+        "TextSecondary/SelectedSurface": 4.805,
+        "TextSecondary/DisabledSurface": 5.027,
+        "AccentBrown/PageBackground": 6.719,
+        "AccentBrown/CardSurface": 7.316,
+        "ErrorColor/PageBackground": 5.951,
+        "ErrorColor/CardSurface": 6.48,
+        "WarningColor/PageBackground": 5.821,
+        "WarningColor/CardSurface": 6.339,
+        "SuccessColor/PageBackground": 5.994,
+        "SuccessColor/CardSurface": 6.527,
+        "ProteinColor/PageBackground": 4.914,
+        "ProteinColor/CardSurface": 5.351,
+        "FatColor/PageBackground": 5.917,
+        "FatColor/CardSurface": 6.444,
+        "CarbColor/PageBackground": 6.779,
+        "CarbColor/CardSurface": 7.382,
+        "ControlOutline/CardSurface": 4.337,
+        "ErrorColor/ErrorSurface": 5.487
+      },
+      "primary_button": 7.316,
+      "glass_composites": {
+        "card": {
+          "opacity": 0.68,
+          "minimum_text_contrast": 6.113,
+          "photo_extremes_checked": false
+        },
+        "navigation": {
+          "opacity": 0.86,
+          "minimum_text_contrast": 4.736,
+          "photo_extremes_checked": true
+        },
+        "panel": {
+          "opacity": 0.9,
+          "minimum_text_contrast": 5.22,
+          "photo_extremes_checked": true
+        },
+        "field": {
+          "opacity": 0.94,
+          "minimum_text_contrast": 5.721,
+          "photo_extremes_checked": true
+        }
+      }
+    },
+    "Dark": {
+      "ratios": {
+        "TextPrimary/PageBackground": 14.288,
+        "TextPrimary/CardSurface": 12.371,
+        "TextPrimary/SecondarySurface": 10.819,
+        "TextPrimary/SelectedSurface": 9.532,
+        "TextPrimary/DisabledSurface": 10.794,
+        "TextSecondary/PageBackground": 9.01,
+        "TextSecondary/CardSurface": 7.801,
+        "TextSecondary/SecondarySurface": 6.822,
+        "TextSecondary/SelectedSurface": 6.011,
+        "TextSecondary/DisabledSurface": 6.806,
+        "AccentBrown/PageBackground": 8.989,
+        "AccentBrown/CardSurface": 7.783,
+        "ErrorColor/PageBackground": 9.907,
+        "ErrorColor/CardSurface": 8.578,
+        "WarningColor/PageBackground": 10.794,
+        "WarningColor/CardSurface": 9.346,
+        "SuccessColor/PageBackground": 10.421,
+        "SuccessColor/CardSurface": 9.023,
+        "ProteinColor/PageBackground": 9.709,
+        "ProteinColor/CardSurface": 8.406,
+        "FatColor/PageBackground": 10.04,
+        "FatColor/CardSurface": 8.692,
+        "CarbColor/PageBackground": 9.554,
+        "CarbColor/CardSurface": 8.272,
+        "ControlOutline/CardSurface": 4.565,
+        "ErrorColor/ErrorSurface": 7.525
+      },
+      "primary_button": 8.989,
+      "glass_composites": {
+        "card": {
+          "opacity": 0.74,
+          "minimum_text_contrast": 7.567,
+          "photo_extremes_checked": false
+        },
+        "navigation": {
+          "opacity": 0.86,
+          "minimum_text_contrast": 5.007,
+          "photo_extremes_checked": true
+        },
+        "panel": {
+          "opacity": 0.9,
+          "minimum_text_contrast": 5.678,
+          "photo_extremes_checked": true
+        },
+        "field": {
+          "opacity": 0.94,
+          "minimum_text_contrast": 6.511,
+          "photo_extremes_checked": true
+        }
+      }
+    }
+  },
+  "fonts": {
+    "inter": {
+      "required_glyphs_present": true,
+      "cyrillic_required": true,
+      "sha256": "29160a80ff49ddcab2c97711247e08b1fab27a484a329ce8b813d820dc559031",
+      "weight_range": [
+        100.0,
+        900.0
+      ]
+    },
+    "lora": {
+      "required_glyphs_present": true,
+      "cyrillic_required": true,
+      "sha256": "822a6621ccbe8d97d20ac88c1c41f5615c9c2c202eaa75f272cd452aac6475a7",
+      "weight_range": [
+        400.0,
+        700.0
+      ]
+    },
+    "noto_sans": {
+      "required_glyphs_present": true,
+      "cyrillic_required": true,
+      "sha256": "bfb7bb691513f12e734dc346c03a03f784912432d7e3fa8e56efcf906fe86b3d",
+      "weight_range": [
+        100.0,
+        900.0
+      ]
+    },
+    "bodoni_moda": {
+      "required_glyphs_present": true,
+      "cyrillic_required": false,
+      "sha256": "550f5e34ee0a828d7941b1fe9bc58b34e5260d3f33a61532e6d0a0114e79a5cf",
+      "weight_range": [
+        400.0,
+        900.0
+      ]
+    }
+  },
+  "locale_strings": 555,
+  "complete_locales": [
+    "en",
+    "ru",
+    "kk"
+  ],
+  "russian_plural_forms": true,
+  "fixed_warm_palette": true,
+  "material_surface_tint_disabled": true
+}

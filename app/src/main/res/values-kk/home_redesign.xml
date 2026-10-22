@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="home_morning">Қайырлы таң</string>
+    <string name="home_afternoon">Қайырлы күн</string>
+    <string name="home_evening">Қайырлы кеш</string>
+    <string name="home_night">Қайырлы түн</string>
+    <string name="home_named_greeting">%1$s, %2$s</string>
+    <string name="home_daily_goal">Күндік мақсат</string>
+    <string name="home_details">Толығырақ</string>
+    <string name="home_macro_no_goal">Мақсатсыз</string>
+    <string name="home_scan_food">Тағамды сканерлеу</string>
+    <string name="home_plan_empty">Таңдалған күнге жоспар құрыңыз</string>
+    <string name="home_plan_draft">Бос нобай · толтыруға болады</string>
+    <string name="home_plan_local">Ас саны: %1$d · осы құрылғыда</string>
+    <string name="home_plan_synced">Ас саны: %1$d · синхрондалған</string>
+    <string name="home_plan_pending">Аяқталмаған сұрау · жоспарды ашыңыз</string>
+    <string name="home_empty_hint">Фотосуреттен немесе тағам сипаттамасынан бастаңыз.</string>
+</resources>

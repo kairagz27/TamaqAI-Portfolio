@@ -1,0 +1,5 @@
+<resources>
+    <string name="demo_meal_name">ДЕМО: сынақ порциясы</string>
+    <string name="demo_component_name">ДЕМО компонент</string>
+    <string name="demo_explanation">Жасанды деректер: бұл фото талданбады.</string>
+</resources>

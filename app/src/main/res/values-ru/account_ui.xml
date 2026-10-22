@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="period_scroll_hint">Период · листайте варианты по горизонтали</string>
+    <string name="single_weight_hint">Пока одно измерение. Точка показывает вес на указанную дату.</string>
+    <string name="previous_month">Предыдущий месяц</string>
+    <string name="next_month">Следующий месяц</string>
+    <string name="history_day_accessibility">%1$s. Записей: %2$d</string>
+    <string name="history_calendar_hint">Число под датой — количество записей. Нажмите день, чтобы увидеть его приёмы пищи.</string>
+    <string name="whole_month">Весь месяц</string>
+    <string name="open_day">Открыть день</string>
+    <string name="history_search">Поиск по названию</string>
+    <string name="history_empty_title">Записей не найдено</string>
+    <string name="history_empty_body">Выберите другой день или месяц либо измените поиск.</string>
+</resources>

@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="ui_error_001">Could not read the diary. No data was deleted.</string>
+    <string name="ui_error_002">Could not create a draft.</string>
+    <string name="ui_error_003">Could not open the entry.</string>
+    <string name="ui_error_004">Enter a number in each calorie and nutrient field.</string>
+    <string name="ui_error_005">Entry deleted.</string>
+    <string name="ui_error_006">Could not open the entry. No data was deleted.</string>
+    <string name="ui_error_007" formatted="false">Check the eaten fraction: 5%–2000% for a meal, 0%–2000% for a component.</string>
+    <string name="ui_error_008">Draft not saved. Try saving again.</string>
+    <string name="ui_error_009">Could not confirm. Your changes are saved in the draft.</string>
+    <string name="ui_error_010">Could not delete the draft.</string>
+    <string name="ui_error_011">Could not save the demo.</string>
+    <string name="ui_error_012">Food was not recognized. You can enter it manually.</string>
+    <string name="ui_error_013">Analysis interrupted. The request outcome may be unknown; it is not retried automatically.</string>
+    <string name="ui_error_014">Analysis did not finish.</string>
+    <string name="ui_error_015">No connection or the request timed out. The photo is saved for later delivery.</string>
+    <string name="ui_error_016">The backend requires HTTPS.</string>
+    <string name="ui_error_017">Enter your pilot access code.</string>
+    <string name="ui_error_018">Invalid backend response.</string>
+    <string name="ui_error_019">Could not save pilot access.</string>
+    <string name="ui_error_020">Demo responses are forbidden in release builds.</string>
+    <string name="ui_error_021">The backend response is too large.</string>
+    <string name="ui_error_022">Check your pilot access code.</string>
+    <string name="ui_error_023">Access expired. Enter your pilot code and resend the same photo.</string>
+    <string name="ui_error_024">The pilot is stopped. You can enter the meal manually.</string>
+    <string name="ui_error_025">Access issuance limit reached. Wait or enter the meal manually.</string>
+    <string name="ui_error_026">Analysis limit reached. You can enter the meal manually.</string>
+    <string name="ui_error_027">The model is unavailable or the backend is not configured.</string>
+    <string name="ui_error_028">The model declined to analyze this photo. Enter the meal manually.</string>
+    <string name="ui_error_029">The photo is too large or damaged. Take a new photo.</string>
+    <string name="ui_error_030">The model returned an incomplete estimate. Enter the meal manually.</string>
+    <string name="ui_error_031">This request belongs to another photo. Take a new one.</string>
+    <string name="ui_error_032">Analysis outcome is unknown. Resending this request does not start another analysis. You can enter the meal manually.</string>
+    <string name="ui_error_033">The backend did not return a usable estimate. Try later or enter it manually.</string>
+    <string name="ui_error_034">Backend not configured. Use manual entries or save the photo for later analysis.</string>
+    <string name="ui_error_035">Enter a name, up to 120 characters.</string>
+    <string name="ui_error_036">Use 1 to 20 components.</string>
+    <string name="ui_error_037">Enter the component name.</string>
+    <string name="ui_error_038">Check the mass in grams.</string>
+    <string name="ui_error_039">Nutrients and calories must be finite and nonnegative.</string>
+    <string name="ui_error_040">Check the component values.</string>
+    <string name="ui_error_041">Total mass exceeds 10 kg.</string>
+    <string name="ui_error_042">Values exceed the allowed meal size.</string>
+    <string name="ui_error_043">Could not save the photo.</string>
+    <string name="ui_error_044">The photo expired or was deleted. Take a new one.</string>
+    <string name="ui_error_045">The photo is too large.</string>
+    <string name="ui_error_046">Unsupported photo file size.</string>
+    <string name="ui_error_047">Unsupported photo dimensions.</string>
+    <string name="ui_error_048">The photo is too large for analysis.</string>
+    <string name="ui_error_049">Confirm the entry to add it to the diary.</string>
+    <string name="ui_error_050">Wait until analysis finishes.</string>
+    <string name="ui_error_051">The original entry was deleted.</string>
+</resources>

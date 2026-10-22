@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "checked_at": "2026-10-22",
+  "scope": "Supplemental upstream notices retained byte-for-byte in the Android APK",
+  "items": [
+    {
+      "component": "libyuv (linked by androidx.camera:camera-core:1.4.2)",
+      "asset": "app/src/main/assets/third-party-licenses/libyuv-LICENSE.txt",
+      "bytes": 1506,
+      "sha256": "2b2cc1180c7e6988328ad2033b04b80117419db9c4c584918bbb3cfec7e9364f",
+      "source_url": "https://chromium.googlesource.com/libyuv/libyuv.git/+/d694f0a82b4da9d8ea37e6c453b7a34947eb5790/LICENSE",
+      "notice_source_revision": "d694f0a82b4da9d8ea37e6c453b7a34947eb5790",
+      "scope": "Canonical upstream notice text; exact CameraX-linked libyuv source revision is not established"
+    },
+    {
+      "component": "libyuv (linked by androidx.camera:camera-core:1.4.2)",
+      "asset": "app/src/main/assets/third-party-licenses/libyuv-PATENTS.txt",
+      "bytes": 1387,
+      "sha256": "4da84211f947c6f9f7dd8fbce513e1522e01833407ae732b8c9a2bbb75fed495",
+      "source_url": "https://chromium.googlesource.com/libyuv/libyuv.git/+/d694f0a82b4da9d8ea37e6c453b7a34947eb5790/PATENTS",
+      "notice_source_revision": "d694f0a82b4da9d8ea37e6c453b7a34947eb5790",
+      "scope": "Canonical upstream notice text; exact CameraX-linked libyuv source revision is not established"
+    },
+    {
+      "component": "androidx.concurrent:concurrent-futures-ktx:1.3.0",
+      "asset": "app/src/main/assets/third-party-licenses/androidx-concurrent-futures-ktx-NOTICE.txt",
+      "bytes": 12024,
+      "sha256": "bbc5cb91e1d3001b0ae4516809602e7698d3694afd6683b29effa8b80ec01de2",
+      "source_url": "https://dl.google.com/dl/android/maven2/androidx/concurrent/concurrent-futures-ktx/1.3.0/concurrent-futures-ktx-1.3.0.jar",
+      "archive_entry": "META-INF/NOTICE.txt",
+      "archive_sha256": "8de3069a4602d487b63ba061c7d46c78739e7ae5bf3dfd14bfbb9ae80277b1d9"
+    }
+  ]
+}

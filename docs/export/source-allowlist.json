@@ -1,0 +1,2052 @@
+{
+  "source_commit": "4d1473f8a34e230f0b0203d5f036bdb955eed603",
+  "method": "Explicit per-file Git blob export; no worktree copy and no old Git directory",
+  "entries": [
+    {
+      "path": ".dockerignore",
+      "source_blob": "e031abbd73f3c561e2b0af1193632eac892a57a4",
+      "source_sha256": "c93bd92a685204dd87e82d721a399138068665ffba3076e7927359d9bd987353",
+      "mode": "100644"
+    },
+    {
+      "path": ".gitattributes",
+      "source_blob": "344408cd3c9799d3350399a0429d1357ff283b4c",
+      "source_sha256": "0b23d0a16cdbabbef1eb6ac7bfa9ce757532c78b3fe7b4f7b32c3f5d42826dfd",
+      "mode": "100644"
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/bug_report.md",
+      "source_blob": "b20f2cc3cae68c4d19ba90ccb5fe83b2734fc8f8",
+      "source_sha256": "9d5a6f3d140c9ffbf507f7bd7e744eccd74990c822e48a795801f6324f24314d",
+      "mode": "100644"
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/config.yml",
+      "source_blob": "0086358db1eb971c0cfa8739c27518bbc18a5ff4",
+      "source_sha256": "13064e7bea658e01e718b414fbb7b3b244f36411fe25ee2055c151f7b534547a",
+      "mode": "100644"
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/feature_request.md",
+      "source_blob": "3bcf01a53dfe7e4bcf0530ec22dba3dbcc446122",
+      "source_sha256": "b2915a568d8337bec14ea3ecb86789219266084089ed74a04ebc24a8fe2d378f",
+      "mode": "100644"
+    },
+    {
+      "path": ".github/PULL_REQUEST_TEMPLATE.md",
+      "source_blob": "74b029d9cdc0b4aea5cde13dad3b944eb68037b8",
+      "source_sha256": "3ac579f44f41d26e1dc0bb331f557c642c420f4f5a2e57db82161b4c7d165228",
+      "mode": "100644"
+    },
+    {
+      "path": ".github/workflows/verify.yml",
+      "source_blob": "b64fc2122efb0367a7e80e8219c5a014312c1514",
+      "source_sha256": "fac6a54639051d667e930b02c8254c4a813f10d7f1245c4f8299ea8ea7e8f379",
+      "mode": "100644"
+    },
+    {
+      "path": ".gitignore",
+      "source_blob": "a511612e45fcbb7de70c37024239dd377ac9cb40",
+      "source_sha256": "012ed9e89534b7f7c31f5e095a7d3d8c0297cfc6e0914f6d78018fd76bb5dad6",
+      "mode": "100644"
+    },
+    {
+      "path": "AGENTS.md",
+      "source_blob": "d28b38fadadc2a0233831b726334c310115a6d86",
+      "source_sha256": "2f940ba81034c6e7a7b2e6587e2bcb4875c4bc62e3adc9e10f694cc9202fdb6a",
+      "mode": "100644"
+    },
+    {
+      "path": "CHANGELOG.md",
+      "source_blob": "a2ccdd3e2ffe6cf9392688ecbc81be741e0a9fa1",
+      "source_sha256": "496f8e3b7256cfb20898c550fcc40de228c57c681dd549f7d248b3738fe248a9",
+      "mode": "100644"
+    },
+    {
+      "path": "CONTRIBUTING.md",
+      "source_blob": "789958b179c5e52656b197e51e5f4f0149a2c0b9",
+      "source_sha256": "0cb0e88b4b39419f784c5dfcbd698a813013352cd29f2be6935ec5c6075df5cb",
+      "mode": "100644"
+    },
+    {
+      "path": "LICENSE",
+      "source_blob": "81455a32cb094097d9e73c9081aa8ae6e7847f4e",
+      "source_sha256": "793c2a66d12eef068e63306b48261b05886c955d6731c994525a535f426f0050",
+      "mode": "100644"
+    },
+    {
+      "path": "README.md",
+      "source_blob": "473e8a21de1f04b929183643695534bfd4e354cc",
+      "source_sha256": "ad3d0f739d6eb61c97d418b3cf42c1013c0ee4b8a3da99efd1e049c922e7a570",
+      "mode": "100644"
+    },
+    {
+      "path": "README.ru.md",
+      "source_blob": "550f8f2a18661489ca55c7df57c34486ff246858",
+      "source_sha256": "9f0eac7eaad4d6a3173c0acfff18cd4b323e652b220fadb521420316bf70a9bc",
+      "mode": "100644"
+    },
+    {
+      "path": "SECURITY.md",
+      "source_blob": "a97c8f4c1b04cc9111322cf1403563af0ffc6a59",
+      "source_sha256": "1aa58457d3f06b43c7c00e0bec212aff2c3a37380342a9eadf20f29b8e43c6e6",
+      "mode": "100644"
+    },
+    {
+      "path": "THIRD_PARTY_NOTICES.md",
+      "source_blob": "34fda84da264624055d3a26e8b331db107070a07",
+      "source_sha256": "9fe7e54fee6690a1134a7b7cb26354c3638872b0a34ba0724bddf786f40f3a36",
+      "mode": "100644"
+    },
+    {
+      "path": "app/build.gradle.kts",
+      "source_blob": "5e9b867bb2c241f52fe919bbdcc942450349e433",
+      "source_sha256": "c2d63751a39a59f36fc6f29cf8ce754a61624ea6f03d219546063d1691e186a9",
+      "mode": "100644"
+    },
+    {
+      "path": "app/proguard-performance-test.pro",
+      "source_blob": "f9c308a7d9ca25eab7c7a55befdcaf32c28864db",
+      "source_sha256": "fb572e35796f503d080452abf4a8dd2c5de94faeec0e4012cd3afafb65f2dfdb",
+      "mode": "100644"
+    },
+    {
+      "path": "app/proguard-performance.pro",
+      "source_blob": "15eb7760deaf4acf1c2c4ccfa7578f178591a8d9",
+      "source_sha256": "d145eb7fba16e3a1d3f348357e9e01683815f8d99bf60a6bddb950d83bf5836f",
+      "mode": "100644"
+    },
+    {
+      "path": "app/schemas/.gitkeep",
+      "source_blob": "8b137891791fe96927ad78e64b0aad7bded08bdc",
+      "source_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "mode": "100644"
+    },
+    {
+      "path": "app/schemas/com.tamaqai.data.local.AppDatabase/1.json",
+      "source_blob": "1c0d5b334e1f3559d1513af20453ccff4291c04b",
+      "source_sha256": "dbd84c1bda2a8acfa94ef210193c51b0279dd70430f1af8ba7343090a0b05375",
+      "mode": "100644"
+    },
+    {
+      "path": "app/schemas/com.tamaqai.data.local.AppDatabase/2.json",
+      "source_blob": "bfd79f43b3dc350f05ddf6590bc6520060fbc954",
+      "source_sha256": "29f2218cda2ace0f95bc8402a6704a6208f49a9c138d3801303e9208a00a33d2",
+      "mode": "100644"
+    },
+    {
+      "path": "app/schemas/com.tamaqai.data.local.AppDatabase/3.json",
+      "source_blob": "c9d63b5d58ba592753219be6fbafd32c49e9b2e2",
+      "source_sha256": "fe3f334be9adb650f809226f99b47e7a8bc6080c3f7982699735ec2cfe2458c0",
+      "mode": "100644"
+    },
+    {
+      "path": "app/schemas/com.tamaqai.data.local.AppDatabase/4.json",
+      "source_blob": "210437352b30d9f2cc693fb23fd4b5247b3bb62f",
+      "source_sha256": "7a3311e4ddf15836a5b2986f1435de72b96d0ec67729c252918bdcbb52014ff8",
+      "mode": "100644"
+    },
+    {
+      "path": "app/schemas/com.tamaqai.data.local.AppDatabase/5.json",
+      "source_blob": "1db7aa2a05791936de184f3111dd218b9bc58c6f",
+      "source_sha256": "564fb428a304717be209b23cbeb6feb6e207474a42587afcf555ecc66de00833",
+      "mode": "100644"
+    },
+    {
+      "path": "app/src/androidTest/java/com/tamaqai/data/AccountIsolationTest.kt",
+      "source_blob": "d80bc853273695ec05733cdd08cb30117483193e",
+      "source_sha256": "5263ae9caa82f5df813f1eef1199894f0874d78091d568ef4c447846be67e483",
+      "mode": "100644"
+    },
+    {
+      "path": "app/src/androidTest/java/com/tamaqai/data/CatalogPersistenceTest.kt",
+      "source_blob": "3ad982442e9206ef13c7a6791c01eb7ab07f3a9a",
+      "source_sha256": "4f7f09dc246feacbec9d08d48cd5b546978cbae92e2102a29a5b2a728dc84c06",
+      "mode": "100644"
+    },
+    {
+      "path": "app/src/androidTest/java/com/tamaqai/data/DailyPersistenceTest.kt",
+      "source_blob": "4f130cd802b317f80d88062b5f4f3cc5fbcddb10",
+      "source_sha256": "d4814f82d8b050193698e8646607d3832c7f76df4e87167f7315a42e41db3ba1",
+      "mode": "100644"
+    },
+    {
+      "path": "app/src/androidTest/java/com/tamaqai/data/DiaryPersistenceTest.kt",
+      "source_blob": "36146159b5fa55881d61f371eb0c5025d8bcd980",
+      "source_sha256": "60df177ad1fe67bd7afbda0da0ca3d426f84d68b29980a9dc8c5aa0bf35ad0a0",
+      "mode": "100644"
+    },
+    {
+      "path": "app/src/androidTest/java/com/tamaqai/data/NetworkCancellationTest.kt",
+      "source_blob": "cf9168e8db99908ab278077933493e9c0e9f64bd",
+      "source_sha256": "fd056d7810a18d33bebc07c76df6d8525fb82cfb35a42eb5134c473dfc3b4ea2",
+      "mode": "100644"
+    },
+    {
+      "path": "app/src/androidTest/java/com/tamaqai/data/NutritionPersistenceTest.kt",
+      "source_blob": "1d972e4e343cae5398390079c0a649f3558261b7",
+      "source_sha256": "dae4c8b74bd75a48f801a90dd54ffa9bde7828fa9df90352804673069424cb6f",
+      "mode": "100644"
+    },
+    {
+      "path": "app/src/androidTest/java/com/tamaqai/data/SecureSessionTest.kt",
+      "source_blob": "e720bac7c09d918c6abaffdec657e130e84d4ff6",
+      "source_sha256": "4c18c461835a42f6f44bd2560d1a07bf20d2b0bf8c64df99d621c9404230aecc",
+      "mode": "100644"
+    },
+    {
+      "path": "app/src/androidTest/java/com/tamaqai/ui/ApricotTestSupport.kt",
+      "source_blob": "7913ce85b24876ce489ca591a74c9d838ad28010",
+      "source_sha256": "030a9761b2c2b9084af490a4c6ade22a60ebba00d295f19b81da389d406ba7f8",
+      "mode": "100644"
+    },
+    {
+      "path": "app/src/androidTest/java/com/tamaqai/ui/PortfolioDemoTest.kt",
+      "source_blob": "279e89bbed2988bb4dadec265b0ab3c3a9b7a9e3",
+      "source_sha256": "f3e19c3b41c8c12bbf85bbbe3f8f73689d455fc93f98f68621d49ca99ef9bfb8",
+      "mode": "100644"
+    },
+    {
+      "path": "app/src/androidTest/java/com/tamaqai/ui/PortfolioNavigationTest.kt",
+      "source_blob": "f5025a9b2992db75c5b5b84821c1c9a8974db1a2",
+      "source_sha256": "28d135c16e86de9a7daf0723d8740cbef4280d36e88bc19732c18cc962483fee",
+      "mode": "100644"
+    },
+    {
+      "path": "app/src/androidTest/java/com/tamaqai/ui/PortfolioRestartTest.kt",
+      "source_blob": "09aef5b1003f346f99dd7a02b5b3f894a4b63a55",
+      "source_sha256": "2e6dbd9242e7276f2246bede30c41d27567bd56ebb8d451a71a0a330e97cc8e5",
+      "mode": "100644"
+    },
+    {
+      "path": "app/src/androidTest/java/com/tamaqai/ui/VisualFoodFixture.kt",
+      "source_blob": "7239fbacd570b3cf5759c8c299abb5f9c0436cbe",
+      "source_sha256": "e07be2eb8a40d63394fdfbfdaa54b2754e745b5ab67bb7de9971aa6e2714d144",
+      "mode": "100644"
+    },
+    {
+      "path": "app/src/debug/AndroidManifest.xml",
+      "source_blob": "343d21a2fbd99a3895615e881c745e253d8c8f1f",
+      "source_sha256": "3fd782b268f618ef0c725797e88fb9ebccd30fd33685f4f263f535cdad53b520",
+      "mode": "100644"
+    },
+    {
+      "path": "app/src/debug/java/com/tamaqai/TamaqDebugApplication.kt",
+      "source_blob": "e78cccbb98f356d53b785b0b02a63a5ef19a4b38",
+      "source_sha256": "b0c4c5079880ebc3180434fc6729cf87f26c5da8e209800a9125542bc97f8266",
+      "mode": "100644"
+    },
+    {
+      "path": "app/src/debug/java/com/tamaqai/data/DemoMeals.kt",
+      "source_blob": "26e349c13c8041813cefed311b1a1a39dd02bc07",
+      "source_sha256": "cb82be3e3b8e10a82d2feb5511d79f4b2a0fabd1e3788e5f0497de692cdb96e5",
+      "mode": "100644"
+    },
+    {
+      "path": "app/src/debug/res/values-kk/strings.xml",
+      "source_blob": "e33d6f6ccd7123e80473f653c0463b091d43bf62",
+      "source_sha256": "444f7bd12de7354a0c5366bcdab5d2ab0f9e2087a7bcdcca56b98e320ed2317a",
+      "mode": "100644"
+    },
+    {
+      "path": "app/src/debug/res/values-ru/strings.xml",
+      "source_blob": "8fed6068de974b1e7d2c48a5f96a8cec9f08b529",
+      "source_sha256": "93e152435fddd52df673986be60f88f4c8118fe25068ff3209741ce59968c70f",
+      "mode": "100644"
+    },
+    {
+      "path": "app/src/debug/res/values/strings.xml",
+      "source_blob": "542214d526008be55167460564d961177a519979",
+      "source_sha256": "328dc5b09fc1fd9ae25925ac7b82f6414b15f192b85dc40a6afa741b0fb47455",
+      "mode": "100644"
+    },
+    {
+      "path": "app/src/debug/res/xml/debug_network_security.xml",
+      "source_blob": "d85a392e61e81392f63f3bec6f587ad430b8cfff",
+      "source_sha256": "dfe0d94108db9dd6ebf1dfb1a55e8747cb313cc8040eec36bd57d3e80ffc19f9",
+      "mode": "100644"
+    },
+    {
+      "path": "app/src/demo/AndroidManifest.xml",
+      "source_blob": "1c2e77c7d99983afce203eb26df8f5ae335fc9fc",
+      "source_sha256": "d17a5adb447d15dd4583823aa47e36f5054be6716c7f3d26a7810263824663d7",
+      "mode": "100644"
+    },
+    {
+      "path": "app/src/main/AndroidManifest.xml",
+      "source_blob": "f8f04776d112dcafcf67daabb48eaee34c36109d",
+      "source_sha256": "0ca7841d0c3a8b017dac2c0af2a446c0132bd14fcd494060cfdba162f0620be7",
+      "mode": "100644"
+    },
+    {
+      "path": "app/src/main/assets/font-licenses/Lora-OFL.txt",
+      "source_blob": "0d1f1e19a5cdad99a2bceed6b04237e4a4ccc020",
+      "source_sha256": "6d6bc7bbb828514925dabcaf89e4771398d12c60dd1cb2bbb90eea129535d0f4",
+      "mode": "100644"
+    },
+    {
+      "path": "app/src/main/assets/font-licenses/NotoSans-OFL.txt",
+      "source_blob": "7d7fbd8f759f04ce523b623abe68f2eee27b1d72",
+      "source_sha256": "e2e177a32561584d4fc13aaa3cd8e53758a12910f013fe9ca125419111722029",
+      "mode": "100644"
+    },
+    {
+      "path": "app/src/main/assets/font-licenses/bodoni_moda-OFL.txt",
+      "source_blob": "0f7d4ec6f03df6399f7b03b38d0382f0da890cac",
+      "source_sha256": "97e32fdfa86a9aa79b85ce20b63b8618a8bf3e1110a0e631fac7f73983417b55",
+      "mode": "100644"
+    },
+    {
+      "path": "app/src/main/assets/font-licenses/inter-OFL.txt",
+      "source_blob": "909a6bf9cfb4849d4468a723cc16ffb7a183bd09",
+      "source_sha256": "5dd548d31a85f756e01d63e00d7faf1e324103ed3e9102fcbbabf2cc2db6dd39",
+      "mode": "100644"
+    },
+    {
+      "path": "app/src/main/assets/third-party-licenses/haze-LICENSE.txt",
+      "source_blob": "261eeb9e9f8b2b4b0d119366dda99c6fd7d35c64",
+      "source_sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+      "mode": "100644"
+    },
+    {
+      "path": "app/src/main/assets/third-party-licenses/zxing-LICENSE.txt",
+      "source_blob": "510991edab065c65cbbad6a78355f230542348dc",
+      "source_sha256": "3f62881f0566227a24b12e5a754cc79f39aaa94883038e95c94812e1f50af42f",
+      "mode": "100644"
+    },
+    {
+      "path": "app/src/main/assets/third-party-licenses/zxing-NOTICE.txt",
+      "source_blob": "70d46cb44a1afdc47187c0c7bb1aa213819d435e",
+      "source_sha256": "4db4b60aace29ec6c5c4f13ca9cac1930d3c0c54bcc67dceead0c10771120e66",
+      "mode": "100644"
+    },
+    {
+      "path": "app/src/main/java/com/tamaqai/MainActivity.kt",
+      "source_blob": "9a3cdd575a749cd732f251d905bb32a1b19c66c0",
+      "source_sha256": "7158ecea81d7d6ec54ebbbacde45ae22ea54fc3ec53b27f0708fb9d70577f432",
+      "mode": "100644"
+    },
+    {
+      "path": "app/src/main/java/com/tamaqai/TamaqApplication.kt",
+      "source_blob": "d2755d4dba6f819ed9d2c67d0ff7237447a6cc4c",
+      "source_sha256": "4044e1350f9ad2affd457ac4fa9d66d57e708c7382c9f37e115e18c9e2b75cdc",
+      "mode": "100644"
+    },
+    {
+      "path": "app/src/main/java/com/tamaqai/data/AppContainer.kt",
+      "source_blob": "d0351977d053ac10feb3738967098a5696879874",
+      "source_sha256": "893f1c13a7491e6a3476e4be3f1b530b14e9cbadcafcef0a66cdea6ae91090b5",
+      "mode": "100644"
+    },
+    {
+      "path": "app/src/main/java/com/tamaqai/data/local/AppDatabase.kt",
+      "source_blob": "f73786ee333ef483e5bdcd39882d4fecbc33bb16",
+      "source_sha256": "e9dd59c6e16d6f57ae93d8aed2689e6d4caeaae20c8bfea8dc0c1b382ce7c8f8",
+      "mode": "100644"
+    },
+    {
+      "path": "app/src/main/java/com/tamaqai/data/local/AppPreferences.kt",
+      "source_blob": "16b79211b89d11c563940ea9ddacdb407818fb52",
+      "source_sha256": "412e06c373427340c9334ae0cf2c56658a116de1b05589bbf4625d954ed4f0c9",
+      "mode": "100644"
+    },
+    {
+      "path": "app/src/main/java/com/tamaqai/data/local/Migrations.kt",
+      "source_blob": "5a2938f6b7e21e3748ce4f697a37c55318aea883",
+      "source_sha256": "2e3772ffe2e8e3bdf5b8cec0d00fbda4115d01992fd7923ff14c16cd48e60623",
+      "mode": "100644"
+    },
+    {
+      "path": "app/src/main/java/com/tamaqai/data/local/PhotoStore.kt",
+      "source_blob": "34db6696fa78edfd72f48735171838872d608aad",
+      "source_sha256": "48defbfc9d6c3ca84db8eb3b80a848c28a3effb18ecf003dabe2cd81162adb18",
+      "mode": "100644"
+    },
+    {
+      "path": "app/src/main/java/com/tamaqai/data/local/UserSettings.kt",
+      "source_blob": "8ec0382bfed2e614312ad3648de86f0f52cfdef2",
+      "source_sha256": "4a0e4e90450017f91875db7cdfedba8032e93f8452a9065ca52524098afc877d",
+      "mode": "100644"
+    },
+    {
+      "path": "app/src/main/java/com/tamaqai/data/local/dao/CatalogDao.kt",
+      "source_blob": "e1c49bdc8e22d2968a3f76ea5916e162381adc7a",
+      "source_sha256": "4bf3564830aad265c4f8485af0c880b2c72832b48946ee733d5fcbc7494f2407",
+      "mode": "100644"
+    },
+    {
+      "path": "app/src/main/java/com/tamaqai/data/local/dao/DailyDao.kt",
+      "source_blob": "002aee0685cfa1cd19c14608b112b2af3da05a0d",
+      "source_sha256": "c325ecb9a06def19edfecd730e9b3406e590f96a86a03315f20b5c2280351344",
+      "mode": "100644"
+    },
+    {
+      "path": "app/src/main/java/com/tamaqai/data/local/dao/MealDao.kt",
+      "source_blob": "dc44e950208111fd5db3810957bb7ef0f9eb88ac",
+      "source_sha256": "bcdc140b872adfe4cec3f91f667c1a7a77afe1f2f35c7d84a865d9231a625d1b",
+      "mode": "100644"
+    },
+    {
+      "path": "app/src/main/java/com/tamaqai/data/local/entity/CatalogCacheEntity.kt",
+      "source_blob": "6fc1e5e50c2b339897525734163996fadac6e9dc",
+      "source_sha256": "0d9802f7854e34fc633cffb9994df71abce87b6b74368012cb2ac2ae07c747ac",
+      "mode": "100644"
+    },
+    {
+      "path": "app/src/main/java/com/tamaqai/data/local/entity/DailyEntities.kt",
+      "source_blob": "222b19f293afaddfa7b57ce04b84d2d8abcb1f22",
+      "source_sha256": "238b7c06da9a93893d1cd06084628de5af0394ef66089f61beb828a06beba561",
+      "mode": "100644"
+    },
+    {
+      "path": "app/src/main/java/com/tamaqai/data/local/entity/LocalLinkEntity.kt",
+      "source_blob": "43be90ef949026d74eabe1797d006a45b96c0f1d",
+      "source_sha256": "3bd08b659c03ee4e4d79588e46223c3e671fcb6e4a4fe2f4b2c408d038a32930",
+      "mode": "100644"
+    },
+    {
+      "path": "app/src/main/java/com/tamaqai/data/local/entity/MealEntity.kt",
+      "source_blob": "830dbea239e3933d948fa8bf22e1e1388da1be0b",
+      "source_sha256": "d64751f917fd2408ca11440055efbdc88f12d0eff2d4c39c97fe652be45763fe",
+      "mode": "100644"
+    },
+    {
+      "path": "app/src/main/java/com/tamaqai/data/remote/AccountRepository.kt",
+      "source_blob": "ca0e2be41eaa1591329af6b41e3f5043267f6ec5",
+      "source_sha256": "c7162f13a1226e7e36661e75f5035afd3df9c3f0160592c668308a95480f16f2",
+      "mode": "100644"
+    },
+    {
+      "path": "app/src/main/java/com/tamaqai/data/remote/BackendFoodAnalysisRepository.kt",
+      "source_blob": "fed31e26d0de188b0db20eb904b31a23dccb4992",
+      "source_sha256": "1ad48af2eb824e77f8ee14b32532e9ecdd4937f480092fef686a3c3180823d4c",
+      "mode": "100644"
+    },
+    {
+      "path": "app/src/main/java/com/tamaqai/data/remote/CatalogRepository.kt",
+      "source_blob": "9f8c157eae28a21d2b2a766ef3ecfa302898b8fc",
+      "source_sha256": "39acdfb656ae07f58d712bd0e7c25e7daa78413f5f6de7ecdf90ce96bdbf2468",
+      "mode": "100644"
+    },
+    {
+      "path": "app/src/main/java/com/tamaqai/data/remote/NutritionRepository.kt",
+      "source_blob": "e0c2c62c45800caac3bc82740287ea030a089292",
+      "source_sha256": "811a85fa17320daf9a7d637b1f346de749316748814f7764ad5ae5e8ab1d4b21",
+      "mode": "100644"
+    },
+    {
+      "path": "app/src/main/java/com/tamaqai/data/remote/PlanRepository.kt",
+      "source_blob": "c62671e01eab0dc3fdae19cf9b20c1e5e80e6937",
+      "source_sha256": "ac1ccf99b3f9a12a37d54dfb8a92c6c28c9e6963370bac323de33bcf82cffb05",
+      "mode": "100644"
+    },
+    {
+      "path": "app/src/main/java/com/tamaqai/data/remote/SecureSessions.kt",
+      "source_blob": "6a4fdca8c592773ef5108ff31a9ea17baa140eea",
+      "source_sha256": "19fbc7a64df5eedbf44f8fcb9f6e6ccaed63f3efe0affe8fb52dd248c2c76f05",
+      "mode": "100644"
+    },
+    {
+      "path": "app/src/main/java/com/tamaqai/data/remote/SessionClient.kt",
+      "source_blob": "ef3573d981854dc3aa716186f39331884ace0f72",
+      "source_sha256": "29eecee2e304ccd0013b7f05c316923a319ff66233383ae9c21a99f21d356fd9",
+      "mode": "100644"
+    },
+    {
+      "path": "app/src/main/java/com/tamaqai/data/repository/DailyRepository.kt",
+      "source_blob": "ddbdcab985a1b67e3ec75d7a756f07021b7e6aeb",
+      "source_sha256": "496f0fc17c2bac9fb2daec3295f33ca4507fd190be143c9059c72867b25c4b33",
+      "mode": "100644"
+    },
+    {
+      "path": "app/src/main/java/com/tamaqai/data/repository/MealRepositoryImpl.kt",
+      "source_blob": "10e6c2cd3b23e60bf9d8db5d5cf116f82d7d57ad",
+      "source_sha256": "47c1d450a167a5f325b86c7264efcc60095607cda6f185c1530604fb26c46da1",
+      "mode": "100644"
+    },
+    {
+      "path": "app/src/main/java/com/tamaqai/domain/model/AnalysisResult.kt",
+      "source_blob": "2f7ce4a03f1d871fc1929b87bfbd8a890dfae1bf",
+      "source_sha256": "ee24727f80cd4429ad9d0b5352ac84963b86d8339f393fa1c1ae5dc7aea22ee7",
+      "mode": "100644"
+    },
+    {
+      "path": "app/src/main/java/com/tamaqai/domain/model/Catalog.kt",
+      "source_blob": "209eeb134c7db60b8b900789f5c2d03e80a30661",
+      "source_sha256": "3836533b3f7ddbc5579467c15961e793b4be523614c7e8d8e8abf52bb320cf16",
+      "mode": "100644"
+    },
+    {
+      "path": "app/src/main/java/com/tamaqai/domain/model/DailyModels.kt",
+      "source_blob": "feaac1a9c9585399a6658d2af9bc0dd31e0b7c97",
+      "source_sha256": "5da1cd7e351e6a920972c8b6723fb3c4a510e08abc4264b3fba392645dd28fc2",
+      "mode": "100644"
+    },
+    {
+      "path": "app/src/main/java/com/tamaqai/domain/model/Meal.kt",
+      "source_blob": "46fb97004ee6e85f919c549a5d462fae98230006",
+      "source_sha256": "b1080ff21a2ac6df8a481e1505aab3aa6bf7479e6a182f80d506c7994265da5b",
+      "mode": "100644"
+    },
+    {
+      "path": "app/src/main/java/com/tamaqai/domain/model/MealComponent.kt",
+      "source_blob": "664dd863f3b4525108a0dfd029db9caa54ad75ea",
+      "source_sha256": "fb5f80e0b1a1b2a0dfdbab95afe69e3db1c612ed181065bb896170979c70ab72",
+      "mode": "100644"
+    },
+    {
+      "path": "app/src/main/java/com/tamaqai/domain/model/MealPlan.kt",
+      "source_blob": "bd4ed1ed627a1336388a788516e1ff0ff4d8d937",
+      "source_sha256": "09bf8259c4daa7dc3820f6010d721b2a3669bc011666b96ed0948e5a3bc56b49",
+      "mode": "100644"
+    },
+    {
+      "path": "app/src/main/java/com/tamaqai/domain/model/Nutrition.kt",
+      "source_blob": "a9a3b2f575eb5a4c45b91d1c153f51bbca31015c",
+      "source_sha256": "66ec737156efed9a62420466ef3a02584203962d8930416ccf0bb41be6978ff7",
+      "mode": "100644"
+    },
+    {
+      "path": "app/src/main/java/com/tamaqai/domain/model/Questionnaire.kt",
+      "source_blob": "e57f5ad0329970ef8f4c33eeac8a0be91816ccf9",
+      "source_sha256": "f41bb4b30a957a5c34c13e76717b8c30d09d43f7cf2695765ecdb98808e9d251",
+      "mode": "100644"
+    },
+    {
+      "path": "app/src/main/java/com/tamaqai/domain/repository/FoodAnalysisRepository.kt",
+      "source_blob": "b680de5b5a22f513f3f98b049d32c8d6527c50a1",
+      "source_sha256": "787958881634ad6e24994b9715da565712b774850d8f77addec7a1e40a7817e1",
+      "mode": "100644"
+    },
+    {
+      "path": "app/src/main/java/com/tamaqai/domain/repository/MealRepository.kt",
+      "source_blob": "2f86564a6e4dbc5959be22de9e1d34856c30444c",
+      "source_sha256": "a7a7985e709eab3948c645c29b56b0f5c8ebc5d40f90c5237bf6b587767db556",
+      "mode": "100644"
+    },
+    {
+      "path": "app/src/main/java/com/tamaqai/domain/usecase/AccountValidation.kt",
+      "source_blob": "a7349a181091b442abc0f316307ff91236f9c88e",
+      "source_sha256": "1d0a126a6c3222a71ceb16aa5f45386d83965147e349b197ae28a22655cff605",
+      "mode": "100644"
+    },
+    {
+      "path": "app/src/main/java/com/tamaqai/domain/usecase/AnalyzeMealPhotoUseCase.kt",
+      "source_blob": "7f1c98b4371191a3fb2b48b5b67301698e320f06",
+      "source_sha256": "7fa23c1902ce33baaa0817c245e54a44d7e42b22ddbffe9047d2578dcd4e9ad4",
+      "mode": "100644"
+    },
+    {
+      "path": "app/src/main/java/com/tamaqai/domain/usecase/CatalogMealFactory.kt",
+      "source_blob": "b5fd5de66e58136ad1637840c2e0fbfe176e7610",
+      "source_sha256": "010b4b3529782ac7bb797337808da04f137c4c5a283c92b6d5495fc0727fe7cd",
+      "mode": "100644"
+    },
+    {
+      "path": "app/src/main/java/com/tamaqai/domain/usecase/DiaryTotals.kt",
+      "source_blob": "3489aa815413cb650b917bee370e67346b1da8e5",
+      "source_sha256": "c016550e76bbae65a821771fa88bfe515b8c7cfa9bb3f932631fe99a4fa2e3cf",
+      "mode": "100644"
+    },
+    {
+      "path": "app/src/main/java/com/tamaqai/domain/usecase/NutritionCalculator.kt",
+      "source_blob": "4f3e3cdd6d8361520d2238c20e545738b2731506",
+      "source_sha256": "ca957d17c8bfbc387067bbb2609ee08b49f9dad3a3016109b698f1392cae026c",
+      "mode": "100644"
+    },
+    {
+      "path": "app/src/main/java/com/tamaqai/domain/usecase/ProductBarcode.kt",
+      "source_blob": "bc70b4f52090c18482930fdf171e1d8fbc4be40e",
+      "source_sha256": "626ed018069a1fcf54c462d666a7c0febd8434c60763c31aa56a018c4646d23c",
+      "mode": "100644"
+    },
+    {
+      "path": "app/src/main/java/com/tamaqai/domain/usecase/ProgressSummary.kt",
+      "source_blob": "b0c3cc8f2c4ebf3e877604ddaf427ff15af31fdb",
+      "source_sha256": "5d5721f3d2553dc1a273c3a614af3479bb45af232fcbcbbdf9bc1cded99c4a1c",
+      "mode": "100644"
+    },
+    {
+      "path": "app/src/main/java/com/tamaqai/ui/LocaleFormatting.kt",
+      "source_blob": "1a96c1b585d7d39431a1d89be7b2132292b730e2",
+      "source_sha256": "73b514a26ecef8d4a81c66fa1ec084285a4003746b57d0da72192e576a3877ca",
+      "mode": "100644"
+    },
+    {
+      "path": "app/src/main/java/com/tamaqai/ui/TamaqViewModelFactory.kt",
+      "source_blob": "fcfd921b28cd77f90f833901f00a9843d6066c33",
+      "source_sha256": "77ff25d9a53d693887af9083520474e084bbe707666509f55eb0d9e7d0ac3929",
+      "mode": "100644"
+    },
+    {
+      "path": "app/src/main/java/com/tamaqai/ui/components/AccountDrawer.kt",
+      "source_blob": "36dfffe9d98ce2c1f8a3524c4d7fe835a1230d36",
+      "source_sha256": "b13967445c75fed53298aae173807b108d0c5b0645f04dd4dde3c80ac1b4e14c",
+      "mode": "100644"
+    },
+    {
+      "path": "app/src/main/java/com/tamaqai/ui/components/CatalogReceipt.kt",
+      "source_blob": "dc4da3eb0479406bfbe2412dba71e3789500b4a2",
+      "source_sha256": "ef29cd25addf46520b2929516c3cf3daca5dd8f3afdd85b04c2c2effd91cd6cc",
+      "mode": "100644"
+    },
+    {
+      "path": "app/src/main/java/com/tamaqai/ui/components/DailyComponents.kt",
+      "source_blob": "5c772e66539e3d5a69fcb78c0bf1a8c62cf7c475",
+      "source_sha256": "1847245c88a1e6d9334395d3a55b0350149c13f589370899560f65e8b0c3ac11",
+      "mode": "100644"
+    },
+    {
+      "path": "app/src/main/java/com/tamaqai/ui/components/DonutChart.kt",
+      "source_blob": "621f15bb6df5bc951dab93d1044573235d070255",
+      "source_sha256": "42774d20086d3168c9b97eb45a9b1bf296f2919f3d558534991ade5d74afe708",
+      "mode": "100644"
+    },
+    {
+      "path": "app/src/main/java/com/tamaqai/ui/components/GlassBottomSheet.kt",
+      "source_blob": "12763a64197b415265ae2e4029db04fa6b4adda3",
+      "source_sha256": "abece856dfba7e432c2b2f97e3d6aaaa9c1640daf6e6c43f2238875c7194ccac",
+      "mode": "100644"
+    },
+    {
+      "path": "app/src/main/java/com/tamaqai/ui/components/HomeOverview.kt",
+      "source_blob": "accb97910e19c98e01259214a6fa5664c8cd2ee2",
+      "source_sha256": "509a67c11a7a549ec2eaeef9fa9a81950217e4cdcbcc43d666675989a41e9748",
+      "mode": "100644"
+    },
+    {
+      "path": "app/src/main/java/com/tamaqai/ui/components/IncompleteNutritionNotice.kt",
+      "source_blob": "fdbd9557bb859dc8bc37459e7c10bc56224481fc",
+      "source_sha256": "3193e7b0424011dbb4e13a0a17cd944d629b24e53e2791c64860326af2e98814",
+      "mode": "100644"
+    },
+    {
+      "path": "app/src/main/java/com/tamaqai/ui/components/MatteSurfaces.kt",
+      "source_blob": "bc41b48922c987689ab640ad5b20fedc3effa867",
+      "source_sha256": "8bec9608d0fa170189bfd0f82ebb19cd16baa729210ab39fdce2642402723726",
+      "mode": "100644"
+    },
+    {
+      "path": "app/src/main/java/com/tamaqai/ui/components/ProfileAvatar.kt",
+      "source_blob": "ed717b4b6e063d24515e82a639954b3e4347d328",
+      "source_sha256": "413996b645a645e33dfce982d04ee8ac088b086c019cc6a7fe81eda6271360db",
+      "mode": "100644"
+    },
+    {
+      "path": "app/src/main/java/com/tamaqai/ui/components/WellnessComponents.kt",
+      "source_blob": "cdf7cf4d2e98a9e9afb4133823b825f495e75c1f",
+      "source_sha256": "11f59183d9e57337b6685c8c54ad4aab216a0f376ffd2e37456aef544ab9cfe3",
+      "mode": "100644"
+    },
+    {
+      "path": "app/src/main/java/com/tamaqai/ui/screens/AccountPanel.kt",
+      "source_blob": "8e2eba15a8e01e109c2c042bc68572e970af5d2e",
+      "source_sha256": "1041b70d77345ac99eb5efb99c3ac1b10d433832a9e960002bdde1fd2422cd6e",
+      "mode": "100644"
+    },
+    {
+      "path": "app/src/main/java/com/tamaqai/ui/screens/CameraPreview.kt",
+      "source_blob": "74f5530524317dfb60ea77e718ff739f0dadd4ba",
+      "source_sha256": "be2b4acf39d32cb7579a58fb6d84cbf3ac9f9bcb6590d795aba1525177c92b6e",
+      "mode": "100644"
+    },
+    {
+      "path": "app/src/main/java/com/tamaqai/ui/screens/CatalogScreen.kt",
+      "source_blob": "93f932affffbf9e1aebb1c9b88832729195c9be6",
+      "source_sha256": "100d35a9d3a0c8718a8d1603179a54760ce6a446e4870238fe22c260a0379a35",
+      "mode": "100644"
+    },
+    {
+      "path": "app/src/main/java/com/tamaqai/ui/screens/DailyViewModel.kt",
+      "source_blob": "b899eae61fac6cd609c2b8a0d1ee35abe3d1926d",
+      "source_sha256": "9608c72a7f39820c122c48cb0bf6567c38c597743d309c42f16fc24c1f94707b",
+      "mode": "100644"
+    },
+    {
+      "path": "app/src/main/java/com/tamaqai/ui/screens/FavoritesScreen.kt",
+      "source_blob": "cd01f5f1306d5fa75d32dda462236e3fd864391f",
+      "source_sha256": "ed839b25a9260d3648a67e3a8e24c4f6bd70a1e917f59caab9821b9316e0ec2b",
+      "mode": "100644"
+    },
+    {
+      "path": "app/src/main/java/com/tamaqai/ui/screens/HistoryScreen.kt",
+      "source_blob": "d7e3c8b26370836fb0b9670e05545f3b767857a4",
+      "source_sha256": "7249b8ffa313800c625112c10a9c9517335958ff58693ad581acbdc66261f35b",
+      "mode": "100644"
+    },
+    {
+      "path": "app/src/main/java/com/tamaqai/ui/screens/HomeScreen.kt",
+      "source_blob": "7dc27e31205cef7e9997d453f7c631909fa9eab6",
+      "source_sha256": "c58f5e0bfc2fa0c8e12459b83d083f7fa465e482c97894040d6b2e2f26d6998d",
+      "mode": "100644"
+    },
+    {
+      "path": "app/src/main/java/com/tamaqai/ui/screens/HomeViewModel.kt",
+      "source_blob": "c86ea45e4622cba3e23ef6e1d7d20880f79c69f7",
+      "source_sha256": "73d85d2b4a64c907fa99fbfd99b9a11d992f66aafe0c9addc6067fb44dda28b9",
+      "mode": "100644"
+    },
+    {
+      "path": "app/src/main/java/com/tamaqai/ui/screens/Labels.kt",
+      "source_blob": "42a4d65db2ae6630d0f8e60108cebc2312048dcd",
+      "source_sha256": "408235eb710517fe78774b720b882d3af34d18822dac85df042cf5a70725bce9",
+      "mode": "100644"
+    },
+    {
+      "path": "app/src/main/java/com/tamaqai/ui/screens/MealEditorScreen.kt",
+      "source_blob": "5342e9a300dfb4959a1eb67c2ecf17681827e1bc",
+      "source_sha256": "38d34b5773f566e62a968170f881d7dfffc549741fcf28d01f76951a2c1b8d80",
+      "mode": "100644"
+    },
+    {
+      "path": "app/src/main/java/com/tamaqai/ui/screens/MealEditorViewModel.kt",
+      "source_blob": "c2a034b29cc5006ec2fbe939f308bd3755edb51c",
+      "source_sha256": "6928e22d5189bda33d1e09f2220416c0df49b68875d0a824a8d259dca0d56d19",
+      "mode": "100644"
+    },
+    {
+      "path": "app/src/main/java/com/tamaqai/ui/screens/NutrientSheet.kt",
+      "source_blob": "7ae7b76d3b3969c71fe3b34fce69fd0f731fc5c7",
+      "source_sha256": "3fc98abb2c5bb20ed71a6a3edced8f2a9855727fa3ae0cd6d850293261d17831",
+      "mode": "100644"
+    },
+    {
+      "path": "app/src/main/java/com/tamaqai/ui/screens/NutritionScreens.kt",
+      "source_blob": "1fd8849f5dbd351f2af9e8ebdc56de1b08739c87",
+      "source_sha256": "a26006832c9f8cfdb4d110125f9b1ae8a5ae3487659781bed1b17c95cddc680c",
+      "mode": "100644"
+    },
+    {
+      "path": "app/src/main/java/com/tamaqai/ui/screens/PhonePanel.kt",
+      "source_blob": "6dbfa86a23949c74ed33b44c885aaf26d535513f",
+      "source_sha256": "c1a8bc42986e37f2b57c7510ad6955fd7400832ac6209cbf638e06ed0b80ff9d",
+      "mode": "100644"
+    },
+    {
+      "path": "app/src/main/java/com/tamaqai/ui/screens/PhotoProcessor.kt",
+      "source_blob": "ce7338a6cba901eee5feeca82b0b3f678430cfdd",
+      "source_sha256": "0ae2a5f3c731d1df95a82db3a80b6bf881537894e0e7438c346e8f85f7b35e87",
+      "mode": "100644"
+    },
+    {
+      "path": "app/src/main/java/com/tamaqai/ui/screens/PlanScreen.kt",
+      "source_blob": "7ec9c25fbbe0a53de963b6d6d8fd5b1dddc7481e",
+      "source_sha256": "65b8713e4d8876ba040338679354c6360491e9de3da121e3c65179bb98daf3fb",
+      "mode": "100644"
+    },
+    {
+      "path": "app/src/main/java/com/tamaqai/ui/screens/PreferencesScreen.kt",
+      "source_blob": "4e0a3948d99f3951db15b911cbcf0a331d8b98b5",
+      "source_sha256": "0af2237fb6afa016c9cbfbee7e58bd021b8f88a1a00f1098bcb4f50453d7e862",
+      "mode": "100644"
+    },
+    {
+      "path": "app/src/main/java/com/tamaqai/ui/screens/ProfileScreen.kt",
+      "source_blob": "40bd0917ed773b6dab2094ae298149f231b02a57",
+      "source_sha256": "95af2701735850ff31f9dbd4d3f971a5e267dc3dadfeb5aa0ecc5df60ce5437e",
+      "mode": "100644"
+    },
+    {
+      "path": "app/src/main/java/com/tamaqai/ui/screens/ProgressScreen.kt",
+      "source_blob": "d0d3937a5b712f1349ecd1c69b76da61ede2fcbc",
+      "source_sha256": "de57ac2fe2b493bbc6b537a7287b2a1493acf50d2e9b2db53e9da1ade50b0e1d",
+      "mode": "100644"
+    },
+    {
+      "path": "app/src/main/java/com/tamaqai/ui/screens/ScannerScreen.kt",
+      "source_blob": "71206dad9f30058a46d1b83760145848afa24923",
+      "source_sha256": "e34d379e71ec9680e2adcc8425094c4c35df1aadf04185954d8c6e9641037a0e",
+      "mode": "100644"
+    },
+    {
+      "path": "app/src/main/java/com/tamaqai/ui/screens/ScannerState.kt",
+      "source_blob": "6440228b46e5dc85f9ad37922700c8ceeb72081f",
+      "source_sha256": "e3b5016dc9883188d55d9dc659d4c878b08ab6fbc65c4a4195e46ad8f2b5c995",
+      "mode": "100644"
+    },
+    {
+      "path": "app/src/main/java/com/tamaqai/ui/screens/ScannerViewModel.kt",
+      "source_blob": "51d3df2f6c3bd9f953c53e4b46cb1851eec996a6",
+      "source_sha256": "6e4de034e7016cfb570b1a05ac9af784dc6030bc8027e35086e79002eac1b24c",
+      "mode": "100644"
+    },
+    {
+      "path": "app/src/main/java/com/tamaqai/ui/screens/StartScreen.kt",
+      "source_blob": "e06cb4b5434db43ed5362a36215c5405c9ac15b6",
+      "source_sha256": "45818f57543542c66a50575c9c4f2c0e21ffa2fddd9fa3b3c84ae3ce64023754",
+      "mode": "100644"
+    },
+    {
+      "path": "app/src/main/java/com/tamaqai/ui/screens/UiMessages.kt",
+      "source_blob": "65ffdf59c25e431efa095a03cc3a99454bf57928",
+      "source_sha256": "5149ae332899b1abe789165c5ffde687b07436dc6904ac873509f43fd9fc1e89",
+      "mode": "100644"
+    },
+    {
+      "path": "app/src/main/java/com/tamaqai/ui/theme/TamaqTheme.kt",
+      "source_blob": "2eec581e0147072d289c8cecfa7b760b5e884fdb",
+      "source_sha256": "8b68e65588dea771301d61ac10b2067f6228f0e9b23799109c090a2571e6049a",
+      "mode": "100644"
+    },
+    {
+      "path": "app/src/main/java/com/tamaqai/ui/theme/WellnessTokens.kt",
+      "source_blob": "b458f0f148cf4ec626208be75cf98449faf41c4c",
+      "source_sha256": "b0f9f9d52075e46d935ad53a1f9eb9ce3eeb267b6fcb21ec852ca9960c3749c4",
+      "mode": "100644"
+    },
+    {
+      "path": "app/src/main/res/drawable/ic_launcher.xml",
+      "source_blob": "64918e6b8ad72723737abb5a75475c542d624aa2",
+      "source_sha256": "88d452ac6a834553cc40121307ea55d99c3b64bff022661466ae977b1e92665e",
+      "mode": "100644"
+    },
+    {
+      "path": "app/src/main/res/font/bodoni_moda.ttf",
+      "source_blob": "c5d582f8003ae692761dd8e9ce69de23cb9fea53",
+      "source_sha256": "550f5e34ee0a828d7941b1fe9bc58b34e5260d3f33a61532e6d0a0114e79a5cf",
+      "mode": "100644"
+    },
+    {
+      "path": "app/src/main/res/font/inter.ttf",
+      "source_blob": "047c92f6e2212473dc436020afed689527076d44",
+      "source_sha256": "29160a80ff49ddcab2c97711247e08b1fab27a484a329ce8b813d820dc559031",
+      "mode": "100644"
+    },
+    {
+      "path": "app/src/main/res/font/lora.ttf",
+      "source_blob": "ee1914c3746140523de2940d267ec2215bd85d5b",
+      "source_sha256": "822a6621ccbe8d97d20ac88c1c41f5615c9c2c202eaa75f272cd452aac6475a7",
+      "mode": "100644"
+    },
+    {
+      "path": "app/src/main/res/font/noto_sans.ttf",
+      "source_blob": "75575046c015ff623a848096a15779867ba71453",
+      "source_sha256": "bfb7bb691513f12e734dc346c03a03f784912432d7e3fa8e56efcf906fe86b3d",
+      "mode": "100644"
+    },
+    {
+      "path": "app/src/main/res/values-kk/account_strings.xml",
+      "source_blob": "6abaac777595700bb1ee890a21712bacaeb999bc",
+      "source_sha256": "b90daead29e1e4f903579fd489db217838f221aef49c9e84ef016b29643ad488",
+      "mode": "100644"
+    },
+    {
+      "path": "app/src/main/res/values-kk/account_ui.xml",
+      "source_blob": "fa2f930137893bdd072a6202de84cafe9b4e65de",
+      "source_sha256": "78db1ccf843974b739c196e2786219a298d5f20da121bb617c2ea6a20f600962",
+      "mode": "100644"
+    },
+    {
+      "path": "app/src/main/res/values-kk/catalog_integration.xml",
+      "source_blob": "9ec62d5e7e0eec2bca6cf8f3ed9d4eef5f4b3d2e",
+      "source_sha256": "1e3783a0597fe440139d3c4c570eb47f94366116cff8e12ebf19baa059e9d7d9",
+      "mode": "100644"
+    },
+    {
+      "path": "app/src/main/res/values-kk/catalog_strings.xml",
+      "source_blob": "86f8a29052fd45b8c735b755b2eedd1d45b5b5d3",
+      "source_sha256": "f8d5c59772f15efd33ce3f5e6be4c4ac3a5c08f7fcc4efd9041af307400200a7",
+      "mode": "100644"
+    },
+    {
+      "path": "app/src/main/res/values-kk/catalog_totals.xml",
+      "source_blob": "af62b10536a5acc648452ecb1b5b0359fdc19213",
+      "source_sha256": "9e731ac4c45e937a4ff87035d1dbdb6fb6dee3f1a04abfd18b43bae9f61e8702",
+      "mode": "100644"
+    },
+    {
+      "path": "app/src/main/res/values-kk/dark_design.xml",
+      "source_blob": "61152f98ead23627403bafffb06ef0c9f5fc9198",
+      "source_sha256": "7d5f4048e116c7b7ae103a1327ab97ba244a16e2dd5e221bdedeadf927930733",
+      "mode": "100644"
+    },
+    {
+      "path": "app/src/main/res/values-kk/drawer_redesign.xml",
+      "source_blob": "08645ec69817c31f5990c5d8e8f7086cf03fd8c9",
+      "source_sha256": "f29dd3570e7711f381c8345feb14753cd3f6489557e3b6ef72ddc62f7060429e",
+      "mode": "100644"
+    },
+    {
+      "path": "app/src/main/res/values-kk/errors.xml",
+      "source_blob": "2cf39a7259717fa355ebd0a7ddd764108f4c5c4e",
+      "source_sha256": "5c1517ceafc1289c8291be0d27dd4bad86af4cdf21d7c799b85dd301892efab7",
+      "mode": "100644"
+    },
+    {
+      "path": "app/src/main/res/values-kk/home_redesign.xml",
+      "source_blob": "9c01aa29806e455ad7b540c1238c50ba00a69481",
+      "source_sha256": "cb9d249cb3e8a37b0b5a5c63e5b040a323dca02d4f7ee6d8f00e06b9604a3d68",
+      "mode": "100644"
+    },
+    {
+      "path": "app/src/main/res/values-kk/nutrition.xml",
+      "source_blob": "efbbb54ee3924a12a7529fb5fc1bc05f26578634",
+      "source_sha256": "53329a05b7bfcadb70ad60ca5a0a07a324fb57705ba3c03fd1e7b8b0902c9022",
+      "mode": "100644"
+    },
+    {
+      "path": "app/src/main/res/values-kk/plurals.xml",
+      "source_blob": "996af22793f3214bbe5204f418412bdb9fc59790",
+      "source_sha256": "18db1cb656c0b5673e9d60c0f57d7377abd8407898c68af6fa1e3a2d2cfc55e4",
+      "mode": "100644"
+    },
+    {
+      "path": "app/src/main/res/values-kk/presentation.xml",
+      "source_blob": "f466625349122e89724cb0d54da35c6f0dfbbafb",
+      "source_sha256": "1f01a2282cc716ff973f5de027dc58b6e20aa196d2b1e27a311499b25bbcad41",
+      "mode": "100644"
+    },
+    {
+      "path": "app/src/main/res/values-kk/registration_errors.xml",
+      "source_blob": "68fddbb2f68ae2ca606b8ae513c075e5b595c900",
+      "source_sha256": "9035ee54fd895dc8c55f210a64593047dccca9dbfab4725451f10ca5fc3a6fd1",
+      "mode": "100644"
+    },
+    {
+      "path": "app/src/main/res/values-kk/strings.xml",
+      "source_blob": "b235d34627fa2ef9e390aa2411ed4b2abe6024c3",
+      "source_sha256": "790e76c0509f60ffb46a8bd0c2f87da0166584a49c3186c2f7995f887cbad0f3",
+      "mode": "100644"
+    },
+    {
+      "path": "app/src/main/res/values-night-v27/themes.xml",
+      "source_blob": "d7739ab09ea3d294e175ebc0ca88006858fe2010",
+      "source_sha256": "bb7e0d215b1a07286f6ed24874651ee1d0e8e232978d6db8586384c510be2348",
+      "mode": "100644"
+    },
+    {
+      "path": "app/src/main/res/values-night/colors.xml",
+      "source_blob": "8aed8333e29dbce993772f91e6b7832d50b4623d",
+      "source_sha256": "9ac7001208a151bae58720db1cc853f93e3bf6cf4f0b0cfaeadc3cba62e168e3",
+      "mode": "100644"
+    },
+    {
+      "path": "app/src/main/res/values-night/themes.xml",
+      "source_blob": "81b0f62059906b70b5a393634a916512b7a9cc8b",
+      "source_sha256": "6ce0426f8f6549994b6766661836b280b8ad656fa3c6a0d97196e61deafcf407",
+      "mode": "100644"
+    },
+    {
+      "path": "app/src/main/res/values-ru/account_strings.xml",
+      "source_blob": "245ef7f19638064e702d64ee80b38652cf057fdc",
+      "source_sha256": "6326fd5c5a3ff3654fc3b4645338edeee35a4b39343a13e58bbea35aee6b0b2f",
+      "mode": "100644"
+    },
+    {
+      "path": "app/src/main/res/values-ru/account_ui.xml",
+      "source_blob": "53b5a16627deced304c09a81153654657a4631f7",
+      "source_sha256": "405be5bb73b36ee29f13ec0f679a8241833be614511f668a0160997a54dbe363",
+      "mode": "100644"
+    },
+    {
+      "path": "app/src/main/res/values-ru/catalog_integration.xml",
+      "source_blob": "a0a4f6463ddf8ebcaa5113c367f2f968a5a6a6a8",
+      "source_sha256": "3b401c54d89908f97723b629a61bdfbeaa71f1a8a2f3d48f69a3f723001e1c51",
+      "mode": "100644"
+    },
+    {
+      "path": "app/src/main/res/values-ru/catalog_strings.xml",
+      "source_blob": "c8d79bf6c88b5a3cef19d853da3bb31029d789eb",
+      "source_sha256": "0011eaa381bff328871aabafb68f411bc236bf3349e0eca0d1761247fec4d2e0",
+      "mode": "100644"
+    },
+    {
+      "path": "app/src/main/res/values-ru/catalog_totals.xml",
+      "source_blob": "aff87789a04fda9cbeddd85cdd4ef7bcc535275b",
+      "source_sha256": "fff598e07a90d372ccb74719880c9bf98f418a9cbc7f66e24ac6c5a10766566a",
+      "mode": "100644"
+    },
+    {
+      "path": "app/src/main/res/values-ru/dark_design.xml",
+      "source_blob": "2a34291d8ec7f4852dbe726241d118782733e02b",
+      "source_sha256": "08eafe2ed6a11a59a6fc7be74f5d20c832a60de11465ba94618d55e7bd675c68",
+      "mode": "100644"
+    },
+    {
+      "path": "app/src/main/res/values-ru/drawer_redesign.xml",
+      "source_blob": "f4468d43f06750e3d80c17356bd60bf3dea11670",
+      "source_sha256": "3f70f854c902532ccf8d0eee3c32e5829c1f61da8efeb23df514d81072ec0a59",
+      "mode": "100644"
+    },
+    {
+      "path": "app/src/main/res/values-ru/errors.xml",
+      "source_blob": "93ca793d263a650f131c312a38d26e22c60e20af",
+      "source_sha256": "b82c873465cbb516de3c7a4fe3a24cbb1ff0e7e41efe6cc57bc867c249b27f93",
+      "mode": "100644"
+    },
+    {
+      "path": "app/src/main/res/values-ru/home_redesign.xml",
+      "source_blob": "3308d5708c2c0a58640dfc41b1ebf2323f54fb95",
+      "source_sha256": "6ff8272f35b9d93098385a603715c01b4a334cf71bb15824e62cd0e7b1336cbb",
+      "mode": "100644"
+    },
+    {
+      "path": "app/src/main/res/values-ru/nutrition.xml",
+      "source_blob": "39fb0dd30e49ad91dcd0aba08d437254f98c635e",
+      "source_sha256": "f822e661810acf7f0348664f4da78454d4ffedb76915d3b1c3dd3eadd0f4e1d4",
+      "mode": "100644"
+    },
+    {
+      "path": "app/src/main/res/values-ru/plurals.xml",
+      "source_blob": "37b382d131338d174b7667fdb1ecd2d6d74b7613",
+      "source_sha256": "ce0f3b55052622bbb213a6a5aaf75d7c04b82d003129eecb79c1fb05b04d0497",
+      "mode": "100644"
+    },
+    {
+      "path": "app/src/main/res/values-ru/presentation.xml",
+      "source_blob": "12b893aaf2ece364d6d3a358bb1953d690f5e3db",
+      "source_sha256": "3530ad165a1e631375d5f4bf756176fc04a26a5457cf9fec11cfc3044c0b2a59",
+      "mode": "100644"
+    },
+    {
+      "path": "app/src/main/res/values-ru/registration_errors.xml",
+      "source_blob": "39280f63243d14dd2c59391f0a2d8fc1cdf1dc0a",
+      "source_sha256": "09eb3633e8d07afb77684eb52d1694087635374f72a8320e89b55d2e090fe9b2",
+      "mode": "100644"
+    },
+    {
+      "path": "app/src/main/res/values-ru/strings.xml",
+      "source_blob": "264867b6d5ce24deb7fdef70681c63211b62c739",
+      "source_sha256": "68f3c9cad2d5ee1708559e8ac740ae18c6cdfe305ea195459fdf7f6bfc951055",
+      "mode": "100644"
+    },
+    {
+      "path": "app/src/main/res/values-v27/themes.xml",
+      "source_blob": "24a6dca8a1dcdab3bd1a0152fb335ec59e53dba5",
+      "source_sha256": "ff09c9472c53077c40f87f741ce64cf2b643e87440550929f0a5e653519251bb",
+      "mode": "100644"
+    },
+    {
+      "path": "app/src/main/res/values/account_strings.xml",
+      "source_blob": "fea9d93d94135f18597acf2b2e746ea31ce7b066",
+      "source_sha256": "4c2a22593ffe724e3b385ee7e93d87517bcdd4f4eb52b43a15091bc385b72d0f",
+      "mode": "100644"
+    },
+    {
+      "path": "app/src/main/res/values/account_ui.xml",
+      "source_blob": "546b2ded3a615cafc9d8fe376e0976862c6050d1",
+      "source_sha256": "dd166012369fb40fd89b29544e42df4f5de5be9c1b7a4f0efc2a0e7b98684926",
+      "mode": "100644"
+    },
+    {
+      "path": "app/src/main/res/values/catalog_integration.xml",
+      "source_blob": "8caae20d462adcb528349849523108e7d01c7b12",
+      "source_sha256": "5627ace0db6328a7ccbe839a03f032ba5e536d4aa43e75ca66c557baa511a964",
+      "mode": "100644"
+    },
+    {
+      "path": "app/src/main/res/values/catalog_strings.xml",
+      "source_blob": "81fab283bfa8db080b698da3408bf88530008bef",
+      "source_sha256": "9ace2083e4d172fbd1b1acba40da90c0ec9e1f7b085afccebf9674dfc33b0c54",
+      "mode": "100644"
+    },
+    {
+      "path": "app/src/main/res/values/catalog_totals.xml",
+      "source_blob": "6c70b0192afb39568400ec4d75cee5e73a498be1",
+      "source_sha256": "101dd76f4adc2004e77fbd52942c23242e475461c165352ed90121a0f7f9d167",
+      "mode": "100644"
+    },
+    {
+      "path": "app/src/main/res/values/colors.xml",
+      "source_blob": "b547d7b0a7d2dea44a16f1c088bcbcb08c82a119",
+      "source_sha256": "b4ac534b07a61e050e37455889268fc018f42163f75af4f02e25e7b1d36cd056",
+      "mode": "100644"
+    },
+    {
+      "path": "app/src/main/res/values/dark_design.xml",
+      "source_blob": "92d596bea706650f1ac34dce247664c461b6291b",
+      "source_sha256": "56c032b3516091127e01dde7a840be18a9e6d34cd8d23eba4a37a4b64a6be76a",
+      "mode": "100644"
+    },
+    {
+      "path": "app/src/main/res/values/drawer_redesign.xml",
+      "source_blob": "5837473f87ad0c509fa5eacc53ab4fd7ee3ff282",
+      "source_sha256": "a66e1963f1ed6e65212b8c6463d1278f2d6702fc812c5da5013c52a536a23899",
+      "mode": "100644"
+    },
+    {
+      "path": "app/src/main/res/values/errors.xml",
+      "source_blob": "d1465d53b78e1ccd2589481ab4b4d592dfafea6a",
+      "source_sha256": "3a28b87e33e84542af64b6ca8da13fb48aa7e2bbd20340d09ffbb70052066c41",
+      "mode": "100644"
+    },
+    {
+      "path": "app/src/main/res/values/home_redesign.xml",
+      "source_blob": "d7c67803d75fd3641cc4677844cc72aa3e1d8867",
+      "source_sha256": "e2814421a1ca57536eaaa84aaa235baaac225d6b4413ea0cb656ebe652b1fc2b",
+      "mode": "100644"
+    },
+    {
+      "path": "app/src/main/res/values/nutrition.xml",
+      "source_blob": "984c42733f9b76a93f302a571dbbbad2d6e91ed3",
+      "source_sha256": "de1c1686fb385f3ca5cb0fa9a8e4c9e6aa93b85839a6e07f97f64d7a92120eab",
+      "mode": "100644"
+    },
+    {
+      "path": "app/src/main/res/values/plurals.xml",
+      "source_blob": "1833c3f476ae5fb482a27ab94a04774131f40deb",
+      "source_sha256": "cbd8586bc31fd54431904d7ae9a20e34d83cd347a89ec1b1d513837967606b09",
+      "mode": "100644"
+    },
+    {
+      "path": "app/src/main/res/values/presentation.xml",
+      "source_blob": "80bc3b3eab63a91f44f64e2c0856ff52e0e0b300",
+      "source_sha256": "986be0cd0fd9feeeb198e2edb3e1cbeee7f4a3449e263765dd57424840b80ff2",
+      "mode": "100644"
+    },
+    {
+      "path": "app/src/main/res/values/registration_errors.xml",
+      "source_blob": "f51bac8a85fda4c49c34e154077bf58a32a0d460",
+      "source_sha256": "280045902f76aa0c47f1d6ff6d60f48fbbe242151cb148c537c8d40f3df9c7f4",
+      "mode": "100644"
+    },
+    {
+      "path": "app/src/main/res/values/strings.xml",
+      "source_blob": "022a37a2c8eea6e48cb2b6f308e46366b9e60d67",
+      "source_sha256": "54da2249bca7ad55b076fd6d855795f13d4243c13de88ff24b57b1125609390a",
+      "mode": "100644"
+    },
+    {
+      "path": "app/src/main/res/values/themes.xml",
+      "source_blob": "c4b25e5242a9cbbce12287fe58f4e61759025396",
+      "source_sha256": "d76428e6a066d4c9018d160443ce1b6acbb985dcb92540790db8204743c5218c",
+      "mode": "100644"
+    },
+    {
+      "path": "app/src/main/res/xml/backup_rules.xml",
+      "source_blob": "ce0b32432a06d0978e0f0ba660c50b34c801d1e4",
+      "source_sha256": "2c5c697984f4c52b526337ab61113f5843e0bfc6af4722374916ffe6da38dd9a",
+      "mode": "100644"
+    },
+    {
+      "path": "app/src/main/res/xml/data_extraction_rules.xml",
+      "source_blob": "491c90fd5f783712abda0e0d73f78a8971c6c15f",
+      "source_sha256": "8b55ff5489071bb19a4e89967b604a16c0e4d1e87a2df3c73c64417314a59f22",
+      "mode": "100644"
+    },
+    {
+      "path": "app/src/main/res/xml/locales_config.xml",
+      "source_blob": "4ecf4e3c81206cacd10504758d2b95d4e1b2b542",
+      "source_sha256": "c10f080dfb6d000838c35a7c53142b77eb14d64289294d9ed5ea91e92bdb3c2e",
+      "mode": "100644"
+    },
+    {
+      "path": "app/src/performance/AndroidManifest.xml",
+      "source_blob": "18973b2929e866216264a9d3ddf61e9798c4d5df",
+      "source_sha256": "e5f3c31071f9b98f9462ea44110a10aea2e1b1eaf3dc4926146ef032534c7bf7",
+      "mode": "100644"
+    },
+    {
+      "path": "app/src/performance/java/com/tamaqai/benchmark/WarmGlassFrameInstrumentation.kt",
+      "source_blob": "4b414e4bfe6f352362bf9df1942ed31f991a4144",
+      "source_sha256": "b7e774071cc525bf4d3a9d1f4bd6b76789473b782b715586844d647c11a9e351",
+      "mode": "100644"
+    },
+    {
+      "path": "app/src/release/java/com/tamaqai/data/DemoMeals.kt",
+      "source_blob": "41569b56c110e43446c5779b526846811e379c5b",
+      "source_sha256": "dddb723ab656e5db56754f18cc65c35ddce559a3b7551d44d16fa4e89bdfcd2d",
+      "mode": "100644"
+    },
+    {
+      "path": "app/src/test/java/com/tamaqai/domain/CatalogCalculatorTest.kt",
+      "source_blob": "dc3311e9ff97d9b2e5faaca56c14b9feac153a63",
+      "source_sha256": "9f11a4e67d06e4795d42f6ff76c7ba406f1fc555317e96fbf90bf79095a58d98",
+      "mode": "100644"
+    },
+    {
+      "path": "app/src/test/java/com/tamaqai/domain/CatalogCompletenessTest.kt",
+      "source_blob": "cfc41dfcee9e66842ad050e2bc0c7d13e0f519f2",
+      "source_sha256": "dd23ee12ab303ad7447c4e8fc3a5029e67406284532ead8e72729bdd416cc7d5",
+      "mode": "100644"
+    },
+    {
+      "path": "app/src/test/java/com/tamaqai/domain/CatalogMealFactoryTest.kt",
+      "source_blob": "01eb564b676e0b08d3c91eccec14de3551e9f847",
+      "source_sha256": "99f8d5e71033be9e7118cc158a2e381de3a7818620e7572d389e19e40be6b0ce",
+      "mode": "100644"
+    },
+    {
+      "path": "app/src/test/java/com/tamaqai/domain/ComponentPortionTest.kt",
+      "source_blob": "45d68af229fbcac30b282ebca01a81e38270603f",
+      "source_sha256": "36f832d1f7c0e4eecb50f036cf83017dea474a3990c240bb55b08eacdb00d95e",
+      "mode": "100644"
+    },
+    {
+      "path": "app/src/test/java/com/tamaqai/domain/DailyProductTest.kt",
+      "source_blob": "0f499ad481e8e169655c0042ec4d0157ea42cafd",
+      "source_sha256": "8c26d37a6e0305618887c67649a2ce4ef3d71bc515dfad23cdbc5a730a5560c2",
+      "mode": "100644"
+    },
+    {
+      "path": "app/src/test/java/com/tamaqai/domain/DiaryTest.kt",
+      "source_blob": "e8c104be6173035d75a5a79da8c13ec0f48f3d17",
+      "source_sha256": "511c934ec7dba6b5d66dd2074b87eec741b2a3b6ff22b3f354f2625c41321af2",
+      "mode": "100644"
+    },
+    {
+      "path": "app/src/test/java/com/tamaqai/domain/ProductBarcodeTest.kt",
+      "source_blob": "f7a8b45bda70cd7a2d37b3a6b1f7c264dcaae53b",
+      "source_sha256": "50add015c21e4a7bfed5041a785de3ed67a8a584305e5d8e9ff3629dcb7ca8ac",
+      "mode": "100644"
+    },
+    {
+      "path": "app/src/test/java/com/tamaqai/domain/usecase/TargetCalculatorTest.kt",
+      "source_blob": "2c565f52c6d1edbba42a0b118016b51f028065c7",
+      "source_sha256": "e48bd787582584694e3d440032ff4addf4d7a8ac352f528ea13d45ef15583c20",
+      "mode": "100644"
+    },
+    {
+      "path": "app/src/test/java/com/tamaqai/ui/HomeCatalogTotalsTest.kt",
+      "source_blob": "06c2c3ca097e8d014007086e06139cc5f3243587",
+      "source_sha256": "546a5bf6d92bc3127473ff5ad2594f28a03db3a2894828603bff0c246628a486",
+      "mode": "100644"
+    },
+    {
+      "path": "app/src/test/java/com/tamaqai/ui/MealEditorTest.kt",
+      "source_blob": "8a8feefe42f2bdaf59f6f207b9a2264178cab44e",
+      "source_sha256": "bd4a98321597b3bdcf3a95bf522e4da730de0d815f9d3c3bdb4fd9b9c54f440e",
+      "mode": "100644"
+    },
+    {
+      "path": "app/src/test/java/com/tamaqai/ui/RuleSetupTimeoutTest.kt",
+      "source_blob": "601dbfb18aa985f1784f27b3258de0372cb37a24",
+      "source_sha256": "a392d1b73bbb47151b9723889de97b9a2ebb35659e3ccb9324db0297cb8c5656",
+      "mode": "100644"
+    },
+    {
+      "path": "app/src/test/java/com/tamaqai/ui/WellnessBlurPolicyTest.kt",
+      "source_blob": "8f538291ddc66f3ab68e66c2e717689767ce2cf8",
+      "source_sha256": "8927fdae0907c8c2f2da8213a5eb45b72409fdc3bc62fd67d0b6f4767daf7228",
+      "mode": "100644"
+    },
+    {
+      "path": "app/src/test/java/com/tamaqai/ui/WellnessPaletteTest.kt",
+      "source_blob": "b42e04b2d5fbc7dd357ed9afdceaf9a320fb6fb4",
+      "source_sha256": "b52dc3582385b021d530291c6ad5d77123e7973b369aae1fb1effd159f84c192",
+      "mode": "100644"
+    },
+    {
+      "path": "app/src/visual/AndroidManifest.xml",
+      "source_blob": "db951afdf16ca3df3eafdb73677313b004721aed",
+      "source_sha256": "7c3f5a6ccb642544adc1c4c9b65b1913876aecb3832535d228e0c0cf8a6c9b4a",
+      "mode": "100644"
+    },
+    {
+      "path": "backend/.dockerignore",
+      "source_blob": "50c631603ea644e0a937e943fc3acf95a7bc912b",
+      "source_sha256": "98529928f372a599963330a6bd32691e9a867667151aee60bdfe705562569c11",
+      "mode": "100644"
+    },
+    {
+      "path": "backend/.env.auth-production.example",
+      "source_blob": "8ef75621ade57b98f072f7d226bd3d9352b451e1",
+      "source_sha256": "6060359dbdd7c7514f58d78ef5fc5d9f906594b073ddb611d31e54eebb2c6d24",
+      "mode": "100644"
+    },
+    {
+      "path": "backend/Dockerfile",
+      "source_blob": "2c1f1aa8dcc1b9f7797ee906007a98d879427ee1",
+      "source_sha256": "d3e744aeb22fb06244b8f71568e091ff67f4da676e5ff9f02971d889abb90427",
+      "mode": "100644"
+    },
+    {
+      "path": "backend/catalog_seed/LICENSE",
+      "source_blob": "8db1bdc8a92857bca2806f6756b7379fae764c70",
+      "source_sha256": "4d960413ac259b3ddc5aea46d693ceefc46170c48e8927ef6af21dcd0e9c3a1a",
+      "mode": "100644"
+    },
+    {
+      "path": "backend/catalog_seed/openfoodfacts-kz.json",
+      "source_blob": "5d3873285c451d98c91b0b391421d67da4f4e42c",
+      "source_sha256": "d80ed00c2cbd65c705ea860fc9882357cadd421cf2596be9e104d689333f18d8",
+      "mode": "100644"
+    },
+    {
+      "path": "backend/evaluation/README.md",
+      "source_blob": "a7eff8c6e8ecd635ed8966597dff2a960d85d8c5",
+      "source_sha256": "b6c002b3466be19dbeb35f39109d8892da82d4e8b5b91cc9a2c2fd5b0b370edb",
+      "mode": "100644"
+    },
+    {
+      "path": "backend/evaluation/__init__.py",
+      "source_blob": "4716eae2a07e952d7946ca8bfeb08f99f42af6c0",
+      "source_sha256": "9ceaed012103f22291f82ce1e84e1a417c9dff436c00064d716a6c0ac940fc42",
+      "mode": "100644"
+    },
+    {
+      "path": "backend/evaluation/dataset.template.json",
+      "source_blob": "83a020d5b4df5e56e1418322974c46a95e7ace08",
+      "source_sha256": "45d2893e4930a0c7ad1bc74a30173067135afdc2c239203971ba5b03eeed18d1",
+      "mode": "100644"
+    },
+    {
+      "path": "backend/evaluation/run.py",
+      "source_blob": "877ee7ac661b069a0cf5e4ee4c7f631752f4c102",
+      "source_sha256": "6ee472c5839a2e5e8ad28f91067452d35e4ddcdd3708a8890c5ff868bdfc89b7",
+      "mode": "100644"
+    },
+    {
+      "path": "backend/evaluation/selftest.py",
+      "source_blob": "bbcfa261fc6218e345d4af34b388f17a6c5e5287",
+      "source_sha256": "fe19215ab4dded3d1be3ccdbb223d3ca5122a4329dd925f4ab7b2d347df4de68",
+      "mode": "100644"
+    },
+    {
+      "path": "backend/requirements.lock.txt",
+      "source_blob": "28ca2d2fc42f78aea70d0abe0a47eaedbfddd9eb",
+      "source_sha256": "ffdaae9798d32bcd6a479a462bc8cd14f81367f39a159b1583234bef1ed96920",
+      "mode": "100644"
+    },
+    {
+      "path": "backend/requirements.txt",
+      "source_blob": "8df5530cea9941347eb27f72b0881e37a0c885b7",
+      "source_sha256": "1595be63c0cc7de42891d42723a19c2c70494415474b2bb5d001b30492e65be3",
+      "mode": "100644"
+    },
+    {
+      "path": "backend/scripts/pilot_preflight.py",
+      "source_blob": "6cf0dc7b773df487814a098d78e29a0d679289ab",
+      "source_sha256": "0677383a2ee723f5136da741b9304f7a1e2bc14e05d312ecb2215857f3e0e99a",
+      "mode": "100644"
+    },
+    {
+      "path": "backend/scripts/portfolio_demo.py",
+      "source_blob": "a9b6f94822da2fe65c09009532c3bb46d39524a4",
+      "source_sha256": "a66747d024d69fff09aadeeb60240477fcc66a3fd738c9879b1232ad4d2540d2",
+      "mode": "100644"
+    },
+    {
+      "path": "backend/tamaq/__init__.py",
+      "source_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": "100644"
+    },
+    {
+      "path": "backend/tamaq/analysis/__init__.py",
+      "source_blob": "79a80de1756315e57db9bdd113b9a142c79e47e5",
+      "source_sha256": "b6b353e5b5f1c0df99f095387d2bb9a8a750a113702e011e7cae7aa7e95d8b76",
+      "mode": "100644"
+    },
+    {
+      "path": "backend/tamaq/analysis/router.py",
+      "source_blob": "632bce6f921f684db879eb5d07b4d530f8300942",
+      "source_sha256": "6a4e2310d96f22c48b0a9caa62b5252df02728af203f3b5af1a024564d43735a",
+      "mode": "100644"
+    },
+    {
+      "path": "backend/tamaq/app.py",
+      "source_blob": "7243e83a61c75b10db52b960bca0ec2ee27f66ef",
+      "source_sha256": "b4862218de1332d327bc922aaf2e81182a60371aa7ab2f23b9a3ea64990194cd",
+      "mode": "100644"
+    },
+    {
+      "path": "backend/tamaq/auth/__init__.py",
+      "source_blob": "115af9a165ec9d1665ded803e8c2854db6c0b632",
+      "source_sha256": "17ac586c6af2159b836d5597ffe18ada27fce4efc817ba1f03eb4c8ecc662e4b",
+      "mode": "100644"
+    },
+    {
+      "path": "backend/tamaq/auth/email.py",
+      "source_blob": "8ab216eeb3176367f05d222efcaeb631a6c943d0",
+      "source_sha256": "fec2afaf3e6337b959ce215c1d23002498ee7f2b5af3782550fa892fafe10801",
+      "mode": "100644"
+    },
+    {
+      "path": "backend/tamaq/auth/phone.py",
+      "source_blob": "46a39662d5b849737a5e110c329790faa8134df2",
+      "source_sha256": "77a77c78d776af056fce56b2a6c1d8be46c1e6393be19c483787c4ba253bde4e",
+      "mode": "100644"
+    },
+    {
+      "path": "backend/tamaq/auth/router.py",
+      "source_blob": "79afd3c6a36b49b256d43f04ce6d956e0cbcef02",
+      "source_sha256": "c8e7183753886b1755b3db397c123a280d40ca92353f0847d256b81f44e1bed5",
+      "mode": "100644"
+    },
+    {
+      "path": "backend/tamaq/auth/service.py",
+      "source_blob": "b58bbd328c9d8cc8add5cc296d69fc9a1f0c95c9",
+      "source_sha256": "e7c915340cb53c03b30311b3d6362c20ce8f21480380091928bd0169e052bbff",
+      "mode": "100644"
+    },
+    {
+      "path": "backend/tamaq/auth/sms.py",
+      "source_blob": "c8c81cd89445135b71207dc4744a588051db584c",
+      "source_sha256": "741947ac648e174623008add348c10ebbbd289e6ebd14e9bccd310ab3db5be4e",
+      "mode": "100644"
+    },
+    {
+      "path": "backend/tamaq/catalog/__init__.py",
+      "source_blob": "a8fcc8412affe63852c1687781aa230001597242",
+      "source_sha256": "1a434f1436dedec88e716f230b6aaeb66ec84746bee6a02f294c6be3049b4f48",
+      "mode": "100644"
+    },
+    {
+      "path": "backend/tamaq/catalog/__main__.py",
+      "source_blob": "65d688b58813ae1d46407ae746115b677a980466",
+      "source_sha256": "4444ebdd9b3770d3dc35f7dda9efee8225a0f94e6926c43a340e2c127cb6c69a",
+      "mode": "100644"
+    },
+    {
+      "path": "backend/tamaq/catalog/importer.py",
+      "source_blob": "40ff87e66ba94cd07012cd680ed8708b174163ec",
+      "source_sha256": "7c7780146d506f7b46975b8cda2e3d253fef5be8347ce3b559e7e61772b0b40d",
+      "mode": "100644"
+    },
+    {
+      "path": "backend/tamaq/catalog/models.py",
+      "source_blob": "5dae48a570cb52f0d496116e724e0bf271ec1318",
+      "source_sha256": "a5358a0dc6e33bf3070027455877da98065f4aaa0d530f2d7d15161d5ae1df95",
+      "mode": "100644"
+    },
+    {
+      "path": "backend/tamaq/catalog/router.py",
+      "source_blob": "b09cde03c75a8a2f380bae87591be8594564598d",
+      "source_sha256": "73c5c54d8eca63032c22a581276f95f44a014bfa924885f618de7f0b3e361edb",
+      "mode": "100644"
+    },
+    {
+      "path": "backend/tamaq/catalog/service.py",
+      "source_blob": "31ff3ebf5dd41fef46603aeea22b3fe305da2a5a",
+      "source_sha256": "930d4b4fb890750069f482565422e4af329fe0864c3e357bb17240508397eaef",
+      "mode": "100644"
+    },
+    {
+      "path": "backend/tamaq/contracts.py",
+      "source_blob": "5350dca5999148a2d498d5b253ff0a38c281cc4f",
+      "source_sha256": "c805b9347af4e9a49cd6b5bb01c64b4f6679cee38b2ebe43d7b2ab4a75772eb8",
+      "mode": "100644"
+    },
+    {
+      "path": "backend/tamaq/db/__init__.py",
+      "source_blob": "038c88d516023c12046a3fa9f1e87874c2b14c0f",
+      "source_sha256": "9f2c6132d84e619b7e5a07b6e55ad76339c91593230e416ac8bf03d64bf8091e",
+      "mode": "100644"
+    },
+    {
+      "path": "backend/tamaq/db/__main__.py",
+      "source_blob": "36db5bde83a8fee28c4eab836dbee687441f6ff0",
+      "source_sha256": "f893be470eae402994edb23d9e6fc176ecc0498b175d39079b2a883d289aed44",
+      "mode": "100644"
+    },
+    {
+      "path": "backend/tamaq/db/evidence.py",
+      "source_blob": "81c35459c9a8552465ceede2b8a05a8faf138efe",
+      "source_sha256": "60ab273f48cf16493f711d9ba24927865c462094be6df3023941cbc2e2fd5004",
+      "mode": "100644"
+    },
+    {
+      "path": "backend/tamaq/db/import_sqlite.py",
+      "source_blob": "388a483991de31e5eea656c127e7b0274fbc4333",
+      "source_sha256": "f158a44f6449f666d113936fa203fc4845f31ebcaecbf1e2e5e6328a5c791a92",
+      "mode": "100644"
+    },
+    {
+      "path": "backend/tamaq/db/migrations/001_usage.sql",
+      "source_blob": "08d7220fad62ab9801459eefccddb6d91f2208a8",
+      "source_sha256": "03214838befe77e61a117f268c7b66b7d0db7cc61f25ff87628c0ad72daa48d7",
+      "mode": "100644"
+    },
+    {
+      "path": "backend/tamaq/db/migrations/002_accounts.sql",
+      "source_blob": "3a73c52b6eef432dbba0952bf505f9a313499d08",
+      "source_sha256": "56e8490687f9e0bce6c523586f5bbfc8677c4189e336306062da71d0ed150b80",
+      "mode": "100644"
+    },
+    {
+      "path": "backend/tamaq/db/migrations/003_phone_profile.sql",
+      "source_blob": "be1f13dd209362d70cf3409c670af3d9e848e027",
+      "source_sha256": "6bfd76c78645e885edab3dcef619f190b2ea2ead48151853c8a41fdde80aba6c",
+      "mode": "100644"
+    },
+    {
+      "path": "backend/tamaq/db/migrations/004_nutrition_plans.sql",
+      "source_blob": "c7596960721db90b4ec67e8fa1ac85a9e21f94d8",
+      "source_sha256": "4351116922f0e00c43f80aa07e1bf96f66849089d54a865b2ed52e78a148fc0e",
+      "mode": "100644"
+    },
+    {
+      "path": "backend/tamaq/db/migrations/005_catalog.sql",
+      "source_blob": "28e29aee5c8b478c3667dc30da59fe40a1a36cd2",
+      "source_sha256": "a11d6aec13707c18cec5e177283a92c4b3f40fe85799b2b654b7843d8b33f52b",
+      "mode": "100644"
+    },
+    {
+      "path": "backend/tamaq/dev_fake.py",
+      "source_blob": "1640382ba436cc4728458e11b926adcdba2a51ca",
+      "source_sha256": "97299ca5872b0b4fe346abcf1630522f02ddd27fc821531581727507965dba69",
+      "mode": "100644"
+    },
+    {
+      "path": "backend/tamaq/files/__init__.py",
+      "source_blob": "43e8bdd054ce3b8762339880f0fcfde128113919",
+      "source_sha256": "f3b021e838ba9dac662190d60f07dcb05a726fff25643f3ae21666a474a2ef94",
+      "mode": "100644"
+    },
+    {
+      "path": "backend/tamaq/ledger.py",
+      "source_blob": "485748f549461815f29fb7d27208ec9d88dc85ea",
+      "source_sha256": "de92536fee862e9fb15dc02dc040e851f200d6e45e787cce138caa86f4dd2847",
+      "mode": "100644"
+    },
+    {
+      "path": "backend/tamaq/nutrition/__init__.py",
+      "source_blob": "b3efe2ebeef5a73d3a74f053c4f172e4378cd29a",
+      "source_sha256": "015fa4f39532ff33376bcd5ffb06736c9d8d426ce52bc023afc12e19186390f7",
+      "mode": "100644"
+    },
+    {
+      "path": "backend/tamaq/nutrition/calculator.py",
+      "source_blob": "51119f44c3376b378e6acfa011147ec413b944ec",
+      "source_sha256": "c8b64f1e0a0f9993c58ccd3b25c25aa5d3e943d8a2bff8308934d3ba67d4076e",
+      "mode": "100644"
+    },
+    {
+      "path": "backend/tamaq/nutrition/models.py",
+      "source_blob": "059bb4f9aa5b15581e3857e81ead1184c0723128",
+      "source_sha256": "7c53e662eace2abd4578b3a3ace6ddbbfe41cbdebea8fa629d0248115e2812bf",
+      "mode": "100644"
+    },
+    {
+      "path": "backend/tamaq/nutrition/router.py",
+      "source_blob": "6d67535ec38fe3e436fd012b619a83f20b5fc315",
+      "source_sha256": "f15f3294639adc1858b9ef30790d54c5796d088ecb8107343d92cda7cf543f40",
+      "mode": "100644"
+    },
+    {
+      "path": "backend/tamaq/observability.py",
+      "source_blob": "91cb904cc77f5f5c56dd76fc24e13ddb0dab6b9e",
+      "source_sha256": "cab0ccf9b14fb0474fda2429fbbbc989fbdea8f8c892dde0d8240966cde44625",
+      "mode": "100644"
+    },
+    {
+      "path": "backend/tamaq/operations.py",
+      "source_blob": "96d2002104f47c66f3997ec94751b40c38998302",
+      "source_sha256": "3c10f70ec4c9abb939a366bf554997b00643683ec518efe6501b526efae9ff26",
+      "mode": "100644"
+    },
+    {
+      "path": "backend/tamaq/pilot.py",
+      "source_blob": "e36e6260c00caf38e0bd5f55578e150306e17068",
+      "source_sha256": "3460001abffce25732bdcf71ee184a596a00568ad8f486c8d5105bea00220020",
+      "mode": "100644"
+    },
+    {
+      "path": "backend/tamaq/plans/__init__.py",
+      "source_blob": "3ba73ee28b9171cbe716172f498e6fd9e433809d",
+      "source_sha256": "69cd31266374accbd38bf9cafb2bb4483ede43e9a3bd4032ec7c99a92a652c1e",
+      "mode": "100644"
+    },
+    {
+      "path": "backend/tamaq/plans/models.py",
+      "source_blob": "4094eae2f8905aabd8efd885925454f732f720fb",
+      "source_sha256": "9d835bd2958aab651e14c597756dab1f4bd307c622a5732bdb2b1c1e638da15f",
+      "mode": "100644"
+    },
+    {
+      "path": "backend/tamaq/plans/router.py",
+      "source_blob": "f495da995c61b9badac2a7b2d35a2b601867eff1",
+      "source_sha256": "13f199def5a0f50aae47606e478f2b58e95d575ec1c30991ac94dab719ae68c7",
+      "mode": "100644"
+    },
+    {
+      "path": "backend/tamaq/provider.py",
+      "source_blob": "7e0c4a0bbcf0772380dc4766e60ef9781aa5d5ef",
+      "source_sha256": "d3f823b73fc9bee70d388fef9b7ec5f9064eb7124f6376d3e643331dd05b874e",
+      "mode": "100644"
+    },
+    {
+      "path": "backend/tamaq/server.py",
+      "source_blob": "60774cc9a450996a08e7c591bd867baaa9a79f62",
+      "source_sha256": "570e807eada87bf49404754cf3317d5c71ad4b70784666213152420efbecf063",
+      "mode": "100644"
+    },
+    {
+      "path": "backend/tamaq/settings.py",
+      "source_blob": "c7a686898a3b3b6361e7a28f1fc0ef3e2a997b0f",
+      "source_sha256": "5b6f2375becea7ca90500ff52e4fa968b5185962d8ebdcaf24fd226f5e2d4852",
+      "mode": "100644"
+    },
+    {
+      "path": "backend/tamaq/usage/__init__.py",
+      "source_blob": "72e6cc49f3e5b8ccbe666688234e4dc62a91c420",
+      "source_sha256": "ed9711e93babc55b02f36a12a6a3d8b6db9fea965f867c2daa25221708048da4",
+      "mode": "100644"
+    },
+    {
+      "path": "backend/tamaq/usage/postgres.py",
+      "source_blob": "7b217a80573a03e9c47536b945295f6dffcd42a7",
+      "source_sha256": "fe8a3265957909cc450777e44e69e54ff48e36852af27616d29a3239fb1ab200",
+      "mode": "100644"
+    },
+    {
+      "path": "backend/tamaq/users/__init__.py",
+      "source_blob": "82c427a3a56d01a793af718654a297fb55555e11",
+      "source_sha256": "5858a05c54797f25c54a897aec476e24e62faca99fadae40bb86efef5588cfd3",
+      "mode": "100644"
+    },
+    {
+      "path": "backend/tamaq/users/router.py",
+      "source_blob": "84d454f88d6f574d25985b9fd173d8e8c7b3cb2f",
+      "source_sha256": "bfb7a595d8e13edc750547e533b6036a9a1f420f0ad55888d5eed78bf0fd19ad",
+      "mode": "100644"
+    },
+    {
+      "path": "backend/tests/test_accounts.py",
+      "source_blob": "8fa6c609f9386deba3a0a18c8f96837e1602592d",
+      "source_sha256": "1a433bd845248a5ee8a80b0828a604aa03d2767d2eff4b8258f771bb087ab698",
+      "mode": "100644"
+    },
+    {
+      "path": "backend/tests/test_backend.py",
+      "source_blob": "260da652c79c70dd239880e4bb1dd2be2d505785",
+      "source_sha256": "ceeb837fdda4ce21e38ce2419bbcb40492972f9ee8dc92e5244450956a4c6246",
+      "mode": "100644"
+    },
+    {
+      "path": "backend/tests/test_catalog.py",
+      "source_blob": "c91b0114fdcf1240ce59fc99af7e92a98cc2f8a0",
+      "source_sha256": "148a714e6c0ee8feed2c05f7345a282b8be00faedaaed78b64576408fda52a08",
+      "mode": "100644"
+    },
+    {
+      "path": "backend/tests/test_catalog_seed.py",
+      "source_blob": "1bd098b44a9302d7ec2abac346559c56bc02b49e",
+      "source_sha256": "e2a84034f8d56be78aeb83c912b110f21c7cd84cce940110afc43aa0ff28dd8a",
+      "mode": "100644"
+    },
+    {
+      "path": "backend/tests/test_email.py",
+      "source_blob": "a7df4684eb8676ab31dce44d5251213971268f4c",
+      "source_sha256": "42cd564ed459e4259f11ae1208ead15e684be04b484eb08367a8a1a97e992908",
+      "mode": "100644"
+    },
+    {
+      "path": "backend/tests/test_nutrition_plans.py",
+      "source_blob": "c980ef60191cfc7368fbec3a0d861b3d9b1ab720",
+      "source_sha256": "3ceb37f19135f961d955e0f4123d4d650eac292104f20bbe4945adf9c91dabd2",
+      "mode": "100644"
+    },
+    {
+      "path": "backend/tests/test_phone_profile.py",
+      "source_blob": "0083e8585df7273b280fa801d337e8a17c1b6dc1",
+      "source_sha256": "815b1061a594ef8dc9603fbc8bae1d9707bb1db84770f2ce3c8aa897ea6d3923",
+      "mode": "100644"
+    },
+    {
+      "path": "backend/tests/test_pilot.py",
+      "source_blob": "90b45d608f056a799558de69b2f286d98eb8d6e7",
+      "source_sha256": "f393543eca9b22585ee57c85c5f8470b969008afb5f79f56cb6e653f44d4ff96",
+      "mode": "100644"
+    },
+    {
+      "path": "backend/tests/test_pilot_operations.py",
+      "source_blob": "4ac181dfef779288409b2f27d7afe146ebfa228c",
+      "source_sha256": "2666597c913fc1dfe3cd1ec8dc657b740a287dda106551afa80fed7d010c7d3b",
+      "mode": "100644"
+    },
+    {
+      "path": "backend/tests/test_pilot_preflight.py",
+      "source_blob": "9e1520d9477ee7a14def10139c2fc40b492048ad",
+      "source_sha256": "b2c4c35e0a589dd4fc796ef9deab1ed85ee82dc898f6c005917b94e73ed9697f",
+      "mode": "100644"
+    },
+    {
+      "path": "backend/tests/test_portfolio_demo_helper.py",
+      "source_blob": "59e8e4d0d5a6e424e402b286e44f509cdb41ca1b",
+      "source_sha256": "7b204c589469b25ebbf1dcf82635b3369e62c9bb1ba7c31f7db3793563a68c7b",
+      "mode": "100644"
+    },
+    {
+      "path": "backend/tests/test_server.py",
+      "source_blob": "b301275d4d70a495bee874c8d86db9eae61e9590",
+      "source_sha256": "55c1bb4ae6cdc5bd5bdab8330b6db9a2c2a96a2a5493bb4d59dbb0a09c8d125e",
+      "mode": "100644"
+    },
+    {
+      "path": "backend/tests/test_smoke.py",
+      "source_blob": "dcdf422ac456449abcb92f24256acf35a08851a2",
+      "source_sha256": "8ffd5b4ea08172fd11ba63662e7d7008bb7ef2e98bf5ba30527c55496cb43fdb",
+      "mode": "100644"
+    },
+    {
+      "path": "build.gradle.kts",
+      "source_blob": "585f482d5000354de0f5e65156d02858c549b7cb",
+      "source_sha256": "6c9dd1a98f993f72889f1a82ee330c58ad02efda77dc6455249f5477ecb40620",
+      "mode": "100644"
+    },
+    {
+      "path": "compose.demo.yaml",
+      "source_blob": "d19ff63cef3025b4a98f3a4d95ced1a231d0667d",
+      "source_sha256": "56392e4772b070a91119484be1fc4c0ab804627e7b34ab37e9684a161d2a91ab",
+      "mode": "100644"
+    },
+    {
+      "path": "deploy/Caddyfile.demo",
+      "source_blob": "3b468fee3f1807da4ab6496863025a67cff5ff6b",
+      "source_sha256": "5ccb1a40e5eec50d560d227f9ea838d601e427562f31c927ff5be3e8d4c2e36c",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/ARCHITECTURE.md",
+      "source_blob": "38d768a6354e8bf1e0964f46372f48a83f3b1a6b",
+      "source_sha256": "5606c72d422e8a352a56924afd10a981f5e34dc5b4124218fdc166df815c590f",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/DATA_SOURCES.md",
+      "source_blob": "e2e2d313af0141889efe36ed6ef0c2270e2c9b5f",
+      "source_sha256": "738d0cc2e5dcda934e5fd3bfbb7146c69874694a4e35be2b8ca951fd4179cdcd",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/DEMO.md",
+      "source_blob": "15ae2bf88318223e5346010510c70aa36acfcce2",
+      "source_sha256": "10ec1877b54228de9a9faf9573c13fcfa0d7f2e276d5db95b6b02c0a89df3eef",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/DEVELOPMENT.md",
+      "source_blob": "7f1cc493190c2f8d46c61ea6747eece1cf5537e5",
+      "source_sha256": "d383b052cdbece078ee9a7321ffac3d6512fdb13757c4a7b07fca4dd646f804d",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/README.md",
+      "source_blob": "bfe258d658b5aed7e22c87505fd6fb1897225068",
+      "source_sha256": "853b98dd5294c36df092a720cd6532f8c50702e9c8b92d2f86abfb3e24597c36",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/ROADMAP.md",
+      "source_blob": "ec091892d78de3e7e6d0e5271def9938d5235bfa",
+      "source_sha256": "d6bbe8b34c156c4ffb0041a0b4a7178808bb9c05e87f7f23d94ad8c18aeda851",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/adr/0001-fastapi-monolith.md",
+      "source_blob": "5731b6bba5dcee2983a49d7d0711310182d8bc06",
+      "source_sha256": "8907f672e3d500d7adaa74285ea71942c5513050b7cb56935599f27a53916d11",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/adr/0002-room-diary.md",
+      "source_blob": "d80955c717f6761fa7df314bddd2732d2486e0be",
+      "source_sha256": "8bc0001c71b4b64de51fb293c4d558096b55dd51f6bb565302f17ce788c05392",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/adr/0003-human-confirmation.md",
+      "source_blob": "63a581ab8092fdd1af1080ab5eb087a924672d92",
+      "source_sha256": "600db6009c1d434d53f11000fe7bb4bab061bdf7ef36646577a830b46651e58d",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/adr/0004-idempotency-reservations.md",
+      "source_blob": "377f6150b993aaf158e5402d510686535f79822f",
+      "source_sha256": "fe85c82c496035d6aff47ef92a4337e016a79aaa14e91cb320cc73653277896b",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/adr/README.md",
+      "source_blob": "161906ea6009234425224ef80d223c8f313fee17",
+      "source_sha256": "9a9234f1066351a635ca5bbcad876afd51cae01ea4f463aa00a383357719ed70",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/catalog/IMPORT.md",
+      "source_blob": "d0e8237a4c2954be6c4644414e8905c093bee928",
+      "source_sha256": "cbb4e79ff749c349e1a0137f5906ddf706074d03cd16ba600feaf304d5c1cd95",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/catalog/SOURCES.md",
+      "source_blob": "35e20b541b360a234f9ce885a2f04cbde55db51a",
+      "source_sha256": "9b3623dfa3dcb271c964bfa4db74a83111289486e0a638469bfc2565f6bcf076",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/catalog/THIRD_PARTY.md",
+      "source_blob": "1f405461c69739f166d2b0c820aa567c69049075",
+      "source_sha256": "a08ec30344d43e5a1d2137c666e103065822f6b2720c4f061cadd50922743606",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/catalog/openfoodfacts-evidence-20261020.json",
+      "source_blob": "a4c98899daff16af8872b7bddfae389f33457057",
+      "source_sha256": "e7444fdb4641fbfd7a024af4e38d210a3b1240c16e00ce72719743b0a07a483d",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/design/presentation/assets-audit.json",
+      "source_blob": "a943ef342b8ba42adf9ce5e655d5fd5408e3ba5f",
+      "source_sha256": "6a1ba049fefeb4e588c251667df40aabde4c8e66ea4e5aff1f07d288bc99fbec",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/design/presentation/verify_assets.py",
+      "source_blob": "7fdf7772d1ab3d5b53a62f0b487d3d960ef07c54",
+      "source_sha256": "85b94c67012ba55fd4b976584c05347bea66ca02caeb918c9f48bfe648fb9a68",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/licenses/android-dependencies.json",
+      "source_blob": "e4f347d7e963872cd012781aef0ec5a5e2a43e4f",
+      "source_sha256": "c9b717904646a3750162df883ad3e056bf1f8b0e0323c178f35d7e6dbc3add9c",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/licenses/fonts.json",
+      "source_blob": "ddc0dfc1a8796cb64b6f4829b29f6f55e068b2af",
+      "source_sha256": "43042e20c2ef56cd51ce05a07132241282638ddb35838c78f77542e9484e8b5b",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/licenses/python-dependencies.json",
+      "source_blob": "1f471659979218bca00fb828357e67fd746c654a",
+      "source_sha256": "a2103e197a647664919f0fb465fa5d54568aee51b15469a27520c687b87f023c",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/screenshots/portfolio/README.md",
+      "source_blob": "339298f6dc926619c314263bf7a29514140e0c29",
+      "source_sha256": "8740ed1f65cd98b3cec1ee0d69a285ecb36841b4a73c488defa568c083205797",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/screenshots/portfolio/catalog-light.png",
+      "source_blob": "4fabe28cd25388871949c62eb289269b2655d0de",
+      "source_sha256": "edf5a21b2e69d684ea2bb902aea5da352b283e323471194904a4803adbab14f7",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/screenshots/portfolio/confirmed-light.png",
+      "source_blob": "0d24e2f3dbd5ab4463eb732894281ff3e8eb86e4",
+      "source_sha256": "a8ef492b4e074706860416326bf460541411fe68a7fdb9a17fbe4a93f68d35aa",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/screenshots/portfolio/drawer-dark.png",
+      "source_blob": "e22d8f6f12cf44500c64efa18bf700d1ab71559d",
+      "source_sha256": "1b0077f0d92c04e672c27e6bc81cc0089195694d22116e9d5c3a8d23cae45682",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/screenshots/portfolio/drawer-light.png",
+      "source_blob": "e45ca9e25066063006373341c7da887fba3fbf4f",
+      "source_sha256": "217e531d253c021304a98d318a19a13f9ec19e6d187fec706a89f86c040cb60e",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/screenshots/portfolio/editor-light.png",
+      "source_blob": "d5ec7014559b6a5ff4ad68e8d02cdeed39cb43c4",
+      "source_sha256": "f988522e6bc2f7c4f98fe45dc58740475eb6f7f8d6317c2d50a72a48019c7e14",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/screenshots/portfolio/history-dark.png",
+      "source_blob": "bc850159bd31828b9b859923d96ca2ccc1c4aedc",
+      "source_sha256": "60be4f4d7717990a9a4ff508329872d1b5f55057a3edb1f2625ebad968e8b93f",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/screenshots/portfolio/history-light.png",
+      "source_blob": "861934c8258b7eb15c7910a4f09c5acd6076a327",
+      "source_sha256": "f1c16ffdd7bf6bcdb2beb0ba95990cc6121ad9eb04ff6de590be083bf6c8c36b",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/screenshots/portfolio/home-dark.png",
+      "source_blob": "e2f5774caf23d22178503bf29ec8291117e45844",
+      "source_sha256": "f8dbfdbe94237781c779c11139679c34eb76f9388635ed5d8648ca07709867bb",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/screenshots/portfolio/home-light.png",
+      "source_blob": "ac17b352cac6182895c4f7ea0dd97662f7e1a255",
+      "source_sha256": "df13fc3dfda5a5a3bf1f9b53c5e1f3cdea1cbaf3a8e3654087d24579a8599840",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/screenshots/portfolio/login.png",
+      "source_blob": "3542adfa9d449468dcbb478a11d18cb84b04edd1",
+      "source_sha256": "67e2bf12d7042e7eb76de0c66c4bba539e3f44f7bc7bcd8ea1f95bede3e12318",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/screenshots/portfolio/macros-light.png",
+      "source_blob": "2957627c285075f0415aff84f9a45dc63e5cc599",
+      "source_sha256": "42131cfedd6d7a2e1d9603bc49c80c3a23f10659b13892d01cf43dd2d7b594fb",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/screenshots/portfolio/photo-draft-light.png",
+      "source_blob": "06638de82586a7e2729fe282b7cbef49a601c2d0",
+      "source_sha256": "77e8416b33ac8a64895b6b97e10c8777d821b26b980f0688c04606de2f88b1f5",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/screenshots/portfolio/plan-light.png",
+      "source_blob": "75d93d114af5da069227cb1b8ba958888fc69226",
+      "source_sha256": "ccbcedbece4f5e52caca626e5fde6ffbc36a0ffddeab927c8a04f4710396df9c",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/screenshots/portfolio/portion-half-light.png",
+      "source_blob": "5a7301234959d41ac45dce2d35ba10eea44689ea",
+      "source_sha256": "eedf323d48614c1c4dbd01f8edbe305a6f4686e17d99422b1f1fdf2cba4adbee",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/screenshots/portfolio/profile-dark.png",
+      "source_blob": "fca1ee4a4ae81b746865a16969385e8bcaf64ecc",
+      "source_sha256": "9e1958e95421d7d136678eb24cbe40a57a3e71abbc25d1442210c84965578c93",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/screenshots/portfolio/profile-light.png",
+      "source_blob": "b7afebbaed3ea4d3e07a64026ce108e8cc85dadc",
+      "source_sha256": "dc1119539b68cd1addbb38c8601d9a670e10dc029187c6180e75b35ea2459361",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/screenshots/portfolio/settings-dark.png",
+      "source_blob": "845933cc29bece3f77d16a4f173bb03c5d66c9bf",
+      "source_sha256": "3e5c9216a56bcdfa0901fac8cf364d18b79b163c417c3521f5e406f09f5a637f",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/screenshots/portfolio/settings-light.png",
+      "source_blob": "d05fe9da4c5c4a40c6c3d8a3e3820960cecfad67",
+      "source_sha256": "b60d17c598663984e07539912ce3c37740f67697dfec21d0184062d0591cf152",
+      "mode": "100644"
+    },
+    {
+      "path": "gradle.properties",
+      "source_blob": "d541e927f642414399f7d3a5f6b7263cac1d03c1",
+      "source_sha256": "7b735630ee41726916138ed9ad702bd9b37ee2a70e641af1bd349c9b087a1fcd",
+      "mode": "100644"
+    },
+    {
+      "path": "gradle/wrapper/gradle-wrapper.jar",
+      "source_blob": "f8e1ee3125fe0768e9a76ee977ac089eb657005e",
+      "source_sha256": "423cb469ccc0ecc31f0e4e1c309976198ccb734cdcbb7029d4bda0f18f57e8d9",
+      "mode": "100644"
+    },
+    {
+      "path": "gradle/wrapper/gradle-wrapper.properties",
+      "source_blob": "e311d962e439444b3e1f9851992d4c5dca4a7f6b",
+      "source_sha256": "8907b6585023ed20cf7e11f8ea1a48f713259cd6e4687f0ea997980e6c69c5d0",
+      "mode": "100644"
+    },
+    {
+      "path": "gradlew",
+      "source_blob": "adff685a0348c64b2b64f0b302f1f82b28eeaaea",
+      "source_sha256": "fb68debc1b1acf8ec55dc0d5e5495e1dedd0bd6b61f304bee61613eeb2bd9b92",
+      "mode": "100755"
+    },
+    {
+      "path": "gradlew.bat",
+      "source_blob": "c4bdd3ab8e3ccd2ac3a2bc0db0f856f16b79ef39",
+      "source_sha256": "9ca26d733ada3a45f27b2151288f54e75c9f95b287d1f82ef942ec5cc2d4f006",
+      "mode": "100644"
+    },
+    {
+      "path": "settings.gradle.kts",
+      "source_blob": "172e53c6d9ad98fec644e7c03e23a27f2f9e7de4",
+      "source_sha256": "422ff765f9df66c3f2ef0049a986430b7616d5d40050bbd600070922a582dda3",
+      "mode": "100644"
+    },
+    {
+      "path": "tools/audit_publication_history.py",
+      "source_blob": "06ce098c9fa0cec7d5027169274069bdbf8b3687",
+      "source_sha256": "5e04326c01388bdc9ceb8a5b1e2216d2f3cd9901882e48eed35fca5e6b39cc56",
+      "mode": "100644"
+    },
+    {
+      "path": "tools/check_git_safety.py",
+      "source_blob": "64af9da95eaa84afd5006f60277a2ab4a7ac2214",
+      "source_sha256": "9db3944ab41e4278e96bec6b712dfa31b7a25ef383c25ca89422ec05b98ab49f",
+      "mode": "100644"
+    },
+    {
+      "path": "tools/check_publication_docs.py",
+      "source_blob": "839a855753794be1e0cdce2604b20f443929dbf1",
+      "source_sha256": "9fe88ea161bbb1cf849a638654584313f5daf78f42f0f65701607492caf9bc27",
+      "mode": "100644"
+    },
+    {
+      "path": "tools/check_readme.py",
+      "source_blob": "7bc749bf0074b8470aee47a6f8061c16d1b5935f",
+      "source_sha256": "d8e6788aafc23fc33d7ddd7dc6a0d01dbc8d6ce49756edebab470baa6a8d8c62",
+      "mode": "100644"
+    },
+    {
+      "path": "tools/compare_warm_glass.py",
+      "source_blob": "c3aac753d6d34ab520a50d1a70e57e3c19127685",
+      "source_sha256": "bf1a1b222261e65fe815d4ed94ceaa1ee88a59500c601d512845b2ebfaa86691",
+      "mode": "100644"
+    },
+    {
+      "path": "tools/measure_warm_glass.py",
+      "source_blob": "42d8534dd785c8ee336a09b3108143625344ce6f",
+      "source_sha256": "6807afea8e1c0d1ab2f9c9f7b6a27af1d382ef1160024f2a645f00aa33e7ae0e",
+      "mode": "100644"
+    },
+    {
+      "path": "tools/qa_room_fingerprint.py",
+      "source_blob": "3eec8e0ab121700b25e6b6f0b253c2bfba2c261e",
+      "source_sha256": "1b4358ed91da484298b857946d8ab198545da044e2b3c65d0351d9e2e956f533",
+      "mode": "100644"
+    },
+    {
+      "path": "tools/record_portfolio_demo.py",
+      "source_blob": "3dd32c7407b6c98ec0f356952b8ac01800e245ad",
+      "source_sha256": "a9d37ce3a7b1d65c0c5817b4642601265e29f8a40c8ab81d1b03e80116bbc1af",
+      "mode": "100644"
+    },
+    {
+      "path": "tools/reparse_warm_glass_metrics.py",
+      "source_blob": "8a9d7119fe4aa151774f7f9d2d483fc0eb24e619",
+      "source_sha256": "27aecca15ec4456945b2561fab53e7b5d83a732cfe6798ceeadd64ba74652742",
+      "mode": "100644"
+    },
+    {
+      "path": "tools/requirements-docs.txt",
+      "source_blob": "371f9bc7a40d63ca6936073b107eb3fd7e5ccfdc",
+      "source_sha256": "861f826511490d092240ae7fbd48a69912b4eace09a494ae8f55761eaba53cc8",
+      "mode": "100644"
+    },
+    {
+      "path": "tools/test_publication_history.py",
+      "source_blob": "4a230a04a43be76a964eba6cc5111f3b5a55c27a",
+      "source_sha256": "5127995e00155b17ce6b21a0dd19c95e987a36185c63bc45877efedb560b75d8",
+      "mode": "100644"
+    },
+    {
+      "path": "tools/test_record_portfolio_demo.py",
+      "source_blob": "3a21dff947ae775995504c2294ad8b44b85d8005",
+      "source_sha256": "422a46375340ad8b07e471731db7ac49a39523693926d1194f84d33f4450eed0",
+      "mode": "100644"
+    },
+    {
+      "path": "tools/test_warm_glass_tools.py",
+      "source_blob": "1bfdc51aebfbe1a8cfd8a14f1b591521188428fa",
+      "source_sha256": "fde442342ba758adbc5ca8306b6c1dd7eee11505541ff0a5a114abafb45d065e",
+      "mode": "100644"
+    },
+    {
+      "path": "tools/verify_apricot_android.py",
+      "source_blob": "a13975c6a0d34292d6df1e498a950335da2d02aa",
+      "source_sha256": "9511fc09ce5ed75b971704d66102cb7f20a79bbcff59e833b259d13f255768a3",
+      "mode": "100644"
+    },
+    {
+      "path": "tools/verify_warm_glass_android.py",
+      "source_blob": "f2892853858d758ba6484cf5f386a1c636712546",
+      "source_sha256": "6144805103b54482513a5be8e0cd81d6b769bf7479fe8d00bdb35f6def76d8e2",
+      "mode": "100644"
+    }
+  ]
+}

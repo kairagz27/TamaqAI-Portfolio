@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="drawer_account_and_settings">Аккаунт және баптаулар</string>
+    <string name="drawer_view_profile">Профильді қарау</string>
+    <string name="drawer_nutrition_group">Тамақтану</string>
+    <string name="drawer_application_group">Қолданба</string>
+    <string name="drawer_my_goals">Менің мақсаттарым</string>
+    <string name="drawer_daily_target">Күндік мақсат</string>
+    <string name="drawer_set_goal">Мақсаттарды баптау</string>
+    <string name="drawer_change_goal">Мақсаттарды өзгерту</string>
+    <string name="drawer_macro_target">%1$s %2$d г</string>
+    <string name="drawer_version">TamaqAI · %1$s</string>
+</resources>

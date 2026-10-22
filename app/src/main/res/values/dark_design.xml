@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="eaten_portion">How much did you eat?</string>
+    <string name="portion_all">All</string>
+    <string name="portion_half">Half</string>
+    <string name="portion_quarter">Quarter</string>
+    <string name="portion_other">Other</string>
+    <string name="eaten_percent">Eaten, %</string>
+    <string name="eaten_percent_hint">100% is the full original portion. A meal allows 5% to 2000%.</string>
+    <string name="component_percent_hint">100% is the whole component. 0% means you did not eat it.</string>
+    <string name="portion_local_hint">The meal fraction applies to every component. Change components individually below, without another analysis.</string>
+    <string name="component_amount">Component %1$d amount</string>
+    <string name="estimated_mass_label">Estimated mass, g</string>
+    <string name="mass_correction_hint">Changing mass corrects the original estimate and nutrients. The eaten fraction is separate.</string>
+    <string name="review_title">Review result</string>
+    <string name="daily_subtitle">Your day in balance</string>
+    <string name="empty_first_meal">Add your first meal</string>
+    <string name="add_sheet_title">Add meal</string>
+    <string name="add_sheet_hint">Choose a convenient method</string>
+    <string name="camera_option_hint">Estimate ingredients from a photo</string>
+    <string name="gallery_option_hint">Choose an existing photo</string>
+    <string name="manual_option_hint">Enter ingredients yourself</string>
+    <string name="favorite_option_hint">Repeat a saved meal</string>
+    <string name="progress_ring_label">%1$d%% of daily goal</string>
+    <string name="goal_not_set">Goal not set yet</string>
+    <string name="hero_goal">of %1$d kcal per day</string>
+</resources>

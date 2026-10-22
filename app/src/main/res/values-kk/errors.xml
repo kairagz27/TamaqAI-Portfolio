@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="ui_error_001">Күнделікті оқу мүмкін болмады. Деректер жойылмады.</string>
+    <string name="ui_error_002">Нобай жасау мүмкін болмады.</string>
+    <string name="ui_error_003">Жазбаны ашу мүмкін болмады.</string>
+    <string name="ui_error_004">Калория мен қоректік мәндердің әр өрісіне сан енгізіңіз.</string>
+    <string name="ui_error_005">Жазба жойылды.</string>
+    <string name="ui_error_006">Жазбаны ашу мүмкін болмады. Деректер жойылмады.</string>
+    <string name="ui_error_007" formatted="false">Жеген үлесін тексеріңіз: тағамға 5%–2000%, компонентке 0%–2000%.</string>
+    <string name="ui_error_008">Нобай сақталмады. Қайта сақтап көріңіз.</string>
+    <string name="ui_error_009">Растау мүмкін болмады. Өзгерістер нобайда сақталған.</string>
+    <string name="ui_error_010">Нобайды жою мүмкін болмады.</string>
+    <string name="ui_error_011">Демоны сақтау мүмкін болмады.</string>
+    <string name="ui_error_012">Тағам танылмады. Жазбаны қолмен толтыруға болады.</string>
+    <string name="ui_error_013">Талдау үзілді. Сұрау нәтижесі белгісіз болуы мүмкін; автоматты түрде қайталанбайды.</string>
+    <string name="ui_error_014">Талдау аяқталмады.</string>
+    <string name="ui_error_015">Желі жоқ немесе күту мерзімі өтті. Фото кейін жіберу үшін сақталды.</string>
+    <string name="ui_error_016">Backend үшін HTTPS қажет.</string>
+    <string name="ui_error_017">Пилотқа кіру кодын енгізіңіз.</string>
+    <string name="ui_error_018">Backend жауабы дұрыс емес.</string>
+    <string name="ui_error_019">Пилотқа кіру рұқсатын сақтау мүмкін болмады.</string>
+    <string name="ui_error_020">Release нұсқасында демо жауаптарға тыйым салынған.</string>
+    <string name="ui_error_021">Backend жауабы тым үлкен.</string>
+    <string name="ui_error_022">Пилотқа кіру кодын тексеріңіз.</string>
+    <string name="ui_error_023">Кіру мерзімі өтті. Пилот кодын енгізіп, сол фотоны қайта жіберіңіз.</string>
+    <string name="ui_error_024">Пилот тоқтатылған. Жазбаны қолмен толтыруға болады.</string>
+    <string name="ui_error_025">Кіру рұқсатын беру лимиті бітті. Күтіңіз немесе қолмен толтырыңыз.</string>
+    <string name="ui_error_026">Талдау лимиті бітті. Жазбаны қолмен толтыруға болады.</string>
+    <string name="ui_error_027">Модель қолжетімсіз немесе backend бапталмаған.</string>
+    <string name="ui_error_028">Модель бұл фотоны талдаудан бас тартты. Жазбаны қолмен толтырыңыз.</string>
+    <string name="ui_error_029">Фото тым үлкен немесе бүлінген. Жаңасын түсіріңіз.</string>
+    <string name="ui_error_030">Модель толық емес баға берді. Жазбаны қолмен толтырыңыз.</string>
+    <string name="ui_error_031">Бұл сұрау басқа фотоға тиесілі. Жаңасын түсіріңіз.</string>
+    <string name="ui_error_032">Талдау нәтижесі белгісіз. Осы сұрауды қайта жіберу жаңа талдау бастамайды. Жазбаны қолмен толтыруға болады.</string>
+    <string name="ui_error_033">Backend жарамды баға бермеді. Кейінірек көріңіз немесе қолмен толтырыңыз.</string>
+    <string name="ui_error_034">Backend бапталмаған. Күнделікті қолмен толтырыңыз немесе фотоны кейінгі талдауға сақтаңыз.</string>
+    <string name="ui_error_035">120 таңбаға дейін атау енгізіңіз.</string>
+    <string name="ui_error_036">1-ден 20-ға дейін компонент қажет.</string>
+    <string name="ui_error_037">Компонент атауын енгізіңіз.</string>
+    <string name="ui_error_038">Граммен берілген массаны тексеріңіз.</string>
+    <string name="ui_error_039">Қоректік мәндер мен калория шекті және теріс емес болуы керек.</string>
+    <string name="ui_error_040">Компонент мәндерін тексеріңіз.</string>
+    <string name="ui_error_041">Жалпы масса 10 кг-нан асады.</string>
+    <string name="ui_error_042">Мәндер рұқсат етілген ас мөлшерінен асады.</string>
+    <string name="ui_error_043">Фотоны сақтау мүмкін болмады.</string>
+    <string name="ui_error_044">Фотоның мерзімі өтті немесе жойылды. Жаңасын түсіріңіз.</string>
+    <string name="ui_error_045">Фото тым үлкен.</string>
+    <string name="ui_error_046">Фото файлының өлшемі қолдау таппайды.</string>
+    <string name="ui_error_047">Фото өлшемдері қолдау таппайды.</string>
+    <string name="ui_error_048">Фото талдау үшін тым үлкен.</string>
+    <string name="ui_error_049">Күнделікке қосу үшін жазбаны растаңыз.</string>
+    <string name="ui_error_050">Талдаудың аяқталуын күтіңіз.</string>
+    <string name="ui_error_051">Бастапқы жазба жойылған.</string>
+</resources>

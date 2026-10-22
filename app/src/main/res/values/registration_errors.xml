@@ -1,0 +1,6 @@
+<resources>
+    <string name="auth_backend_not_configured">This build has no server address. Install the configured app update.</string>
+    <string name="password_requirement">Use 15–128 characters</string>
+    <string name="login_password_requirement">Enter your password, up to 128 characters</string>
+    <string name="account_server_error">The server could not complete the request. Your form is kept; try again later.</string>
+</resources>

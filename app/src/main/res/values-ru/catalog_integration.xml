@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="catalog_values_label">Данные каталога</string>
+    <string name="catalog_product_option">Поиск продукта</string>
+    <string name="catalog_product_hint">Этикетка и источник</string>
+    <string name="catalog_restaurant_option">Из заведения</string>
+    <string name="catalog_restaurant_hint">Город, меню и порция</string>
+    <string name="catalog_barcode_title">Сканировать штрихкод</string>
+    <string name="catalog_barcode_hint">Расположите штрихкод горизонтально и снимите его. Распознавание выполняется на устройстве.</string>
+    <string name="catalog_barcode_missing">Штрихкод не распознан. Повторите или найдите продукт; ручной ввод доступен в меню добавления еды.</string>
+    <string name="catalog_open_search">Перейти к поиску</string>
+    <string name="catalog_add_failed">Не удалось сохранить черновик. Повторите попытку.</string>
+    <string name="catalog_unknown_manual">Пищевая ценность не опубликована. Введите все четыре значения вручную: это будут ваши данные, а не данные заведения.</string>
+    <string name="catalog_match_title">Возможные совпадения в каталоге</string>
+    <string name="catalog_match_hint">Значения по фото — оценка. Совпадение с каталогом подтверждаете вы; внешний вид не определяет бренд или заведение.</string>
+    <string name="catalog_match_error">Поиск совпадений недоступен. Оценка по фото доступна для правок.</string>
+    <string name="catalog_receipt_source">Исходная запись каталога</string>
+    <string name="catalog_receipt_amount">Выбранное количество: %1$s %2$s</string>
+    <string name="catalog_loading">Загрузка…</string>
+</resources>

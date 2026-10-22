@@ -1,0 +1,16 @@
+* text=auto eol=lf
+*.kt text eol=lf
+*.kts text eol=lf
+*.py text eol=lf
+*.md text eol=lf
+*.xml text eol=lf
+*.yaml text eol=lf
+*.sh text eol=lf
+gradlew text eol=lf
+*.bat text eol=crlf
+*.ttf binary
+*.png binary
+*.jpg binary
+*.jar binary
+# Preserve the upstream NOTICE byte-for-byte, including its trailing blank line.
+app/src/main/assets/third-party-licenses/androidx-concurrent-futures-ktx-NOTICE.txt whitespace=-blank-at-eof

@@ -1,0 +1,83 @@
+# Portfolio only. Init: python backend/scripts/portfolio_demo.py init
+# All volumes and ports are distinct from the owner's pilot environment.
+name: tamaq-portfolio
+services:
+  postgres-test:
+    profiles: [test]
+    image: postgres:18-bookworm
+    env_file: [.demo/backend.env]
+    ports: ["127.0.0.1:8101:5432"]
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U portfolio -d portfolio"]
+      interval: 3s
+      timeout: 3s
+      retries: 30
+  postgres:
+    image: postgres:18-bookworm
+    env_file: [.demo/backend.env]
+    volumes: ["demo-postgres:/var/lib/postgresql"]
+    networks: [demo]
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U portfolio -d portfolio"]
+      interval: 3s
+      timeout: 3s
+      retries: 30
+  mailpit:
+    image: axllent/mailpit:v1.27.8
+    networks: [demo]
+  migrate:
+    build: ./backend
+    env_file: [.demo/backend.env]
+    user: "10001:10001"
+    command: ["python", "-m", "tamaq.db"]
+    read_only: true
+    tmpfs: ["/tmp:rw,noexec,nosuid,size=16m"]
+    networks: [demo]
+    depends_on:
+      postgres: {condition: service_healthy}
+  backend:
+    build: ./backend
+    env_file: [.demo/backend.env]
+    environment:
+      # Literal overrides cannot accidentally inherit a developer's OpenAI key.
+      TAMAQ_ENV: development
+      TAMAQ_PROVIDER: fake
+      OPENAI_API_KEY: ""
+      TAMAQ_SMTP_HOST: mailpit
+      TAMAQ_SMTP_PORT: "1025"
+      TAMAQ_EMAIL_FROM: demo@example.com
+      TAMAQ_SMTP_STARTTLS: "false"
+      TAMAQ_SMTP_USERNAME: ""
+      TAMAQ_SMTP_PASSWORD: ""
+      TAMAQ_SMS_PROVIDER: disabled
+      TAMAQ_FILES_ROOT: /files
+      TAMAQ_GLOBAL_BUDGET_USD: "5"
+      TAMAQ_PILOT_BUDGET_USD: "5"
+      TAMAQ_VERIFICATION_BUDGET_USD: "1"
+    volumes: ["demo-files:/files"]
+    read_only: true
+    tmpfs: ["/tmp:rw,noexec,nosuid,size=64m", "/data:rw,noexec,nosuid,size=1m"]
+    cap_drop: [ALL]
+    cap_add: [CHOWN, SETUID, SETGID]
+    security_opt: ["no-new-privileges:true"]
+    networks: [demo]
+    depends_on:
+      migrate: {condition: service_completed_successfully}
+      mailpit: {condition: service_started}
+  # Docker internal networks suppress direct published ports on this engine.
+  # Only this fixed HTTP proxy is dual-homed; backend/SMTP retain no egress.
+  gateway:
+    image: caddy:2-alpine@sha256:d8542f48d34a9cf4e4c11a478865229840e87e4c96ea3f439101f31a5d35f75f
+    ports: ["127.0.0.1:8100:8000", "127.0.0.1:8125:8025"]
+    volumes: ["./deploy/Caddyfile.demo:/etc/caddy/Caddyfile:ro"]
+    networks: [demo, edge]
+    depends_on:
+      backend: {condition: service_healthy}
+      mailpit: {condition: service_started}
+networks:
+  demo:
+    internal: true
+  edge: {}
+volumes:
+  demo-postgres:
+  demo-files:

@@ -1,0 +1,11 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="48dp"
+    android:height="48dp"
+    android:viewportWidth="48"
+    android:viewportHeight="48">
+    <path android:fillColor="@color/wellness_accent" android:pathData="M0,0h48v48h-48z" />
+    <path android:fillColor="@color/wellness_card" android:pathData="M24,8a16,16 0,1 0,0 32a16,16 0,1 0,0 -32M24,12a12,12 0,1 1,0 24a12,12 0,1 1,0 -24" />
+    <path android:fillColor="@color/wellness_fat" android:pathData="M24,13a11,11 0,0 1,9.53 5.5l-3.47,2a7,7 0,0 0,-6.06 -3.5z" />
+    <path android:fillColor="@color/wellness_carbs" android:pathData="M33.53,18.5a11,11 0,0 1,-1.92 12.4l-2.83,-2.83a7,7 0,0 0,1.28 -7.57z" />
+    <path android:fillColor="@color/wellness_protein" android:pathData="M31.61,30.9a11,11 0,0 1,-11.22 2.5l1.24,-3.8a7,7 0,0 0,7.15 -1.53z" />
+</vector>

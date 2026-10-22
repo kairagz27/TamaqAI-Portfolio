@@ -1,0 +1,5 @@
+<resources>
+    <string name="demo_meal_name">ДЕМО: тестовая порция</string>
+    <string name="demo_component_name">ДЕМО компонент</string>
+    <string name="demo_explanation">Искусственные данные: фото не анализировалось.</string>
+</resources>

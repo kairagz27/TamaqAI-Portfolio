@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="home_morning">Доброе утро</string>
+    <string name="home_afternoon">Добрый день</string>
+    <string name="home_evening">Добрый вечер</string>
+    <string name="home_night">Доброй ночи</string>
+    <string name="home_named_greeting">%1$s, %2$s</string>
+    <string name="home_daily_goal">Дневная цель</string>
+    <string name="home_details">Подробнее</string>
+    <string name="home_macro_no_goal">Без цели</string>
+    <string name="home_scan_food">Сканировать еду</string>
+    <string name="home_plan_empty">Составьте план на выбранный день</string>
+    <string name="home_plan_draft">Пустой черновик · можно заполнить</string>
+    <string name="home_plan_local">Приёмов: %1$d · на устройстве</string>
+    <string name="home_plan_synced">Приёмов: %1$d · синхронизирован</string>
+    <string name="home_plan_pending">Незавершённый запрос · откройте план</string>
+    <string name="home_empty_hint">Начните с фотографии или пары слов о еде.</string>
+</resources>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="catalog_totals_incomplete">Қорытынды толық емес</string>
+    <string name="catalog_totals_known_only">Белгілі бөлігі</string>
+    <string name="catalog_totals_partial_day">Толық емес қорытынды</string>
+    <plurals name="catalog_totals_missing_records">
+        <item quantity="one">Тағамдық құндылығы жоқ %d каталог жазбасы есепке алынбады. Сандар тек мәндері белгілі расталған жазбаларды қамтиды.</item>
+        <item quantity="other">Тағамдық құндылығы жоқ %d каталог жазбасы есепке алынбады. Сандар тек мәндері белгілі расталған жазбаларды қамтиды.</item>
+    </plurals>
+</resources>
