@@ -42,6 +42,7 @@ android {
     namespace = "com.tamaqai"
     compileSdk = 36
     testBuildType = when {
+        providers.gradleProperty("tamaqStandaloneTest").orNull == "true" -> "standaloneDemo"
         providers.gradleProperty("tamaqDemoTest").orNull == "true" -> "demo"
         providers.gradleProperty("tamaqPerformanceTest").orNull == "true" -> "performance"
         providers.gradleProperty("tamaqVisualTest").orNull == "true" -> "visual"
@@ -83,6 +84,15 @@ android {
                 "Portfolio demo requires a loopback/emulator HTTP origin on port 8100. Start compose.demo.yaml."
             }
             buildConfigField("String", "BACKEND_URL", "\"$demoUrl\"")
+        }
+        // Independent local package: no backend, server credentials or debug demo provider.
+        create("standaloneDemo") {
+            initWith(getByName("debug"))
+            applicationIdSuffix = ".standalone"
+            versionNameSuffix = "-standalone.1"
+            matchingFallbacks += listOf("debug")
+            manifestPlaceholders["applicationName"] = ".TamaqStandaloneApplication"
+            buildConfigField("String", "BACKEND_URL", "\"\"")
         }
         create("visual") {
             initWith(getByName("debug"))
@@ -135,6 +145,16 @@ android {
     sourceSets["visual"].res.srcDir("src/debug/res")
     sourceSets["performance"].res.srcDir("src/debug/res")
     sourceSets["performance"].java.srcDir("src/release/java")
+}
+
+// Version only the new package; existing real and server-demo APKs keep their versions.
+androidComponents {
+    onVariants(selector().withBuildType("standaloneDemo")) { variant ->
+        variant.outputs.forEach { output ->
+            output.versionCode.set(6)
+            output.versionName.set("1.4.0-standalone.1")
+        }
+    }
 }
 
 tasks.configureEach {

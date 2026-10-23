@@ -12,7 +12,7 @@ import com.tamaqai.data.remote.targets
 
 data class GoalSnapshot(val date:LocalDate,val origin:String,val targets:DailyGoals)
 
-class UserSettings(context: Context, owner: String = "guest") {
+class UserSettings(context: Context, private val owner: String = "guest") {
     private val prefs = context.getSharedPreferences(if (owner == "guest") "daily_settings" else "daily_settings_$owner", Context.MODE_PRIVATE)
     private fun goals() = DailyGoals(prefs.getInt("calories", 0).takeIf { it > 0 },
         prefs.getInt("protein", 0).takeIf { it > 0 }, prefs.getInt("fat", 0).takeIf { it > 0 },
@@ -31,6 +31,12 @@ class UserSettings(context: Context, owner: String = "guest") {
     @Synchronized fun save(value: DailyGoals,date:LocalDate=LocalDate.now(),origin:String="manual") {
         value.validate()
         persist((historyState.value.filterNot {it.date==date}+GoalSnapshot(date,origin,value)).sortedBy {it.date})
+    }
+    /** Only the isolated standalone package may replace its own goal timeline. */
+    @Synchronized fun resetStandalone(value:DailyGoals,date:LocalDate) {
+        check(owner=="standalone")
+        value.validate()
+        persist(listOf(GoalSnapshot(date,"manual",value)))
     }
     @Synchronized fun mergeHistory(a:JSONArray) {
         var entries=historyState.value

@@ -1,0 +1,6 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+    <!-- Enforced in the packaged APK, including permissions from transitive libraries. -->
+    <uses-permission android:name="android.permission.INTERNET" tools:node="remove" />
+    <application android:label="@string/standalone_app_name" tools:replace="android:label" />
+</manifest>

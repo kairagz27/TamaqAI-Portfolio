@@ -30,25 +30,25 @@ fun targets(j:JSONObject)=DailyGoals(if(j.isNull("calories")) null else j.getInt
 data class FitnessState(val version:Int=0,val document:Questionnaire=Questionnaire(completed=true),val dirty:Boolean=false,val loaded:Boolean=false)
 
 @android.annotation.SuppressLint("UseKtx")
-class NutritionRepository(context:Context,private val client:SessionClient,private val settings:UserSettings) {
+class NutritionRepository(context:Context,private val client:SessionClient,private val settings:UserSettings) : com.tamaqai.data.contracts.NutritionStore {
     private val owner=client.sessions.owner
     private val prefs=context.getSharedPreferences("nutrition_$owner",Context.MODE_PRIVATE)
     private val lock=Mutex()
     private fun read():FitnessState=runCatching {val j=JSONObject(prefs.getString("fitness",null) ?: error("empty"));FitnessState(j.getInt("version"),questionnaire(j.getJSONObject("document")),j.optBoolean("dirty"),true)}.getOrDefault(FitnessState())
-    private val changes=MutableStateFlow(read());val state=changes.asStateFlow()
+    private val changes=MutableStateFlow(read());override val state=changes.asStateFlow()
     private fun persist(s:FitnessState) {
         client.requireOwner(owner)
         check(prefs.edit().putString("fitness",JSONObject().put("version",s.version).put("document",s.document.json()).put("dirty",s.dirty).toString()).commit());changes.value=s
     }
-    suspend fun load()=withContext(Dispatchers.IO) {lock.withLock {
+    override suspend fun load()=withContext(Dispatchers.IO) {lock.withLock {
         if(owner=="guest") return@withLock
         val remote=client.authorized("/v1/nutrition/questionnaire",owner)
         if(!changes.value.dirty) persist(FitnessState(remote.getInt("version"),questionnaire(remote.getJSONObject("document")),loaded=true))
         val history=client.authorized("/v1/nutrition/goals",owner).getJSONArray("history")
         settings.mergeHistory(history)
     }}
-    suspend fun draft(q:Questionnaire)=withContext(Dispatchers.IO) {lock.withLock {persist(changes.value.copy(document=q,dirty=true,loaded=true))}}
-    suspend fun sync()=withContext(Dispatchers.IO) {lock.withLock {
+    override suspend fun draft(q:Questionnaire)=withContext(Dispatchers.IO) {lock.withLock {persist(changes.value.copy(document=q,dirty=true,loaded=true))}}
+    override suspend fun sync()=withContext(Dispatchers.IO) {lock.withLock {
         if(owner=="guest") {persist(changes.value.copy(dirty=false));return@withLock}
         if(!changes.value.dirty) return@withLock
         val s=changes.value
@@ -56,11 +56,11 @@ class NutritionRepository(context:Context,private val client:SessionClient,priva
         persist(FitnessState(response.getInt("version"),questionnaire(response.getJSONObject("document")),loaded=true))
     }}
     /** Explicitly discard a stale draft only after the user chooses the server copy. */
-    suspend fun useServer()=withContext(Dispatchers.IO) {lock.withLock {
+    override suspend fun useServer()=withContext(Dispatchers.IO) {lock.withLock {
         val r=client.authorized("/v1/nutrition/questionnaire",owner)
         persist(FitnessState(r.getInt("version"),questionnaire(r.getJSONObject("document")),loaded=true))
     }}
-    suspend fun finish(q:Questionnaire,apply:Boolean)=withContext(Dispatchers.IO) {lock.withLock {
+    override suspend fun finish(q:Questionnaire,apply:Boolean)=withContext(Dispatchers.IO) {lock.withLock {
         val done=q.copy(step=3,completed=true)
         val goals=if(apply) TargetCalculator.calculate(done) else null
         var version=changes.value.version
@@ -75,7 +75,7 @@ class NutritionRepository(context:Context,private val client:SessionClient,priva
         if(goals!=null) settings.save(goals,LocalDate.now(),"calculated")
         persist(FitnessState(version,done,loaded=true))
     }}
-    suspend fun saveGoals(value:DailyGoals,date:LocalDate,origin:String)=withContext(Dispatchers.IO) {lock.withLock {
+    override suspend fun saveGoals(value:DailyGoals,date:LocalDate,origin:String)=withContext(Dispatchers.IO) {lock.withLock {
         value.validate();require(!date.isBefore(LocalDate.now()))
         if(owner!="guest") client.authorized("/v1/nutrition/goals",owner,"PUT",JSONObject().put("effective_date",date.toString()).put("timezone",ZoneId.systemDefault().id)
             .put("origin",origin).put("targets",value.json()).put("fitness_version",changes.value.version))

@@ -1,0 +1,92 @@
+{
+  "checked_at": "2026-10-23",
+  "screenshots": [
+    {
+      "path": "docs/screenshots/standalone/home-light.png",
+      "sha256": "8c193c7e12f8622a558e2e76b05a7795ead5d49f87fe1571485756f463c2d7ce",
+      "size": [
+        540,
+        1200
+      ],
+      "review": "actual standalone UI, synthetic local fixtures; no real contacts/tokens/personal photos"
+    },
+    {
+      "path": "docs/screenshots/standalone/editor-light.png",
+      "sha256": "69ad83f54f1692160d662f53af99e98646b0ba64322a5e8285e96f6557706502",
+      "size": [
+        540,
+        1200
+      ],
+      "review": "actual standalone UI, synthetic local fixtures; no real contacts/tokens/personal photos"
+    },
+    {
+      "path": "docs/screenshots/standalone/macros-light.png",
+      "sha256": "ef423751ad93ec5f30a792ccf4e617e23ad330f1c71cfad6b2c39bb2efe56628",
+      "size": [
+        540,
+        1200
+      ],
+      "review": "actual standalone UI, synthetic local fixtures; no real contacts/tokens/personal photos"
+    },
+    {
+      "path": "docs/screenshots/standalone/history-light.png",
+      "sha256": "ba859a6f3f8d7391cb315281d08783f8243dcf7e2c61f7baf6732273164e6180",
+      "size": [
+        540,
+        1200
+      ],
+      "review": "actual standalone UI, synthetic local fixtures; no real contacts/tokens/personal photos"
+    },
+    {
+      "path": "docs/screenshots/standalone/profile-light.png",
+      "sha256": "86eff0f61a90a493183fa1d0b8880d2acffa67fd67c80dae6cfefc747cf2def1",
+      "size": [
+        540,
+        1200
+      ],
+      "review": "actual standalone UI, synthetic local fixtures; no real contacts/tokens/personal photos"
+    },
+    {
+      "path": "docs/screenshots/standalone/drawer-light.png",
+      "sha256": "edafda6952bf83169d8d3c90b229532174d23b98d57b15db94aa4c55d3ac0fa3",
+      "size": [
+        540,
+        1200
+      ],
+      "review": "actual standalone UI, synthetic local fixtures; no real contacts/tokens/personal photos"
+    },
+    {
+      "path": "docs/screenshots/standalone/catalog-light.png",
+      "sha256": "f1e3713e45dcfb4539c087a746d6c38702336733cde74617544f816a49a7e658",
+      "size": [
+        540,
+        1200
+      ],
+      "review": "actual standalone UI, synthetic local fixtures; no real contacts/tokens/personal photos"
+    },
+    {
+      "path": "docs/screenshots/standalone/plan-light.png",
+      "sha256": "d6e35faa7b3bdc4ebd57777c06c10dc14f68c6d381701606435d531cca97f43b",
+      "size": [
+        540,
+        1200
+      ],
+      "review": "actual standalone UI, synthetic local fixtures; no real contacts/tokens/personal photos"
+    },
+    {
+      "path": "docs/screenshots/standalone/home-dark.png",
+      "sha256": "63027b5acb711778698fd52af083b38c10d85dfcd4637c7639d7ee7a0344924a",
+      "size": [
+        540,
+        1200
+      ],
+      "review": "actual standalone UI, synthetic local fixtures; no real contacts/tokens/personal photos"
+    }
+  ],
+  "video": {
+    "asset": "tamaqai-standalone-demo.mp4",
+    "sha256": "2af7008b72ab7b8acfa63575e388df55174bfaab39974036f2748d97596fcf89",
+    "review": "actual local synthetic workflow only; no personal data, no audio; end teardown trimmed; new draft asset"
+  },
+  "source_photo": "standalone-assets.json"
+}

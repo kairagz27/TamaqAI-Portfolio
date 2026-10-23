@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="standalone_badge">ДЕМО · AI мысалы</string>
+    <string name="standalone_welcome">Бұл TamaqAI демонстрациялық нұсқасы</string>
+    <string name="standalone_local_only">Барлық деректер осы құрылғыда сақталады. Күнделіктің бұлттық көшірмесі жоқ.</string>
+    <string name="standalone_fake_ai">AI талдауы — дайын демонстрациялық мысал</string>
+    <string name="standalone_try">Қолданып көру</string>
+    <string name="standalone_example">Мысалды қолданып көру</string>
+    <string name="standalone_example_hint">Кірістірілген суретті таңдаңыз. Дайын бағалауды өзгертуге болады; AI сервисі шақырылмайды.</string>
+    <string name="standalone_local_profile">Жергілікті демонстрациялық профиль</string>
+    <string name="standalone_infrastructure">Тіркелу, email және нақты AI серверді қажет етеді. Автономды демо оған қосылмайды.</string>
+    <string name="standalone_plan_local_hint">Деможоспарды жергілікті өңдеңіз. Жоспарланған ас растағаннан кейін ғана күнделікке қосылады.</string>
+    <string name="standalone_manual_photo_hint">Өз суретіңізді желісіз тану мүмкін емес. Құрамы мен тағамдық құндылығын қолмен енгізіңіз немесе кірістірілген мысалды қолданыңыз.</string>
+    <string name="standalone_reset">Демонстрациялық деректерді қалпына келтіру</string>
+    <string name="standalone_reset_title">Демоны қалпына келтіру керек пе?</string>
+    <string name="standalone_reset_body">Демопрофиль, жазбалар, мақсаттар мен жоспар қалпына келеді. Осы демодағы өзгерістер жойылады. Тіл мен тақырып сақталады. Басқа қолданбалар мен сервер деректері өзгермейді.</string>
+    <string name="standalone_reset_error">Демоны қалпына келтіру мүмкін болмады. Қайталап көріңіз.</string>
+    <string name="standalone_sample_salad">Ірімшік қосылған салат</string>
+    <string name="standalone_sample_leaves">Салат жапырақтары</string>
+    <string name="standalone_sample_tomato">Қызанақ</string>
+    <string name="standalone_sample_cheese">Жұмсақ ірімшік</string>
+    <string name="standalone_sample_dressing">Тұздық</string>
+    <string name="standalone_sample_explanation">Тек осы кірістірілген суретке дайындалған мысал. Құрамы мен мөлшері — өлшенген рецепт немесе нақты AI жауабы емес, шартты бағалау. Тексеріп, өңдеңіз.</string>
+    <string name="standalone_seed_breakfast">Таңғы ас мысалы</string>
+    <string name="standalone_seed_lunch">Түскі ас мысалы</string>
+    <string name="standalone_seed_dinner">Кешкі ас мысалы</string>
+    <string name="standalone_seed_oats">Сұлы</string>
+    <string name="standalone_seed_milk">Сүт</string>
+    <string name="standalone_seed_chicken">Тауық еті</string>
+    <string name="standalone_seed_rice">Күріш</string>
+    <string name="standalone_seed_vegetables">Көкөніс</string>
+    <string name="standalone_example_error">Мысалды ашу мүмкін болмады. Қайталап көріңіз.</string>
+    <string name="standalone_catalog_hint">Кірістірілген анықтамалық каталог. Деректерді қаптамадағы жапсырмамен салыстырыңыз.</string>
+</resources>

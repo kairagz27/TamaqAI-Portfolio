@@ -21,7 +21,7 @@ import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
 import com.tamaqai.R
 import com.tamaqai.data.remote.ApiFailure
-import com.tamaqai.data.remote.CatalogRepository
+import com.tamaqai.data.contracts.CatalogStore
 import com.tamaqai.domain.model.*
 import com.tamaqai.ui.components.*
 import com.tamaqai.ui.theme.TextSecondary
@@ -32,7 +32,7 @@ import java.math.BigDecimal
 
 @Composable
 fun CatalogScreen(
-    repository: CatalogRepository,
+    repository: CatalogStore,
     kind: String,
     initialQuery: String = "",
     initialVersionId: String? = null,
@@ -131,7 +131,8 @@ fun CatalogScreen(
                     style = MaterialTheme.typography.headlineMedium, modifier = Modifier.weight(1f))
             }
         }
-        if (offline) item { Text(stringResource(R.string.catalog_offline), color = TextSecondary, style = MaterialTheme.typography.bodyMedium) }
+        if(repository.isBundled) item { Text(stringResource(R.string.standalone_catalog_hint),color=TextSecondary,style=MaterialTheme.typography.bodyMedium) }
+        else if (offline) item { Text(stringResource(R.string.catalog_offline), color = TextSecondary, style = MaterialTheme.typography.bodyMedium) }
         error?.let { code -> item {
             WellnessCard(Modifier.fillMaxWidth()) {
                 Text(stringResource(catalogError(code)), color = MaterialTheme.colorScheme.error)
