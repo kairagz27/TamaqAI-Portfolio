@@ -1,8 +1,8 @@
 # Roadmap and limitations
 
-## Before public visibility
+## Public snapshot
 
-Keep `TamaqAI-Portfolio` private and its first release in draft while the owner reviews the export, media/license evidence and actual CI results. Review the [export audit](export/README.md), [verification report](PUBLICATION_VERIFICATION.md) and release checksums. Public visibility and release publication require a separate decision; the original development repository stays private.
+The owner authorized public publication on 23 October 2026. The prepared [release](https://github.com/kairagz27/TamaqAI-Portfolio/releases/tag/v1.3.1-portfolio.1) remains bound to tested commit `b67f95bcdd59a59923e7364df662b91b2b2b463b`; subsequent publication documentation is separate. See the [export audit](export/README.md), [preparation verification](PUBLICATION_VERIFICATION.md) and [publication checks](PUBLICATION.md). The original development repository stays private. Publication does not establish production readiness.
 
 ## Before a hosted pilot
 

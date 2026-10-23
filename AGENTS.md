@@ -13,7 +13,7 @@
 
 - This repository starts from the prepared source snapshot `4d1473f8a34e230f0b0203d5f036bdb955eed603`. Preserve authorship, original notices and the explicit export provenance. Do not recreate or impersonate earlier development commits.
 - Work only in this portfolio repository. The original development repository remains private; do not rewrite or publish its history.
-- Keep this repository private and releases in draft until the owner explicitly authorizes publication. Ordinary commit/push permission does not authorize a visibility change.
+- The owner authorized public visibility and publication of `v1.3.1-portfolio.1` on 2026-10-23. The original development repository must remain private. Ordinary commit/push permission does not authorize other visibility changes or future release publications.
 - Demo APKs require local services on port 8100 and adb reverse; state these requirements before download links. Do not describe the current APK as standalone or a hosted demo.
 - Include only reviewed assets/data with confirmed redistribution terms. Preserve the separate OFL, Apache and ODbL/DbCL notices; the root MIT license does not override them.
 
@@ -24,7 +24,7 @@ After every completed task:
 1. Run checks appropriate to the changes, including relevant builds, tests, lint and visual checks for UI changes. Record what ran and what remains unverified.
 2. Update documentation whenever behavior, configuration or launch instructions change.
 3. Inspect `.gitignore`, staged paths and content. Never commit API keys, secret `.env` files, real invitations or tokens, user databases, ledger data, backups, keystores, local machine settings, build directories or APKs. Include safe configuration templates without secret values.
-4. Create a clear, descriptive commit and push it to the existing private repository `https://github.com/kairagz27/TamaqAI-Portfolio` using the current working branch.
+4. Create a clear, descriptive commit and push it to `https://github.com/kairagz27/TamaqAI-Portfolio` using the current working branch. This public portfolio repository is separate from the private development repository.
 5. Verify that local `HEAD` equals the remote branch SHA after pushing. Report the actual commit and result.
 
 The user has authorized ordinary future commits and pushes to this repository. Fetch remote changes before pushing; do not use force push, rewrite shared history or overwrite other contributors' changes. If authentication or a conflict prevents a safe push, finish local work and explain the concrete remaining action. Never ask for passwords or tokens in chat.

@@ -1,5 +1,11 @@
 # Portfolio snapshot verification — 22 October 2026
 
+This is the **preparation record**, retained with its original test results.
+The owner authorized public publication on 23 October 2026; see [publication](PUBLICATION.md).
+The release's unchanged `verification.json` describes the private/draft preparation
+state, not current visibility. The release tag remains on tested commit
+`b67f95bcdd59a59923e7364df662b91b2b2b463b`.
+
 These checks ran in the **separate selected export**, not the original working
 tree. Source: `4d1473f8a34e230f0b0203d5f036bdb955eed603`. No original Git directory,
 production configuration, user database, ledger or keystore was copied. The local
@@ -72,10 +78,11 @@ nonempty XML and zero failures/skips. Guarded backend-dependent full UI probes r
 locally and are distinct from CI core coverage.
 
 Only runs whose `head_sha` matches this repository's final commit count. Actual
-run URLs/conclusions and that SHA are bound in the draft release's `verification.json`;
+run URLs/conclusions and that SHA are bound in the preparation `verification.json`;
 old private-repository runs are not reused as evidence. The [first release notes](RELEASE_NOTES.md)
-state the APK prerequisites and unresolved limitations. Repository visibility stays
-private and release status stays draft until separately authorized.
+state the APK prerequisites and unresolved limitations. The repository and release
+were private/draft at preparation. The separately authorized public release uses
+the [permanent release URL](https://github.com/kairagz27/TamaqAI-Portfolio/releases/tag/v1.3.1-portfolio.1).
 
 ## Unresolved and not verified
 

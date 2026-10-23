@@ -1,6 +1,10 @@
 # TamaqAI Portfolio — v1.3.1-portfolio.1
 
-**Draft preview · repository remains private.**
+**Public demo release · publication authorized on 23 October 2026.**
+
+[Permanent release](https://github.com/kairagz27/TamaqAI-Portfolio/releases/tag/v1.3.1-portfolio.1)
+· [Video — no Android installation required](https://github.com/kairagz27/TamaqAI-Portfolio/releases/download/v1.3.1-portfolio.1/tamaqai-demo-fake-ai.mp4).
+The original development repository remains private.
 
 TamaqAI is a Kotlin/Jetpack Compose food diary with a modular FastAPI/PostgreSQL
 backend. Review an estimated meal, change components or eaten fraction, confirm
@@ -10,7 +14,7 @@ imported or recreated. Original authorship and third-party notices are retained.
 
 ## Before downloading the demo APK
 
-The APK **requires a local backend on `http://127.0.0.1:8100` and
+The APK uses **FAKE AI** and **requires a local backend on `http://127.0.0.1:8100` and
 `adb reverse tcp:8100 tcp:8100`** on an authorized emulator/USB device. Run
 `portfolio_demo.py init`, Docker Compose, smoke and catalogue import first;
 follow [setup](DEVELOPMENT.md). It is **not standalone**, has no hosted backend,
@@ -24,12 +28,18 @@ prepared as a separate future improvement.
   1.3.1-portfolio-demo / code 5, loopback port 8100. No API key or operating login
   is bundled. Generated local credentials stay in ignored `.demo/` files.
 - `tamaqai-demo-fake-ai.mp4`: 79.62-second recording, view/download without Android
-  installation; private draft access still requires repository permissions.
+  installation or GitHub authentication.
   All 164 frames were reviewed; original native image and synthetic data only,
   password masked, no audio. Camera/picker operation is not demonstrated.
 - `SHA256SUMS.txt`: hashes of the APK, video and verification record.
-- `verification.json`: exact exported commit, CI run/job results, local checks,
-  media audit, artefact digests and private/draft state.
+- `verification.json`: unchanged preparation record from **22 October 2026**,
+  binding the exported commit, CI run/job results, local checks, media audit and
+  artefact digests. Its private/draft flags describe that earlier preparation
+  state; subsequent publication is recorded in [PUBLICATION.md](PUBLICATION.md).
+
+The release tag and uploaded binaries remain bound to checked commit
+`b67f95bcdd59a59923e7364df662b91b2b2b463b`. Publication documentation may advance
+`main` without changing that tested APK or replacing the preparation evidence.
 
 ## Verification
 

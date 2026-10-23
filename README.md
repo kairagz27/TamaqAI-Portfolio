@@ -4,17 +4,17 @@
 
 TamaqAI reduces manual meal entry: take a photo, review proposed ingredients and quantities, adjust what you ate, then confirm. Confirmed meals feed daily calorie and macronutrient totals. Photo analysis is an estimate: the model can misidentify recipes, ingredients and mass. It is not a measured calorie count or medical assessment.
 
-[79-second video — no installation required](https://github.com/kairagz27/TamaqAI-Portfolio/releases) · [Architecture](docs/ARCHITECTURE.md) · [Verification](docs/PUBLICATION_VERIFICATION.md) · [Русский](README.ru.md)
+[79-second video — no installation required](https://github.com/kairagz27/TamaqAI-Portfolio/releases/download/v1.3.1-portfolio.1/tamaqai-demo-fake-ai.mp4) · [Architecture](docs/ARCHITECTURE.md) · [Verification](docs/PUBLICATION_VERIFICATION.md) · [Русский](README.ru.md)
 
 This portfolio edition starts from a prepared project snapshot, source commit `4d1473f8a34e230f0b0203d5f036bdb955eed603`. It has a new Git history; earlier development commits have not been recreated. [Authorship](AUTHORS.md) · [Export provenance](docs/export/README.md).
 
 ## Try the workflow
 
-**Video:** the release attachments contain a recording of the running app, viewable or downloadable without installing Android. The repository is currently **private** and the first release is a **draft**: preview access requires the owner's GitHub permissions. Public access is pending a separate visibility decision.
+**Public demo release:** [v1.3.1-portfolio.1](https://github.com/kairagz27/TamaqAI-Portfolio/releases/tag/v1.3.1-portfolio.1) contains a recording of the running app, viewable or downloadable without installing Android or signing in to GitHub. The owner authorized public publication on **23 October 2026**; the original development repository remains private.
 
-**Before downloading the demo APK:** it requires Docker services on your computer at **`http://127.0.0.1:8100`** and an authorized device/emulator with **`adb reverse tcp:8100 tcp:8100`**. The APK is **not standalone** and has no hosted backend. Run the [local setup](docs/DEVELOPMENT.md) first.
+**Before downloading the demo APK:** it uses **FAKE AI** and requires Docker services on your computer at **`http://127.0.0.1:8100`** and an authorized device/emulator with **`adb reverse tcp:8100 tcp:8100`**. The APK is **not standalone** and has no hosted backend. Run the [local setup](docs/DEVELOPMENT.md) first.
 
-[Demo APK and video — private draft attachments](https://github.com/kairagz27/TamaqAI-Portfolio/releases) · [Complete demo instructions](docs/DEMO.md)
+[Download labelled demo APK](https://github.com/kairagz27/TamaqAI-Portfolio/releases/download/v1.3.1-portfolio.1/tamaqai-portfolio-demo-debug.apk) · [Video, checksums and verification record](https://github.com/kairagz27/TamaqAI-Portfolio/releases/tag/v1.3.1-portfolio.1) · [Complete demo instructions](docs/DEMO.md)
 
 The separate `com.tamaqai.demo` application displays **FAKE AI · LOCAL BACKEND**. Its deterministic provider demonstrates review, portions and persistence, not recognition quality. A standalone demonstration is a possible future improvement; it is not included in this release.
 
@@ -119,3 +119,5 @@ This export contains only an explicit reviewed file list, not the private develo
 - `tools/`, `docs/`: [engineering documentation](docs/README.md), audits and dated evidence.
 
 Original code is [MIT licensed](LICENSE); fonts, dependencies and data have [separate terms](THIRD_PARTY_NOTICES.md). [Contributing](CONTRIBUTING.md) · [Security](SECURITY.md).
+
+The release tag and binaries identify the checked snapshot `b67f95bcdd59a59923e7364df662b91b2b2b463b`. Its `verification.json` is the unchanged **22 October preparation record**; its private/draft fields describe that historical check, not today's visibility. [Publication record](docs/PUBLICATION.md).

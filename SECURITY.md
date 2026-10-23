@@ -1,6 +1,6 @@
 # Security
 
-This portfolio repository stays **private** until the owner approves a separate visibility change. The first release stays **draft**. No dedicated private vulnerability-reporting address or GitHub private reporting channel has been configured and verified. Do not put credentials, personal data or exploit details in an issue. Contact the owner through an existing private channel to arrange a secure report.
+This portfolio repository and its first demo release are public with the owner's authorization of 23 October 2026. The original development repository remains private. No dedicated private vulnerability-reporting address or GitHub private reporting channel has been configured and verified. Do not put credentials, personal data or exploit details in an issue. Contact the owner through an existing private channel to arrange a secure report.
 
 ## Boundaries
 

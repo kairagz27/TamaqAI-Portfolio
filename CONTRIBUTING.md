@@ -26,5 +26,6 @@ synthetic fixtures.
 This portfolio repository starts from a prepared snapshot; see [AUTHORS](AUTHORS.md)
 and [export provenance](docs/export/README.md). Preserve the authentic snapshot
 boundary and use real commits for new work. Ordinary contribution permission does
-not authorize changing the repository's private visibility or publishing a draft
-release.
+not authorize further visibility changes or publishing future releases. The owner
+separately authorized this portfolio repository and `v1.3.1-portfolio.1` for public
+publication on 23 October 2026; the development repository remains private.

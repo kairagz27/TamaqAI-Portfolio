@@ -1,8 +1,17 @@
 # Changelog
 
+## Public portfolio publication — 23 October 2026
+
+The owner authorized public visibility for this portfolio repository and publication
+of the existing [demo release v1.3.1-portfolio.1](https://github.com/kairagz27/TamaqAI-Portfolio/releases/tag/v1.3.1-portfolio.1).
+The release tag remains on tested commit `b67f95bcdd59a59923e7364df662b91b2b2b463b`;
+the publication update changes documentation and its integrity manifest only.
+Prepared APK, video, verification record and checksums are preserved. The original
+development repository remains private. [Publication checks](docs/PUBLICATION.md).
+
 ## v1.3.1-portfolio.1 — prepared snapshot, 22 October 2026
 
-First portfolio edition, starting from source snapshot `4d1473f8a34e230f0b0203d5f036bdb955eed603`. This is a new export history, not a reconstruction of previous releases. The tagged release remains a draft until separately approved.
+First portfolio edition, starting from source snapshot `4d1473f8a34e230f0b0203d5f036bdb955eed603`. This is a new export history, not a reconstruction of previous releases. At preparation, the repository and draft release were held private pending the owner's separate approval.
 
 Included capabilities from the source snapshot:
 

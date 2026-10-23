@@ -45,8 +45,8 @@
     },
     {
       "path": "AGENTS.md",
-      "sha256": "27f2ab543e6b785d4a1c529675ccc4d64cc1d02942c5baad85802fedce9c82c3",
-      "origin": "adapted for reviewed snapshot distribution"
+      "sha256": "a950f8458de8a59dfd8364f0a61ca78507993c65a47200609fadb4032e6032a1",
+      "origin": "reviewed publication documentation; owner authorized 2026-10-23"
     },
     {
       "path": "AUTHORS.md",
@@ -55,13 +55,13 @@
     },
     {
       "path": "CHANGELOG.md",
-      "sha256": "f196e1be84fa28d554130cca0d01df23b2061d8fa3812c90fb52f53150b85711",
-      "origin": "adapted for reviewed snapshot distribution"
+      "sha256": "3f94f6b7d5c8f0f4142089e730fc7d9e1881ab266caebde7cc5aba8aad6ba768",
+      "origin": "reviewed publication documentation; owner authorized 2026-10-23"
     },
     {
       "path": "CONTRIBUTING.md",
-      "sha256": "f3a163f5cfb51c252a7f7cbf1e0d70e923afe7ebd8cac185f38d61b5a1714c93",
-      "origin": "adapted for reviewed snapshot distribution"
+      "sha256": "e1f72a6fb248317d8c4ce8898d012fe320db0dfbb418dd68c2ad32efa8e7792b",
+      "origin": "reviewed publication documentation; owner authorized 2026-10-23"
     },
     {
       "path": "LICENSE",
@@ -70,18 +70,18 @@
     },
     {
       "path": "README.md",
-      "sha256": "94deaca8c41e3894503440a4b5e03f6d867b85b85034431be86c5e3189f0a239",
-      "origin": "adapted for reviewed snapshot distribution"
+      "sha256": "6b6ce0a5eb1158590b18c88272b5379709e330226fde9e8c3afd022ac6c8ee0e",
+      "origin": "reviewed publication documentation; owner authorized 2026-10-23"
     },
     {
       "path": "README.ru.md",
-      "sha256": "6258600bd12a2b56bac188dd5ead50391510335c07ee92a0a25edd1e9e4b5e41",
-      "origin": "adapted for reviewed snapshot distribution"
+      "sha256": "187d509ae5e61609482e37088dee88a6bc91b25f2e86d99cf47b3c5fa9f3f491",
+      "origin": "reviewed publication documentation; owner authorized 2026-10-23"
     },
     {
       "path": "SECURITY.md",
-      "sha256": "68e17e95206cedc0ed382317d7c0dd221749cb14e24c7cc288c5b58dcdeda470",
-      "origin": "adapted for reviewed snapshot distribution"
+      "sha256": "b39c43c4051092e635b97173d432aba6f27def9a1c7133b71f28cfca62929966",
+      "origin": "reviewed publication documentation; owner authorized 2026-10-23"
     },
     {
       "path": "THIRD_PARTY_NOTICES.md",
@@ -1455,8 +1455,8 @@
     },
     {
       "path": "docs/DEMO.md",
-      "sha256": "aae4e3e99e9402ababaf27024ae0df89384b1b4a72a28942c0739c6f72624efd",
-      "origin": "adapted for reviewed snapshot distribution"
+      "sha256": "5e04be6597a337c24b9c1447fedb0d3fcc067140666cb189f06dad50776231aa",
+      "origin": "reviewed publication documentation; owner authorized 2026-10-23"
     },
     {
       "path": "docs/DEVELOPMENT.md",
@@ -1464,24 +1464,29 @@
       "origin": "adapted for reviewed snapshot distribution"
     },
     {
+      "path": "docs/PUBLICATION.md",
+      "sha256": "0497881469f9e5d740698a141c80d424624be08a0bd7830a5d8dd387a261497b",
+      "origin": "reviewed publication documentation; owner authorized 2026-10-23"
+    },
+    {
       "path": "docs/PUBLICATION_VERIFICATION.md",
-      "sha256": "0f7160d333df1c5ca46f3ccd5ec75b7d69ac47eb67cf28f35a6e01a134625381",
-      "origin": "new export provenance, verification, notice or integrity gate"
+      "sha256": "4dc43275fe43d64c7560af8f282044d2ff17da7dc002b1ab1e8896aac18b13f4",
+      "origin": "reviewed publication documentation; owner authorized 2026-10-23"
     },
     {
       "path": "docs/README.md",
-      "sha256": "626bebed58566c8c84973697849a3486b5781ff8cb61a861b99eb43cb30984fb",
-      "origin": "adapted for reviewed snapshot distribution"
+      "sha256": "1e503c180e70b617c336e949b3f20b8523ffeb051aec41e2374cdffe370ad2f7",
+      "origin": "reviewed publication documentation; owner authorized 2026-10-23"
     },
     {
       "path": "docs/RELEASE_NOTES.md",
-      "sha256": "31a609cdfe26c47844b5e9d3175364dfce7a20b98f539dc765dbf0933f099262",
-      "origin": "new export provenance, verification, notice or integrity gate"
+      "sha256": "e321647d8ae53944cbb5f185c87531c08b1d1099a56eb1df8efb0ab3f36ce7e3",
+      "origin": "reviewed publication documentation; owner authorized 2026-10-23"
     },
     {
       "path": "docs/ROADMAP.md",
-      "sha256": "38849fbe81bb0d474cf02d16dd29d00d2b658fc11df51a8e77fb441cf26d6ef1",
-      "origin": "adapted for reviewed snapshot distribution"
+      "sha256": "e948f27afca45018f5fb58d449ff2ea3f94f9061e9cbb94342523794100f2890",
+      "origin": "reviewed publication documentation; owner authorized 2026-10-23"
     },
     {
       "path": "docs/adr/0001-fastapi-monolith.md",
@@ -1540,8 +1545,8 @@
     },
     {
       "path": "docs/export/README.md",
-      "sha256": "d971be90493909c7b72963293b4f17b4c1c12dc53c6e56fa3d9362ba87c5a194",
-      "origin": "new export provenance, verification, notice or integrity gate"
+      "sha256": "bde796d3c6733c860ba4fcd091db91b84192980829284aed11867c8f5fc889c3",
+      "origin": "reviewed publication documentation; owner authorized 2026-10-23"
     },
     {
       "path": "docs/export/media-review.json",
@@ -1783,5 +1788,6 @@
       "sha256": "6144805103b54482513a5be8e0cd81d6b769bf7479fe8d00bdb35f6def76d8e2",
       "origin": "unchanged source blob"
     }
-  ]
+  ],
+  "publication_update_base": "b67f95bcdd59a59923e7364df662b91b2b2b463b"
 }

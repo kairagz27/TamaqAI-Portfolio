@@ -80,9 +80,16 @@ from inherited observations. The known intermittent Espresso/Compose full-demo
 idle timeout and teardown failure remain unresolved. No physical-device smoothness,
 real AI, hosted HTTPS, external email or production readiness is claimed here.
 
-Both repositories remain **private**; the first tagged release remains a
-**draft** until the owner separately authorizes publication. A successful CI run
-is a technical check, not an instruction to change visibility. The release
-contains the demo APK, reviewed video, checksums and an actual verification record.
+The portfolio repository and its [first release](https://github.com/kairagz27/TamaqAI-Portfolio/releases/tag/v1.3.1-portfolio.1)
+are public with the owner's separate authorization of 23 October 2026. The original
+development repository remains **private**, without history changes. The tag stays
+on tested commit `b67f95bcdd59a59923e7364df662b91b2b2b463b`; publication documentation
+is maintained in subsequent authentic commits. A successful CI run alone never
+authorizes visibility changes. The release contains the unchanged prepared demo
+APK, reviewed video, checksums and historical preparation `verification.json`.
+Its private/draft flags describe 22 October, not current publication state;
+see [publication checks](../PUBLICATION.md). The current manifest also covers the
+reviewed publication documentation, while the original manifest remains available
+at the release tag.
 APK/video files are outside Git. The APK needs a local backend on port **8100**
 and **adb reverse**; it is not a standalone demonstration.

@@ -4,7 +4,7 @@ Real Android screens and HTTP transport run against an explicitly fake local pro
 
 ## Before downloading or installing
 
-The APK **requires local backend services at `http://127.0.0.1:8100` and `adb reverse tcp:8100 tcp:8100`**. It is not standalone and has no hosted server. Follow [development setup](DEVELOPMENT.md), including Docker startup, account bootstrap and catalogue import, before installing it.
+The APK uses **FAKE AI** and **requires local backend services at `http://127.0.0.1:8100` and `adb reverse tcp:8100 tcp:8100`**. It is not standalone and has no hosted server. Follow [development setup](DEVELOPMENT.md), including Docker startup, account bootstrap and catalogue import, before installing it.
 
 It installs as the separate debug-signed package `com.tamaqai.demo`. It does not contain an operating OpenAI key, real invitation or user diary. Keys differ between development machines; preserve your own signing key for in-place demo updates. Never uninstall or clear the user's main application for verification.
 
@@ -16,9 +16,11 @@ Use only the generated synthetic account and isolated diary. The native syntheti
 
 ## Video and attachments
 
-[First release attachments](https://github.com/kairagz27/TamaqAI-Portfolio/releases) contain the labelled demo APK, MP4, checksums and limitations. The repository remains **private**, the release **draft**; preview access requires owner-authorized GitHub access. The MP4 can be viewed or downloaded without installing Android. It is not an anonymously accessible public demo while the release is a private draft.
+[Published release v1.3.1-portfolio.1](https://github.com/kairagz27/TamaqAI-Portfolio/releases/tag/v1.3.1-portfolio.1) contains the labelled demo APK, MP4, checksums and limitations. Public publication was authorized on **23 October 2026**. The [MP4](https://github.com/kairagz27/TamaqAI-Portfolio/releases/download/v1.3.1-portfolio.1/tamaqai-demo-fake-ai.mp4) can be viewed or downloaded without installing Android or signing in to GitHub. The original development repository remains private.
 
 The existing source-snapshot recording is 79.62 seconds. The 18 actual captures in [the gallery](screenshots/portfolio/README.md) show both themes, editor, nutrients, history, profile, drawer, catalogue and plan. Review evidence and exact distributed hashes belong in the [export audit](export/README.md); checks repeated in the clean export are listed separately in [verification](PUBLICATION_VERIFICATION.md). Video and APK are release assets, not tracked source files.
+
+The tag and binaries remain bound to checked commit `b67f95bcdd59a59923e7364df662b91b2b2b463b`. The attached `verification.json` remains the original preparation record from **22 October 2026**, including its then-private/draft state. See the [publication record](PUBLICATION.md) for the subsequent release state and anonymous-access checks.
 
 A standalone demonstration can be considered as a separate future task. The current APK's backend requirement remains part of its distribution description.
 
