@@ -1660,8 +1660,8 @@
     },
     {
       "path": "docs/design/presentation/assets-audit.json",
-      "sha256": "6a1ba049fefeb4e588c251667df40aabde4c8e66ea4e5aff1f07d288bc99fbec",
-      "origin": "unchanged source blob"
+      "sha256": "fb6d18143c3666c5b8b53563ce9ef921eeaeabd2a975521eff0f932e17ca0907",
+      "origin": "Refreshed generated locale/font audit for standalone strings"
     },
     {
       "path": "docs/design/presentation/verify_assets.py",
