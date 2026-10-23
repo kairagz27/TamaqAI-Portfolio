@@ -14,7 +14,8 @@
 - This repository starts from the prepared source snapshot `4d1473f8a34e230f0b0203d5f036bdb955eed603`. Preserve authorship, original notices and the explicit export provenance. Do not recreate or impersonate earlier development commits.
 - Work only in this portfolio repository. The original development repository remains private; do not rewrite or publish its history.
 - The owner authorized public visibility and publication of `v1.3.1-portfolio.1` on 2026-10-23. The original development repository must remain private. Ordinary commit/push permission does not authorize other visibility changes or future release publications.
-- Demo APKs require local services on port 8100 and adb reverse; state these requirements before download links. Do not describe the current APK as standalone or a hosted demo.
+- Distinguish the demo variants before download links. The existing `demo` / `com.tamaqai.demo` APK uses fake AI and requires local services on port 8100 plus `adb reverse`; it is not standalone or hosted. The separate `standaloneDemo` / `com.tamaqai.standalone` package uses local implementations and bundled examples, needs no backend/internet/reverse, and must remove `INTERNET` from its packaged manifest. Do not silently return a prepared result for arbitrary user photographs.
+- The current standalone task authorizes a new draft release `v1.4.0-standalone.1` and a pull request to `main`, not publication of that draft. Keep the previous `v1.3.1-portfolio.1` tag and assets unchanged. Draft assets are not publicly downloadable; use the releases overview until publication is separately authorized.
 - Include only reviewed assets/data with confirmed redistribution terms. Preserve the separate OFL, Apache and ODbL/DbCL notices; the root MIT license does not override them.
 
 ## Verification, commits and GitHub

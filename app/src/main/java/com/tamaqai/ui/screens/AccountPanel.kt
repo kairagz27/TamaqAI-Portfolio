@@ -35,6 +35,16 @@ enum class AccountForm { Profile, Edit, Login, Register, Forgot, Reset, Verify, 
 @Composable fun AccountPanel(initialForm:AccountForm=AccountForm.Profile,onBack:()->Unit={},onPhone:()->Unit={}) {
     val context=LocalContext.current
     val container=(context.applicationContext as TamaqApplication).container
+    val standalone=container.standalone!=null
+    // Offline demos have a local profile, never a simulated server account.
+    if(standalone && initialForm !in listOf(AccountForm.Profile,AccountForm.Edit)) {
+        WellnessCard(Modifier.fillMaxWidth()) {
+            BackButton(onBack)
+            Text(stringResource(R.string.standalone_local_profile),style=MaterialTheme.typography.titleLarge)
+            Text(stringResource(R.string.standalone_infrastructure),color=TextSecondary)
+        }
+        return
+    }
     val repository=container.account
     val guest=container.owner=="guest"
     val profile by repository.profileState.collectAsStateWithLifecycle()
@@ -56,7 +66,7 @@ enum class AccountForm { Profile, Edit, Login, Register, Forgot, Reset, Verify, 
     var target by remember { mutableStateOf(profile.targetWeight) }
     val scope=rememberCoroutineScope()
     var avatarActions by remember {mutableStateOf(false)}
-    fun show(next: AccountForm) { if (!busy) { password="";confirm="";code="";invite="";visible=false;error=null;fieldErrors=emptyMap();notice=null;form=next } }
+    fun show(next: AccountForm) { if (!busy && (!standalone || next in listOf(AccountForm.Profile,AccountForm.Edit))) { password="";confirm="";code="";invite="";visible=false;error=null;fieldErrors=emptyMap();notice=null;form=next } }
     fun execute(work: suspend ()->Unit) {
         if (busy) return
         busy=true;error=null;fieldErrors=emptyMap();notice=null
@@ -99,14 +109,16 @@ enum class AccountForm { Profile, Edit, Login, Register, Forgot, Reset, Verify, 
                     ProfileAvatar(profile)
                     Column(Modifier.weight(1f),verticalArrangement=Arrangement.spacedBy(4.dp)) {
                         Text(profile.name.ifBlank { stringResource(if(guest) R.string.account_guest else R.string.account_title) },style=MaterialTheme.typography.titleLarge.copy(fontFamily=BodyFont))
-                        Text(if(guest) stringResource(R.string.account_guest) else profile.email.ifBlank {profile.phone},style=MaterialTheme.typography.bodySmall,color=TextSecondary)
-                        if(!guest && profile.contactVerified) Text(stringResource(R.string.contact_verified),style=MaterialTheme.typography.labelSmall,color=SuccessColor)
+                        Text(if(standalone) stringResource(R.string.standalone_local_profile) else if(guest) stringResource(R.string.account_guest) else profile.email.ifBlank {profile.phone},style=MaterialTheme.typography.bodySmall,color=TextSecondary)
+                        if(!standalone && !guest && profile.contactVerified) Text(stringResource(R.string.contact_verified),style=MaterialTheme.typography.labelSmall,color=SuccessColor)
                     }
                 }
-                Text(stringResource(if(guest) R.string.guest_diary_hint else R.string.account_local_diary_hint),style=MaterialTheme.typography.bodySmall,color=TextSecondary)
+                Text(stringResource(if(standalone) R.string.standalone_local_only else if(guest) R.string.guest_diary_hint else R.string.account_local_diary_hint),style=MaterialTheme.typography.bodySmall,color=TextSecondary)
                 WellnessTextButton({ name=profile.name;height=profile.height;current=profile.currentWeight;target=profile.targetWeight;show(AccountForm.Edit) }) { Text(stringResource(R.string.edit_profile)) }
-                if(!guest) WellnessOutlinedButton({avatarActions=true},enabled=!busy) {Text(stringResource(R.string.edit_avatar))}
-                if(guest) {
+                if(!standalone && !guest) WellnessOutlinedButton({avatarActions=true},enabled=!busy) {Text(stringResource(R.string.edit_avatar))}
+                if(standalone) {
+                    Text(stringResource(R.string.standalone_infrastructure),style=MaterialTheme.typography.bodySmall,color=TextSecondary)
+                } else if(guest) {
                     PrimaryButton(stringResource(R.string.account_login),{show(AccountForm.Login)},enabled=!busy)
                     WellnessOutlinedButton({show(AccountForm.Register)},Modifier.fillMaxWidth(),enabled=!busy) {Text(stringResource(R.string.account_register))}
                     WellnessTextButton(onPhone,enabled=!busy) {Text(stringResource(R.string.phone_method))}
@@ -228,6 +240,7 @@ private fun accountFieldError(field:String,form:AccountForm):Int=when(field) {
 }
 
 fun accountError(error:Exception):Int=when(error.message) {
+    "standalone_infrastructure_unavailable"->R.string.standalone_infrastructure
     "backend_not_configured"->R.string.auth_backend_not_configured
     "backend_https_required"->R.string.ui_error_016
     "sms_unavailable","sms_delivery_unavailable"->R.string.sms_unavailable

@@ -80,6 +80,7 @@ fun AccountDrawer(
     onGuestLogin: () -> Unit,
     modifier: Modifier = Modifier,
     closeFocusRequester: FocusRequester? = null,
+    localOnly: Boolean = false,
 ) {
     val paneLabel = stringResource(R.string.drawer_account_and_settings)
     val displayName = profile.name.trim().ifBlank {
@@ -116,7 +117,7 @@ fun AccountDrawer(
                     style = MaterialTheme.typography.titleLarge, color = TextPrimary,
                 )
                 TextButton(
-                    onClick = { if (isGuest) onGuestLogin() else onNavigate("profile") },
+                    onClick = { if (isGuest && !localOnly) onGuestLogin() else onNavigate("profile") },
                     modifier = Modifier.testTag("drawer-profile").heightIn(min = WellnessSpace.touch),
                     // A zero horizontal inset clips multiline labels against
                     // Material's button outline at 130% text size.
@@ -125,8 +126,8 @@ fun AccountDrawer(
                     colors = ButtonDefaults.textButtonColors(contentColor = AccentBrown),
                 ) {
                     Text(
-                        stringResource(if (isGuest) R.string.account_login else R.string.drawer_view_profile),
-                        modifier = Modifier.weight(1f).then(if (isGuest) Modifier.testTag("drawer-login") else Modifier),
+                        stringResource(if (isGuest && !localOnly) R.string.account_login else R.string.drawer_view_profile),
+                        modifier = Modifier.weight(1f).then(if (isGuest && !localOnly) Modifier.testTag("drawer-login") else Modifier),
                         style = MaterialTheme.typography.labelLarge,
                     )
                     Icon(Icons.Outlined.ChevronRight, null, Modifier.size(18.dp))
@@ -145,6 +146,12 @@ fun AccountDrawer(
                 }
             }
         }
+
+        if(localOnly) Text(
+            stringResource(R.string.standalone_local_only),
+            Modifier.testTag("drawer-local-only").padding(top=WellnessSpace.compact),
+            color=TextSecondary,style=MaterialTheme.typography.bodySmall,
+        )
 
         Spacer(Modifier.height(WellnessSpace.gap))
         CurrentGoalCard(goals) { onNavigate("goals") }
@@ -180,7 +187,7 @@ fun AccountDrawer(
 
         Spacer(Modifier.height(WellnessSpace.section))
         HorizontalDivider(color = BorderSoft.copy(alpha = .6f))
-        if (!isGuest) {
+        if (!isGuest && !localOnly) {
             DrawerDestinationRow(
                 "logout", stringResource(R.string.account_logout), Icons.AutoMirrored.Outlined.Logout,
                 iconSurface = SecondarySurface, showChevron = false, onClick = onLogout,

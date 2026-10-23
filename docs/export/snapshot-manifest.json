@@ -35,8 +35,8 @@
     },
     {
       "path": ".github/workflows/verify.yml",
-      "sha256": "22d926945bf744c795c6bd48135d666547328fd3da0384054c98d08661949244",
-      "origin": "adapted for reviewed snapshot distribution"
+      "sha256": "223c80e51707d22a732debe17015c6f4baab7e52c205032c7197b9435e4f1c88",
+      "origin": "Updated for standalone demo; original snapshot provenance retained"
     },
     {
       "path": ".gitignore",
@@ -45,8 +45,8 @@
     },
     {
       "path": "AGENTS.md",
-      "sha256": "a950f8458de8a59dfd8364f0a61ca78507993c65a47200609fadb4032e6032a1",
-      "origin": "reviewed publication documentation; owner authorized 2026-10-23"
+      "sha256": "ce4e8cfcd4482cc3d66e7717634cad7cc862dbd37ad3460c8157696ef68a10af",
+      "origin": "Updated for standalone demo; original snapshot provenance retained"
     },
     {
       "path": "AUTHORS.md",
@@ -55,8 +55,8 @@
     },
     {
       "path": "CHANGELOG.md",
-      "sha256": "3f94f6b7d5c8f0f4142089e730fc7d9e1881ab266caebde7cc5aba8aad6ba768",
-      "origin": "reviewed publication documentation; owner authorized 2026-10-23"
+      "sha256": "8695a9551b2ddb7a8097f9cdfe8de142f262e82853b187a148fdcfe9e9fac2eb",
+      "origin": "Updated for standalone demo; original snapshot provenance retained"
     },
     {
       "path": "CONTRIBUTING.md",
@@ -70,13 +70,13 @@
     },
     {
       "path": "README.md",
-      "sha256": "6b6ce0a5eb1158590b18c88272b5379709e330226fde9e8c3afd022ac6c8ee0e",
-      "origin": "reviewed publication documentation; owner authorized 2026-10-23"
+      "sha256": "26e59c0d35154ba7512eced7363d8423236f6deb859846f2e3ce6bcce3571223",
+      "origin": "Updated for standalone demo; original snapshot provenance retained"
     },
     {
       "path": "README.ru.md",
-      "sha256": "187d509ae5e61609482e37088dee88a6bc91b25f2e86d99cf47b3c5fa9f3f491",
-      "origin": "reviewed publication documentation; owner authorized 2026-10-23"
+      "sha256": "c7c408d9478b8de92661702d8948dc8d1271248206f23f7d4375d3a55e39ab9e",
+      "origin": "Updated for standalone demo; original snapshot provenance retained"
     },
     {
       "path": "SECURITY.md",
@@ -85,13 +85,13 @@
     },
     {
       "path": "THIRD_PARTY_NOTICES.md",
-      "sha256": "f1512c0316eb6e5cdfaaa61ce790a00e4b44d797636ab5a6847be104e6608357",
-      "origin": "adapted for reviewed snapshot distribution"
+      "sha256": "c829b8f36359cdbe0dc8521d37d76d36f02a055aad99ab4f4e127873f9f13298",
+      "origin": "Updated for standalone demo; original snapshot provenance retained"
     },
     {
       "path": "app/build.gradle.kts",
-      "sha256": "c2d63751a39a59f36fc6f29cf8ce754a61624ea6f03d219546063d1691e186a9",
-      "origin": "unchanged source blob"
+      "sha256": "1b39232cfe97c63d19eed573ec541fae91df6621265347420669c4ec78416841",
+      "origin": "Updated for standalone demo; original snapshot provenance retained"
     },
     {
       "path": "app/proguard-performance-test.pro",
@@ -194,6 +194,16 @@
       "origin": "unchanged source blob"
     },
     {
+      "path": "app/src/androidTestStandaloneDemo/java/com/tamaqai/data/StandaloneDemoPersistenceTest.kt",
+      "sha256": "f7e1ba2d405f5da0fe0b259eb09c9dac9b6bcd43495388ef17b226a0d3dcf0f1",
+      "origin": "Added for standalone demo: reviewed source, test, licensed asset or documentation"
+    },
+    {
+      "path": "app/src/androidTestStandaloneDemo/java/com/tamaqai/ui/StandaloneDemoUiTest.kt",
+      "sha256": "ac6a29de242b46582529b9825b5d4b726ddedf6b0452120dee4891dfba8405f9",
+      "origin": "Added for standalone demo: reviewed source, test, licensed asset or documentation"
+    },
+    {
       "path": "app/src/debug/AndroidManifest.xml",
       "sha256": "3fd782b268f618ef0c725797e88fb9ebccd30fd33685f4f263f535cdad53b520",
       "origin": "unchanged source blob"
@@ -265,8 +275,8 @@
     },
     {
       "path": "app/src/main/assets/third-party-licenses/TamaqAI-THIRD_PARTY_NOTICES.md",
-      "sha256": "f1512c0316eb6e5cdfaaa61ce790a00e4b44d797636ab5a6847be104e6608357",
-      "origin": "new export provenance, verification, notice or integrity gate"
+      "sha256": "c829b8f36359cdbe0dc8521d37d76d36f02a055aad99ab4f4e127873f9f13298",
+      "origin": "Updated for standalone demo; original snapshot provenance retained"
     },
     {
       "path": "app/src/main/assets/third-party-licenses/android-dependencies.json",
@@ -305,18 +315,23 @@
     },
     {
       "path": "app/src/main/java/com/tamaqai/MainActivity.kt",
-      "sha256": "7158ecea81d7d6ec54ebbbacde45ae22ea54fc3ec53b27f0708fb9d70577f432",
-      "origin": "unchanged source blob"
+      "sha256": "dd9d1c2bcbac08476f9c325ae133b1d4847fd58b17006c705d3bf6d8ac91c82f",
+      "origin": "Updated for standalone demo; original snapshot provenance retained"
     },
     {
       "path": "app/src/main/java/com/tamaqai/TamaqApplication.kt",
-      "sha256": "4044e1350f9ad2affd457ac4fa9d66d57e708c7382c9f37e115e18c9e2b75cdc",
-      "origin": "unchanged source blob"
+      "sha256": "72eaf659098d06cdb9d82230ade4bdbab27340920abfd4dfd03a210e7a9b3d39",
+      "origin": "Updated for standalone demo; original snapshot provenance retained"
     },
     {
       "path": "app/src/main/java/com/tamaqai/data/AppContainer.kt",
-      "sha256": "893f1c13a7491e6a3476e4be3f1b530b14e9cbadcafcef0a66cdea6ae91090b5",
-      "origin": "unchanged source blob"
+      "sha256": "a330002e34fb016720fdd3a6bdd0f4ee8bf4ef73467ded18f14f72079e4c20ef",
+      "origin": "Updated for standalone demo; original snapshot provenance retained"
+    },
+    {
+      "path": "app/src/main/java/com/tamaqai/data/contracts/Stores.kt",
+      "sha256": "df0dbdc6b124431d5409fe97b57eea960bd82f17a8e213d86faad660f36e7ca7",
+      "origin": "Added for standalone demo: reviewed source, test, licensed asset or documentation"
     },
     {
       "path": "app/src/main/java/com/tamaqai/data/local/AppDatabase.kt",
@@ -340,8 +355,8 @@
     },
     {
       "path": "app/src/main/java/com/tamaqai/data/local/UserSettings.kt",
-      "sha256": "4a0e4e90450017f91875db7cdfedba8032e93f8452a9065ca52524098afc877d",
-      "origin": "unchanged source blob"
+      "sha256": "60cb429c9b319cf4e2c5622c788bc1a60e071eec4edd560b32ae3793e7307984",
+      "origin": "Updated for standalone demo; original snapshot provenance retained"
     },
     {
       "path": "app/src/main/java/com/tamaqai/data/local/dao/CatalogDao.kt",
@@ -380,8 +395,8 @@
     },
     {
       "path": "app/src/main/java/com/tamaqai/data/remote/AccountRepository.kt",
-      "sha256": "c7162f13a1226e7e36661e75f5035afd3df9c3f0160592c668308a95480f16f2",
-      "origin": "unchanged source blob"
+      "sha256": "904b6461e30a216370306084c9a8b6171dd26ccc9e766159804a0782d502741b",
+      "origin": "Updated for standalone demo; original snapshot provenance retained"
     },
     {
       "path": "app/src/main/java/com/tamaqai/data/remote/BackendFoodAnalysisRepository.kt",
@@ -390,18 +405,18 @@
     },
     {
       "path": "app/src/main/java/com/tamaqai/data/remote/CatalogRepository.kt",
-      "sha256": "39acdfb656ae07f58d712bd0e7c25e7daa78413f5f6de7ecdf90ce96bdbf2468",
-      "origin": "unchanged source blob"
+      "sha256": "fd0e7fcaa031b7663392735fb10ba91cca9475c0f07984ecf3673b46888df52d",
+      "origin": "Updated for standalone demo; original snapshot provenance retained"
     },
     {
       "path": "app/src/main/java/com/tamaqai/data/remote/NutritionRepository.kt",
-      "sha256": "811a85fa17320daf9a7d637b1f346de749316748814f7764ad5ae5e8ab1d4b21",
-      "origin": "unchanged source blob"
+      "sha256": "d7d2ee0ccd072132099628e9f6e0ebf71c7f4a7d37bf37ce7cac55c99216772f",
+      "origin": "Updated for standalone demo; original snapshot provenance retained"
     },
     {
       "path": "app/src/main/java/com/tamaqai/data/remote/PlanRepository.kt",
-      "sha256": "ac1ccf99b3f9a12a37d54dfb8a92c6c28c9e6963370bac323de33bcf82cffb05",
-      "origin": "unchanged source blob"
+      "sha256": "06b5a55f24337f8945e2a44146f3b060476eb387119cc6e9452c65588afd4040",
+      "origin": "Updated for standalone demo; original snapshot provenance retained"
     },
     {
       "path": "app/src/main/java/com/tamaqai/data/remote/SecureSessions.kt",
@@ -422,6 +437,41 @@
       "path": "app/src/main/java/com/tamaqai/data/repository/MealRepositoryImpl.kt",
       "sha256": "47c1d450a167a5f325b86c7264efcc60095607cda6f185c1530604fb26c46da1",
       "origin": "unchanged source blob"
+    },
+    {
+      "path": "app/src/main/java/com/tamaqai/data/standalone/LocalAccountStore.kt",
+      "sha256": "78f6a651f99fb40787de897c6c23f6470186d785f2c3307d0579668e7dd1c1b4",
+      "origin": "Added for standalone demo: reviewed source, test, licensed asset or documentation"
+    },
+    {
+      "path": "app/src/main/java/com/tamaqai/data/standalone/LocalCatalogStore.kt",
+      "sha256": "c5343d4cef924ff1c232de516f8fd588ba2f6bf2d6e49a221cf300c88f7c4015",
+      "origin": "Added for standalone demo: reviewed source, test, licensed asset or documentation"
+    },
+    {
+      "path": "app/src/main/java/com/tamaqai/data/standalone/LocalNutritionStore.kt",
+      "sha256": "5ef20514f4807183691153a35b77cd457f7b06ccd1501c658ed7c3b863ea046d",
+      "origin": "Added for standalone demo: reviewed source, test, licensed asset or documentation"
+    },
+    {
+      "path": "app/src/main/java/com/tamaqai/data/standalone/LocalPlanStore.kt",
+      "sha256": "40e91fa788175f1bbcfb9dd387a89e7f8f4c39c369df3ff6fbce0771ff153915",
+      "origin": "Added for standalone demo: reviewed source, test, licensed asset or documentation"
+    },
+    {
+      "path": "app/src/main/java/com/tamaqai/data/standalone/LocalSampleFoodRepository.kt",
+      "sha256": "8488079a817c266546f36efd9b4f2c45c328c39fa3dc73fb4851b63d7d600283",
+      "origin": "Added for standalone demo: reviewed source, test, licensed asset or documentation"
+    },
+    {
+      "path": "app/src/main/java/com/tamaqai/data/standalone/OneTimeDemoSeed.kt",
+      "sha256": "a0b4ff3eda078f785c1c56f5843f9df23bed0d78f8faa6fc4f47558be6231ed2",
+      "origin": "Added for standalone demo: reviewed source, test, licensed asset or documentation"
+    },
+    {
+      "path": "app/src/main/java/com/tamaqai/data/standalone/StandaloneDemoController.kt",
+      "sha256": "601d30f1dfd97d5bd48a2544aa8cc0144e73c015dba75fd7b7ecd1e79a2c5d2b",
+      "origin": "Added for standalone demo: reviewed source, test, licensed asset or documentation"
     },
     {
       "path": "app/src/main/java/com/tamaqai/domain/model/AnalysisResult.kt",
@@ -520,8 +570,8 @@
     },
     {
       "path": "app/src/main/java/com/tamaqai/ui/components/AccountDrawer.kt",
-      "sha256": "b13967445c75fed53298aae173807b108d0c5b0645f04dd4dde3c80ac1b4e14c",
-      "origin": "unchanged source blob"
+      "sha256": "d0ba7b5c20c74e972016aee06ddc278c821d3e81db45cc236ecfbd56d181151d",
+      "origin": "Updated for standalone demo; original snapshot provenance retained"
     },
     {
       "path": "app/src/main/java/com/tamaqai/ui/components/CatalogReceipt.kt",
@@ -540,13 +590,13 @@
     },
     {
       "path": "app/src/main/java/com/tamaqai/ui/components/GlassBottomSheet.kt",
-      "sha256": "abece856dfba7e432c2b2f97e3d6aaaa9c1640daf6e6c43f2238875c7194ccac",
-      "origin": "unchanged source blob"
+      "sha256": "1f6b8765ab2693fc6de2c5bf874b2079b88b6bf3651a54576f2b46e4895e9418",
+      "origin": "Updated for standalone demo; original snapshot provenance retained"
     },
     {
       "path": "app/src/main/java/com/tamaqai/ui/components/HomeOverview.kt",
-      "sha256": "509a67c11a7a549ec2eaeef9fa9a81950217e4cdcbcc43d666675989a41e9748",
-      "origin": "unchanged source blob"
+      "sha256": "5216cfe9f3e5e4e5924236c171271d1600c228a5ca0319d9efc66ffafe7996d6",
+      "origin": "Updated for standalone demo; original snapshot provenance retained"
     },
     {
       "path": "app/src/main/java/com/tamaqai/ui/components/IncompleteNutritionNotice.kt",
@@ -570,8 +620,8 @@
     },
     {
       "path": "app/src/main/java/com/tamaqai/ui/screens/AccountPanel.kt",
-      "sha256": "1041b70d77345ac99eb5efb99c3ac1b10d433832a9e960002bdde1fd2422cd6e",
-      "origin": "unchanged source blob"
+      "sha256": "bd91aabbd1715e129cc3bda58139983e9459ce8be0ec8a0c1bf6cb67ef33a821",
+      "origin": "Updated for standalone demo; original snapshot provenance retained"
     },
     {
       "path": "app/src/main/java/com/tamaqai/ui/screens/CameraPreview.kt",
@@ -580,8 +630,8 @@
     },
     {
       "path": "app/src/main/java/com/tamaqai/ui/screens/CatalogScreen.kt",
-      "sha256": "100d35a9d3a0c8718a8d1603179a54760ce6a446e4870238fe22c260a0379a35",
-      "origin": "unchanged source blob"
+      "sha256": "37bc3c40c27111fb4c8bdf473261d81d1d604b07bf83031ebd3dacb397a3c69f",
+      "origin": "Updated for standalone demo; original snapshot provenance retained"
     },
     {
       "path": "app/src/main/java/com/tamaqai/ui/screens/DailyViewModel.kt",
@@ -600,8 +650,8 @@
     },
     {
       "path": "app/src/main/java/com/tamaqai/ui/screens/HomeScreen.kt",
-      "sha256": "c58f5e0bfc2fa0c8e12459b83d083f7fa465e482c97894040d6b2e2f26d6998d",
-      "origin": "unchanged source blob"
+      "sha256": "ae84d7cca098d884c1487c392f396ee1093715cb565e83bc02d569546d3a14ed",
+      "origin": "Updated for standalone demo; original snapshot provenance retained"
     },
     {
       "path": "app/src/main/java/com/tamaqai/ui/screens/HomeViewModel.kt",
@@ -615,8 +665,8 @@
     },
     {
       "path": "app/src/main/java/com/tamaqai/ui/screens/MealEditorScreen.kt",
-      "sha256": "38d34b5773f566e62a968170f881d7dfffc549741fcf28d01f76951a2c1b8d80",
-      "origin": "unchanged source blob"
+      "sha256": "3ec501f924f391698bb3dda30e995be03a54bf40ee25538491f2bb33a450fb43",
+      "origin": "Updated for standalone demo; original snapshot provenance retained"
     },
     {
       "path": "app/src/main/java/com/tamaqai/ui/screens/MealEditorViewModel.kt",
@@ -645,8 +695,8 @@
     },
     {
       "path": "app/src/main/java/com/tamaqai/ui/screens/PlanScreen.kt",
-      "sha256": "65b8713e4d8876ba040338679354c6360491e9de3da121e3c65179bb98daf3fb",
-      "origin": "unchanged source blob"
+      "sha256": "95f404644348ed77985fe73bf62634959de245a6fdf0d41b35140b2575ed90b9",
+      "origin": "Updated for standalone demo; original snapshot provenance retained"
     },
     {
       "path": "app/src/main/java/com/tamaqai/ui/screens/PreferencesScreen.kt",
@@ -655,8 +705,8 @@
     },
     {
       "path": "app/src/main/java/com/tamaqai/ui/screens/ProfileScreen.kt",
-      "sha256": "95af2701735850ff31f9dbd4d3f971a5e267dc3dadfeb5aa0ecc5df60ce5437e",
-      "origin": "unchanged source blob"
+      "sha256": "18257c634c7c503169932fff86c2b4a3fd7752fa30e99b04af0ec31abba762e8",
+      "origin": "Updated for standalone demo; original snapshot provenance retained"
     },
     {
       "path": "app/src/main/java/com/tamaqai/ui/screens/ProgressScreen.kt",
@@ -677,6 +727,11 @@
       "path": "app/src/main/java/com/tamaqai/ui/screens/ScannerViewModel.kt",
       "sha256": "6e4de034e7016cfb570b1a05ac9af784dc6030bc8027e35086e79002eac1b24c",
       "origin": "unchanged source blob"
+    },
+    {
+      "path": "app/src/main/java/com/tamaqai/ui/screens/StandaloneScreens.kt",
+      "sha256": "7a80ff599a19d690066e57d65a35a0c937ebd959e43c9f57faffc21cc3461584",
+      "origin": "Added for standalone demo: reviewed source, test, licensed asset or documentation"
     },
     {
       "path": "app/src/main/java/com/tamaqai/ui/screens/StartScreen.kt",
@@ -789,6 +844,11 @@
       "origin": "unchanged source blob"
     },
     {
+      "path": "app/src/main/res/values-kk/standalone_strings.xml",
+      "sha256": "9231048812d42d24a3bbfa54262bacb9aded2c4f7d95bc40dfc3f5d16de7126f",
+      "origin": "Added for standalone demo: reviewed source, test, licensed asset or documentation"
+    },
+    {
       "path": "app/src/main/res/values-kk/strings.xml",
       "sha256": "790e76c0509f60ffb46a8bd0c2f87da0166584a49c3186c2f7995f887cbad0f3",
       "origin": "unchanged source blob"
@@ -874,6 +934,11 @@
       "origin": "unchanged source blob"
     },
     {
+      "path": "app/src/main/res/values-ru/standalone_strings.xml",
+      "sha256": "beb71bd6e7e0709179ceca2725873c69611f69fa3cdc7479e0cedb138b80b86b",
+      "origin": "Added for standalone demo: reviewed source, test, licensed asset or documentation"
+    },
+    {
       "path": "app/src/main/res/values-ru/strings.xml",
       "sha256": "68f3c9cad2d5ee1708559e8ac740ae18c6cdfe305ea195459fdf7f6bfc951055",
       "origin": "unchanged source blob"
@@ -954,6 +1019,11 @@
       "origin": "unchanged source blob"
     },
     {
+      "path": "app/src/main/res/values/standalone_strings.xml",
+      "sha256": "57f0a883c360ddd07120831c60f89a0f06da628788d1a9782dc96e716c331d33",
+      "origin": "Added for standalone demo: reviewed source, test, licensed asset or documentation"
+    },
+    {
       "path": "app/src/main/res/values/strings.xml",
       "sha256": "54da2249bca7ad55b076fd6d855795f13d4243c13de88ff24b57b1125609390a",
       "origin": "unchanged source blob"
@@ -992,6 +1062,51 @@
       "path": "app/src/release/java/com/tamaqai/data/DemoMeals.kt",
       "sha256": "dddb723ab656e5db56754f18cc65c35ddce559a3b7551d44d16fa4e89bdfcd2d",
       "origin": "unchanged source blob"
+    },
+    {
+      "path": "app/src/standaloneDemo/AndroidManifest.xml",
+      "sha256": "bc56475c5dbcd78e211cabcf29d878911c81e3417fe97f1188ba0413f6011e13",
+      "origin": "Added for standalone demo: reviewed source, test, licensed asset or documentation"
+    },
+    {
+      "path": "app/src/standaloneDemo/assets/examples/salad.jpg",
+      "sha256": "0c5874fc16a9669d7748ae773d894de3fd0d316b7bf2fa1f74282ef70a2d0142",
+      "origin": "Added for standalone demo: reviewed source, test, licensed asset or documentation"
+    },
+    {
+      "path": "app/src/standaloneDemo/assets/standalone/catalog-LICENSE.txt",
+      "sha256": "24c52cd0ce83a57079847f01fdfb12cb813e7f3664a74c04f91b7a8fa653a092",
+      "origin": "Added for standalone demo: reviewed source, test, licensed asset or documentation"
+    },
+    {
+      "path": "app/src/standaloneDemo/assets/standalone/catalog.json",
+      "sha256": "9eab72bbe60c3fbd3c6c18d653ffe63e05271c34cdbb83164cde8a28f6227b06",
+      "origin": "Added for standalone demo: reviewed source, test, licensed asset or documentation"
+    },
+    {
+      "path": "app/src/standaloneDemo/assets/third-party-licenses/CC0-1.0-legalcode.txt",
+      "sha256": "a2010f343487d3f7618affe54f789f5487602331c0a8d03f49e9a7c547cf0499",
+      "origin": "Added for standalone demo: reviewed source, test, licensed asset or documentation"
+    },
+    {
+      "path": "app/src/standaloneDemo/assets/third-party-licenses/salad-NOTICE.txt",
+      "sha256": "c3be28a61ca8eddd694ecbe2625f2ce97ce714ea2e4ae243628e9ff32ef30660",
+      "origin": "Added for standalone demo: reviewed source, test, licensed asset or documentation"
+    },
+    {
+      "path": "app/src/standaloneDemo/java/com/tamaqai/TamaqStandaloneApplication.kt",
+      "sha256": "06b314ed6429300f1287c26551aeb0241a9bca7f80ecba5bb697a664cb3fb4c1",
+      "origin": "Added for standalone demo: reviewed source, test, licensed asset or documentation"
+    },
+    {
+      "path": "app/src/standaloneDemo/java/com/tamaqai/data/DemoMeals.kt",
+      "sha256": "fe0dc4922b826b80910a0f421b2d72393bfcd10a8a4d1963fc86e3a0c627951f",
+      "origin": "Added for standalone demo: reviewed source, test, licensed asset or documentation"
+    },
+    {
+      "path": "app/src/standaloneDemo/res/values/strings.xml",
+      "sha256": "67797d8b43c8b41d98c70ae8c69fd99dfad5d59cb8935f519a812491d8c0ff9c",
+      "origin": "Added for standalone demo: reviewed source, test, licensed asset or documentation"
     },
     {
       "path": "app/src/test/java/com/tamaqai/domain/CatalogCalculatorTest.kt",
@@ -1057,6 +1172,11 @@
       "path": "app/src/test/java/com/tamaqai/ui/WellnessPaletteTest.kt",
       "sha256": "b52dc3582385b021d530291c6ad5d77123e7973b369aae1fb1effd159f84c192",
       "origin": "unchanged source blob"
+    },
+    {
+      "path": "app/src/testStandaloneDemo/java/com/tamaqai/data/standalone/OneTimeDemoSeedTest.kt",
+      "sha256": "bd3cfa1742170d2953b2379c2d159be89186d1de19528b8ec0ccd8503d630354",
+      "origin": "Added for standalone demo: reviewed source, test, licensed asset or documentation"
     },
     {
       "path": "app/src/visual/AndroidManifest.xml",
@@ -1445,8 +1565,8 @@
     },
     {
       "path": "docs/ARCHITECTURE.md",
-      "sha256": "41c65cf53f61f41a6c0e93d552a309430f20d5de2f5b6dd4b71a5e52b13fbd42",
-      "origin": "adapted for reviewed snapshot distribution"
+      "sha256": "60f0a814abad50270eb6bf4e679810ab3d1c40c45c83df24b84f6c660d8adbf9",
+      "origin": "Updated for standalone demo; original snapshot provenance retained"
     },
     {
       "path": "docs/DATA_SOURCES.md",
@@ -1475,8 +1595,8 @@
     },
     {
       "path": "docs/README.md",
-      "sha256": "1e503c180e70b617c336e949b3f20b8523ffeb051aec41e2374cdffe370ad2f7",
-      "origin": "reviewed publication documentation; owner authorized 2026-10-23"
+      "sha256": "cb3efc0b6c3313cfb2b126150f3e8d2b82551227db8f6ee3fe78bd4754f293b8",
+      "origin": "Updated for standalone demo; original snapshot provenance retained"
     },
     {
       "path": "docs/RELEASE_NOTES.md",
@@ -1487,6 +1607,11 @@
       "path": "docs/ROADMAP.md",
       "sha256": "e948f27afca45018f5fb58d449ff2ea3f94f9061e9cbb94342523794100f2890",
       "origin": "reviewed publication documentation; owner authorized 2026-10-23"
+    },
+    {
+      "path": "docs/STANDALONE_DEMO.md",
+      "sha256": "190786bad72bd23f8012457842b07b87ff65d90222a036efd1b9eb463b2af3f9",
+      "origin": "Added for standalone demo: reviewed source, test, licensed asset or documentation"
     },
     {
       "path": "docs/adr/0001-fastapi-monolith.md",
@@ -1577,6 +1702,16 @@
       "path": "docs/licenses/python-dependencies.json",
       "sha256": "a2103e197a647664919f0fb465fa5d54568aee51b15469a27520c687b87f023c",
       "origin": "unchanged source blob"
+    },
+    {
+      "path": "docs/licenses/standalone-assets.json",
+      "sha256": "af7c24ba6f5192a3e38b1ff27f108268dd77016d1b4ca2d32750f75ccca6ca5b",
+      "origin": "Added for standalone demo: reviewed source, test, licensed asset or documentation"
+    },
+    {
+      "path": "docs/licenses/standalone-media.json",
+      "sha256": "55f2ba0bc6e4e109ebf9e7ab9c8b12f4e7586bf6a2d6cfbbfd94b4c5cff49395",
+      "origin": "Added for standalone demo: reviewed source, test, licensed asset or documentation"
     },
     {
       "path": "docs/screenshots/portfolio/README.md",
@@ -1674,6 +1809,56 @@
       "origin": "unchanged source blob"
     },
     {
+      "path": "docs/screenshots/standalone/README.md",
+      "sha256": "89f6b07d78f0fe7ae7dec8587b17b3a307b0d7040671968d8dbd32e7a091ac13",
+      "origin": "Added for standalone demo: reviewed source, test, licensed asset or documentation"
+    },
+    {
+      "path": "docs/screenshots/standalone/catalog-light.png",
+      "sha256": "f1e3713e45dcfb4539c087a746d6c38702336733cde74617544f816a49a7e658",
+      "origin": "Added for standalone demo: reviewed source, test, licensed asset or documentation"
+    },
+    {
+      "path": "docs/screenshots/standalone/drawer-light.png",
+      "sha256": "edafda6952bf83169d8d3c90b229532174d23b98d57b15db94aa4c55d3ac0fa3",
+      "origin": "Added for standalone demo: reviewed source, test, licensed asset or documentation"
+    },
+    {
+      "path": "docs/screenshots/standalone/editor-light.png",
+      "sha256": "69ad83f54f1692160d662f53af99e98646b0ba64322a5e8285e96f6557706502",
+      "origin": "Added for standalone demo: reviewed source, test, licensed asset or documentation"
+    },
+    {
+      "path": "docs/screenshots/standalone/history-light.png",
+      "sha256": "ba859a6f3f8d7391cb315281d08783f8243dcf7e2c61f7baf6732273164e6180",
+      "origin": "Added for standalone demo: reviewed source, test, licensed asset or documentation"
+    },
+    {
+      "path": "docs/screenshots/standalone/home-dark.png",
+      "sha256": "63027b5acb711778698fd52af083b38c10d85dfcd4637c7639d7ee7a0344924a",
+      "origin": "Added for standalone demo: reviewed source, test, licensed asset or documentation"
+    },
+    {
+      "path": "docs/screenshots/standalone/home-light.png",
+      "sha256": "8c193c7e12f8622a558e2e76b05a7795ead5d49f87fe1571485756f463c2d7ce",
+      "origin": "Added for standalone demo: reviewed source, test, licensed asset or documentation"
+    },
+    {
+      "path": "docs/screenshots/standalone/macros-light.png",
+      "sha256": "ef423751ad93ec5f30a792ccf4e617e23ad330f1c71cfad6b2c39bb2efe56628",
+      "origin": "Added for standalone demo: reviewed source, test, licensed asset or documentation"
+    },
+    {
+      "path": "docs/screenshots/standalone/plan-light.png",
+      "sha256": "d6e35faa7b3bdc4ebd57777c06c10dc14f68c6d381701606435d531cca97f43b",
+      "origin": "Added for standalone demo: reviewed source, test, licensed asset or documentation"
+    },
+    {
+      "path": "docs/screenshots/standalone/profile-light.png",
+      "sha256": "86eff0f61a90a493183fa1d0b8880d2acffa67fd67c80dae6cfefc747cf2def1",
+      "origin": "Added for standalone demo: reviewed source, test, licensed asset or documentation"
+    },
+    {
       "path": "gradle.properties",
       "sha256": "7b735630ee41726916138ed9ad702bd9b37ee2a70e641af1bd349c9b087a1fcd",
       "origin": "unchanged source blob"
@@ -1729,6 +1914,11 @@
       "origin": "new export provenance, verification, notice or integrity gate"
     },
     {
+      "path": "tools/check_standalone.py",
+      "sha256": "8af7f1079ffd1b25aef07cc6b8bfbf019d87cb962c3842eca51b04ad38b68849",
+      "origin": "Added for standalone demo: reviewed source, test, licensed asset or documentation"
+    },
+    {
       "path": "tools/compare_warm_glass.py",
       "sha256": "bf1a1b222261e65fe815d4ed94ceaa1ee88a59500c601d512845b2ebfaa86691",
       "origin": "unchanged source blob"
@@ -1772,6 +1962,11 @@
       "path": "tools/test_snapshot.py",
       "sha256": "e9832b937c3171967b58b24adbd28078ee0d6b416beb74f71d572d338555258b",
       "origin": "new export provenance, verification, notice or integrity gate"
+    },
+    {
+      "path": "tools/test_standalone_tools.py",
+      "sha256": "763d3ea99cc093dfb06b936af885ab5774297ff1b701e2c150370a1c03b76807",
+      "origin": "Added for standalone demo: reviewed source, test, licensed asset or documentation"
     },
     {
       "path": "tools/test_warm_glass_tools.py",

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="standalone_badge">ДЕМО · AI-пример</string>
+    <string name="standalone_welcome">Это демонстрационная версия TamaqAI</string>
+    <string name="standalone_local_only">Все данные хранятся на этом устройстве. Облачной копии дневника нет.</string>
+    <string name="standalone_fake_ai">AI-анализ демонстрационный</string>
+    <string name="standalone_try">Попробовать</string>
+    <string name="standalone_example">Попробовать на примере</string>
+    <string name="standalone_example_hint">Выберите встроенный снимок. Подготовленную оценку можно изменить; AI-сервис не вызывается.</string>
+    <string name="standalone_local_profile">Локальный демонстрационный профиль</string>
+    <string name="standalone_infrastructure">Регистрация, email и настоящий AI требуют сервера. Автономное демо к нему не подключается.</string>
+    <string name="standalone_plan_local_hint">Редактируйте демоплан локально. Планируемая еда попадёт в дневник только после подтверждения.</string>
+    <string name="standalone_manual_photo_hint">Распознавание вашего фото без сети недоступно. Введите состав и БЖУ вручную или попробуйте встроенный пример.</string>
+    <string name="standalone_reset">Сбросить демонстрационные данные</string>
+    <string name="standalone_reset_title">Сбросить демо?</string>
+    <string name="standalone_reset_body">Восстановятся демопрофиль, записи, цели и план. Ваши правки в этом демо будут удалены. Язык и тема сохранятся. Другие приложения и серверные данные не затрагиваются.</string>
+    <string name="standalone_reset_error">Не удалось сбросить демо. Повторите попытку.</string>
+    <string name="standalone_sample_salad">Салат с сыром</string>
+    <string name="standalone_sample_leaves">Листья салата</string>
+    <string name="standalone_sample_tomato">Помидоры</string>
+    <string name="standalone_sample_cheese">Мягкий сыр</string>
+    <string name="standalone_sample_dressing">Заправка</string>
+    <string name="standalone_sample_explanation">Подготовленный пример только для этого встроенного снимка. Состав и порции — условная оценка, не взвешенный рецепт и не ответ настоящего AI. Проверьте и отредактируйте.</string>
+    <string name="standalone_seed_breakfast">Пример завтрака</string>
+    <string name="standalone_seed_lunch">Пример обеда</string>
+    <string name="standalone_seed_dinner">Пример ужина</string>
+    <string name="standalone_seed_oats">Овсянка</string>
+    <string name="standalone_seed_milk">Молоко</string>
+    <string name="standalone_seed_chicken">Курица</string>
+    <string name="standalone_seed_rice">Рис</string>
+    <string name="standalone_seed_vegetables">Овощи</string>
+    <string name="standalone_example_error">Не удалось открыть пример. Повторите попытку.</string>
+    <string name="standalone_catalog_hint">Встроенный справочный каталог. Сверяйте данные с этикеткой упаковки.</string>
+</resources>

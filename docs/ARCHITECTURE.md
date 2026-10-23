@@ -12,6 +12,21 @@ An analysis creates a pending draft with stable identity. Editing estimated mass
 
 CameraX is lifecycle-bound and disposed/unbound by the camera composable. Network operations have finite timeouts. Session refresh is coordinated, with logout/generation checks against stale restoration. Cancellation now disconnects a blocked HttpURLConnection; a local socket regression verifies cancellation latency.
 
+## Standalone composition
+
+`standaloneDemo` installs `com.tamaqai.standalone` with `TamaqStandaloneApplication`.
+The composition root selects `AccountStore`, `NutritionStore`, `PlanStore` and
+`CatalogStore` local implementations, together with the same Room meal repository
+and domain calculations. It never constructs `SessionClient` or `SecureSessions`.
+The packaged manifest removes `INTERNET`; no account identity or invitation is simulated.
+
+An injected `Clock` anchors one-time seed data. A durable receipt and stable IDs
+make retries insert missing records without replacing edits. Explicit reset has a
+recoverable pending phase and is restricted to the standalone package and owner.
+The sample provider accepts only the exact bundled CC0 photograph; arbitrary
+photos cannot receive its prepared answer. Plans use stable meal IDs, and only
+explicit confirmation enters the diary. [Details and checks](STANDALONE_DEMO.md).
+
 ## FastAPI modular monolith
 
 Auth, Users, Analysis and Usage run in one service. PostgreSQL holds accounts, hashed rotating refresh sessions, single-use verification/reset tokens, invitations, results, quotas, reservations and usage. Versioned server migrations run with `python -m tamaq.db`. Legacy SQLite import code remains available for explicit operator use; the portfolio demo does not import or reset pilot state.

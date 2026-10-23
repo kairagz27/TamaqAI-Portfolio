@@ -55,7 +55,7 @@ import com.tamaqai.ui.theme.*
 }
 
 /** The camera and manual path remain distinct; other existing sources stay in the add menu. */
-@Composable fun HomeFoodActions(onScan: () -> Unit, onManual: () -> Unit, onOther: () -> Unit) {
+@Composable fun HomeFoodActions(onScan: () -> Unit, onManual: () -> Unit, onOther: () -> Unit, scanLabel:Int=R.string.home_scan_food) {
     val interactions = remember { MutableInteractionSource() }
     val pressed by interactions.collectIsPressedAsState()
     val scale by androidx.compose.animation.core.animateFloatAsState(if(pressed) .985f else 1f,
@@ -67,7 +67,7 @@ import com.tamaqai.ui.theme.*
             colors = ButtonDefaults.buttonColors()) {
             Icon(Icons.Outlined.PhotoCamera, null, Modifier.size(23.dp))
             Spacer(Modifier.width(10.dp))
-            Text(stringResource(R.string.home_scan_food), style = MaterialTheme.typography.labelLarge,
+            Text(stringResource(scanLabel), style = MaterialTheme.typography.labelLarge,
                 fontWeight = FontWeight.SemiBold)
         }
         Row(Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically) {

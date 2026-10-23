@@ -17,7 +17,7 @@ import org.json.JSONArray
 import org.json.JSONObject
 
 /** All cache reads/writes and late responses are scoped to the captured session owner. */
-class CatalogRepository(private val client: SessionClient, private val dao: CatalogDao, private val owner: String) {
+class CatalogRepository(private val client: SessionClient, private val dao: CatalogDao, private val owner: String) : com.tamaqai.data.contracts.CatalogStore {
     private val json = Json { ignoreUnknownKeys = true; encodeDefaults = true }
     private fun checkOwner() = client.requireOwner(owner)
     private suspend fun call(path: String, method: String = "GET", body: JSONObject = JSONObject()): JSONObject {
@@ -40,12 +40,12 @@ class CatalogRepository(private val client: SessionClient, private val dao: Cata
     private fun canUseCache(error: Exception): Boolean = error is IOException || error is ApiFailure &&
         (error.status in 502..504 || error.status == 401 && error.code == "session_expired")
 
-    suspend fun recent(): List<CatalogEntry> = withContext(Dispatchers.IO) {
+    override suspend fun recent(): List<CatalogEntry> = withContext(Dispatchers.IO) {
         checkOwner()
         dao.recent(owner).mapNotNull { runCatching { json.decodeFromString<CatalogEntry>(it.entryJson) }.getOrNull() }.also { checkOwner() }
     }
 
-    suspend fun search(text: String, kind: String, city: String? = null, chain: String? = null, barcode: String? = null, branchScope: String? = null): CatalogResults {
+    override suspend fun search(text: String, kind: String, city: String?, chain: String?, barcode: String?, branchScope: String?): CatalogResults {
         require(kind in listOf("product", "dish"))
         return try {
             val path = "/v1/catalog/search?q=${query(text.trim())}&kind=$kind&limit=30" +
@@ -66,7 +66,7 @@ class CatalogRepository(private val client: SessionClient, private val dao: Cata
         }
     }
 
-    suspend fun cities(): List<String> = try {
+    override suspend fun cities(): List<String> = try {
         val array = call("/v1/catalog/cities").getJSONArray("items")
         (0 until array.length()).map(array::getString)
     } catch (error: Exception) {
@@ -74,7 +74,7 @@ class CatalogRepository(private val client: SessionClient, private val dao: Cata
         recent().filter { it.kind == "dish" }.mapNotNull { it.city }.distinct().sorted()
     }
 
-    suspend fun restaurants(city: String): List<CatalogRestaurant> = try {
+    override suspend fun restaurants(city: String): List<CatalogRestaurant> = try {
         val array = call("/v1/catalog/restaurants?city=${query(city)}").getJSONArray("items")
         (0 until array.length()).map { index -> array.getJSONObject(index).let {
             CatalogRestaurant(it.getString("chain"), it.optString("city").takeIf(String::isNotBlank), it.optString("branch_scope").takeIf(String::isNotBlank))
@@ -85,7 +85,7 @@ class CatalogRepository(private val client: SessionClient, private val dao: Cata
             CatalogRestaurant(it, candidate.city, candidate.branchScope) } }.distinct()
     }
 
-    suspend fun get(idOrVersion: String, rememberSelection: Boolean = false): CatalogEntry {
+    override suspend fun get(idOrVersion: String, rememberSelection: Boolean): CatalogEntry {
         val result = try {
             entry(call("/v1/catalog/entries/${query(idOrVersion)}"))
         } catch (error: Exception) {
@@ -96,16 +96,16 @@ class CatalogRepository(private val client: SessionClient, private val dao: Cata
         return result
     }
 
-    suspend fun entry(versionId: String): CatalogEntry = get(versionId)
+    override suspend fun entry(versionId: String): CatalogEntry = get(versionId)
 
-    suspend fun match(names: List<String>, barcode: String? = null, city: String? = null, chain: String? = null): List<CatalogEntry> {
+    override suspend fun match(names: List<String>, barcode: String?, city: String?, chain: String?): List<CatalogEntry> {
         val body = JSONObject().put("names", JSONArray(names)).put("barcode", barcode ?: JSONObject.NULL)
             .put("city", city ?: JSONObject.NULL).put("chain", chain ?: JSONObject.NULL)
         return entries(call("/v1/catalog/match", "POST", body).getJSONArray("candidates"))
     }
 
     /** Preserve the recognition component index: selecting rice must never replace the whole dish. */
-    suspend fun matchComponents(names: List<String>): List<Pair<Int,CatalogEntry>> {
+    override suspend fun matchComponents(names: List<String>): List<Pair<Int,CatalogEntry>> {
         val response=call("/v1/catalog/match","POST",JSONObject().put("names",JSONArray(names)))
         val groups=response.getJSONArray("matches")
         require(groups.length()==names.size)
@@ -116,18 +116,18 @@ class CatalogRepository(private val client: SessionClient, private val dao: Cata
         }
     }
 
-    suspend fun remember(entry: CatalogEntry) = withContext(Dispatchers.IO) {
+    override suspend fun remember(entry: CatalogEntry) = withContext(Dispatchers.IO) {
         checkOwner()
         dao.remember(CatalogCacheEntity(owner, entry.versionId, json.encodeToString(entry), System.currentTimeMillis()))
         checkOwner()
     }
 
-    suspend fun isFavorite(version: String): Boolean = withContext(Dispatchers.IO) { checkOwner(); dao.get(owner, version)?.favorite == true }
-    suspend fun favorite(entry: CatalogEntry, favorite: Boolean) = withContext(Dispatchers.IO) {
+    override suspend fun isFavorite(version: String): Boolean = withContext(Dispatchers.IO) { checkOwner(); dao.get(owner, version)?.favorite == true }
+    override suspend fun favorite(entry: CatalogEntry, favorite: Boolean) = withContext(Dispatchers.IO) {
         remember(entry); checkOwner(); dao.favorite(owner, entry.versionId, favorite); checkOwner()
     }
 
-    suspend fun calculate(entry: CatalogEntry, quantity: Double, unit: String, addons: List<CatalogAddon> = emptyList()): CatalogCalculation {
+    override suspend fun calculate(entry: CatalogEntry, quantity: Double, unit: String, addons: List<CatalogAddon>): CatalogCalculation {
         val body = JSONObject().put("version_id", entry.versionId).put("quantity", quantity).put("unit", unit)
             .put("addons", JSONArray(addons.map { JSONObject().put("version_id", it.versionId).put("quantity", it.quantity).put("unit", it.unit) }))
         val calculation = try {

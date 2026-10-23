@@ -1,5 +1,16 @@
 # Changelog
 
+## 1.4.0-standalone.1 — draft
+
+- Separate offline Android package, local profile and one-time Room fixtures.
+- Real shared editor, manual entry, catalogue, goals, plans, themes and languages.
+- Explicit CC0 photograph with matching prepared nutrition; no live AI or arbitrary-photo substitution.
+- Local reset with confirmation, durable recovery and preserved appearance/language.
+- No INTERNET permission, backend URL or server session implementation in the standalone composition.
+- New draft assets are separate from the unchanged server demo release.
+
+[Standalone usage and actual verification](docs/STANDALONE_DEMO.md).
+
 ## Public portfolio publication — 23 October 2026
 
 The owner authorized public visibility for this portfolio repository and publication

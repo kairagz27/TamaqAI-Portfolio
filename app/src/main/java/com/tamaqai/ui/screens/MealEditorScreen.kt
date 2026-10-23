@@ -42,6 +42,7 @@ import com.tamaqai.ui.theme.*
 @Composable fun MealEditorScreen(uid: String, onBack: () -> Unit) {
     val context = LocalContext.current
     val application = context.applicationContext as TamaqApplication
+    val standalone = application.container.standalone != null
     val vm: MealEditorViewModel = viewModel(key = uid, factory = TamaqViewModelFactory(application.container, uid))
     val state by vm.state.collectAsStateWithLifecycle()
     var invite by rememberSaveable { mutableStateOf("") }
@@ -149,7 +150,9 @@ import com.tamaqai.ui.theme.*
                 }
                 meal.details.explanation?.let { Text(explanationText(it), style = MaterialTheme.typography.bodyMedium) }
                 meal.details.question?.let { Text(stringResource(R.string.clarify, it)) }
-                if (meal.details.photoName != null && meal.status != MealStatus.NeedsReview) {
+                if (standalone && meal.details.photoName != null && meal.status != MealStatus.NeedsReview) {
+                    Text(stringResource(R.string.standalone_manual_photo_hint),style=MaterialTheme.typography.bodySmall,color=TextSecondary)
+                } else if (meal.details.photoName != null && meal.status != MealStatus.NeedsReview) {
                     val hasAccess = application.container.sessions.hasAnalysisAccess(application.container.owner)
                     if (!hasAccess) WellnessTextField(invite, { invite = it }, label = { Text(stringResource(R.string.invite)) },
                         visualTransformation = PasswordVisualTransformation(), enabled = !state.busy, modifier = Modifier.fillMaxWidth(), colors = wellnessFieldColors())
@@ -157,7 +160,7 @@ import com.tamaqai.ui.theme.*
                     PrimaryButton(stringResource(R.string.analyze), { vm.analyze(invite.trim()) }, enabled = !state.busy)
                 }
                 WellnessTextButton(onClick = { details = !details }) { Text(stringResource(R.string.photo_details)) }
-                if (details) Text(stringResource(R.string.photo_policy), style = MaterialTheme.typography.bodySmall, color = TextSecondary)
+                if (details) Text(stringResource(if(standalone) R.string.standalone_local_only else R.string.photo_policy), style = MaterialTheme.typography.bodySmall, color = TextSecondary)
                 TamaqCard(Modifier.fillMaxWidth()) {
                     EatenPortionSelector(state.portion, vm::portion, !state.busy)
                     Text(stringResource(R.string.portion_local_hint), style = MaterialTheme.typography.bodySmall, color = TextSecondary)
@@ -199,7 +202,7 @@ import com.tamaqai.ui.theme.*
                 if (vm.energyWarning()) Text(stringResource(R.string.energy_warning), color = TextSecondary)
                 if (state.saving) Text(stringResource(R.string.saving), style = MaterialTheme.typography.bodySmall)
                 Text(stringResource(R.string.input_hint), style = MaterialTheme.typography.bodySmall, color = TextSecondary)
-                if (DemoMeals.available) WellnessTextButton(onClick = vm::demo, enabled = !state.busy) { Text(stringResource(R.string.demo_fill)) }
+                if (!standalone && DemoMeals.available) WellnessTextButton(onClick = vm::demo, enabled = !state.busy) { Text(stringResource(R.string.demo_fill)) }
                 WellnessTextButton(onClick = { deleteOriginal = false; delete = true }, enabled = !state.busy) { Text(stringResource(R.string.delete_draft_title)) }
                 if (meal.originalUid != null) WellnessTextButton(onClick = { deleteOriginal = true; delete = true }, enabled = !state.busy) { Text(stringResource(R.string.meal_delete_title)) }
                 }

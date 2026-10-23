@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="standalone_badge">DEMO · AI example</string>
+    <string name="standalone_welcome">This is a TamaqAI demonstration</string>
+    <string name="standalone_local_only">All data stays on this device. There is no cloud diary backup.</string>
+    <string name="standalone_fake_ai">AI analysis is a prepared demonstration</string>
+    <string name="standalone_try">Try it</string>
+    <string name="standalone_example">Try an example</string>
+    <string name="standalone_example_hint">Choose the bundled photo. Its prepared estimate is editable; no AI service is called.</string>
+    <string name="standalone_local_profile">Local demo profile</string>
+    <string name="standalone_infrastructure">Registration, email and real AI require a server. This standalone demo does not connect to one.</string>
+    <string name="standalone_plan_local_hint">Edit this demo plan locally. A planned meal enters the diary only after you confirm eating it.</string>
+    <string name="standalone_manual_photo_hint">Your own photo cannot be recognized offline. Enter the ingredients and nutrition manually, or try the bundled example.</string>
+    <string name="standalone_reset">Reset demonstration data</string>
+    <string name="standalone_reset_title">Reset the demo?</string>
+    <string name="standalone_reset_body">Restore this demo profile, meals, goals and plan. Your edits in this demo will be removed. Language and theme are kept. Other apps and server data are unaffected.</string>
+    <string name="standalone_reset_error">Reset failed. Try again.</string>
+    <string name="standalone_sample_salad">Salad with cheese</string>
+    <string name="standalone_sample_leaves">Salad leaves</string>
+    <string name="standalone_sample_tomato">Tomatoes</string>
+    <string name="standalone_sample_cheese">Soft cheese</string>
+    <string name="standalone_sample_dressing">Dressing</string>
+    <string name="standalone_sample_explanation">Prepared example for this bundled photo only. Ingredients and portions are illustrative estimates, not a measured recipe or live AI result. Please review and edit.</string>
+    <string name="standalone_seed_breakfast">Breakfast example</string>
+    <string name="standalone_seed_lunch">Lunch example</string>
+    <string name="standalone_seed_dinner">Dinner example</string>
+    <string name="standalone_seed_oats">Oats</string>
+    <string name="standalone_seed_milk">Milk</string>
+    <string name="standalone_seed_chicken">Chicken</string>
+    <string name="standalone_seed_rice">Rice</string>
+    <string name="standalone_seed_vegetables">Vegetables</string>
+    <string name="standalone_example_error">Could not open the example. Try again.</string>
+    <string name="standalone_catalog_hint">Bundled reference catalogue. Check the label on your package.</string>
+</resources>

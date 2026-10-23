@@ -29,26 +29,26 @@ fun planRecord(j:JSONObject):MealPlan {
 }
 
 @android.annotation.SuppressLint("UseKtx")
-class PlanRepository(context:Context,private val client:SessionClient,private val diary:MealRepository) {
+class PlanRepository(context:Context,private val client:SessionClient,private val diary:MealRepository) : com.tamaqai.data.contracts.PlanStore {
     private val owner=client.sessions.owner
     private val prefs=context.getSharedPreferences("plans_$owner",Context.MODE_PRIVATE)
     private val lock=Mutex();private val consumeLock=Mutex()
     private fun read()=runCatching {val a=JSONArray(prefs.getString("plans","[]"));(0 until a.length()).map {planRecord(a.getJSONObject(it))}}.getOrDefault(emptyList())
-    private val changes=MutableStateFlow(read());val plans=changes.asStateFlow()
-    val hasPendingGeneration get()=prefs.contains("generation")
+    private val changes=MutableStateFlow(read());override val plans=changes.asStateFlow()
+    override val hasPendingGeneration get()=prefs.contains("generation")
     private fun persist(items:List<MealPlan>) {
         client.requireOwner(owner)
         val a=JSONArray(items.map {JSONObject().put("id",it.id).put("version",it.version).put("document",it.document()).put("dirty",it.dirty).put("is_demo",it.demo)})
         check(prefs.edit().putString("plans",a.toString()).commit());changes.value=items
     }
-    suspend fun local(plan:MealPlan)=withContext(Dispatchers.IO) {lock.withLock {plan.validate();persist(listOf(plan.copy(dirty=true))+changes.value.filterNot {it.id==plan.id})}}
-    suspend fun load()=withContext(Dispatchers.IO) {lock.withLock {
+    override suspend fun local(plan:MealPlan)=withContext(Dispatchers.IO) {lock.withLock {plan.validate();persist(listOf(plan.copy(dirty=true))+changes.value.filterNot {it.id==plan.id})}}
+    override suspend fun load()=withContext(Dispatchers.IO) {lock.withLock {
         if(owner=="guest") return@withLock
         val a=client.authorized("/v1/plans",owner).getJSONArray("plans");val remote=(0 until a.length()).map {planRecord(a.getJSONObject(it))}
         val local=changes.value
         persist(local.filter {it.dirty || remote.none {r->r.id==it.id}}+remote.filter {r->local.none {it.id==r.id && it.dirty}}.map {r->r.copy(demo=r.demo || local.firstOrNull {it.id==r.id}?.demo==true)})
     }}
-    suspend fun sync(id:String)=withContext(Dispatchers.IO) {lock.withLock {
+    override suspend fun sync(id:String)=withContext(Dispatchers.IO) {lock.withLock {
         require(owner!="guest") {"account_required"}
         var p=changes.value.first {it.id==id}
         val pendingKey="pending_$id"
@@ -68,11 +68,11 @@ class PlanRepository(context:Context,private val client:SessionClient,private va
         persist(changes.value.map {if(it.id==id) p.copy(version=r.getInt("version"),dirty=false) else it})
         check(prefs.edit().remove(pendingKey).commit())
     }}
-    suspend fun saveAsCopy(id:String):String=withContext(Dispatchers.IO) {lock.withLock {
+    override suspend fun saveAsCopy(id:String):String=withContext(Dispatchers.IO) {lock.withLock {
         val p=changes.value.first {it.id==id}.copy(id=UUID.randomUUID().toString(),version=0,dirty=true,source="manual")
         persist(listOf(p)+changes.value);p.id
     }}
-    suspend fun generate(date:LocalDate,fitnessVersion:Int,goalDate:LocalDate,language:String)=withContext(Dispatchers.IO) {lock.withLock {
+    override suspend fun generate(date:LocalDate,fitnessVersion:Int,goalDate:LocalDate,language:String)=withContext(Dispatchers.IO) {lock.withLock {
         require(owner!="guest") {"account_required"}
         val request=prefs.getString("generation",null)?.let(::JSONObject) ?: JSONObject().put("key",UUID.randomUUID().toString()).put("body",JSONObject().put("date",date.toString()).put("fitness_version",fitnessVersion).put("goal_date",goalDate.toString()).put("language",language))
             .also {check(prefs.edit().putString("generation",it.toString()).commit())}
@@ -81,8 +81,8 @@ class PlanRepository(context:Context,private val client:SessionClient,private va
         if(changes.value.none {it.id==p.id}) persist(listOf(p)+changes.value)
         check(prefs.edit().remove("generation").commit());p.id
     }}
-    fun abandonGeneration() {check(prefs.edit().remove("generation").commit())}
-    suspend fun eat(planId:String,mealId:String,portion:Double):String=consumeLock.withLock {
+    override fun abandonGeneration() {check(prefs.edit().remove("generation").commit())}
+    override suspend fun eat(planId:String,mealId:String,portion:Double):String=consumeLock.withLock {
         client.requireOwner(owner);require(portion.isFinite() && portion in .05..20.0)
         val p=changes.value.first {it.id==planId};val m=p.meals.first {it.id==mealId}
         // A guest linkage changes owner but must retain the same meal identity.
