@@ -42,6 +42,7 @@ android {
     namespace = "com.tamaqai"
     compileSdk = 36
     testBuildType = when {
+        providers.gradleProperty("tamaqPlanningTest").orNull == "true" -> "planningQa"
         providers.gradleProperty("tamaqStandaloneTest").orNull == "true" -> "standaloneDemo"
         providers.gradleProperty("tamaqDemoTest").orNull == "true" -> "demo"
         providers.gradleProperty("tamaqPerformanceTest").orNull == "true" -> "performance"
@@ -53,8 +54,8 @@ android {
         applicationId = "com.tamaqai"
         minSdk = 26
         targetSdk = 36
-        versionCode = 5
-        versionName = "1.3.1"
+        versionCode = 7
+        versionName = "1.5.0"
         manifestPlaceholders["applicationName"] = ".TamaqApplication"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         testInstrumentationRunnerArguments["backendUrl"] = providers.gradleProperty("tamaqTestBackendUrl").getOrElse("")
@@ -93,6 +94,13 @@ android {
             matchingFallbacks += listOf("debug")
             manifestPlaceholders["applicationName"] = ".TamaqStandaloneApplication"
             buildConfigField("String", "BACKEND_URL", "\"\"")
+        }
+        // Disposable planning verification package; never installs over a user diary.
+        create("planningQa") {
+            initWith(getByName("standaloneDemo"))
+            applicationIdSuffix = ".planningqa.standalone"
+            versionNameSuffix = "-planning-qa"
+            matchingFallbacks += listOf("standaloneDemo", "debug")
         }
         create("visual") {
             initWith(getByName("debug"))
@@ -138,6 +146,11 @@ android {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
         }
     }
+    sourceSets["planningQa"].java.srcDir("src/standaloneDemo/java")
+    sourceSets["planningQa"].res.srcDir("src/standaloneDemo/res")
+    sourceSets["planningQa"].assets.srcDir("src/standaloneDemo/assets")
+    sourceSets["testPlanningQa"].java.srcDir("src/testStandaloneDemo/java")
+    sourceSets["planningQa"].manifest.srcFile("src/standaloneDemo/AndroidManifest.xml")
     sourceSets["androidTest"].assets.srcDir("$projectDir/schemas")
     sourceSets["visual"].java.srcDir("src/debug/java")
     sourceSets["demo"].java.srcDir("src/debug/java")
@@ -147,12 +160,12 @@ android {
     sourceSets["performance"].java.srcDir("src/release/java")
 }
 
-// Version only the new package; existing real and server-demo APKs keep their versions.
+// Keep the standalone artifact's identity explicit alongside the application version.
 androidComponents {
     onVariants(selector().withBuildType("standaloneDemo")) { variant ->
         variant.outputs.forEach { output ->
-            output.versionCode.set(6)
-            output.versionName.set("1.4.0-standalone.1")
+            output.versionCode.set(7)
+            output.versionName.set("1.5.0-standalone.1")
         }
     }
 }

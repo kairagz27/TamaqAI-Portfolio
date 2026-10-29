@@ -5,7 +5,8 @@ from pathlib import Path
 import tempfile
 import unittest
 
-from check_standalone import check_assets, check_catalog, check_packaged_manifest
+from check_standalone import (check_assets, check_catalog, check_packaged_manifest,
+                              check_instrumented_results, EXPECTED_STANDALONE_VERSION)
 
 
 class StandaloneAuditTest(unittest.TestCase):
@@ -38,7 +39,7 @@ class StandaloneAuditTest(unittest.TestCase):
         self.addCleanup(temporary.cleanup)
         path = Path(temporary.name) / 'manifest.xml'
         path.write_text('<manifest xmlns:android="http://schemas.android.com/apk/res/android" '
-                        'package="com.tamaqai.standalone" android:versionName="1.4.0-standalone.1">' + permission +
+                        'package="com.tamaqai.standalone" android:versionName="' + EXPECTED_STANDALONE_VERSION + '">' + permission +
                         '<application android:name="com.tamaqai.TamaqStandaloneApplication" android:allowBackup="false"/>'
                         '</manifest>', encoding='utf-8')
         return path
@@ -55,6 +56,43 @@ class StandaloneAuditTest(unittest.TestCase):
         path.write_text(path.read_text().replace('package="com.tamaqai.standalone"', 'package="com.tamaqai"'))
         with self.assertRaisesRegex(AssertionError, 'not isolated'):
             check_packaged_manifest(path)
+
+    def test_outdated_apk_version_is_rejected(self):
+        path = self.manifest()
+        path.write_text(path.read_text().replace(EXPECTED_STANDALONE_VERSION, '1.4.0-standalone.1'))
+        with self.assertRaisesRegex(AssertionError, 'Wrong standalone APK version'):
+            check_packaged_manifest(path)
+
+    def instrumented_results(self, cases):
+        temporary = tempfile.TemporaryDirectory()
+        self.addCleanup(temporary.cleanup)
+        directory = Path(temporary.name)
+        (directory / 'TEST-fixture.xml').write_text('<testsuite>' + cases + '</testsuite>', encoding='utf-8')
+        return directory
+
+    def test_exact_instrumented_results_are_required(self):
+        directory = self.instrumented_results('<testcase classname="fixture.Example" name="required"/>')
+        self.assertEqual(check_instrumented_results(directory, {'fixture.Example': {'required'}}),
+                         {'executed': 1, 'classes': 1, 'skipped': 0, 'failures': 0})
+
+    def test_missing_or_wrong_class_instrumented_results_are_rejected(self):
+        directory = self.instrumented_results('<testcase classname="other.Example" name="required"/>')
+        with self.assertRaisesRegex(AssertionError, 'identities differ'):
+            check_instrumented_results(directory, {'fixture.Example': {'required'}})
+        with self.assertRaisesRegex(AssertionError, 'identities differ'):
+            check_instrumented_results(directory, {'other.Example': {'required', 'missing'}})
+
+    def test_skipped_or_failed_instrumented_results_are_rejected(self):
+        for tag in ('skipped', 'failure', 'error'):
+            with self.subTest(tag=tag):
+                directory = self.instrumented_results('<testcase classname="fixture.Example" name="required"><' + tag + '/></testcase>')
+                with self.assertRaises(AssertionError):
+                    check_instrumented_results(directory, {'fixture.Example': {'required'}})
+
+    def test_duplicate_instrumented_results_are_rejected(self):
+        directory = self.instrumented_results('<testcase classname="fixture.Example" name="required"/>' * 2)
+        with self.assertRaisesRegex(AssertionError, 'Duplicate instrumented'):
+            check_instrumented_results(directory, {'fixture.Example': {'required'}})
 
     def asset_fixture(self):
         temporary = tempfile.TemporaryDirectory()

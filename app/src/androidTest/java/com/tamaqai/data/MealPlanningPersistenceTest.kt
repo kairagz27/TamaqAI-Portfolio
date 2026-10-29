@@ -36,7 +36,7 @@ class MealPlanningPersistenceTest {
 
     @Suppress("DEPRECATION")
     @get:Rule val migrations = MigrationTestHelper(InstrumentationRegistry.getInstrumentation(),
-        AppDatabase::class.java.canonicalName, FrameworkSQLiteOpenHelperFactory())
+        requireNotNull(AppDatabase::class.java.canonicalName), FrameworkSQLiteOpenHelperFactory())
 
     private fun database() = Room.inMemoryDatabaseBuilder(context, AppDatabase::class.java).build()
     private suspend fun <T> useDatabase(action: suspend (AppDatabase) -> T): T {

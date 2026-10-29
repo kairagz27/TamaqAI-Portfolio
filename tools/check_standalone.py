@@ -4,6 +4,7 @@ Optionally pass XML produced from the *packaged APK* by `apkanalyzer manifest pr
 This tool does not start Docker, use the network, read private data or contact an AI.
 """
 import argparse
+from collections import Counter
 from datetime import date
 import hashlib
 import json
@@ -14,6 +15,58 @@ import xml.etree.ElementTree as ET
 ROOT = Path(__file__).resolve().parents[1]
 ANDROID = '{http://schemas.android.com/apk/res/android}'
 TOOLS = '{http://schemas.android.com/tools}'
+EXPECTED_STANDALONE_VERSION = '1.5.0-standalone.1'
+
+# Exact selected methods prevent an empty, partial or accidentally renamed suite
+# from being presented as successful instrumentation in CI.
+STANDALONE_INSTRUMENTED_TESTS = {
+    'com.tamaqai.data.StandaloneDemoPersistenceTest': {
+        'builtInPhotoUsesMatchingResultAndDoubleConfirmationCreatesOneEntry',
+        'seedOnceEditAndDateRolloverPreserveRoomRows',
+        'offlineCatalogAndPlanConfirmAreLocalAndIdempotent',
+        'resetRestoresOnlyDemoDataAndPreservesAppearancePreference',
+        'compositionRootNeverConstructsServerRepositoriesOrSessions',
+        'mergedApplicationHasNoInternetPermissionOrServerUrl',
+    },
+    'com.tamaqai.data.MealPlanningPersistenceTest': {
+        'migrationFromFivePreservesDiaryFavoritesWeightsCatalogAndSettings',
+        'threeDayInitializationAndDayCopyNeverWriteTheDiary',
+        'recreationAndShoppingRefreshRetainManualNotesAndRequestReviewOnIncrease',
+        'separateOwnersAndStaleSessionCannotAccessOrMutateAnotherWorkspace',
+        'concurrentConfirmationAcrossInstancesCreatesOneImmutableDiaryEntry',
+        'diaryConfirmationStoresTheSelectedRecipeLanguageWithoutChangingTheRecipeSnapshot',
+        'unknownNutritionAndInvalidQuantityNeverBecomeZeroDiaryRows',
+        'newerServerSnapshotCannotOverwriteLocalPortionsOrReimportDeletedEntries',
+        'explicitGuestTransferPreservesPlannerAndNotesOverOnlyPristineTargetMetadata',
+        'guestTransferRejectsExistingAccountNotesOrPeriodEditsWithoutDeletingEitherOwner',
+        'transferWithNoGuestRowsLeavesExistingAccountAndRejectsUnknownDocumentFieldsWhenGuestExists',
+        'alreadyConfirmedGuestPlanKeepsOneDiaryIdentityAfterExplicitOwnershipTransfer',
+    },
+    'com.tamaqai.ui.PlanningViewModelRecoveryTest': {
+        'sameModelRecoversAfterLocalResetDeletesItsPlanningWorkspace',
+        'expiredOwnerClearsVisibleSnapshotAndNeverRecreatesItsWorkspace',
+        'rejectedMutationForChangedAccountClearsSnapshotWithoutAutomaticRetry',
+    },
+}
+PLANNING_UI_TESTS = {
+    'com.tamaqai.ui.MealPlanningUiTest': {
+        'threeDaysPortionsShoppingMarksManualRefreshShareAndPreservation',
+    },
+}
+
+
+def check_instrumented_results(directory, expected):
+    """Audit actual JUnit results; this function never executes or retries a test."""
+    cases = [case for path in Path(directory).rglob('*.xml')
+             for case in ET.parse(path).getroot().iter('testcase')]
+    assert cases, 'No instrumented test results found'
+    assert not any(case.find('skipped') is not None for case in cases), 'Instrumented tests were skipped'
+    assert not any(case.find('failure') is not None or case.find('error') is not None for case in cases), 'Instrumented test failed'
+    required = {(class_name, name) for class_name, names in expected.items() for name in names}
+    counts = Counter((case.get('classname'), case.get('name')) for case in cases)
+    assert required == counts.keys(), 'Required instrumented class/method identities differ'
+    assert all(count == 1 for count in counts.values()), 'Duplicate instrumented test results'
+    return {'executed': len(cases), 'classes': len(expected), 'skipped': 0, 'failures': 0}
 
 
 def check_catalog(source, bundled, notice):
@@ -44,7 +97,7 @@ def check_catalog(source, bundled, notice):
 def check_packaged_manifest(path):
     root = ET.parse(path).getroot()
     assert root.get('package') == 'com.tamaqai.standalone', 'Packaged application ID is not isolated'
-    assert root.get(ANDROID + 'versionName') == '1.4.0-standalone.1', 'Wrong standalone APK version'
+    assert root.get(ANDROID + 'versionName') == EXPECTED_STANDALONE_VERSION, 'Wrong standalone APK version'
     assert not any(node.get(ANDROID + 'name') == 'android.permission.INTERNET'
                    for node in root if node.tag.startswith('uses-permission')), 'Packaged standalone APK has INTERNET permission'
     app = root.find('application')

@@ -364,7 +364,11 @@ private fun TamaqRootNavigation() {
             rootDestination("profile") { RootContent("profile",presentedRoute.value) {ProfileScreen(daily, bottomSpace = listBottom,onPhone={nav.navigate("phone_auth")},onGoals={nav.navigate("goals")},onQuestionnaire={nav.navigate("questionnaire")},onPlan={nav.navigate("plan")})} }
             composable("questionnaire") {QuestionnaireScreen({nav.popBackStack()},{nav.popBackStack()})}
             composable("goals") {GoalsScreen({nav.popBackStack()},{nav.navigate("questionnaire")},{nav.navigate("plan")})}
-            composable("plan") {PlanScreen({nav.popBackStack()},{nav.navigate("goals")})}
+            composable("plan") {
+                val planner:PlanningViewModel=viewModel(factory=factory)
+                MealPlanningScreen(planner,{nav.popBackStack()},{nav.navigate("daily_plan")},{nav.navigate("goals")})
+            }
+            composable("daily_plan") {PlanScreen({nav.popBackStack()},{nav.navigate("goals")})}
             composable("login") {Column(Modifier.fillMaxSize().imePadding().verticalScroll(androidx.compose.foundation.rememberScrollState()).padding(20.dp)) {
                 AccountPanel(initialForm=AccountForm.Login,onBack={nav.popBackStack()})
             }}
