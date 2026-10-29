@@ -134,6 +134,11 @@
       "origin": "unchanged source blob"
     },
     {
+      "path": "app/schemas/com.tamaqai.data.local.AppDatabase/6.json",
+      "sha256": "4426a3a9fd9fae0a62adbe69f402527bbf06e75d1e47c2595fef546d62cb0ac8",
+      "origin": "reviewed multi-day planning and shopping feature"
+    },
+    {
       "path": "app/src/androidTest/java/com/tamaqai/data/AccountIsolationTest.kt",
       "sha256": "5263ae9caa82f5df813f1eef1199894f0874d78091d568ef4c447846be67e483",
       "origin": "unchanged source blob"
@@ -335,8 +340,8 @@
     },
     {
       "path": "app/src/main/java/com/tamaqai/data/local/AppDatabase.kt",
-      "sha256": "e9dd59c6e16d6f57ae93d8aed2689e6d4caeaae20c8bfea8dc0c1b382ce7c8f8",
-      "origin": "unchanged source blob"
+      "sha256": "48a0e2cf2dc00056e7576714d14f2c13dc9427321f10c470ebd584e302e2f545",
+      "origin": "reviewed multi-day planning and shopping feature"
     },
     {
       "path": "app/src/main/java/com/tamaqai/data/local/AppPreferences.kt",
@@ -345,8 +350,8 @@
     },
     {
       "path": "app/src/main/java/com/tamaqai/data/local/Migrations.kt",
-      "sha256": "2e3772ffe2e8e3bdf5b8cec0d00fbda4115d01992fd7923ff14c16cd48e60623",
-      "origin": "unchanged source blob"
+      "sha256": "46957138eaeb2918029d132ef694e421c558a1ba373a674572f24576a09c5419",
+      "origin": "reviewed multi-day planning and shopping feature"
     },
     {
       "path": "app/src/main/java/com/tamaqai/data/local/PhotoStore.kt",
@@ -374,6 +379,11 @@
       "origin": "unchanged source blob"
     },
     {
+      "path": "app/src/main/java/com/tamaqai/data/local/dao/PlanningDao.kt",
+      "sha256": "f38d44a83ccc761b3f0b1f7af5e8ecf279579119389badb935c4dfeeffb3c094",
+      "origin": "reviewed multi-day planning and shopping feature"
+    },
+    {
       "path": "app/src/main/java/com/tamaqai/data/local/entity/CatalogCacheEntity.kt",
       "sha256": "0d9802f7854e34fc633cffb9994df71abce87b6b74368012cb2ac2ae07c747ac",
       "origin": "unchanged source blob"
@@ -392,6 +402,11 @@
       "path": "app/src/main/java/com/tamaqai/data/local/entity/MealEntity.kt",
       "sha256": "d64751f917fd2408ca11440055efbdc88f12d0eff2d4c39c97fe652be45763fe",
       "origin": "unchanged source blob"
+    },
+    {
+      "path": "app/src/main/java/com/tamaqai/data/local/entity/PlanningEntities.kt",
+      "sha256": "82823631bbdb22ab46d48f0500e5dfc5db2490ceeb60568fbb5485d7a2c7f67c",
+      "origin": "reviewed multi-day planning and shopping feature"
     },
     {
       "path": "app/src/main/java/com/tamaqai/data/remote/AccountRepository.kt",
@@ -504,6 +519,11 @@
       "origin": "unchanged source blob"
     },
     {
+      "path": "app/src/main/java/com/tamaqai/domain/model/MealPlanning.kt",
+      "sha256": "7b75cd43a213713dbe434945493f41220d55f67f1ac0670579e08a911521964b",
+      "origin": "reviewed multi-day planning and shopping feature"
+    },
+    {
       "path": "app/src/main/java/com/tamaqai/domain/model/Nutrition.kt",
       "sha256": "66ec737156efed9a62420466ef3a02584203962d8930416ccf0bb41be6978ff7",
       "origin": "unchanged source blob"
@@ -524,6 +544,11 @@
       "origin": "unchanged source blob"
     },
     {
+      "path": "app/src/main/java/com/tamaqai/domain/repository/PlanningRepository.kt",
+      "sha256": "51916bcf6734ba1737bd176b8841326470f7e76e397a825de197077c0b07968c",
+      "origin": "reviewed multi-day planning and shopping feature"
+    },
+    {
       "path": "app/src/main/java/com/tamaqai/domain/usecase/AccountValidation.kt",
       "sha256": "1d0a126a6c3222a71ceb16aa5f45386d83965147e349b197ae28a22655cff605",
       "origin": "unchanged source blob"
@@ -537,6 +562,11 @@
       "path": "app/src/main/java/com/tamaqai/domain/usecase/CatalogMealFactory.kt",
       "sha256": "010b4b3529782ac7bb797337808da04f137c4c5a283c92b6d5495fc0727fe7cd",
       "origin": "unchanged source blob"
+    },
+    {
+      "path": "app/src/main/java/com/tamaqai/domain/usecase/DemoRecipes.kt",
+      "sha256": "aa634ed31b3bf70ff61f3004ffcac80966f35e22d127bbf47a9c2816d63eae28",
+      "origin": "reviewed multi-day planning and shopping feature"
     },
     {
       "path": "app/src/main/java/com/tamaqai/domain/usecase/DiaryTotals.kt",
@@ -557,6 +587,11 @@
       "path": "app/src/main/java/com/tamaqai/domain/usecase/ProgressSummary.kt",
       "sha256": "5d5721f3d2553dc1a273c3a614af3479bb45af232fcbcbbdf9bc1cded99c4a1c",
       "origin": "unchanged source blob"
+    },
+    {
+      "path": "app/src/main/java/com/tamaqai/domain/usecase/ShoppingListCalculator.kt",
+      "sha256": "448622495e3d7d0fa773812fd0055e051c4495122375dbffb35ccd279152db55",
+      "origin": "reviewed multi-day planning and shopping feature"
     },
     {
       "path": "app/src/main/java/com/tamaqai/ui/LocaleFormatting.kt",
@@ -1144,6 +1179,11 @@
       "origin": "unchanged source blob"
     },
     {
+      "path": "app/src/test/java/com/tamaqai/domain/ShoppingListCalculatorTest.kt",
+      "sha256": "5cf91ffecd2e9437f70e535b9c166d930287fa5f802d52e67aef0099bc99d036",
+      "origin": "reviewed multi-day planning and shopping feature"
+    },
+    {
       "path": "app/src/test/java/com/tamaqai/domain/usecase/TargetCalculatorTest.kt",
       "sha256": "e48bd787582584694e3d440032ff4addf4d7a8ac352f528ea13d45ef15583c20",
       "origin": "unchanged source blob"
@@ -1687,6 +1727,11 @@
       "path": "docs/licenses/android-dependencies.json",
       "sha256": "c9b717904646a3750162df883ad3e056bf1f8b0e0323c178f35d7e6dbc3add9c",
       "origin": "unchanged source blob"
+    },
+    {
+      "path": "docs/licenses/demo-recipes.md",
+      "sha256": "126084cc6ca3911b72f670eb4d7e8ec21d3467b9b75dbb7ce56a38a86314a68b",
+      "origin": "reviewed multi-day planning and shopping feature"
     },
     {
       "path": "docs/licenses/fonts.json",
