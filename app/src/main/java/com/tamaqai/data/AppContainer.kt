@@ -34,6 +34,9 @@ class AppContainer(context:Context, existingSessions:SessionClient?=null,
     val nutrition:NutritionStore=if(offline) LocalNutritionStore(context,owner,settings,clock) else NutritionRepository(context,sessions,settings)
     val plans:PlanStore=if(offline) LocalPlanStore(context,owner,mealRepository,clock) else PlanRepository(context,sessions,mealRepository)
     val catalog:CatalogStore=if(offline) LocalCatalogStore(context,database.catalogDao(),owner,clock) else CatalogRepository(sessions,database.catalogDao(),owner)
+    val planningRepository:com.tamaqai.domain.repository.PlanningRepository by lazy {
+        RoomPlanningRepository(database,owner,mealRepository,clock,ownerCheck={remoteSessions?.requireOwner(owner)},language={com.tamaqai.ui.appLocale().language})
+    }
     val standalone:StandaloneDemoController?=if(offline) StandaloneDemoController(context,database,mealRepository,settings,
         account as LocalAccountStore,nutrition as LocalNutritionStore,plans as LocalPlanStore,catalog as LocalCatalogStore,photos,clock,::text) else null
     val analyzeMealPhotoUseCase=AnalyzeMealPhotoUseCase(if(offline) LocalSampleFoodRepository(context,::text)

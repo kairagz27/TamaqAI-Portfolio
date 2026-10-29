@@ -256,7 +256,7 @@ fun accountError(error:Exception):Int=when(error.message) {
     "invalid_email_code"->R.string.invalid_email_code
     "email_delivery_unavailable"->R.string.email_delivery_failed
     "reauthentication_required"->R.string.reauthentication_required
-    "link_conflict","local_link_conflict"->R.string.link_conflict
+    "link_conflict","local_link_conflict","planning_link_conflict"->R.string.link_conflict
     "invalid_guest_session","invite_required","invitation_already_linked"->R.string.link_invitation_error
     else->when {
         error is ApiFailure && error.status==429->R.string.account_rate_limited

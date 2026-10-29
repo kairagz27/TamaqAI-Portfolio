@@ -27,5 +27,7 @@ interface DailyDao {
     @Query("DELETE FROM weight_entries WHERE owner=:owner") suspend fun clearWeights(owner: String = "guest")
     @Query("DELETE FROM meals WHERE owner=:owner") suspend fun clearMeals(owner: String = "guest")
     @Query("DELETE FROM catalog_cache WHERE owner=:owner") suspend fun clearCatalog(owner: String)
-    @Transaction suspend fun clearLocalRecords(owner: String = "guest") { clearMeals(owner); clearFavorites(owner); clearWeights(owner); clearCatalog(owner) }
+    @Query("DELETE FROM shopping_documents WHERE owner=:owner") suspend fun clearShopping(owner:String)
+    @Query("DELETE FROM planning_workspaces WHERE owner=:owner") suspend fun clearPlanning(owner:String)
+    @Transaction suspend fun clearLocalRecords(owner: String = "guest") { clearMeals(owner); clearFavorites(owner); clearWeights(owner); clearCatalog(owner); clearShopping(owner); clearPlanning(owner) }
 }

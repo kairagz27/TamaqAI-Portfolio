@@ -136,6 +136,7 @@ class AccountRepository(private val context: Context, val client: SessionClient)
                 }
             }
         }
+        if(!moved) com.tamaqai.data.repository.PlanningOwnerTransfer.validate(database,"guest",owner)
         val oldSettings=context.getSharedPreferences("daily_settings",Context.MODE_PRIVATE)
         val guestPlans=context.getSharedPreferences("plans_guest",Context.MODE_PRIVATE)
         val ownedPlans=context.getSharedPreferences("plans_$owner",Context.MODE_PRIVATE)
@@ -167,6 +168,7 @@ class AccountRepository(private val context: Context, val client: SessionClient)
                 database.openHelper.writableDatabase.query("SELECT COUNT(*) FROM $table WHERE owner=?",arrayOf(owner)).use { check(it.moveToFirst() && it.getInt(0)==0) { "local_link_conflict" } }
                 database.openHelper.writableDatabase.execSQL("UPDATE $table SET owner=? WHERE owner='guest'",arrayOf(owner))
             }
+            if(!moved) com.tamaqai.data.repository.PlanningOwnerTransfer.transfer(database,"guest",owner)
             database.openHelper.writableDatabase.execSQL("INSERT OR IGNORE INTO local_links(operation,owner) VALUES(?,?)",arrayOf(operation,owner))
         }
         // The operation receipt is durable. A restart can finish moving the same local rows.
