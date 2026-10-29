@@ -1,16 +1,53 @@
 # Architecture
 
-Prepared portfolio snapshot, 22 October 2026. [Source and export boundary](export/README.md).
+The public history begins with the prepared portfolio snapshot of 22 October 2026.
+The Android planning additions below describe source version 1.5.0.
+[Source and export boundary](export/README.md).
 
 ## Android
 
 MainActivity owns the Compose entry/navigation and identity changes. Screens render state, ViewModels coordinate it, domain models represent meals/components/plans, and repositories implement storage/transport. Some screens coordinate repositories directly: these are pragmatic layers, not strict Clean Architecture.
 
-Room schema version **5** stores the local diary. Explicit migrations and exported schemas are retained; destructive migration is not configured. Owner-scoped repositories prevent account switches from showing another owner's diary. Explicit guest linking requires both session proofs. Account/profile synchronization does not back up the Room diary.
+Room schema version **6** stores the local diary and planning documents. The additive **5 → 6** migration creates `planning_workspaces` and `shopping_documents` without replacing existing tables. Explicit migrations and exported schemas are retained; destructive migration is not configured. Owner-scoped repositories prevent account switches from showing another owner's diary or plans. Explicit guest linking requires both session proofs. Account/profile synchronization does not back up the Room diary or local planning documents.
 
 An analysis creates a pending draft with stable identity. Editing estimated mass and eaten fraction are separate operations; recalculation starts from baseline nutrition. Confirmation adds a snapshot to totals. Catalogue version/source metadata remains in confirmed entries; later imports do not rewrite them. Unknown nutrients remain nullable.
 
 CameraX is lifecycle-bound and disposed/unbound by the camera composable. Network operations have finite timeouts. Session refresh is coordinated, with logout/generation checks against stale restoration. Cancellation now disconnects a blocked HttpURLConnection; a local socket regression verifies cancellation latency.
+
+## Local planning and shopping
+
+`PlanningViewModel` exposes `StateFlow` to the shared Compose plan and shopping
+screens. The `PlanningRepository` contract has one Room implementation for both
+server and standalone compositions: planning needs no AI or network adapter.
+Each workspace is owner-scoped and stores a selected 1–7-day window (default 3),
+a revision, immutable recipe snapshots and explicit legacy-import receipts.
+Entries outside the selected window remain stored.
+
+`ShoppingListCalculator` is pure business logic. It scales recipe ingredients by
+planned servings / recipe yield, groups exact product identities and preparation
+states, and normalizes compatible units. Mass/volume/piece conversions require
+explicit, consistent metadata. Unknown quantities and per-field nutrients remain
+nullable. A known shopping subtotal can carry an unknown contribution; an
+incomplete nutrition total is never reported as a complete zero.
+
+The saved shopping document records the source workspace revision. Plan edits
+mark it stale; explicit refresh preserves manual rows, notes and marks. Increased
+marked demand requires acknowledgement. Removed generated rows carrying notes or
+marks remain visible as inactive rather than losing user input.
+
+Room transactions coordinate writes and diary confirmation. Confirming the
+actual eaten servings snapshots the baseline recipe into a diary entry whose
+stable UID derives from the plan entry ID. Retries and explicit guest linkage
+retain that identity. Later plan changes do not rewrite a confirmed diary meal.
+Guest linking rejects ambiguous target planning data rather than silently merging
+or overwriting it.
+
+The existing daily `PlanStore` remains separate. Its cached plans can be imported
+explicitly once; loading newer server data cannot overwrite local multi-day edits.
+Neither the local workspace nor shopping document is uploaded to the backend.
+The six original MIT recipe fixtures have illustrative nutrition and one
+intentionally incomplete recipe. [Behavior, data rules and checks](MEAL_PLANS_SHOPPING.md)
+· [Recipe provenance](licenses/demo-recipes.md).
 
 ## Standalone composition
 

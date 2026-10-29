@@ -81,6 +81,11 @@ Base images also contain OS packages with their respective licenses.
 
 ## Catalogue: separate data license
 
+The six multi-day planner recipes are original synthetic TamaqAI fixtures under
+MIT, with illustrative nutrition. They do not reproduce third-party recipes or
+manufacturer measurements. [Recipe provenance](docs/licenses/demo-recipes.md).
+They are separate from the catalogue dataset below.
+
 The snapshot bundles **39 Open Food Facts records**, separately under
 ODbL 1.0 for the database and DbCL 1.0 for individual contents. It is not an MIT
 dataset. Attribution: **Contains information from Open Food Facts, made available
