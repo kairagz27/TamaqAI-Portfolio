@@ -3,7 +3,8 @@
 Start with the [project overview](../README.md), then [development](DEVELOPMENT.md) for reproducible commands.
 
 - [Architecture and data boundaries](ARCHITECTURE.md), [architecture decisions](adr/README.md).
-- [Demo workflow, video and APK limitations](DEMO.md).
+- [Multi-day plans and shopping lists · 1.5.0](MEAL_PLANS_SHOPPING.md): local behavior, Room 6 migration, recipe provenance and verification commands.
+- [Standalone Android demo](STANDALONE_DEMO.md); [technical server demo, video and APK limitations](DEMO.md).
 - [New-export verification](PUBLICATION_VERIFICATION.md), [export provenance and audit](export/README.md).
 - [Public release and anonymous-access checks](PUBLICATION.md).
 - [Data sources and nutrition provenance](DATA_SOURCES.md), [catalogue import](catalog/IMPORT.md), [barcode dependency](catalog/THIRD_PARTY.md).

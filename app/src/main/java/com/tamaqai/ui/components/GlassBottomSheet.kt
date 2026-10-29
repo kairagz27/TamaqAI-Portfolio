@@ -54,6 +54,7 @@ val LocalWellnessSheetClose=staticCompositionLocalOf<(() -> Unit)?> {null}
     content: @Composable ColumnScope.() -> Unit,
 ) {
     val haze=LocalWellnessOverlayBackdrop.current ?: LocalWellnessBackdrop.current
+    val parentWindow=androidx.activity.compose.LocalActivity.current?.window
     val token=rememberWellnessModalToken()
     val visible=remember {MutableTransitionState(false)}
     var opened by remember {mutableStateOf(false)}
@@ -74,7 +75,11 @@ val LocalWellnessSheetClose=staticCompositionLocalOf<(() -> Unit)?> {null}
             it.setDimAmount(0f)
             WindowCompat.setDecorFitsSystemWindows(it,false)
             WindowCompat.getInsetsController(it,it.decorView).apply {
-                isAppearanceLightStatusBars=light;isAppearanceLightNavigationBars=light
+                // The transparent top still shows the parent (including a demo banner or camera).
+                isAppearanceLightStatusBars=parentWindow?.let {parent ->
+                    WindowCompat.getInsetsController(parent,parent.decorView).isAppearanceLightStatusBars
+                } ?: light
+                isAppearanceLightNavigationBars=light
             }
             if(Build.VERSION.SDK_INT>=29) it.isNavigationBarContrastEnforced=false
         }}

@@ -14,6 +14,8 @@ class TamaqViewModelFactory(
 ) : ViewModelProvider.Factory {
     @Suppress("UNCHECKED_CAST")
     override fun <T : ViewModel> create(modelClass: Class<T>): T = when {
+        modelClass.isAssignableFrom(com.tamaqai.ui.screens.PlanningViewModel::class.java) ->
+            com.tamaqai.ui.screens.PlanningViewModel(container.planningRepository,container.settings,container.plans,container.ready,container.clock) as T
         modelClass.isAssignableFrom(DailyViewModel::class.java) ->
             DailyViewModel(container.mealRepository, container.dailyRepository, container.settings, container.photos, container.ready) as T
         modelClass.isAssignableFrom(HomeViewModel::class.java) ->

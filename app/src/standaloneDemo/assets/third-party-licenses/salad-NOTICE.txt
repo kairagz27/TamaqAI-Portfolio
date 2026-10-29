@@ -1,0 +1,16 @@
+Salad Plate
+Creator: Katja S. Verhoeven
+Source: https://isorepublic.com/photo/salad-plate/
+Original download: https://isorepublic.com/wp-content/uploads/2018/11/isorepublic-salad-1-1100x733.jpg
+License: Creative Commons CC0 1.0 Universal
+https://creativecommons.org/publicdomain/zero/1.0/
+The CC0 legal code is included alongside this notice as CC0-1.0-legalcode.txt.
+
+Retrieved/reviewed: 2026-10-23.
+Modification: RGB conversion and JPEG quality-88 re-encoding, with EXIF removed.
+Bundled size: 1100 x 733 pixels.
+Bundled SHA-256: 0c5874fc16a9669d7748ae773d894de3fd0d316b7bf2fa1f74282ef70a2d0142
+
+Included only in the standalone Android demo. The matching prepared nutrition is
+synthetic; no AI or measured nutrition assessment was performed on this image.
+The photograph does not imply endorsement by its creator or ISO Republic.

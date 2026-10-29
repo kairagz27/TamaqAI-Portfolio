@@ -68,9 +68,9 @@ class MainActivity : AppCompatActivity() {
         enableEdgeToEdge(statusBarStyle = bars, navigationBarStyle = bars)
         if (android.os.Build.VERSION.SDK_INT >= 29) window.isNavigationBarContrastEnforced = false
         setContent { TamaqTheme {
-            if (BuildConfig.PORTFOLIO_DEMO) Column(Modifier.fillMaxSize().background(PageBackground)) {
+            if ((application as TamaqApplication).container.standalone!=null || BuildConfig.PORTFOLIO_DEMO) Column(Modifier.fillMaxSize().background(PageBackground)) {
                 Surface(color=MaterialTheme.colorScheme.primary, contentColor=MaterialTheme.colorScheme.onPrimary) {
-                    Text("PORTFOLIO DEMO · FAKE AI · LOCAL BACKEND", style=MaterialTheme.typography.labelSmall,
+                    Text(if((application as TamaqApplication).container.standalone!=null) stringResource(R.string.standalone_badge) else "PORTFOLIO DEMO · FAKE AI · LOCAL BACKEND", style=MaterialTheme.typography.labelSmall,
                         modifier=Modifier.fillMaxWidth().statusBarsPadding().padding(horizontal=12.dp,vertical=6.dp))
                 }
                 Box(Modifier.weight(1f).consumeWindowInsets(WindowInsets.statusBars)) {WellnessGlassHost {TamaqEntry()}}
@@ -101,9 +101,10 @@ class MainActivity : AppCompatActivity() {
 @Composable private fun SystemPanels(camera:Boolean=false) {
     val activity=requireNotNull(androidx.activity.compose.LocalActivity.current)
     val light=!camera && MaterialTheme.colorScheme.background.luminance()>.5f
+    val banner=(activity.application as TamaqApplication).container.standalone!=null || BuildConfig.PORTFOLIO_DEMO
     SideEffect {
         androidx.core.view.WindowCompat.getInsetsController(activity.window,activity.window.decorView).apply {
-            isAppearanceLightStatusBars=light;isAppearanceLightNavigationBars=light
+            isAppearanceLightStatusBars=light && !banner;isAppearanceLightNavigationBars=light
         }
     }
 }
@@ -112,6 +113,11 @@ class MainActivity : AppCompatActivity() {
     val app=LocalContext.current.applicationContext as TamaqApplication
     val activity=androidx.activity.compose.LocalActivity.current as MainActivity
     val container=app.container
+    if(container.standalone!=null) {
+        SystemPanels()
+        StandaloneEntry(container) {TamaqRootNavigation()}
+        return
+    }
     val identity by container.sessions.sessions.changes.collectAsStateWithLifecycle()
     val mealFlow=remember(container) {container.mealRepository.getAllMeals()}
     val entries by mealFlow.collectAsStateWithLifecycle(initialValue=emptyList())
@@ -319,7 +325,7 @@ private fun TamaqRootNavigation() {
                     drawerState.close();val revoked=container.account.logout()
                     if(!revoked) android.widget.Toast.makeText(context,R.string.logout_local_only,android.widget.Toast.LENGTH_LONG).show()
                     (context as MainActivity).identityChanged()
-                }},onGuestLogin={navigateDrawer("login")},closeFocusRequester=drawerCloseFocus)
+                }},onGuestLogin={navigateDrawer("login")},closeFocusRequester=drawerCloseFocus,localOnly=container.standalone!=null)
         }
     }) {
     WellnessBackground(Modifier.fillMaxSize()) {
@@ -351,21 +357,25 @@ private fun TamaqRootNavigation() {
             popEnterTransition = { if (initialState.destination.route in roots && targetState.destination.route in roots) EnterTransition.None else fadeIn(tween(WellnessMotion.enter)) + slideIntoContainer(AnimatedContentTransitionScope.SlideDirection.Right, tween(WellnessMotion.enter),initialOffset={it/12}) },
             popExitTransition = { if(initialState.destination.route in roots && targetState.destination.route in roots) ExitTransition.None else fadeOut(tween(WellnessMotion.exit)) }) {
             rootDestination("home") { RootContent("home",presentedRoute.value) {HomeScreen(home, daily, container.photos, ::edit, { nav.navigate("goals") }, onMenu={scope.launch {drawerState.open()}},onAdd = { addSheet = true }, bottomSpace = listBottom,onPlan={nav.navigate("plan")},
-                onScan={scanner.captureDate(homeState.date);nav.navigate("scanner")},
+                onScan={if(container.standalone!=null) nav.navigate("examples") else {scanner.captureDate(homeState.date);nav.navigate("scanner")}},
                 onManual={home.createManual(::edit)},menuFocusRequester=menuFocus)} }
             rootDestination("history") { RootContent("history",presentedRoute.value) {HistoryScreen(daily, container.photos, { uid -> home.open(uid,::edit) }, { day -> home.selectDate(day); navigateRoot("home",selectToday=false) }, bottomSpace = listBottom)} }
             rootDestination("progress") { RootContent("progress",presentedRoute.value) {ProgressScreen(daily, bottomSpace = listBottom)} }
             rootDestination("profile") { RootContent("profile",presentedRoute.value) {ProfileScreen(daily, bottomSpace = listBottom,onPhone={nav.navigate("phone_auth")},onGoals={nav.navigate("goals")},onQuestionnaire={nav.navigate("questionnaire")},onPlan={nav.navigate("plan")})} }
             composable("questionnaire") {QuestionnaireScreen({nav.popBackStack()},{nav.popBackStack()})}
             composable("goals") {GoalsScreen({nav.popBackStack()},{nav.navigate("questionnaire")},{nav.navigate("plan")})}
-            composable("plan") {PlanScreen({nav.popBackStack()},{nav.navigate("goals")})}
+            composable("plan") {
+                val planner:PlanningViewModel=viewModel(factory=factory)
+                MealPlanningScreen(planner,{nav.popBackStack()},{nav.navigate("daily_plan")},{nav.navigate("goals")})
+            }
+            composable("daily_plan") {PlanScreen({nav.popBackStack()},{nav.navigate("goals")})}
             composable("login") {Column(Modifier.fillMaxSize().imePadding().verticalScroll(androidx.compose.foundation.rememberScrollState()).padding(20.dp)) {
                 AccountPanel(initialForm=AccountForm.Login,onBack={nav.popBackStack()})
             }}
-            composable("phone_auth") {Column(Modifier.fillMaxSize().imePadding().verticalScroll(androidx.compose.foundation.rememberScrollState()).padding(20.dp)) {PhonePanel {nav.popBackStack()}}}
+            composable("phone_auth") {if(container.standalone!=null) StandaloneInfrastructureScreen {nav.popBackStack()} else Column(Modifier.fillMaxSize().imePadding().verticalScroll(androidx.compose.foundation.rememberScrollState()).padding(20.dp)) {PhonePanel {nav.popBackStack()}}}
             listOf("appearance","language","about").forEach {kind ->composable(kind) {PreferencesScreen(kind,application.preferences) {nav.popBackStack()}}}
             composable("settings") {Column {BackButton {nav.popBackStack()};SettingsScreen(daily,onGoals={nav.navigate("goals")})}}
-            composable("scanner") { ScannerScreen(scannerViewModel = scanner, onClose = { nav.popBackStack() }, onGallery = ::gallery,
+            composable("scanner") { if(container.standalone!=null) StandaloneInfrastructureScreen {nav.popBackStack()} else ScannerScreen(scannerViewModel = scanner, onClose = { nav.popBackStack() }, onGallery = ::gallery,
                 onPermissionChanged = { cameraPermission = it }) }
             composable("barcode") {ScannerScreen(scannerViewModel=scanner,onClose={nav.popBackStack()},
                 onGallery={catalogBarcode=null;catalogQuery="";nav.navigate("catalog/product") {popUpTo("barcode") {inclusive=true}}},
@@ -396,6 +406,11 @@ private fun TamaqRootNavigation() {
                         }
                     }
                 })}
+            composable("examples") {
+                container.standalone?.let {demo ->StandaloneExamplesScreen(demo,homeState.date,{nav.popBackStack()}) {uid ->
+                    nav.popBackStack();edit(uid)
+                }}
+            }
             composable("favorites") { FavoritesScreen(daily, container.photos, homeState.date, ::edit, { nav.popBackStack() }) }
             composable("meal/{uid}") { e -> MealEditorScreen(requireNotNull(e.arguments?.getString("uid")), {
                 nav.popBackStack()
@@ -414,7 +429,10 @@ private fun TamaqRootNavigation() {
             Text(stringResource(R.string.add_sheet_title), style = MaterialTheme.typography.headlineSmall)
             Text(stringResource(R.string.add_sheet_hint), style = MaterialTheme.typography.bodySmall, color = TextSecondary)
             Spacer(Modifier.height(8.dp))
-            Row(horizontalArrangement = Arrangement.spacedBy(12.dp)) {
+            if(container.standalone!=null) {
+                PrimaryButton(stringResource(R.string.standalone_example),{addSheet=false;nav.navigate("examples")})
+                Text(stringResource(R.string.standalone_manual_photo_hint),style=MaterialTheme.typography.bodySmall,color=TextSecondary)
+            } else Row(horizontalArrangement = Arrangement.spacedBy(12.dp)) {
                 PrimaryAddOption(R.string.take_photo, R.string.camera_option_hint, Icons.Outlined.PhotoCamera, Modifier.weight(1f), true) {
                     addSheet = false; scanner.captureDate(homeState.date); nav.navigate("scanner") }
                 PrimaryAddOption(R.string.gallery, R.string.gallery_option_hint, Icons.Outlined.PhotoLibrary, Modifier.weight(1f)) { addSheet = false; gallery() }

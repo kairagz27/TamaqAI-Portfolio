@@ -1,5 +1,38 @@
 # Changelog
 
+## 1.5.0 — meal plans and shopping lists
+
+- Local 1–7-day planning, default 3 days, with recipe snapshots per meal,
+  portion changes, dish replacement/removal, day copying and daily nutrition
+  relative to dated goals.
+- Shopping calculation with conservative product/preparation identity, compatible
+  units, explicit conversion metadata and unknown quantities/nutrition preserved.
+- Categorized purchases, dish references, bought/at-home marks, notes, manual
+  positions and Android text sharing. Plan changes require refresh; increased
+  marked quantities request review while user edits remain intact.
+- Additive Room 5 → 6 migration, owner isolation, explicit guest transfer and stable
+  actual-eaten confirmation IDs. Cached legacy-plan import cannot overwrite local
+  edits or create duplicates on reimport.
+- Six original MIT synthetic recipe fixtures, RU/KK/EN labels and shared warm
+  light/dark styling. No AI calls, paid services or cloud diary synchronization.
+- Domain, persistence/migration, ViewModel recovery and Compose scenario tests;
+  actual execution results are tracked separately and are not implied by this list.
+
+This is a source/build update. No new public release is published by this feature;
+earlier release tags and assets remain unchanged.
+[Behavior, limits and verification](docs/MEAL_PLANS_SHOPPING.md).
+
+## 1.4.0-standalone.1 — draft
+
+- Separate offline Android package, local profile and one-time Room fixtures.
+- Real shared editor, manual entry, catalogue, goals, plans, themes and languages.
+- Explicit CC0 photograph with matching prepared nutrition; no live AI or arbitrary-photo substitution.
+- Local reset with confirmation, durable recovery and preserved appearance/language.
+- No INTERNET permission, backend URL or server session implementation in the standalone composition.
+- New draft assets are separate from the unchanged server demo release.
+
+[Standalone usage and actual verification](docs/STANDALONE_DEMO.md).
+
 ## Public portfolio publication — 23 October 2026
 
 The owner authorized public visibility for this portfolio repository and publication

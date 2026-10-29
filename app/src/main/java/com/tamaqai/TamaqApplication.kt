@@ -16,7 +16,7 @@ open class TamaqApplication : Application() {
     override fun onCreate() {
         super.onCreate()
         val startedAt = System.currentTimeMillis()
-        container = AppContainer(this)
+        container = createContainer()
         CoroutineScope(SupervisorJob() + Dispatchers.IO).launch {
             cacheDir.listFiles { file -> file.name.startsWith("tamaq_capture_") && file.lastModified() < startedAt }
                 ?.forEach { file ->
@@ -25,7 +25,8 @@ open class TamaqApplication : Application() {
         }
     }
 
-    fun reloadIdentity() { container = AppContainer(this,container.sessions) }
+    protected open fun createContainer():AppContainer=AppContainer(this)
+    fun reloadIdentity() { container=if(container.standalone!=null) createContainer() else AppContainer(this,container.remoteSessions) }
 
     private companion object {
         const val TAG = "TamaqAI"

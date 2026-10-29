@@ -24,6 +24,8 @@ import com.tamaqai.domain.model.Meal
 import com.tamaqai.ui.components.*
 import com.tamaqai.ui.theme.TextSecondary
 import kotlinx.coroutines.delay
+import kotlinx.coroutines.CancellationException
+import kotlinx.coroutines.flow.catch
 import java.time.LocalTime
 
 @Composable
@@ -37,6 +39,14 @@ fun HomeScreen(homeViewModel: HomeViewModel, dailyViewModel: DailyViewModel, pho
     val settings=container.settings
     val profile by container.account.profileState.collectAsStateWithLifecycle()
     val plans by container.plans.plans.collectAsStateWithLifecycle()
+    val planningPreview = remember(container) {
+        container.planningRepository.workspace.catch { failure ->
+            if (failure is CancellationException) throw failure
+            // A stale owner must not leave a previous account's preview or crash the diary.
+            emit(null)
+        }
+    }
+    val planning by planningPreview.collectAsStateWithLifecycle(initialValue=null)
     val hour by produceState(LocalTime.now().hour) {
         while(true) { value=LocalTime.now().hour; delay(60_000) }
     }
@@ -61,8 +71,11 @@ fun HomeScreen(homeViewModel: HomeViewModel, dailyViewModel: DailyViewModel, pho
             label = if (state.incompleteNutritionCount > 0) stringResource(R.string.catalog_totals_known_only) else null,
             onDetails={nutrient=0}) }
         item(key="macros") { MacroCards(state.protein, state.fat, state.carbs, goals) {nutrient=it} }
-        item(key="food-actions") { HomeFoodActions(onScan,onManual,onAdd) }
-        item(key="plan-preview") { HomePlanCard(plans.firstOrNull {it.date==state.date},container.plans.hasPendingGeneration,onPlan) }
+        item(key="food-actions") { HomeFoodActions(onScan,onManual,onAdd,if(container.standalone!=null) R.string.standalone_example else R.string.home_scan_food) }
+        item(key="plan-preview") {
+            planning?.let {PlanningHomePreview(it,state.date.toString(),onPlan)}
+                ?: HomePlanCard(plans.firstOrNull {it.date==state.date},container.plans.hasPendingGeneration,onPlan)
+        }
         item(key="meals-title") {
             Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(8.dp)) {
                 Text(stringResource(R.string.meals_heading), modifier = Modifier.weight(1f),

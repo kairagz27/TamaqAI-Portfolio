@@ -1,0 +1,42 @@
+{
+  "checked_at": "2026-10-23",
+  "assets": [
+    {
+      "path": "app/src/standaloneDemo/assets/examples/salad.jpg",
+      "title": "Salad Plate",
+      "creator": "Katja S. Verhoeven",
+      "source_page": "https://isorepublic.com/photo/salad-plate/",
+      "download_url": "https://isorepublic.com/wp-content/uploads/2018/11/isorepublic-salad-1-1100x733.jpg",
+      "license": "CC0-1.0",
+      "license_page": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "license_evidence": "ISO Republic source page explicitly identifies this photograph as CC0; source page reviewed on 2026-10-23.",
+      "modification": "Decoded to RGB and re-encoded JPEG quality 88; EXIF removed. The prepared nutrition is synthetic, not an analysis of the photograph.",
+      "dimensions": [
+        1100,
+        733
+      ],
+      "sha256": "0c5874fc16a9669d7748ae773d894de3fd0d316b7bf2fa1f74282ef70a2d0142",
+      "notice": "app/src/standaloneDemo/assets/third-party-licenses/salad-NOTICE.txt",
+      "legalcode": "app/src/standaloneDemo/assets/third-party-licenses/CC0-1.0-legalcode.txt",
+      "visual_review": "Inspected bundled image: salad/plate/tableware only; no visible person, personal data, watermark or brand/logo."
+    }
+  ],
+  "license_files": [
+    {
+      "path": "app/src/standaloneDemo/assets/third-party-licenses/CC0-1.0-legalcode.txt",
+      "source": "https://creativecommons.org/publicdomain/zero/1.0/legalcode.txt",
+      "sha256": "a2010f343487d3f7618affe54f789f5487602331c0a8d03f49e9a7c547cf0499"
+    }
+  ],
+  "catalogue": {
+    "path": "app/src/standaloneDemo/assets/standalone/catalog.json",
+    "records": 39,
+    "source": "backend/catalog_seed/openfoodfacts-kz.json",
+    "transformation": "Only deterministic version_id and revision=1 added; all source fields unchanged.",
+    "licenses": [
+      "ODbL-1.0",
+      "DbCL-1.0"
+    ],
+    "notice": "app/src/standaloneDemo/assets/standalone/catalog-LICENSE.txt"
+  }
+}

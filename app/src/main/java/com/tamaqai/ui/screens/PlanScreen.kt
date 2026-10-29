@@ -31,6 +31,7 @@ import java.time.LocalDate
 
 @Composable fun PlanScreen(onBack:()->Unit,onGoals:()->Unit) {
     val container=(LocalContext.current.applicationContext as TamaqApplication).container
+    val standalone=container.standalone!=null
     val repository=container.plans
     val plans by repository.plans.collectAsStateWithLifecycle()
     val history by container.settings.history.collectAsStateWithLifecycle()
@@ -47,22 +48,23 @@ import java.time.LocalDate
     LaunchedEffect(repository) {try {repository.load()} catch(c:CancellationException) {throw c} catch(e:Exception) {error=nutritionError(e)};if(selected==null) selected=repository.plans.value.firstOrNull()?.id}
     Column(Modifier.fillMaxSize().imePadding().verticalScroll(rememberScrollState()).padding(20.dp),verticalArrangement=Arrangement.spacedBy(16.dp)) {
         BackButton(onBack);Text(stringResource(R.string.meal_plan),style=MaterialTheme.typography.headlineLarge)
-        Text(stringResource(R.string.plan_warning),style=MaterialTheme.typography.bodySmall,color=TextSecondary)
+        Text(stringResource(if(standalone) R.string.standalone_plan_local_hint else R.string.plan_warning),style=MaterialTheme.typography.bodySmall,color=TextSecondary)
         WellnessOutlinedButton({calendar=true},enabled=!busy) {Text(dateLabel(date))}
         PrimaryButton(stringResource(R.string.plan_manual),{run {val p=MealPlan(date=date);repository.local(p);selected=p.id;notice=R.string.plan_local_saved}},enabled=!busy)
         val goals=container.settings.onDate(date)
         val goalDate=history.lastOrNull {it.date<=date}?.date
-        PrimaryButton(stringResource(if(pending) R.string.plan_retry else R.string.plan_generate),{run {
+        if(!standalone) PrimaryButton(stringResource(if(pending) R.string.plan_retry else R.string.plan_generate),{run {
             if(goalDate==null || goalDate==LocalDate.MIN || goals.calories==null || !fitness.document.completed) throw IllegalStateException("plan_targets_required")
             selected=repository.generate(date,fitness.version,goalDate,com.tamaqai.ui.appLocale().language.takeIf {it in listOf("ru","kk","en")} ?: "en")
         }},enabled=!busy && (pending || container.owner!="guest" && fitness.document.completed && goals.calories!=null && goalDate!=LocalDate.MIN && !fitness.dirty))
-        if(pending) WellnessTextButton({repository.abandonGeneration();pending=false},enabled=!busy) {Text(stringResource(R.string.plan_abandon))}
+        if(!standalone && pending) WellnessTextButton({repository.abandonGeneration();pending=false},enabled=!busy) {Text(stringResource(R.string.plan_abandon))}
+        if(standalone) Text(stringResource(R.string.standalone_infrastructure),style=MaterialTheme.typography.bodySmall,color=TextSecondary)
         WellnessTextButton(onGoals) {Text(stringResource(R.string.setup_goals))}
         if(container.owner=="guest") Text(stringResource(R.string.account_required),color=TextSecondary)
         if(busy) Row(verticalAlignment=Alignment.CenterVertically,horizontalArrangement=Arrangement.spacedBy(12.dp)) {WellnessLoadingIndicator(Modifier.size(24.dp));Text(stringResource(R.string.account_working))}
         FeedbackPanel(error?.let {WellnessFeedback(stringResource(it),error=true)}
             ?: notice?.let {WellnessFeedback(stringResource(it))})
-        plans.forEach {p->WellnessOutlinedButton({selected=p.id;date=p.date},Modifier.fillMaxWidth(),enabled=!busy) {Text(dateLabel(p.date)+" · "+stringResource(if(p.dirty) R.string.plan_local_saved else R.string.plan_synced)+(if(p.demo) " · DEMO" else ""))}}
+        plans.forEach {p->WellnessOutlinedButton({selected=p.id;date=p.date},Modifier.fillMaxWidth(),enabled=!busy) {Text(dateLabel(p.date)+" · "+stringResource(if(standalone || p.dirty) R.string.plan_local_saved else R.string.plan_synced)+(if(p.demo) " · DEMO" else ""))}}
         if(plan==null && !busy) EmptyState(stringResource(R.string.meal_plan),stringResource(R.string.plan_warning),scene=CeramicScene.Plan)
         if(plan!=null) {
             WellnessCard(Modifier.fillMaxWidth()) {
@@ -81,7 +83,7 @@ import java.time.LocalDate
                     }
                 }}
                 Text(stringResource(R.string.plan_offline),style=MaterialTheme.typography.bodySmall,color=TextSecondary)
-                WellnessOutlinedButton({run {repository.sync(plan.id);notice=R.string.plan_synced}},enabled=!busy && container.owner!="guest") {Text(stringResource(R.string.plan_sync))}
+                if(!standalone) WellnessOutlinedButton({run {repository.sync(plan.id);notice=R.string.plan_synced}},enabled=!busy && container.owner!="guest") {Text(stringResource(R.string.plan_sync))}
                 if(error==R.string.edit_conflict) WellnessTextButton({run {selected=repository.saveAsCopy(plan.id);notice=R.string.plan_local_saved}},enabled=!busy) {Text(stringResource(R.string.plan_copy))}
             }
             plan.meals.forEach {m->WellnessCard(Modifier.fillMaxWidth()) {

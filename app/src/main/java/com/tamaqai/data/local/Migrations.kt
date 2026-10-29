@@ -4,6 +4,13 @@ import androidx.room.migration.Migration
 import androidx.sqlite.db.SupportSQLiteDatabase
 
 object Migrations {
+    /** Additive migration. Existing diary, favorites, weights and catalog rows are untouched. */
+    val FROM_5_TO_6 = object : Migration(5, 6) {
+        override fun migrate(db: SupportSQLiteDatabase) {
+            db.execSQL("CREATE TABLE IF NOT EXISTS planning_workspaces (owner TEXT NOT NULL, id TEXT NOT NULL, documentJson TEXT NOT NULL, PRIMARY KEY(owner,id))")
+            db.execSQL("CREATE TABLE IF NOT EXISTS shopping_documents (owner TEXT NOT NULL, workspaceId TEXT NOT NULL, documentJson TEXT NOT NULL, PRIMARY KEY(owner,workspaceId))")
+        }
+    }
     val FROM_4_TO_5 = object : Migration(4, 5) {
         override fun migrate(db: SupportSQLiteDatabase) {
             db.execSQL("CREATE TABLE IF NOT EXISTS catalog_cache (owner TEXT NOT NULL, versionId TEXT NOT NULL, entryJson TEXT NOT NULL, lastUsed INTEGER NOT NULL, favorite INTEGER NOT NULL, PRIMARY KEY(owner,versionId))")
