@@ -1875,8 +1875,8 @@
     },
     {
       "path": "docs/design/presentation/assets-audit.json",
-      "sha256": "ba1da5c0f5f7f60ada1e8d6d23ae417d13fe3d8a5a7de01d51cb45937d0d1999",
-      "origin": "reviewed multi-day planning and shopping feature"
+      "sha256": "80cfff27ef0702ed8ad1d319448072712fa2a2919a3ba86e08581b342aa39027",
+      "origin": "reviewed generated locale audit: 683 strings"
     },
     {
       "path": "docs/design/presentation/verify_assets.py",
