@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="photo_quick_save_hint">Оценка еды сохраняется автоматически. Её можно изменить позже. Неясные фото остаются черновиками.</string>
+</resources>

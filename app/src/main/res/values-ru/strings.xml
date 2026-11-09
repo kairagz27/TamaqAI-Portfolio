@@ -148,7 +148,7 @@
     <string name="protein_average_value">%1$s г / день</string>
     <string name="calories_average">Калории в среднем</string>
     <string name="average_basis">Дней с подтверждёнными записями: %1$d. Среднее рассчитано по ним. Дни без записей исключены; дневник может отражать не всё питание.</string>
-    <string name="weight_chart_hint">Линия соединяет реальные измерения. Дни без измерений не считаются нулевым весом.</string>
+    <string name="weight_chart_hint">Линия соединяет записанные измерения, включая промежутки между ними. Это ориентир, а не измерение на каждый день.</string>
     <string name="observed_days">Дни с записями</string>
     <string name="chart_range">От %1$s до %2$s</string>
     <string name="data_loading">Загружаем дневник…</string>

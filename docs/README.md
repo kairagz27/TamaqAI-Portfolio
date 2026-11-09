@@ -2,6 +2,7 @@
 
 Start with the [project overview](../README.md), then [development](DEVELOPMENT.md) for reproducible commands.
 
+- [Current local delivery and honest verification status](CURRENT_DELIVERY.md); [current capture conditions](screenshots/current-20261109/README.md).
 - [Architecture and data boundaries](ARCHITECTURE.md), [architecture decisions](adr/README.md).
 - [Multi-day plans and shopping lists · 1.5.0](MEAL_PLANS_SHOPPING.md): local behavior, Room 6 migration, recipe provenance and verification commands.
 - [Standalone Android demo](STANDALONE_DEMO.md); [technical server demo, video and APK limitations](DEMO.md).

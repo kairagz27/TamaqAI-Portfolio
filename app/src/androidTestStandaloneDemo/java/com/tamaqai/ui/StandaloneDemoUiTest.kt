@@ -162,6 +162,7 @@ class StandaloneDemoUiTest {
         assertEquals(NutritionSource.Demo, prepared.source)
         assertEquals(4, prepared.details.components.size)
         assertNotNull(container.photos.availableFile(prepared.details.photoName))
+        find(hasContentDescription(text(R.string.eaten_portion) + ": " + text(R.string.portion_half)))
         shot("editor-light")
         phase = "whole-portion-half"
         find(hasContentDescription(text(R.string.eaten_portion) + ": " + text(R.string.portion_half))).apricotClick()
@@ -271,9 +272,9 @@ class StandaloneDemoUiTest {
         compose.waitUntil(5_000) { confirmed().none { it.nutrition.name == "Demo manual bowl" } }
         assertEquals(beforePlan + 2, confirmed().size)
         // Reset through the visible settings UI, not by clearing package data.
-        menu(); clickTag("drawer-appearance"); click(R.string.theme_dark); back()
+        menu(); clickTag("drawer-appearance"); clickTag("drawer-theme-Dark"); back()
         val languageBeforeReset = compose.activity.resources.configuration.locales[0].language
-        menu(); clickTag("drawer-settings"); click(R.string.standalone_reset)
+        menu(); clickTag("drawer-settings"); click(R.string.privacy_title); click(R.string.standalone_reset)
         compose.onAllNodesWithText(text(R.string.standalone_reset_title)).fetchSemanticsNodes().also { assertTrue(it.isNotEmpty()) }
         find(hasText(text(R.string.standalone_reset)) and hasClickAction() and hasAnyAncestor(isDialog())).apricotClick()
         compose.waitUntil(10_000) { compose.onAllNodesWithTag("standalone-start").filter(isEnabled()).fetchSemanticsNodes().isNotEmpty() }
@@ -294,14 +295,14 @@ class StandaloneDemoUiTest {
         guardAndReset(); clickTag("standalone-start"); awaitHome()
         val locales = listOf("ru" to R.string.language_ru, "kk" to R.string.language_kk, "en" to R.string.language_en)
         for ((language, label) in locales) {
-            menu(); clickTag("drawer-language"); click(label)
+            menu(); clickTag("drawer-language"); clickTag("drawer-language-$language")
             compose.waitUntil(10_000) { compose.activity.resources.configuration.locales[0].language == language }
             if (compose.onAllNodesWithTag("root-screen-home").fetchSemanticsNodes().isEmpty()) back()
             awaitHome()
             compose.onNodeWithText(text(R.string.standalone_badge)).assertExists()
             for ((mode, button) in listOf(ThemeMode.Light to R.string.theme_light, ThemeMode.Dark to R.string.theme_dark)) {
-                menu(); clickTag("drawer-appearance"); click(button)
-                assertEquals(mode, app.preferences.theme.value); back(); awaitHome(); top()
+                menu(); clickTag("drawer-appearance"); clickTag("drawer-theme-${mode.name}")
+                assertEquals(mode, app.preferences.theme.value); shot("drawer-inline-$language-${mode.name.lowercase()}"); back(); awaitHome(); top()
                 compose.onNodeWithTag("calorie-value", useUnmergedTree = true).assertIsDisplayed()
                 shot("home-$language-${mode.name.lowercase()}")
                 if (language == "en") {
@@ -316,4 +317,61 @@ class StandaloneDemoUiTest {
         evidence("localization-themes", JSONObject().put("languages", "ru,kk,en").put("themes", "light,dark")
             .put("local_profile_without_login_or_logout", true).put("seed_record_count_unchanged", true))
     }
+    @Test fun smoothWeightProgressKeepsOriginalScreens() = guarded {
+        guardAndReset(); clickTag("standalone-start"); awaitHome()
+        val today = LocalDate.now()
+        runBlocking {
+            // guardAndReset guarantees the isolated demo package, never a user's diary.
+            container.dailyRepository.clearWeights()
+            listOf(28L to 74.8, 23L to 74.2, 17L to 74.5, 11L to 73.7, 5L to 73.4, 0L to 72.9)
+                .forEachIndexed { i, (ago, kg) ->
+                    container.dailyRepository.saveWeight(WeightEntry("chart-preview-$i", today.minusDays(ago), kg))
+                }
+        }
+        menu(); clickTag("drawer-language"); clickTag("drawer-language-ru")
+        compose.waitUntil(10_000) { compose.activity.resources.configuration.locales[0].language == "ru" }
+        if (compose.onAllNodesWithTag("root-screen-home").fetchSemanticsNodes().isEmpty()) back()
+        awaitHome()
+        for (mode in listOf(ThemeMode.Light, ThemeMode.Dark)) {
+            menu(); clickTag("drawer-appearance"); clickTag("drawer-theme-${mode.name}"); back(); awaitHome(); top()
+            shot("original-home-${mode.name.lowercase()}")
+            click(R.string.progress)
+            find(hasTestTag("weight-chart")).performScrollTo()
+            compose.onAllNodes(verticalLazy).onFirst().performScrollToIndex(3)
+            compose.waitForIdle()
+            shot("weight-curve-${mode.name.lowercase()}")
+            click(R.string.today); awaitHome()
+        }
+        assertEquals(6, confirmed().size)
+        evidence("weight-curve", JSONObject().put("synthetic_measurements", 6).put("date_spaced", true)
+            .put("original_visual_baseline_restored", true))
+    }
+
+
+    /** Current approved UI; the bundled sample is explicitly a prepared local example. */
+    @Test fun portfolioCurrentDesignVideo() {
+        org.junit.Assume.assumeTrue("Recording-only journey requires the bounded controller", video)
+        guarded {
+        bundledPhotoComponentsPortionDoubleConfirmAndRealDiary()
+        menu(); clickTag("drawer-appearance")
+        shot("current-drawer-light")
+        clickTag("drawer-theme-Dark")
+        shot("current-drawer-dark")
+        back(); awaitHome(); top(); shot("current-home-dark")
+        click(R.string.progress)
+        find(hasTestTag("weight-chart")).performScrollTo()
+        compose.onAllNodes(verticalLazy).onFirst().performScrollToIndex(3)
+        Thread.sleep(500)
+        shot("current-weight-curve-dark")
+        click(R.string.today); awaitHome()
+        menu(); clickTag("drawer-appearance"); clickTag("drawer-theme-Light")
+        back(); awaitHome(); top(); shot("current-home-light")
+        evidence("current-portfolio-video", JSONObject().put("prepared_example_only", true)
+            .put("real_photo_analysis_demonstrated", false).put("approved_original_palette", true)
+            .put("inline_drawer", true).put("smooth_weight_curve", true))
+        File(directory, "phase").writeText("video-complete")
+        Thread.sleep(3_000)
+        }
+    }
+
 }

@@ -1,5 +1,10 @@
 package com.tamaqai.ui.components
 
+import androidx.compose.animation.AnimatedVisibility
+import androidx.compose.runtime.saveable.rememberSaveable
+import androidx.compose.foundation.selection.selectable
+import androidx.compose.foundation.selection.selectableGroup
+import androidx.compose.ui.semantics.stateDescription
 import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.animation.core.tween
 import androidx.compose.foundation.background
@@ -81,7 +86,10 @@ fun AccountDrawer(
     modifier: Modifier = Modifier,
     closeFocusRequester: FocusRequester? = null,
     localOnly: Boolean = false,
+    onThemeChange: (ThemeMode) -> Unit = {},
+    onLanguageChange: (String) -> Unit = {},
 ) {
+    var expanded by rememberSaveable { mutableStateOf<String?>(null) }
     val paneLabel = stringResource(R.string.drawer_account_and_settings)
     val displayName = profile.name.trim().ifBlank {
         stringResource(if (isGuest) R.string.account_guest else R.string.account_title)
@@ -168,23 +176,35 @@ fun AccountDrawer(
 
         Spacer(Modifier.height(WellnessSpace.section))
         DrawerGroupTitle(stringResource(R.string.drawer_application_group))
-        DrawerDestinationRow(
-            "appearance", stringResource(R.string.appearance), Icons.Outlined.Palette, themeLabel,
-            selected = currentRoute == "appearance", iconSurface = Apricot, iconContent = PastelContent,
-        ) { onNavigate("appearance") }
-        DrawerDestinationRow(
-            "language", stringResource(R.string.language), Icons.Outlined.Language, languageLabel,
-            selected = currentRoute == "language", iconSurface = ProteinPastel, iconContent = PastelContent,
-        ) { onNavigate("language") }
-        DrawerDestinationRow(
-            "settings", stringResource(R.string.settings), Icons.Outlined.Settings,
-            selected = currentRoute == "settings", iconSurface = SecondarySurface,
-        ) { onNavigate("settings") }
-        DrawerDestinationRow(
-            "about", stringResource(R.string.about_app), Icons.Outlined.Info,
-            selected = currentRoute == "about", iconSurface = SecondarySurface,
-        ) { onNavigate("about") }
-
+        DrawerAccordion("appearance", stringResource(R.string.appearance), Icons.Outlined.Palette,
+            themeLabel, Apricot, expanded == "appearance", { expanded = if (expanded == "appearance") null else "appearance" }) {
+            Column(Modifier.selectableGroup()) {
+                listOf(ThemeMode.System to R.string.theme_system, ThemeMode.Light to R.string.theme_light,
+                    ThemeMode.Dark to R.string.theme_dark).forEach { (mode, label) ->
+                    DrawerChoice("theme-${mode.name}", stringResource(label), theme == mode) { onThemeChange(mode) }
+                }
+            }
+        }
+        DrawerAccordion("language", stringResource(R.string.language), Icons.Outlined.Language,
+            languageLabel, ProteinPastel, expanded == "language", { expanded = if (expanded == "language") null else "language" }) {
+            Column(Modifier.selectableGroup()) {
+                listOf("ru" to R.string.language_ru, "kk" to R.string.language_kk, "en" to R.string.language_en).forEach { (tag, label) ->
+                    DrawerChoice("language-$tag", stringResource(label), languageCode == tag) { onLanguageChange(tag) }
+                }
+            }
+        }
+        DrawerAccordion("settings", stringResource(R.string.settings), Icons.Outlined.Settings,
+            null, SecondarySurface, expanded == "settings", { expanded = if (expanded == "settings") null else "settings" }) {
+            Text(stringResource(if (localOnly) R.string.standalone_local_only else R.string.privacy_body),
+                style = MaterialTheme.typography.bodySmall, color = TextSecondary)
+            WellnessTextButton({ onNavigate("goals") }) { Text(stringResource(R.string.goals_title)) }
+            WellnessTextButton({ onNavigate("settings") }) { Text(stringResource(R.string.privacy_title)) }
+        }
+        DrawerAccordion("about", stringResource(R.string.about_app), Icons.Outlined.Info,
+            null, SecondarySurface, expanded == "about", { expanded = if (expanded == "about") null else "about" }) {
+            Text("TamaqAI ${BuildConfig.VERSION_NAME}", style = MaterialTheme.typography.titleMedium)
+            Text(stringResource(R.string.about_description), style = MaterialTheme.typography.bodySmall, color = TextSecondary)
+        }
         Spacer(Modifier.height(WellnessSpace.section))
         HorizontalDivider(color = BorderSoft.copy(alpha = .6f))
         if (!isGuest && !localOnly) {
@@ -255,8 +275,10 @@ private fun DrawerDestinationRow(
     iconSurface: Color,
     iconContent: Color = TextPrimary,
     showChevron: Boolean = true,
+    expanded: Boolean? = null,
     onClick: () -> Unit,
 ) {
+    val expansionLabel = expanded?.let { stringResource(if (it) R.string.drawer_expanded else R.string.drawer_collapsed) }
     val interactions = remember { MutableInteractionSource() }
     val pressed by interactions.collectIsPressedAsState()
     val pressScale by animateFloatAsState(if (pressed) .98f else 1f, tween(WellnessMotion.press), label = "drawer press")
@@ -264,6 +286,7 @@ private fun DrawerDestinationRow(
     val shape = RoundedCornerShape(WellnessSpace.control)
     Row(
         Modifier.fillMaxWidth().testTag("drawer-$destination").heightIn(min = AccountDrawerGeometry.row)
+            .then(if (expansionLabel != null) Modifier.semantics { stateDescription = expansionLabel } else Modifier)
             .graphicsLayer { scaleX = pressScale; scaleY = pressScale }.clip(shape)
             .background(if (selected) SelectedSurface else Color.Transparent)
             .clickable(interactionSource = interactions, indication = null, role = Role.Button, onClick = onClick)
@@ -286,6 +309,32 @@ private fun DrawerDestinationRow(
         if (!stackedValue && value != null) {
             Text(value, Modifier.widthIn(max = 100.dp), color = TextSecondary, style = MaterialTheme.typography.bodySmall)
         }
-        if (showChevron) Icon(Icons.Outlined.ChevronRight, null, Modifier.size(18.dp), tint = TextSecondary)
+        if (showChevron) Icon(Icons.Outlined.ChevronRight, null, Modifier.size(18.dp).graphicsLayer { rotationZ = if (expanded == true) 90f else 0f }, tint = TextSecondary)
+    }
+}
+
+/** Lightweight preferences remain in the modal; complex/destructive actions retain their own flow. */
+@Composable
+private fun DrawerAccordion(id: String, title: String, icon: ImageVector, value: String?, surface: Color,
+    expanded: Boolean, onToggle: () -> Unit, content: @Composable ColumnScope.() -> Unit) {
+    Column {
+        DrawerDestinationRow(id, title, icon, value, selected = expanded, iconSurface = surface,
+            expanded = expanded, onClick = onToggle)
+        AnimatedVisibility(expanded) {
+            Column(Modifier.fillMaxWidth().padding(start = 40.dp, bottom = 8.dp)
+                .background(SecondarySurface.copy(alpha = .55f), RoundedCornerShape(16.dp)).padding(8.dp),
+                verticalArrangement = Arrangement.spacedBy(4.dp), content = content)
+        }
+    }
+}
+
+@Composable
+private fun DrawerChoice(id: String, title: String, checked: Boolean, onClick: () -> Unit) {
+    Row(Modifier.fillMaxWidth().testTag("drawer-$id").heightIn(min = 48.dp)
+        .clip(RoundedCornerShape(12.dp)).background(if (checked) SelectedSurface else Color.Transparent)
+        .selectable(selected = checked, role = Role.RadioButton, onClick = onClick).padding(horizontal = 8.dp),
+        verticalAlignment = Alignment.CenterVertically) {
+        WellnessRadioButton(selected = checked, onClick = null)
+        Text(title, style = MaterialTheme.typography.bodyMedium, color = TextPrimary, modifier = Modifier.weight(1f))
     }
 }

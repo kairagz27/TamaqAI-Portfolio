@@ -90,7 +90,11 @@ import java.util.Locale
             leadingIcon={Icon(Icons.Outlined.Search,null)},modifier=Modifier.fillMaxWidth(), colors = wellnessFieldColors()) }
         if (incompleteCount > 0) item { IncompleteNutritionNotice(incompleteCount) }
         if(state.loading) item { WellnessLoadingIndicator() }
-        if(!state.loading && filtered.isEmpty()) item { EmptyState(stringResource(R.string.history_empty_title),stringResource(R.string.history_empty_body),scene=CeramicScene.History) }
+        state.error?.let { error -> item {
+            Text(stringResource(error), color = MaterialTheme.colorScheme.error)
+            WellnessTextButton(vm::retry) { Text(stringResource(R.string.retry)) }
+        } }
+        if(!state.loading && state.error == null && filtered.isEmpty()) item { EmptyState(stringResource(R.string.history_empty_title),stringResource(R.string.history_empty_body),scene=CeramicScene.History) }
         items(filtered,key=Meal::uid) { meal ->
             Column(verticalArrangement=Arrangement.spacedBy(8.dp)) {
                 Text(dateLabel(date(meal)),color=TextSecondary,style=MaterialTheme.typography.labelMedium)

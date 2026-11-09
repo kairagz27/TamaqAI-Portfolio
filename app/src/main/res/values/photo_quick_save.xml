@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="photo_quick_save_hint">Food estimates are saved automatically. You can edit them later. Unclear photos stay as drafts.</string>
+</resources>

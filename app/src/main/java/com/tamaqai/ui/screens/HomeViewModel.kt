@@ -26,15 +26,18 @@ class HomeViewModel(private val mealRepository: MealRepository, private val read
     private val clockDate = flow { while (true) { emit(LocalDate.now()); delay(60_000) } }
     private val retry = MutableStateFlow(0)
     private val actionError = MutableStateFlow<String?>(null)
+    // Keep the last successful local snapshot while surfacing a read/retry error.
+    // This cache belongs to this owner-scoped ViewModel, never to another account.
+    private var lastLoadedMeals: List<Meal> = emptyList()
     @OptIn(kotlinx.coroutines.ExperimentalCoroutinesApi::class)
     private val entries = retry.flatMapLatest {
-        mealRepository.getAllMeals().map { Result.success(it) }
+        mealRepository.getAllMeals().map { lastLoadedMeals = it; Result.success(it) }
             .onStart { ready?.await() }
             .catch { emit(Result.failure(it)) }
     }
     val uiState = combine(entries, date, actionError, clockDate) { entries, selectedDay, error, today ->
         val day = selectedDay ?: today
-        val all = entries.getOrDefault(emptyList())
+        val all = entries.getOrElse { lastLoadedMeals }
         val confirmed = DiaryTotals.forDate(all, day)
         HomeUiState(confirmed, all.filter { it.status != MealStatus.Confirmed || it.details.catalogPendingManual },
             confirmed.sumOf { it.nutrition.calories }, confirmed.sumOf { it.nutrition.protein },

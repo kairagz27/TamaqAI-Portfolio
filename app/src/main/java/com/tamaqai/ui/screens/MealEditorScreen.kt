@@ -67,6 +67,8 @@ import com.tamaqai.ui.theme.*
         }
     }
     LaunchedEffect(vm) { vm.close.collect { onBack() } }
+    val analysisAccess = !standalone && application.container.sessions.hasAnalysisAccess(application.container.owner)
+    LaunchedEffect(vm, state.loading, analysisAccess) { vm.startPhotoAnalysisIfReady(analysisAccess) }
     if(catalogVersion!=null) {
         CatalogScreen(repository=application.container.catalog,kind="product",initialVersionId=catalogVersion,
             onBack={catalogVersion=null},onSelected={selection ->catalogVersion=null;vm.selectCatalog(selection,catalogComponentIndex)})
@@ -78,7 +80,7 @@ import com.tamaqai.ui.theme.*
             modifier = Modifier.glassBackdrop(material = WellnessGlassMaterial.Navigation)) {
             Column(Modifier.fillMaxWidth().imePadding().padding(16.dp)) {
                 PrimaryButton(stringResource(R.string.save_meal), vm::confirm,
-                    enabled = !state.busy && !state.saving && state.snapshot != null && state.error == null)
+                    enabled = !state.busy && !state.saving && state.snapshot != null && (state.error == null || state.error == "ui_error_009"))
             }
         }
     }) { padding ->
@@ -95,6 +97,9 @@ import com.tamaqai.ui.theme.*
                 Column(Modifier.fillMaxWidth().offset(y = if (hasPhoto) (-28).dp else 0.dp)
                     .matteSurface()
                     .padding(16.dp), verticalArrangement = Arrangement.spacedBy(16.dp)) {
+                if (meal.details.photoName != null && meal.status == MealStatus.PendingUpload) {
+                    Text(stringResource(R.string.photo_quick_save_hint), style = MaterialTheme.typography.bodySmall, color = TextSecondary)
+                }
                 Text(meal.source.label(), style = MaterialTheme.typography.labelLarge, color = AccentBrown)
                 if (meal.details.userEdited) Text(stringResource(R.string.edited_values), style = MaterialTheme.typography.bodySmall, color = TextSecondary)
                 meal.details.catalogSourceLabel?.let {Text(it,style=MaterialTheme.typography.bodySmall,color=TextSecondary)}

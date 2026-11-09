@@ -8,6 +8,7 @@ import com.tamaqai.domain.model.*
 import com.tamaqai.domain.repository.MealRepository
 import com.tamaqai.domain.usecase.AnalyzeMealPhotoUseCase
 import com.tamaqai.domain.usecase.NutritionCalculator
+import com.tamaqai.domain.usecase.PhotoAnalysisSavePolicy
 import kotlinx.coroutines.*
 import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.flow.*
@@ -41,12 +42,17 @@ class MealEditorViewModel(private val uid: String, private val repository: MealR
     private val closeChannel = Channel<Unit>(Channel.BUFFERED)
     val close = closeChannel.receiveAsFlow()
     private var analysisJob: Job? = null
+    private var automaticStartAttempted = false
     init { load() }
     fun load() = viewModelScope.launch {
         try {
             ready?.await()
             val meal = requireNotNull(repository.getMeal(uid)) { "ui_error_005" }
-            show(meal)
+            if (meal.status == MealStatus.Confirmed) {
+                // Process recreation after the transaction must not create another editable draft.
+                _state.value = EditorState(meal = meal, loading = false, busy = true)
+                closeChannel.send(Unit)
+            } else show(meal)
         } catch (cancel: CancellationException) { throw cancel }
         catch (_: Exception) { _state.value = EditorState(loading = false, error = "ui_error_006") }
     }
@@ -145,13 +151,28 @@ class MealEditorViewModel(private val uid: String, private val repository: MealR
         _state.update { it.copy(busy = true, error = null) }
         viewModelScope.launch {
             try {
-                lock.withLock { repository.confirm(model) }
-                withContext(ioDispatcher) { photos.delete(model.details.photoName) }
-                closeChannel.send(Unit)
+                commitAndClose(model)
             } catch (cancel: CancellationException) { throw cancel }
             catch (_: Exception) { _state.update { it.copy(busy = false, error = "ui_error_009") } }
         }
     }
+    /** The database transaction is the success boundary; photo cleanup is best effort. */
+    private suspend fun commitAndClose(model: Meal) = withContext(NonCancellable) {
+        lock.withLock { repository.confirm(model) }
+        _state.update { it.copy(meal = model.copy(status = MealStatus.Confirmed), busy = true, saving = false, error = null) }
+        withContext(ioDispatcher) { runCatching { photos.delete(model.details.photoName) } }
+        closeChannel.send(Unit)
+    }
+
+    /** Only pristine pending photos start automatically. Failed/cancelled drafts need an explicit retry. */
+    fun startPhotoAnalysisIfReady(hasAccess: Boolean) {
+        if (!hasAccess || automaticStartAttempted || _state.value.loading || _state.value.busy) return
+        val meal = _state.value.meal ?: return
+        if (meal.status != MealStatus.PendingUpload || meal.details.photoName == null || meal.details.userEdited) return
+        automaticStartAttempted = true
+        analyze("")
+    }
+
     fun delete(originalToo: Boolean = false) {
         if (_state.value.busy) return
         _state.update { it.copy(busy = true) }
@@ -181,6 +202,7 @@ class MealEditorViewModel(private val uid: String, private val repository: MealR
         val key = initial.details.analysisId ?: return
         _state.update { it.copy(busy = true, error = null) }
         analysisJob = viewModelScope.launch {
+            var receivedReview: Meal? = null
             try {
                 lock.withLock { repository.saveDraft(initial.copy(status = MealStatus.Analyzing)) }
                 val jpeg = withContext(ioDispatcher) { photos.read(photo) }
@@ -194,13 +216,35 @@ class MealEditorViewModel(private val uid: String, private val repository: MealR
                     else calculator.calculate(result.name, details.components, 1.0)
                 val reviewed = initial.copy(nutrition = snapshot, status = MealStatus.NeedsReview,
                     source = if (response.isDemo) NutritionSource.Demo else NutritionSource.AiEstimate, details = details)
+                // Retain the received result before a cancellable database suspension.
+                receivedReview = reviewed
                 lock.withLock { repository.saveDraft(reviewed) }
                 show(reviewed)
+                if (PhotoAnalysisSavePolicy.shouldSave(response, initial)) {
+                    _state.update { it.copy(busy = true) }
+                    // A failed local confirmation retains the analyzed draft. Retry Save, not AI.
+                    try { commitAndClose(reviewed) }
+                    catch (cancel: CancellationException) { throw cancel }
+                    catch (_: Exception) { _state.update { it.copy(busy = false, error = "ui_error_009") } }
+                }
             } catch (cancel: CancellationException) {
-                withContext(NonCancellable) { fail(initial, "ui_error_013") }
+                if (_state.value.meal?.status != MealStatus.Confirmed) {
+                    withContext(NonCancellable) {
+                        receivedReview?.let { recoverReview(it) } ?: fail(initial, "ui_error_013")
+                    }
+                }
                 throw cancel
-            } catch (e: Exception) { fail(initial, if (e is IllegalStateException || e is IllegalArgumentException) e.message ?: "ui_error_014" else "ui_error_015") }
+            } catch (e: Exception) {
+                receivedReview?.let { recoverReview(it) }
+                    ?: fail(initial, if (e is IllegalStateException || e is IllegalArgumentException) e.message ?: "ui_error_014" else "ui_error_015")
+            }
         }
+    }
+    /** Once a result exists, recovery must never replace it with the pre-analysis draft. */
+    private suspend fun recoverReview(reviewed: Meal) {
+        show(reviewed)
+        try { lock.withLock { repository.saveDraft(reviewed) } }
+        catch (_: Exception) { _state.update { it.copy(error = "ui_error_009", busy = false) } }
     }
     private suspend fun fail(meal: Meal, message: String) {
         val failed = meal.copy(status = MealStatus.Failed)

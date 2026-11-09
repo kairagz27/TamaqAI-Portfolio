@@ -55,7 +55,7 @@ import com.tamaqai.ui.theme.*
 }
 
 /** The camera and manual path remain distinct; other existing sources stay in the add menu. */
-@Composable fun HomeFoodActions(onScan: () -> Unit, onManual: () -> Unit, onOther: () -> Unit, scanLabel:Int=R.string.home_scan_food) {
+@Composable fun HomeFoodActions(onScan: () -> Unit, onManual: () -> Unit, onOther: () -> Unit, scanLabel:Int=R.string.home_scan_food, showAnalysisDisclosure: Boolean = false) {
     val interactions = remember { MutableInteractionSource() }
     val pressed by interactions.collectIsPressedAsState()
     val scale by androidx.compose.animation.core.animateFloatAsState(if(pressed) .985f else 1f,
@@ -70,6 +70,11 @@ import com.tamaqai.ui.theme.*
             Text(stringResource(scanLabel), style = MaterialTheme.typography.labelLarge,
                 fontWeight = FontWeight.SemiBold)
         }
+        if (showAnalysisDisclosure) Text(
+            stringResource(R.string.home_photo_analysis_disclosure),
+            Modifier.fillMaxWidth().padding(horizontal = 4.dp, vertical = 6.dp).testTag("photo-analysis-disclosure"),
+            style = MaterialTheme.typography.bodySmall, color = TextSecondary,
+        )
         Row(Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically) {
             WellnessTextButton(onManual, Modifier.weight(1f).testTag("manual-food")) {
                 Icon(Icons.Outlined.EditNote, null, Modifier.size(21.dp))

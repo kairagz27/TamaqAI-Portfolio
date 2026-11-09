@@ -110,7 +110,7 @@ jobs:
             --no-daemon --no-parallel --max-workers=2
             -Pkotlin.compiler.execution.strategy=in-process
             '-Dorg.gradle.jvmargs=-Xmx2g -Dfile.encoding=UTF-8'
-            -Pandroid.testInstrumentationRunnerArguments.class=com.tamaqai.data.NetworkCancellationTest,com.tamaqai.data.SecureSessionTest,com.tamaqai.data.DiaryPersistenceTest,com.tamaqai.data.DailyPersistenceTest,com.tamaqai.data.NutritionPersistenceTest,com.tamaqai.data.AccountIsolationTest,com.tamaqai.data.CatalogPersistenceTest
+            -Pandroid.testInstrumentationRunnerArguments.class=com.tamaqai.data.NetworkCancellationTest,com.tamaqai.data.LocalHttpPhotoFlowTest,com.tamaqai.data.SecureSessionTest,com.tamaqai.data.DiaryPersistenceTest,com.tamaqai.data.DailyPersistenceTest,com.tamaqai.data.NutritionPersistenceTest,com.tamaqai.data.AccountIsolationTest,com.tamaqai.data.CatalogPersistenceTest
       - name: Require the selected core tests to execute without skips
         run: |
           python3 - <<'PY'
@@ -119,6 +119,8 @@ jobs:
           cases = [case for path in Path('app/build/outputs/androidTest-results/connected/demo').rglob('*.xml')
                    for case in ET.parse(path).getroot().iter('testcase')]
           assert cases, 'No Android core test results found'
+          photo_cases = [case for case in cases if case.get('classname') == 'com.tamaqai.data.LocalHttpPhotoFlowTest']
+          assert len(photo_cases) == 4, 'The four real-client photo pipeline tests must execute'
           assert not any(case.find('skipped') is not None for case in cases), 'Selected core tests were skipped'
           assert not any(case.find('failure') is not None or case.find('error') is not None for case in cases), 'Android core test failed'
           print({'executed': len(cases), 'skipped': 0, 'failures': 0})
@@ -175,8 +177,8 @@ jobs:
             test "$(adb shell settings get global airplane_mode_on | tr -d '\r')" = 1
             adb shell svc wifi disable
             adb shell svc data disable
-            ./gradlew connectedStandaloneDemoAndroidTest -PtamaqStandaloneTest=true --no-daemon --no-parallel --max-workers=2 -Pkotlin.compiler.execution.strategy=in-process '-Dorg.gradle.jvmargs=-Xmx2g -Dfile.encoding=UTF-8' -Pandroid.testInstrumentationRunnerArguments.class=com.tamaqai.data.StandaloneDemoPersistenceTest,com.tamaqai.data.MealPlanningPersistenceTest,com.tamaqai.ui.PlanningViewModelRecoveryTest
-      - name: Require all 21 standalone, planner migration and account recovery tests without skips
+            ./gradlew connectedStandaloneDemoAndroidTest -PtamaqStandaloneTest=true --no-daemon --no-parallel --max-workers=2 -Pkotlin.compiler.execution.strategy=in-process '-Dorg.gradle.jvmargs=-Xmx2g -Dfile.encoding=UTF-8' -Pandroid.testInstrumentationRunnerArguments.class=com.tamaqai.data.StandaloneDemoPersistenceTest,com.tamaqai.data.MealPlanningPersistenceTest,com.tamaqai.ui.PlanningViewModelRecoveryTest,com.tamaqai.ui.DrawerInlineTest,com.tamaqai.ui.WeightChartAnimationTest
+      - name: Require all 24 standalone, planner, drawer and chart tests without skips
         run: |
           python3 - <<'PY'
           import sys

@@ -325,7 +325,9 @@ private fun TamaqRootNavigation() {
                     drawerState.close();val revoked=container.account.logout()
                     if(!revoked) android.widget.Toast.makeText(context,R.string.logout_local_only,android.widget.Toast.LENGTH_LONG).show()
                     (context as MainActivity).identityChanged()
-                }},onGuestLogin={navigateDrawer("login")},closeFocusRequester=drawerCloseFocus,localOnly=container.standalone!=null)
+                }},onGuestLogin={navigateDrawer("login")},closeFocusRequester=drawerCloseFocus,localOnly=container.standalone!=null,
+                onThemeChange={ mode -> try { application.preferences.setTheme(mode) } catch (_: Exception) { scope.launch { snackbar.showSnackbar(context.getString(R.string.local_save_error)) } } },
+                onLanguageChange={ tag -> androidx.appcompat.app.AppCompatDelegate.setApplicationLocales(androidx.core.os.LocaleListCompat.forLanguageTags(tag)) })
         }
     }) {
     WellnessBackground(Modifier.fillMaxSize()) {
@@ -437,6 +439,7 @@ private fun TamaqRootNavigation() {
                     addSheet = false; scanner.captureDate(homeState.date); nav.navigate("scanner") }
                 PrimaryAddOption(R.string.gallery, R.string.gallery_option_hint, Icons.Outlined.PhotoLibrary, Modifier.weight(1f)) { addSheet = false; gallery() }
             }
+            Text(stringResource(R.string.home_photo_analysis_disclosure), style = MaterialTheme.typography.bodySmall, color = TextSecondary)
             Row(horizontalArrangement = Arrangement.spacedBy(12.dp)) {
                 PrimaryAddOption(R.string.catalog_product_option,R.string.catalog_product_hint,Icons.Outlined.Search,Modifier.weight(1f)) {
                     addSheet=false;catalogQuery="";catalogBarcode=null;nav.navigate("catalog/product") }

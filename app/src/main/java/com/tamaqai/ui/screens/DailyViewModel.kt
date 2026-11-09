@@ -22,11 +22,10 @@ class DailyViewModel(private val meals: MealRepository, private val daily: Daily
     private val settings: UserSettings, private val photos: PhotoStore, private val ready: Deferred<Unit>) : ViewModel() {
     private val action = MutableStateFlow(DailyState())
     private val retry = MutableStateFlow(0)
-    @OptIn(ExperimentalCoroutinesApi::class)
-    private val entries = retry.flatMapLatest {
+    private val entries = dailyReadStates(retry, ready) {
         combine(meals.getAllMeals(), daily.favorites, daily.weights, settings.dailyGoals) { m, f, w, g ->
             DailyState(m, f, w, g, loading = false, incompleteCatalogMeals = DiaryTotals.incompleteCatalogEntries(m))
-        }.onStart { ready.await() }.catch { emit(DailyState(loading = false, error = R.string.diary_read_error)) }
+        }
     }
     val state = combine(entries, action) { values, status -> values.copy(error = status.error ?: values.error,
         notice = status.notice, busy = status.busy) }.stateIn(viewModelScope, SharingStarted.WhileSubscribed(5000), DailyState())
@@ -65,4 +64,15 @@ class DailyViewModel(private val meals: MealRepository, private val daily: Daily
         daily.clearLocalRecords()
         withContext(Dispatchers.IO) { ownedPhotos.forEach(photos::delete); settings.save(DailyGoals()) }
     }
+}
+
+/** Cache is local to this owner-scoped collector and is replaced by every successful snapshot. */
+@OptIn(ExperimentalCoroutinesApi::class)
+internal fun dailyReadStates(retry: Flow<Int>, ready: Deferred<Unit>, source: () -> Flow<DailyState>): Flow<DailyState> = flow {
+    var lastSuccessful = DailyState()
+    emitAll(retry.flatMapLatest {
+        source().onStart { ready.await() }
+            .onEach { lastSuccessful = it }
+            .catch { emit(lastSuccessful.copy(loading = false, error = R.string.diary_read_error)) }
+    })
 }

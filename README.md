@@ -2,7 +2,7 @@
 
 **A native food diary with multi-day meal plans and a portion-aware shopping list.**
 
-TamaqAI turns a proposed photo result into an editable record. Component quantities and the amount actually eaten are separate controls; confirmed meals feed calorie and macronutrient totals. Photo estimates can be wrong about ingredients and mass, so review remains part of the workflow.
+In server-connected builds, TamaqAI saves a valid food estimate after photo analysis, with editing available later. The offline standalone demo uses explicitly prepared examples and does not analyze arbitrary photos. Fresh photo drafts start once when the account already has analysis access; unclear or no-food results stay as drafts. Component quantities and the amount actually eaten remain separate controls. Nutrition is approximate, not a measured calorie count. [Quick-save behavior and recovery](docs/PHOTO_QUICK_SAVE.md).
 
 Plan up to a week, scale recipes and refresh a categorized shopping list without
 AI calls. Planning stays local; food enters the diary only when you explicitly
@@ -11,16 +11,21 @@ a newly published APK release.
 
 [Server demo video — watch without installing Android](https://github.com/kairagz27/TamaqAI-Portfolio/releases/download/v1.3.1-portfolio.1/tamaqai-demo-fake-ai.mp4) · [Architecture](docs/ARCHITECTURE.md) · [Русский](README.ru.md)
 
+## Local November refresh
+
+Inline theme/language controls and a smooth animated weight chart are implemented locally. The original screen design is retained; the experimental dashboard/history redesign was rolled back. These changes are not a newly published release. [Current demonstration, checks and limits](docs/CURRENT_DELIVERY.md).
+
+[Watch the current offline demo (31 seconds)](docs/media/tamaqai-current-standalone.mp4). Actual approved UI with prepared examples, not real photo inference. [Capture details](docs/screenshots/current-20261109/README.md).
+
 ## The application
 
 <table>
-<tr><td><img src="docs/screenshots/standalone/home-light.png" width="210" alt="Filled light diary"/><br/>Today</td><td><img src="docs/screenshots/standalone/editor-light.png" width="210" alt="Reviewable demo analysis"/><br/>Review ingredients</td><td><img src="docs/screenshots/standalone/macros-light.png" width="210" alt="Macronutrient details"/><br/>Nutrients</td></tr>
-<tr><td><img src="docs/screenshots/standalone/history-light.png" width="210" alt="History"/><br/>History</td><td><img src="docs/screenshots/standalone/profile-light.png" width="210" alt="Synthetic profile"/><br/>Profile</td><td><img src="docs/screenshots/standalone/drawer-light.png" width="210" alt="Drawer"/><br/>Navigation</td></tr>
-<tr><td><img src="docs/screenshots/standalone/catalog-light.png" width="210" alt="Starter catalogue"/><br/>Catalogue</td><td><img src="docs/screenshots/meal-planning/plan-light-en-360-130.png" width="210" alt="Three-day plan in version 1.5.0"/><br/>Meal plan · 1.5.0</td><td><img src="docs/screenshots/standalone/home-dark.png" width="210" alt="Dark diary"/><br/>Dark theme</td></tr>
+<tr><td><img src="docs/screenshots/current-20261109/current-home-light.png" width="210" alt="Filled light diary"/><br/>Today</td><td><img src="docs/screenshots/current-20261109/editor-portion-and-component.png" width="210" alt="Reviewable demo analysis"/><br/>Review ingredients</td><td><img src="docs/screenshots/current-20261109/macros-light.png" width="210" alt="Macronutrient details"/><br/>Nutrients</td></tr>
+<tr><td><img src="docs/screenshots/current-20261109/history-light.png" width="210" alt="History"/><br/>History</td><td><img src="docs/screenshots/current-20261109/profile-light.png" width="210" alt="Synthetic profile"/><br/>Profile</td><td><img src="docs/screenshots/current-20261109/current-drawer-dark.png" width="210" alt="Drawer"/><br/>Navigation</td></tr>
+<tr><td><img src="docs/screenshots/current-20261109/current-weight-curve-dark.png" width="210" alt="Current smooth weight curve with synthetic measurements"/><br/>Weight progress</td><td><img src="docs/screenshots/meal-planning/plan-light-en-360-130.png" width="210" alt="Three-day plan in version 1.5.0"/><br/>Meal plan · 1.5.0</td><td><img src="docs/screenshots/current-20261109/current-home-dark.png" width="210" alt="Dark diary"/><br/>Dark theme</td></tr>
 </table>
 
-Actual standalone demo and isolated QA on a 360 dp emulator, using synthetic local
-data and the licensed CC0 sample. The plan is updated to 1.5.0.
+Actual standalone screens at 360 dp with synthetic local data and the licensed CC0 sample. Home, editor, history, profile, drawer and weight curve show the current approved local design. The meal plan image is an earlier 1.5.0 capture. This is not evidence of real AI accuracy. [Current recording conditions](docs/CURRENT_DELIVERY.md).
 [Earlier capture conditions](docs/screenshots/standalone/README.md) and
 [current planning captures](docs/screenshots/meal-planning/README.md).
 
@@ -84,7 +89,7 @@ This path demonstrates FastAPI/PostgreSQL, local Mailpit and the deterministic s
 
 ## What the code demonstrates
 
-- Editable meal drafts, component mass and eaten fractions recalculated from baseline values; confirmation before daily totals. Unknown nutrition marks totals incomplete instead of contributing a false zero.
+- Server photo estimates auto-save only for a new unambiguous food result. Manual entry and prepared standalone examples retain explicit confirmation. Editable drafts, component mass and eaten fractions are recalculated from baseline values. Unknown nutrition marks totals incomplete instead of contributing a false zero.
 - Room diary/history, goals, weight tracking, editable plans and catalogue snapshots. Updating catalogue data does not rewrite confirmed meals.
 - Offline multi-day recipe planning and computed shopping lists with nullable nutrition, preparation-aware aggregation, durable user marks and explicit diary confirmation.
 - RU/KK/EN, warm light/dark glass surfaces and bundled licensed fonts.

@@ -71,7 +71,7 @@ fun HomeScreen(homeViewModel: HomeViewModel, dailyViewModel: DailyViewModel, pho
             label = if (state.incompleteNutritionCount > 0) stringResource(R.string.catalog_totals_known_only) else null,
             onDetails={nutrient=0}) }
         item(key="macros") { MacroCards(state.protein, state.fat, state.carbs, goals) {nutrient=it} }
-        item(key="food-actions") { HomeFoodActions(onScan,onManual,onAdd,if(container.standalone!=null) R.string.standalone_example else R.string.home_scan_food) }
+        item(key="food-actions") { HomeFoodActions(onScan,onManual,onAdd,if(container.standalone!=null) R.string.standalone_example else R.string.home_scan_food, showAnalysisDisclosure = container.standalone == null) }
         item(key="plan-preview") {
             planning?.let {PlanningHomePreview(it,state.date.toString(),onPlan)}
                 ?: HomePlanCard(plans.firstOrNull {it.date==state.date},container.plans.hasPendingGeneration,onPlan)

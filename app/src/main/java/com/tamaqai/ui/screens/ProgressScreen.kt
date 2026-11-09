@@ -1,5 +1,13 @@
 package com.tamaqai.ui.screens
 
+import androidx.compose.animation.core.Animatable
+import androidx.compose.animation.core.FastOutSlowInEasing
+import androidx.compose.animation.core.tween
+import androidx.compose.ui.graphics.Path
+import androidx.compose.ui.graphics.StrokeCap
+import androidx.compose.ui.graphics.StrokeJoin
+import androidx.compose.ui.graphics.drawscope.Stroke
+import androidx.compose.ui.graphics.drawscope.clipRect
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
@@ -15,7 +23,12 @@ import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.geometry.Offset
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.semantics.SemanticsPropertyKey
+import kotlin.coroutines.CoroutineContext
+import kotlin.coroutines.EmptyCoroutineContext
+import kotlinx.coroutines.withContext
 import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.text.input.KeyboardType
@@ -130,9 +143,21 @@ fun decimal(value: Double, precision: Int = 1) = java.text.NumberFormat.getNumbe
         { delete = null }, { vm.deleteWeight(entry.id); delete = null }) }
 }
 
-@Composable private fun DataChart(points: List<Pair<Long, Double>>, start: LocalDate, end: LocalDate, bars: Boolean) {
-    val min = if (bars) 0.0 else points.minOf { it.second } - 1
-    val max = points.maxOf { it.second }.coerceAtLeast(min + 1)
+// Custom test semantics are not announced by accessibility services.
+internal val ChartReveal = SemanticsPropertyKey<Float>("ChartReveal")
+
+@Composable internal fun DataChart(points: List<Pair<Long, Double>>, start: LocalDate, end: LocalDate, bars: Boolean,
+    animationContext: CoroutineContext = EmptyCoroutineContext) {
+    val observations = remember(points, start, end) { WeightCurve.points(points, start.toEpochDay(), end.toEpochDay()) }
+    if (observations.isEmpty()) return
+    val curve = remember(observations) { WeightCurve.segments(observations) }
+    val reveal = remember(observations, start, end, bars) { Animatable(if (bars) 1f else 0f) }
+    LaunchedEffect(reveal) {
+        // Standard Compose animation observes the system animator-duration scale, including zero.
+        if (!bars) withContext(animationContext) { reveal.animateTo(1f, tween(900, easing = FastOutSlowInEasing)) }
+    }
+    val min = if (bars) 0.0 else observations.minOf { it.value } - 1
+    val max = observations.maxOf { it.value }.coerceAtLeast(min + 1)
     val description = stringResource(R.string.chart_range, decimal(min), decimal(max))
     Text(description, style = MaterialTheme.typography.labelMedium, color = TextSecondary)
     Row(Modifier.fillMaxWidth(),horizontalArrangement=Arrangement.spacedBy(8.dp)) {
@@ -141,19 +166,40 @@ fun decimal(value: Double, precision: Int = 1) = java.text.NumberFormat.getNumbe
     }
     val grid=BorderSoft
     val plot=AccentBrown
-    Canvas(Modifier.weight(1f).height(170.dp).semantics { contentDescription = description }) {
+    Canvas(Modifier.weight(1f).height(170.dp).testTag(if (bars) "calories-chart" else "weight-chart").semantics { contentDescription = description; this[ChartReveal] = reveal.value }) {
         val pad = 10.dp.toPx()
         val plotHeight = size.height - 2 * pad
-        fun point(entry: Pair<Long, Double>) = Offset(pad + (entry.first - start.toEpochDay()).toFloat() /
-            (end.toEpochDay() - start.toEpochDay()).coerceAtLeast(1) * (size.width - 2 * pad),
-            size.height - pad - ((entry.second - min) / (max - min)).toFloat() * plotHeight)
-        repeat(4) { i -> val y = pad + i * plotHeight / 3; drawLine(grid, Offset(pad, y), Offset(size.width - pad, y), .7.dp.toPx()) }
-        if (!bars) points.zipWithNext().filter { (a,b) -> b.first-a.first==1L }
-            .forEach { (a, b) -> drawLine(plot, point(a), point(b), 1.8.dp.toPx()) }
-        points.forEach { entry ->
-            val p = point(entry)
-            if (bars) drawLine(plot, Offset(p.x, size.height - pad), p, (size.width / 45).coerceIn(3.dp.toPx(), 12.dp.toPx()))
-            else drawCircle(plot, 4.dp.toPx(), p)
+        fun x(day: Double) = pad + ((day - start.toEpochDay()) /
+            (end.toEpochDay() - start.toEpochDay()).coerceAtLeast(1) * (size.width - 2 * pad)).toFloat()
+        fun y(value: Double) = size.height - pad - ((value - min) / (max - min)).toFloat() * plotHeight
+        repeat(4) { i ->
+            val level = pad + i * plotHeight / 3
+            drawLine(grid, Offset(pad, level), Offset(size.width - pad, level), .7.dp.toPx())
+        }
+        if (bars) observations.forEach { entry ->
+            drawLine(plot, Offset(x(entry.day.toDouble()), size.height - pad), Offset(x(entry.day.toDouble()), y(entry.value)),
+                (size.width / 45).coerceIn(3.dp.toPx(), 12.dp.toPx()))
+        } else {
+            val path = Path().apply {
+                moveTo(x(observations.first().day.toDouble()), y(observations.first().value))
+                curve.forEach { segment ->
+                    val third = (segment.to.day - segment.from.day) / 3.0
+                    cubicTo(x(segment.from.day + third), y(segment.firstControlValue),
+                        x(segment.to.day - third), y(segment.secondControlValue),
+                        x(segment.to.day.toDouble()), y(segment.to.value))
+                }
+            }
+            val firstX = x(observations.first().day.toDouble())
+            val lastX = x(observations.last().day.toDouble())
+            val right = firstX + (lastX - firstX) * reveal.value
+            if (curve.isNotEmpty()) clipRect(right = right + if (reveal.value == 1f) 4.dp.toPx() else 0f) {
+                drawPath(path, plot, style = Stroke(2.4.dp.toPx(), cap = StrokeCap.Round, join = StrokeJoin.Round))
+            }
+            observations.forEach { entry ->
+                val position = Offset(x(entry.day.toDouble()), y(entry.value))
+                if (position.x <= right) drawCircle(plot, 3.5.dp.toPx(), position,
+                    alpha = if (observations.size == 1) reveal.value else 1f)
+            }
         }
     }
     }

@@ -20,6 +20,13 @@ EXPECTED_STANDALONE_VERSION = '1.5.0-standalone.1'
 # Exact selected methods prevent an empty, partial or accidentally renamed suite
 # from being presented as successful instrumentation in CI.
 STANDALONE_INSTRUMENTED_TESTS = {
+    'com.tamaqai.ui.DrawerInlineTest': {
+        'themeAndLanguageStayInlineAndOnlyOneSectionExpands',
+    },
+    'com.tamaqai.ui.WeightChartAnimationTest': {
+        'manualClockRevealsPartialThenCompleteCurve',
+        'zeroDurationScaleCompletesWithoutChangingGlobalSettings',
+    },
     'com.tamaqai.data.StandaloneDemoPersistenceTest': {
         'builtInPhotoUsesMatchingResultAndDoubleConfirmationCreatesOneEntry',
         'seedOnceEditAndDateRolloverPreserveRoomRows',

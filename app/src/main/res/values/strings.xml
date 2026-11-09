@@ -148,7 +148,7 @@
     <string name="protein_average_value">%1$s g / day</string>
     <string name="calories_average">Average calories</string>
     <string name="average_basis">Days with confirmed entries: %1$d. The average uses these days only. Missing days are excluded; the diary may not reflect all food.</string>
-    <string name="weight_chart_hint">The line connects actual measurements. Days without measurements are not zero weight.</string>
+    <string name="weight_chart_hint">The curve connects recorded measurements, including gaps. It is a visual guide, not a measurement for each day.</string>
     <string name="observed_days">Days with entries</string>
     <string name="chart_range">From %1$s to %2$s</string>
     <string name="data_loading">Loading diary…</string>

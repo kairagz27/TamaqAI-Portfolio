@@ -148,7 +148,7 @@
     <string name="protein_average_value">%1$s г / күн</string>
     <string name="calories_average">Орташа калория</string>
     <string name="average_basis">Расталған жазбасы бар күндер: %1$d. Орташа мән тек сол күндерге есептелген. Жазбасыз күндер кірмейді; күнделік барлық тағамды қамтымауы мүмкін.</string>
-    <string name="weight_chart_hint">Сызық нақты өлшемдерді байланыстырады. Өлшемсіз күндер нөлдік салмақ болып саналмайды.</string>
+    <string name="weight_chart_hint">Сызық жазылған өлшемдерді, олардың арасындағы үзілістерді де қосады. Бұл күн сайынғы өлшем емес, көрнекі бағдар.</string>
     <string name="observed_days">Жазбасы бар күндер</string>
     <string name="chart_range">%1$s мәнінен %2$s мәніне дейін</string>
     <string name="data_loading">Күнделік жүктелуде…</string>

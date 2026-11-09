@@ -239,4 +239,8 @@ dependencies {
     // Align app/test runtime: AndroidX Test ViewCapture needs SuspendToFutureAdapter.
     implementation("androidx.concurrent:concurrent-futures-ktx:1.3.0")
     debugImplementation("androidx.compose.ui:ui-test-manifest")
+    // The standalone QA variant needs its own in-process Compose test host.
+    if (providers.gradleProperty("tamaqStandaloneTest").orNull == "true") {
+        add("standaloneDemoImplementation", "androidx.compose.ui:ui-test-manifest")
+    }
 }

@@ -2,29 +2,31 @@
 
 **Дневник питания, план на несколько дней и список покупок с учётом порций.**
 
-TamaqAI сокращает ручной ввод: фотография → оценка состава → правки компонентов и съеденной доли → подтверждение. Масса компонента и фактически съеденная часть — разные параметры. Модель может ошибаться в рецепте и массе, поэтому результат нужно проверить; это оценка, а не измерение калорий.
+Свежая фотография в серверной сборке при наличии доступа запускает анализ один раз. Корректная оценка еды сохраняется автоматически; блюдо и порцию можно отредактировать позже. Неоднозначные результаты остаются черновиками. В автономном демо используются явно помеченные подготовленные примеры: произвольные фото оно не анализирует. Калории и БЖУ приблизительные, а не измеренные. [Поведение и восстановление](docs/PHOTO_QUICK_SAVE.md).
 
 Можно заранее распределить рецепты на неделю и пересчитать покупки без AI-вызовов.
 Планы остаются локальными, а в дневник попадает только явно подтверждённая еда.
 Текущая версия исходников и сборки — **1.5.0**; новый публичный релиз для этого
 обновления не опубликован.
 
-[Видео серверного демо — без установки Android](https://github.com/kairagz27/TamaqAI-Portfolio/releases/download/v1.3.1-portfolio.1/tamaqai-demo-fake-ai.mp4) · [Архитектура](docs/ARCHITECTURE.md) · [English](README.md)
+[Более раннее серверное демо (fake AI)](https://github.com/kairagz27/TamaqAI-Portfolio/releases/download/v1.3.1-portfolio.1/tamaqai-demo-fake-ai.mp4) · [Архитектура](docs/ARCHITECTURE.md) · [English](README.md)
 
 ## Приложение
 
+Сохранён утверждённый исходный дизайн. Настройки темы и языка раскрываются прямо в шторке; измерения веса соединяет плавная линия с анимацией появления. Цветовые эксперименты отменены. Нового опубликованного релиза нет. [Текущая демонстрация и ограничения](docs/CURRENT_DELIVERY.md).
+
+[Актуальное офлайн-демо, 31 секунда](docs/media/tamaqai-current-standalone.mp4). Подготовленный пример, не реальный анализ фото. [Условия записи](docs/screenshots/current-20261109/README.md).
+
 <table>
-<tr><td><img src="docs/screenshots/standalone/home-light.png" width="210" alt="Filled light diary"/><br/>Сегодня</td><td><img src="docs/screenshots/standalone/editor-light.png" width="210" alt="Reviewable demo analysis"/><br/>Проверка состава</td><td><img src="docs/screenshots/standalone/macros-light.png" width="210" alt="Macronutrient details"/><br/>Нутриенты</td></tr>
-<tr><td><img src="docs/screenshots/standalone/history-light.png" width="210" alt="History"/><br/>История</td><td><img src="docs/screenshots/standalone/profile-light.png" width="210" alt="Synthetic profile"/><br/>Профиль</td><td><img src="docs/screenshots/standalone/drawer-light.png" width="210" alt="Drawer"/><br/>Навигация</td></tr>
-<tr><td><img src="docs/screenshots/standalone/catalog-light.png" width="210" alt="Starter catalogue"/><br/>Каталог</td><td><img src="docs/screenshots/meal-planning/plan-light-ru-360-130.png" width="210" alt="План на три дня в версии 1.5.0"/><br/>План · 1.5.0</td><td><img src="docs/screenshots/standalone/home-dark.png" width="210" alt="Dark diary"/><br/>Тёмная тема</td></tr>
+<tr><td><img src="docs/screenshots/current-20261109/current-home-light.png" width="210" alt="Filled light diary"/><br/>Сегодня</td><td><img src="docs/screenshots/current-20261109/editor-portion-and-component.png" width="210" alt="Reviewable demo analysis"/><br/>Проверка состава</td><td><img src="docs/screenshots/current-20261109/macros-light.png" width="210" alt="Macronutrient details"/><br/>Нутриенты</td></tr>
+<tr><td><img src="docs/screenshots/current-20261109/history-light.png" width="210" alt="History"/><br/>История</td><td><img src="docs/screenshots/current-20261109/profile-light.png" width="210" alt="Synthetic profile"/><br/>Профиль</td><td><img src="docs/screenshots/current-20261109/current-drawer-dark.png" width="210" alt="Drawer"/><br/>Навигация</td></tr>
+<tr><td><img src="docs/screenshots/current-20261109/current-weight-curve-dark.png" width="210" alt="Current weight curve with synthetic measurements"/><br/>График веса</td><td><img src="docs/screenshots/meal-planning/plan-light-ru-360-130.png" width="210" alt="План на три дня в версии 1.5.0"/><br/>План · 1.5.0</td><td><img src="docs/screenshots/current-20261109/current-home-dark.png" width="210" alt="Dark diary"/><br/>Тёмная тема</td></tr>
 </table>
 
-Реальные экраны автономного демо и изолированного QA, эмулятор 360 dp,
-синтетические данные и лицензированный пример CC0. План обновлён до 1.5.0.
-[Условия прежних снимков](docs/screenshots/standalone/README.md) и
-[новых снимков планирования](docs/screenshots/meal-planning/README.md).
+Реальные экраны автономного демо с синтетическими данными, 360 dp. Главная, редактор, история, профиль, шторка и график сняты для текущей локальной версии. План питания — более ранний снимок версии 1.5.0. Это не демонстрация точности реального AI. [Условия текущей записи](docs/CURRENT_DELIVERY.md).
 
 ## План питания → список покупок
+
 
 <table>
 <tr><td><img src="docs/screenshots/meal-planning/plan-light-ru-360-130.png" width="210" alt="План на три дня в светлой теме"/><br/>План · 1.5.0</td><td><img src="docs/screenshots/meal-planning/shopping-dark-ru-360-130.png" width="210" alt="Рассчитанные покупки в тёмной теме"/><br/>Список покупок</td><td><img src="docs/screenshots/meal-planning/manual-bottom-keyboard-light-en-360-130.png" width="210" alt="Кнопка сохранения ручной позиции над клавиатурой"/><br/>360 dp · шрифт 130% · клавиатура</td></tr>
@@ -86,7 +88,7 @@ APK: `app/build/outputs/apk/standaloneDemo/app-standaloneDemo.apk`. На Windows
 
 ## Что реализовано
 
-- Редактируемые черновики, масса отдельных компонентов и съеденная доля с пересчётом от исходных значений. Только подтверждённые записи влияют на итоги; неизвестные БЖУ помечают итог как неполный, а не превращаются в ноль.
+- Серверная оценка по фото сохраняется автоматически только для нового однозначного результата еды. Ручной ввод и подготовленные автономные примеры подтверждаются пользователем. Компоненты, масса и съеденная доля редактируются; неизвестная пищевая ценность помечается как неполная, а не как ноль.
 - Room, история, цели, вес, редактируемый план и снимки каталожных данных в дневнике. Обновление продукта не переписывает ранее подтверждённую запись.
 - Локальный план рецептов на несколько дней и рассчитываемые покупки: неполные БЖУ, раздельный учёт сырого/приготовленного продукта, сохранение отметок и явное подтверждение в дневник.
 - RU/KK/EN, тёплые светлая/тёмная темы, стеклянные поверхности и локальные шрифты.

@@ -16,7 +16,9 @@ import java.time.*
 import java.util.UUID
 
 class ScannerViewModel(private val meals: MealRepository, private val photos: PhotoStore,
-    private val ready: Deferred<Unit>? = null, private val text: (Int) -> String = { it.toString() }) : ViewModel() {
+    private val ready: Deferred<Unit>? = null, private val text: (Int) -> String = { it.toString() },
+    private val ioDispatcher: CoroutineDispatcher = Dispatchers.IO,
+    private val processPhoto: (File) -> ByteArray = PhotoProcessor::downsampleToJpeg) : ViewModel() {
     private val _state = MutableStateFlow<ScannerState>(ScannerState.Idle)
     val state = _state.asStateFlow()
     private val openChannel = Channel<String>(Channel.BUFFERED)
@@ -31,13 +33,16 @@ class ScannerViewModel(private val meals: MealRepository, private val photos: Ph
         viewModelScope.launch {
             var temporary: File? = null
             try {
-                temporary = withContext(Dispatchers.IO) {
+                val imported = withContext(ioDispatcher) {
                     val file = File.createTempFile("tamaq_capture_picker_", ".image")
+                    // Own the file before a cancelled IO return can skip its result assignment.
+                    temporary = file
                     try {
                         resolver.openInputStream(uri)?.use { input -> file.outputStream().use { output ->
                             val buffer = ByteArray(8192)
                             var count = 0L
                             while (true) {
+                                currentCoroutineContext().ensureActive()
                                 val size = input.read(buffer)
                                 if (size < 0) break
                                 count += size
@@ -48,10 +53,10 @@ class ScannerViewModel(private val meals: MealRepository, private val photos: Ph
                         file
                     } catch (e: Exception) { file.delete(); throw e }
                 }
-                prepare(temporary, day)
+                prepare(imported, day)
             } catch (c: CancellationException) { throw c }
             catch (_: Exception) { _state.value = ScannerState.Error("photo_error") }
-            finally { withContext(NonCancellable + Dispatchers.IO) { temporary?.delete() } }
+            finally { withContext(NonCancellable + ioDispatcher) { temporary?.delete() } }
         }
     }
     private suspend fun prepare(photoFile: File, day: LocalDate) {
@@ -60,20 +65,29 @@ class ScannerViewModel(private val meals: MealRepository, private val photos: Ph
         try {
             ready?.await()
             val uid = UUID.randomUUID().toString()
-            val name = withContext(Dispatchers.IO) { photos.save(uid, PhotoProcessor.downsampleToJpeg(photoFile)) }
-            savedPhoto = name
+            val jpeg = withContext(ioDispatcher) { processPhoto(photoFile) }
+            currentCoroutineContext().ensureActive()
+            // Track ownership inside the IO block, even if cancellation wins its return boundary.
+            val name = withContext(NonCancellable + ioDispatcher) {
+                photos.save(uid, jpeg).also { savedPhoto = it }
+            }
             val zone = ZoneId.systemDefault()
             val timestamp = day.atTime(LocalTime.now()).atZone(zone).toInstant().toEpochMilli()
             val meal = Meal(uid = uid, nutrition = Nutrition(text(R.string.status_pending), 0, 0, 0, 0),
                 timestamp = timestamp, zoneId = zone.id, status = MealStatus.PendingUpload,
                 details = MealDetails(emptyList(), photoName = name, analysisId = UUID.randomUUID().toString()))
-            meals.saveDraft(meal)
-            savedPhoto = null
+            currentCoroutineContext().ensureActive()
+            // Once Room commits, the draft owns this photo. Cancellation must not delete it.
+            withContext(NonCancellable) {
+                meals.saveDraft(meal)
+                savedPhoto = null
+            }
+            currentCoroutineContext().ensureActive()
             _state.value = ScannerState.Idle
             openChannel.send(uid)
         } catch (c: CancellationException) { throw c }
         catch (_: Exception) { _state.value = ScannerState.Error("photo_error") }
-        finally { withContext(NonCancellable + Dispatchers.IO) { photoFile.delete(); photos.delete(savedPhoto) } }
+        finally { withContext(NonCancellable + ioDispatcher) { photoFile.delete(); photos.delete(savedPhoto) } }
     }
     fun onCaptureFailed() { _state.value = ScannerState.Error("camera_error") }
     fun dismissError() { _state.value = ScannerState.Idle }
