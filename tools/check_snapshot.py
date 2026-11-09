@@ -10,6 +10,18 @@ import subprocess
 
 ROOT = Path(__file__).resolve().parents[1]
 MANIFEST = 'docs/export/snapshot-manifest.json'
+# Reviewed synthetic offline demonstration. No wildcard media exemption.
+# Provenance and visual review: docs/screenshots/current-20261109/README.md.
+REVIEWED_VIDEO = ('docs/media/tamaqai-current-standalone.mp4',
+                  'c7eea2569be9ead7c9119b7e565c4a6477e123251b9d2590f6f7f930370a89b9')
+
+
+def artifact_allowed(name, digest):
+    suffix = Path(name).suffix.lower()
+    if suffix == '.mp4':
+        return (name, digest) == REVIEWED_VIDEO
+    return suffix not in {'.apk', '.db', '.sqlite3', '.keystore'}
+
 
 
 def verify():
@@ -28,7 +40,7 @@ def verify():
         assert path.is_relative_to(ROOT) and path.is_file(), 'Invalid manifest path'
         data = subprocess.check_output(['git', 'show', ':' + name], cwd=ROOT)
         assert hashlib.sha256(data).hexdigest() == digest, 'Snapshot hash differs: ' + name
-    assert not any((ROOT / name).suffix.lower() in {'.apk', '.mp4', '.db', '.sqlite3', '.keystore'} for name in tracked)
+    assert all(artifact_allowed(name, expected.get(name)) for name in tracked), 'Unreviewed binary artifact'
     print(json.dumps({'snapshot_files_verified': len(expected), 'unexpected_tracked_paths': 0,
                       'source_commit': document['source_commit']}))
 

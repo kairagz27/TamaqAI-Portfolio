@@ -35,8 +35,8 @@
     },
     {
       "path": ".github/workflows/verify.yml",
-      "sha256": "08d829480d82adaac0ed2f71109cca5f3880e1109295275e8bcbd3e85181dacf",
-      "origin": "reviewed multi-day planning and shopping feature"
+      "sha256": "874aa7b4c9d36a5222743391c0aa08057fb90829df7eb99697e4b0481a11a268",
+      "origin": "reviewed November 2026 app, tests and synthetic portfolio update"
     },
     {
       "path": ".gitignore",
@@ -70,13 +70,13 @@
     },
     {
       "path": "README.md",
-      "sha256": "c1820d8c7e7ad94a79578bfae28c6355637cc9237a068b3f8dfacbaa5e351cf4",
-      "origin": "reviewed multi-day planning and shopping feature"
+      "sha256": "4a5ed5fab4c63c326f2aea6e93c9fdfef8acde6c0d9056f24da4b414230f2041",
+      "origin": "reviewed November 2026 app, tests and synthetic portfolio update"
     },
     {
       "path": "README.ru.md",
-      "sha256": "50ae12b831c0048b2c13affe1ba465483cc651c2d0046b9c3af8b28c0e11647f",
-      "origin": "reviewed multi-day planning and shopping feature"
+      "sha256": "8c67a1e8dafa6558d692fe71f6c2589bce969fea818b6d4e3745f53ed4e3fbac",
+      "origin": "reviewed November 2026 app, tests and synthetic portfolio update"
     },
     {
       "path": "SECURITY.md",
@@ -90,8 +90,8 @@
     },
     {
       "path": "app/build.gradle.kts",
-      "sha256": "059a91bb756dca64b5a5f465d795723bae78c4853683d127ea15b02385e925d7",
-      "origin": "reviewed multi-day planning and shopping feature"
+      "sha256": "f16f5383c45391aa77b49cb6acc6cd0fe3f46fecb936ab0164dc5f3ca510930f",
+      "origin": "reviewed November 2026 app, tests and synthetic portfolio update"
     },
     {
       "path": "app/proguard-performance-test.pro",
@@ -159,6 +159,11 @@
       "origin": "unchanged source blob"
     },
     {
+      "path": "app/src/androidTest/java/com/tamaqai/data/LocalHttpPhotoFlowTest.kt",
+      "sha256": "bd9878fcd2137afc84111eb9056cf84af3e91c8636818882965492ec88ac5ef1",
+      "origin": "reviewed November 2026 app, tests and synthetic portfolio update"
+    },
+    {
       "path": "app/src/androidTest/java/com/tamaqai/data/MealPlanningPersistenceTest.kt",
       "sha256": "980b40b4cb379adab36071450a4cf1a77c4f5f3f156409e2b14b7bbbd72625fe",
       "origin": "reviewed multi-day planning and shopping feature"
@@ -182,6 +187,11 @@
       "path": "app/src/androidTest/java/com/tamaqai/ui/ApricotTestSupport.kt",
       "sha256": "030a9761b2c2b9084af490a4c6ade22a60ebba00d295f19b81da389d406ba7f8",
       "origin": "unchanged source blob"
+    },
+    {
+      "path": "app/src/androidTest/java/com/tamaqai/ui/DrawerInlineTest.kt",
+      "sha256": "e9623c9980804770108fe8beca5c2ff208daf232b2b72e3e73e11cf992f3a3e1",
+      "origin": "reviewed November 2026 app, tests and synthetic portfolio update"
     },
     {
       "path": "app/src/androidTest/java/com/tamaqai/ui/PlanningViewModelRecoveryTest.kt",
@@ -209,6 +219,11 @@
       "origin": "unchanged source blob"
     },
     {
+      "path": "app/src/androidTest/java/com/tamaqai/ui/WeightChartAnimationTest.kt",
+      "sha256": "cfb62ecb73d5e6427406a94950e712e4f8e03ed581b8be5beab7488671ab6c14",
+      "origin": "reviewed November 2026 app, tests and synthetic portfolio update"
+    },
+    {
       "path": "app/src/androidTestPlanningQa/java/com/tamaqai/ui/MealPlanningUiTest.kt",
       "sha256": "baf0d501bf8b95b90f33ac11885b15420e628e76a014e9e42131c91bfca18311",
       "origin": "reviewed multi-day planning and shopping feature"
@@ -220,8 +235,8 @@
     },
     {
       "path": "app/src/androidTestStandaloneDemo/java/com/tamaqai/ui/StandaloneDemoUiTest.kt",
-      "sha256": "ac6a29de242b46582529b9825b5d4b726ddedf6b0452120dee4891dfba8405f9",
-      "origin": "Added for standalone demo: reviewed source, test, licensed asset or documentation"
+      "sha256": "46456915acfb9b1131e441e9a8d6c8507029c7900dca14296bb3e648caed2b2a",
+      "origin": "reviewed November 2026 app, tests and synthetic portfolio update"
     },
     {
       "path": "app/src/debug/AndroidManifest.xml",
@@ -335,8 +350,8 @@
     },
     {
       "path": "app/src/main/java/com/tamaqai/MainActivity.kt",
-      "sha256": "e2c8440770511494d9816a0b342c8a061635a97885200b5623f323c35039ddc5",
-      "origin": "reviewed multi-day planning and shopping feature"
+      "sha256": "9a41f5d3b6166caf45a47b04b0f64670c80098a23e2a39c274b2f13ffc82a88f",
+      "origin": "reviewed November 2026 app, tests and synthetic portfolio update"
     },
     {
       "path": "app/src/main/java/com/tamaqai/TamaqApplication.kt",
@@ -604,6 +619,11 @@
       "origin": "unchanged source blob"
     },
     {
+      "path": "app/src/main/java/com/tamaqai/domain/usecase/PhotoAnalysisSavePolicy.kt",
+      "sha256": "74f9f1e91b8a0de0d38d6a0200489af33346e797792c67ab448339f2a8d0079a",
+      "origin": "reviewed November 2026 app, tests and synthetic portfolio update"
+    },
+    {
       "path": "app/src/main/java/com/tamaqai/domain/usecase/ProductBarcode.kt",
       "sha256": "626ed018069a1fcf54c462d666a7c0febd8434c60763c31aa56a018c4646d23c",
       "origin": "unchanged source blob"
@@ -630,8 +650,8 @@
     },
     {
       "path": "app/src/main/java/com/tamaqai/ui/components/AccountDrawer.kt",
-      "sha256": "d0ba7b5c20c74e972016aee06ddc278c821d3e81db45cc236ecfbd56d181151d",
-      "origin": "Updated for standalone demo; original snapshot provenance retained"
+      "sha256": "fea4e06af8390239fc1cd0c434d8720fc73987fc4cd5734a1d8cf5b69075b814",
+      "origin": "reviewed November 2026 app, tests and synthetic portfolio update"
     },
     {
       "path": "app/src/main/java/com/tamaqai/ui/components/CatalogReceipt.kt",
@@ -655,8 +675,8 @@
     },
     {
       "path": "app/src/main/java/com/tamaqai/ui/components/HomeOverview.kt",
-      "sha256": "5216cfe9f3e5e4e5924236c171271d1600c228a5ca0319d9efc66ffafe7996d6",
-      "origin": "Updated for standalone demo; original snapshot provenance retained"
+      "sha256": "9c38c9ceed3a51eabd473a4d1389fe992b696d4bd625d4685ffb1fdbb70da42c",
+      "origin": "reviewed November 2026 app, tests and synthetic portfolio update"
     },
     {
       "path": "app/src/main/java/com/tamaqai/ui/components/IncompleteNutritionNotice.kt",
@@ -677,6 +697,11 @@
       "path": "app/src/main/java/com/tamaqai/ui/components/ProfileAvatar.kt",
       "sha256": "413996b645a645e33dfce982d04ee8ac088b086c019cc6a7fe81eda6271360db",
       "origin": "unchanged source blob"
+    },
+    {
+      "path": "app/src/main/java/com/tamaqai/ui/components/WeightCurve.kt",
+      "sha256": "ec93e668ec5faa1cb374b0caa4c52adb8e162a77b30a614a1ee3e9e9f53e50d9",
+      "origin": "reviewed November 2026 app, tests and synthetic portfolio update"
     },
     {
       "path": "app/src/main/java/com/tamaqai/ui/components/WellnessComponents.kt",
@@ -700,8 +725,8 @@
     },
     {
       "path": "app/src/main/java/com/tamaqai/ui/screens/DailyViewModel.kt",
-      "sha256": "9608c72a7f39820c122c48cb0bf6567c38c597743d309c42f16fc24c1f94707b",
-      "origin": "unchanged source blob"
+      "sha256": "b00e2b6f8e1e3736e2604df6827ef5503731f90519d1c9c9a79ea2d1ca7db738",
+      "origin": "reviewed November 2026 app, tests and synthetic portfolio update"
     },
     {
       "path": "app/src/main/java/com/tamaqai/ui/screens/FavoritesScreen.kt",
@@ -710,18 +735,18 @@
     },
     {
       "path": "app/src/main/java/com/tamaqai/ui/screens/HistoryScreen.kt",
-      "sha256": "7249b8ffa313800c625112c10a9c9517335958ff58693ad581acbdc66261f35b",
-      "origin": "unchanged source blob"
+      "sha256": "1b04ecdc6c9ff1c5caeb612463cc25ca1bc6464335160cead1e619d33418ca68",
+      "origin": "reviewed November 2026 app, tests and synthetic portfolio update"
     },
     {
       "path": "app/src/main/java/com/tamaqai/ui/screens/HomeScreen.kt",
-      "sha256": "2ea316296f581a647658dd67e8503052cd9a0406e0edee67b55ab4887b2a3e09",
-      "origin": "reviewed multi-day planning and shopping feature"
+      "sha256": "20681a9cc4faffc66834dc32486df7502df2e5762fa1234962bd70198bfab08e",
+      "origin": "reviewed November 2026 app, tests and synthetic portfolio update"
     },
     {
       "path": "app/src/main/java/com/tamaqai/ui/screens/HomeViewModel.kt",
-      "sha256": "73d85d2b4a64c907fa99fbfd99b9a11d992f66aafe0c9addc6067fb44dda28b9",
-      "origin": "unchanged source blob"
+      "sha256": "5df854f4b885574ef1ae4bcc756d60b6630e85550371672428abcff09e831a44",
+      "origin": "reviewed November 2026 app, tests and synthetic portfolio update"
     },
     {
       "path": "app/src/main/java/com/tamaqai/ui/screens/Labels.kt",
@@ -730,13 +755,13 @@
     },
     {
       "path": "app/src/main/java/com/tamaqai/ui/screens/MealEditorScreen.kt",
-      "sha256": "3ec501f924f391698bb3dda30e995be03a54bf40ee25538491f2bb33a450fb43",
-      "origin": "Updated for standalone demo; original snapshot provenance retained"
+      "sha256": "80b07671bc08ed4b7442668a9bda6b80bbce812d8ec617dbd497b8b70e20edf0",
+      "origin": "reviewed November 2026 app, tests and synthetic portfolio update"
     },
     {
       "path": "app/src/main/java/com/tamaqai/ui/screens/MealEditorViewModel.kt",
-      "sha256": "6928e22d5189bda33d1e09f2220416c0df49b68875d0a824a8d259dca0d56d19",
-      "origin": "unchanged source blob"
+      "sha256": "d93f2ddd3ab41940e023282b65334f34177a8eeb5dd52a4617fe17925db5b8e9",
+      "origin": "reviewed November 2026 app, tests and synthetic portfolio update"
     },
     {
       "path": "app/src/main/java/com/tamaqai/ui/screens/MealPlanningScreen.kt",
@@ -785,8 +810,8 @@
     },
     {
       "path": "app/src/main/java/com/tamaqai/ui/screens/ProgressScreen.kt",
-      "sha256": "de57ac2fe2b493bbc6b537a7287b2a1493acf50d2e9b2db53e9da1ade50b0e1d",
-      "origin": "unchanged source blob"
+      "sha256": "ddc849599783037a7b28bf3b8dc73041e439a604982126c48fcf3777dd9d4886",
+      "origin": "reviewed November 2026 app, tests and synthetic portfolio update"
     },
     {
       "path": "app/src/main/java/com/tamaqai/ui/screens/ScannerScreen.kt",
@@ -800,8 +825,8 @@
     },
     {
       "path": "app/src/main/java/com/tamaqai/ui/screens/ScannerViewModel.kt",
-      "sha256": "6e4de034e7016cfb570b1a05ac9af784dc6030bc8027e35086e79002eac1b24c",
-      "origin": "unchanged source blob"
+      "sha256": "21aea08c80d0a937cd204232417caf9551dcdaa3e9185638fff265c3f347a07a",
+      "origin": "reviewed November 2026 app, tests and synthetic portfolio update"
     },
     {
       "path": "app/src/main/java/com/tamaqai/ui/screens/ShoppingListScreen.kt",
@@ -889,6 +914,11 @@
       "origin": "unchanged source blob"
     },
     {
+      "path": "app/src/main/res/values-kk/drawer_inline.xml",
+      "sha256": "bc10822550c9f266f028e849dcb207d720a934ce0f0170ab7725b4db61b52580",
+      "origin": "reviewed November 2026 app, tests and synthetic portfolio update"
+    },
+    {
       "path": "app/src/main/res/values-kk/drawer_redesign.xml",
       "sha256": "f29dd3570e7711f381c8345feb14753cd3f6489557e3b6ef72ddc62f7060429e",
       "origin": "unchanged source blob"
@@ -914,6 +944,16 @@
       "origin": "unchanged source blob"
     },
     {
+      "path": "app/src/main/res/values-kk/photo_flow_disclosure.xml",
+      "sha256": "71b2dbbd8ae666c1d55d79ff7631a48f7bc0d6f9d0d1542ba9617b23efaa3a34",
+      "origin": "reviewed November 2026 app, tests and synthetic portfolio update"
+    },
+    {
+      "path": "app/src/main/res/values-kk/photo_quick_save.xml",
+      "sha256": "47ea03f57c7dca897cd54f25f62287e2c2777d61a13898a0de7e62417872e047",
+      "origin": "reviewed November 2026 app, tests and synthetic portfolio update"
+    },
+    {
       "path": "app/src/main/res/values-kk/plurals.xml",
       "sha256": "18db1cb656c0b5673e9d60c0f57d7377abd8407898c68af6fa1e3a2d2cfc55e4",
       "origin": "unchanged source blob"
@@ -935,8 +975,8 @@
     },
     {
       "path": "app/src/main/res/values-kk/strings.xml",
-      "sha256": "790e76c0509f60ffb46a8bd0c2f87da0166584a49c3186c2f7995f887cbad0f3",
-      "origin": "unchanged source blob"
+      "sha256": "d5b7f1e53795d083509f061f67eb76cce2491788d4b45890e19f972aeb7d0368",
+      "origin": "reviewed November 2026 app, tests and synthetic portfolio update"
     },
     {
       "path": "app/src/main/res/values-night-v27/themes.xml",
@@ -984,6 +1024,11 @@
       "origin": "unchanged source blob"
     },
     {
+      "path": "app/src/main/res/values-ru/drawer_inline.xml",
+      "sha256": "5994a7ccf250eab3b350e8fb2c45b284513565e3add8205dd2e0227d2a7ba1f6",
+      "origin": "reviewed November 2026 app, tests and synthetic portfolio update"
+    },
+    {
       "path": "app/src/main/res/values-ru/drawer_redesign.xml",
       "sha256": "3f70f854c902532ccf8d0eee3c32e5829c1f61da8efeb23df514d81072ec0a59",
       "origin": "unchanged source blob"
@@ -1009,6 +1054,16 @@
       "origin": "unchanged source blob"
     },
     {
+      "path": "app/src/main/res/values-ru/photo_flow_disclosure.xml",
+      "sha256": "954fcb38740fa57fc1b6faa2329fb73e396583c7a336b4d01b9c7695f238288f",
+      "origin": "reviewed November 2026 app, tests and synthetic portfolio update"
+    },
+    {
+      "path": "app/src/main/res/values-ru/photo_quick_save.xml",
+      "sha256": "9a227d570aa2ae8bdbd2e8b46cdfbcfd0470fd8f58510a81e46d837cd6ee21a9",
+      "origin": "reviewed November 2026 app, tests and synthetic portfolio update"
+    },
+    {
       "path": "app/src/main/res/values-ru/plurals.xml",
       "sha256": "ce0f3b55052622bbb213a6a5aaf75d7c04b82d003129eecb79c1fb05b04d0497",
       "origin": "unchanged source blob"
@@ -1030,8 +1085,8 @@
     },
     {
       "path": "app/src/main/res/values-ru/strings.xml",
-      "sha256": "68f3c9cad2d5ee1708559e8ac740ae18c6cdfe305ea195459fdf7f6bfc951055",
-      "origin": "unchanged source blob"
+      "sha256": "3687f81b6b3df62d03086ba15389a674807c1331675b56f2460f6dc096193d68",
+      "origin": "reviewed November 2026 app, tests and synthetic portfolio update"
     },
     {
       "path": "app/src/main/res/values-v27/themes.xml",
@@ -1074,6 +1129,11 @@
       "origin": "unchanged source blob"
     },
     {
+      "path": "app/src/main/res/values/drawer_inline.xml",
+      "sha256": "f91cd7a587a25f05c11d1f4256e83d661950bf5518fe26a0955794320328fa72",
+      "origin": "reviewed November 2026 app, tests and synthetic portfolio update"
+    },
+    {
       "path": "app/src/main/res/values/drawer_redesign.xml",
       "sha256": "a66e1963f1ed6e65212b8c6463d1278f2d6702fc812c5da5013c52a536a23899",
       "origin": "unchanged source blob"
@@ -1099,6 +1159,16 @@
       "origin": "unchanged source blob"
     },
     {
+      "path": "app/src/main/res/values/photo_flow_disclosure.xml",
+      "sha256": "e9427a421da55ed37c7f431af97160f0baa0eb0a1946cdeb5c59800dcec28845",
+      "origin": "reviewed November 2026 app, tests and synthetic portfolio update"
+    },
+    {
+      "path": "app/src/main/res/values/photo_quick_save.xml",
+      "sha256": "a027873bc87da1499cb3337d788685ddaf1baa6756a8d07fb45e4312934b1c39",
+      "origin": "reviewed November 2026 app, tests and synthetic portfolio update"
+    },
+    {
       "path": "app/src/main/res/values/plurals.xml",
       "sha256": "cbd8586bc31fd54431904d7ae9a20e34d83cd347a89ec1b1d513837967606b09",
       "origin": "unchanged source blob"
@@ -1120,8 +1190,8 @@
     },
     {
       "path": "app/src/main/res/values/strings.xml",
-      "sha256": "54da2249bca7ad55b076fd6d855795f13d4243c13de88ff24b57b1125609390a",
-      "origin": "unchanged source blob"
+      "sha256": "060ef7d149a9fb297154aa2997d1bfafbf17936c4101aeb7245722e2dd1a5536",
+      "origin": "reviewed November 2026 app, tests and synthetic portfolio update"
     },
     {
       "path": "app/src/main/res/values/themes.xml",
@@ -1249,14 +1319,29 @@
       "origin": "unchanged source blob"
     },
     {
+      "path": "app/src/test/java/com/tamaqai/ui/DailyReadRecoveryTest.kt",
+      "sha256": "d43465bab86079f90e5ea6357873cb4d9e8da1cb35b5f157cd2b66c54540e38d",
+      "origin": "reviewed November 2026 app, tests and synthetic portfolio update"
+    },
+    {
       "path": "app/src/test/java/com/tamaqai/ui/HomeCatalogTotalsTest.kt",
       "sha256": "546a5bf6d92bc3127473ff5ad2594f28a03db3a2894828603bff0c246628a486",
       "origin": "unchanged source blob"
     },
     {
+      "path": "app/src/test/java/com/tamaqai/ui/HomeReadRecoveryTest.kt",
+      "sha256": "e803a036131d9552ed2bfc956251002f741569ca63dedef0e1fbbb3f7e9f4246",
+      "origin": "reviewed November 2026 app, tests and synthetic portfolio update"
+    },
+    {
       "path": "app/src/test/java/com/tamaqai/ui/MealEditorTest.kt",
-      "sha256": "bd4a98321597b3bdcf3a95bf522e4da730de0d815f9d3c3bdb4fd9b9c54f440e",
-      "origin": "unchanged source blob"
+      "sha256": "93552527cfdfaf1f25fcc0231cb0bc12b7f7a32f33b4e0b50bb91687f46ee980",
+      "origin": "reviewed November 2026 app, tests and synthetic portfolio update"
+    },
+    {
+      "path": "app/src/test/java/com/tamaqai/ui/PhotoOwnershipTest.kt",
+      "sha256": "f3fdb5baf92e46d63333cd67b97af0d6cda5014d60f87e634113335faec56b1d",
+      "origin": "reviewed November 2026 app, tests and synthetic portfolio update"
     },
     {
       "path": "app/src/test/java/com/tamaqai/ui/PlanningWorkspaceRecoveryTest.kt",
@@ -1272,6 +1357,11 @@
       "path": "app/src/test/java/com/tamaqai/ui/ShoppingShareTextTest.kt",
       "sha256": "f8e2f647f8fb7636a41292ca3aafdc5d3b0362ec48cb18a8e1ca0bc783998718",
       "origin": "reviewed multi-day planning and shopping feature"
+    },
+    {
+      "path": "app/src/test/java/com/tamaqai/ui/WeightCurveTest.kt",
+      "sha256": "4fbd4aae56c7e831059ef5d6da9856c3ef97ca0e472ff9d79ae598758d6037ac",
+      "origin": "reviewed November 2026 app, tests and synthetic portfolio update"
     },
     {
       "path": "app/src/test/java/com/tamaqai/ui/WellnessBlurPolicyTest.kt",
@@ -1675,8 +1765,13 @@
     },
     {
       "path": "docs/ARCHITECTURE.md",
-      "sha256": "acc1e77d84c1a2ae03d69f534832583d9848fde0d4f0f7223e2eb921dc7914f3",
-      "origin": "reviewed multi-day planning and shopping feature"
+      "sha256": "3e2b16886cf17323b9e0c4886c381d88bc86ae6bcdecbb671e70271001814fe3",
+      "origin": "reviewed November 2026 app, tests and synthetic portfolio update"
+    },
+    {
+      "path": "docs/CURRENT_DELIVERY.md",
+      "sha256": "0b0b3b5a454cc6d4afff412cceb9ebec0955013369f7189b387a1fe801119f72",
+      "origin": "reviewed November 2026 app, tests and synthetic portfolio update"
     },
     {
       "path": "docs/DATA_SOURCES.md",
@@ -1699,6 +1794,11 @@
       "origin": "reviewed multi-day planning and shopping feature"
     },
     {
+      "path": "docs/PHOTO_QUICK_SAVE.md",
+      "sha256": "a6a72c0d77a29228a50e41b726be908b88eb9bec9859c63939df82e3ca16331c",
+      "origin": "reviewed November 2026 app, tests and synthetic portfolio update"
+    },
+    {
       "path": "docs/PUBLICATION.md",
       "sha256": "0497881469f9e5d740698a141c80d424624be08a0bd7830a5d8dd387a261497b",
       "origin": "reviewed publication documentation; owner authorized 2026-10-23"
@@ -1710,8 +1810,8 @@
     },
     {
       "path": "docs/README.md",
-      "sha256": "60c8f49ea6238e3c587bdb2c847899a7fecc3f9bb7a3ece36be0d2f6ca8a7ed7",
-      "origin": "reviewed multi-day planning and shopping feature"
+      "sha256": "56917ea4e3fba172cc762665fcd94eadfcb6db787f18c26bfba4ac628d683300",
+      "origin": "reviewed November 2026 app, tests and synthetic portfolio update"
     },
     {
       "path": "docs/RELEASE_NOTES.md",
@@ -1832,6 +1932,81 @@
       "path": "docs/licenses/standalone-media.json",
       "sha256": "55f2ba0bc6e4e109ebf9e7ab9c8b12f4e7586bf6a2d6cfbbfd94b4c5cff49395",
       "origin": "Added for standalone demo: reviewed source, test, licensed asset or documentation"
+    },
+    {
+      "path": "docs/media/tamaqai-current-standalone.mp4",
+      "sha256": "c7eea2569be9ead7c9119b7e565c4a6477e123251b9d2590f6f7f930370a89b9",
+      "origin": "reviewed November 2026 app, tests and synthetic portfolio update"
+    },
+    {
+      "path": "docs/screenshots/current-20261109/README.md",
+      "sha256": "9b5ff7d5864648c371ebe0f10425b2bcabef20cc7d5084f3d4b8a592b9b50562",
+      "origin": "reviewed November 2026 app, tests and synthetic portfolio update"
+    },
+    {
+      "path": "docs/screenshots/current-20261109/confirmed-light.png",
+      "sha256": "71e70eefc673cdd654d071966034e8948bab8f057f534c0d280a4b47137c1b6e",
+      "origin": "reviewed November 2026 app, tests and synthetic portfolio update"
+    },
+    {
+      "path": "docs/screenshots/current-20261109/current-drawer-dark.png",
+      "sha256": "1b2ff09c08ddfe2f2a842894a43709a8d01459884d40a61d4613ab1a7a78f1eb",
+      "origin": "reviewed November 2026 app, tests and synthetic portfolio update"
+    },
+    {
+      "path": "docs/screenshots/current-20261109/current-drawer-light.png",
+      "sha256": "710ecbaa08804b04d784fb860952895083a52b909988d4e1412314447a344725",
+      "origin": "reviewed November 2026 app, tests and synthetic portfolio update"
+    },
+    {
+      "path": "docs/screenshots/current-20261109/current-home-dark.png",
+      "sha256": "d794b13350920dd1ef234db63469cc67b0528774ae6ce9867a884b4fd24eb4a5",
+      "origin": "reviewed November 2026 app, tests and synthetic portfolio update"
+    },
+    {
+      "path": "docs/screenshots/current-20261109/current-home-light.png",
+      "sha256": "71e70eefc673cdd654d071966034e8948bab8f057f534c0d280a4b47137c1b6e",
+      "origin": "reviewed November 2026 app, tests and synthetic portfolio update"
+    },
+    {
+      "path": "docs/screenshots/current-20261109/current-weight-curve-dark.png",
+      "sha256": "c957cb247744eb7a6fabbaa96c97ecaeb105683dc12eaab41ea9618c2ff48125",
+      "origin": "reviewed November 2026 app, tests and synthetic portfolio update"
+    },
+    {
+      "path": "docs/screenshots/current-20261109/editor-light.png",
+      "sha256": "86c9b04d0155bf1c7fb7561ab4b96d6a453c14454a1097405ea91c1492be06af",
+      "origin": "reviewed November 2026 app, tests and synthetic portfolio update"
+    },
+    {
+      "path": "docs/screenshots/current-20261109/editor-portion-and-component.png",
+      "sha256": "9136deed2e7806972e552e4b525a7410310b3780e42bf7a28870038b52c3afc9",
+      "origin": "reviewed November 2026 app, tests and synthetic portfolio update"
+    },
+    {
+      "path": "docs/screenshots/current-20261109/history-light.png",
+      "sha256": "f23166154e6a90e98eded73d74038bd4f0a263c6676b8108a8ccc939795403bc",
+      "origin": "reviewed November 2026 app, tests and synthetic portfolio update"
+    },
+    {
+      "path": "docs/screenshots/current-20261109/home-light.png",
+      "sha256": "5f30df372ea90bcf8f6b135938e4c919dd8efba3bb6b75fc2242b7c5d568d99f",
+      "origin": "reviewed November 2026 app, tests and synthetic portfolio update"
+    },
+    {
+      "path": "docs/screenshots/current-20261109/macros-light.png",
+      "sha256": "60db8c473e5491e509b566ec0baffed265df0bad0052f6731c6e0f5ef0402789",
+      "origin": "reviewed November 2026 app, tests and synthetic portfolio update"
+    },
+    {
+      "path": "docs/screenshots/current-20261109/profile-light.png",
+      "sha256": "3d4345eae4a2b8b9f457dbc65a46b4d88da9705907ca441e0a49e7a1987543f6",
+      "origin": "reviewed November 2026 app, tests and synthetic portfolio update"
+    },
+    {
+      "path": "docs/screenshots/current-20261109/welcome.png",
+      "sha256": "e64404afac120d91db073c76ff2e60160079821b5dfe20ff84ca92e387853da3",
+      "origin": "reviewed November 2026 app, tests and synthetic portfolio update"
     },
     {
       "path": "docs/screenshots/meal-planning/README.md",
@@ -2120,13 +2295,13 @@
     },
     {
       "path": "tools/check_snapshot.py",
-      "sha256": "d6eddb6243d3f4fd2a57d4fbfe0c9f16848be0d67e6fbe0ac7aadfaa736c2fc0",
-      "origin": "new export provenance, verification, notice or integrity gate"
+      "sha256": "69a34287e18d84e4d214d3ae6a8cec5aa8ac54bfbf6cbf0e5fe55a9aceca4b38",
+      "origin": "reviewed November 2026 app, tests and synthetic portfolio update"
     },
     {
       "path": "tools/check_standalone.py",
-      "sha256": "471d27addafc212b362e59a79f738ca9f691be4344316a56654869ff9ad58090",
-      "origin": "reviewed multi-day planning and shopping feature"
+      "sha256": "84d99832971213feb985242e3facb30d5671c526620992bfc1f5247eeb411c64",
+      "origin": "reviewed November 2026 app, tests and synthetic portfolio update"
     },
     {
       "path": "tools/compare_warm_glass.py",
@@ -2142,6 +2317,11 @@
       "path": "tools/qa_room_fingerprint.py",
       "sha256": "1b4358ed91da484298b857946d8ab198545da044e2b3c65d0351d9e2e956f533",
       "origin": "unchanged source blob"
+    },
+    {
+      "path": "tools/record_current_standalone.py",
+      "sha256": "34c54f1e10d5a256942e84df0d36dbb08d993e26bb69d2fb5997c4371d33267f",
+      "origin": "reviewed November 2026 app, tests and synthetic portfolio update"
     },
     {
       "path": "tools/record_portfolio_demo.py",
@@ -2164,14 +2344,19 @@
       "origin": "unchanged source blob"
     },
     {
+      "path": "tools/test_record_current_standalone.py",
+      "sha256": "a5f77b938d38c6508dd31f9a7411e781599048070c3a7d7b4be179e6d681bf6c",
+      "origin": "reviewed November 2026 app, tests and synthetic portfolio update"
+    },
+    {
       "path": "tools/test_record_portfolio_demo.py",
       "sha256": "422a46375340ad8b07e471731db7ac49a39523693926d1194f84d33f4450eed0",
       "origin": "unchanged source blob"
     },
     {
       "path": "tools/test_snapshot.py",
-      "sha256": "e9832b937c3171967b58b24adbd28078ee0d6b416beb74f71d572d338555258b",
-      "origin": "new export provenance, verification, notice or integrity gate"
+      "sha256": "c77580745b710f1cdafaf146f3238eb859ac42950c28519a5d199c7e4c58c744",
+      "origin": "reviewed November 2026 app, tests and synthetic portfolio update"
     },
     {
       "path": "tools/test_standalone_tools.py",

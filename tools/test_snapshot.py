@@ -40,6 +40,28 @@ class SnapshotGateTest(unittest.TestCase):
         with patch.object(check_snapshot, 'ROOT', self.root), redirect_stdout(io.StringIO()):
             check_snapshot.verify()
 
+    def test_reviewed_video_requires_exact_path_and_hash(self):
+        name, digest = check_snapshot.REVIEWED_VIDEO
+        self.assertTrue(check_snapshot.artifact_allowed(name, digest))
+        self.assertFalse(check_snapshot.artifact_allowed(name, '0' * 64))
+        self.assertFalse(check_snapshot.artifact_allowed('other.mp4', digest))
+        for suffix in ('.apk', '.db', '.sqlite3', '.keystore'):
+            self.assertFalse(check_snapshot.artifact_allowed('payload' + suffix, digest))
+
+    def test_manifest_does_not_bless_unreviewed_video(self):
+        (self.root / 'unexpected.mp4').write_bytes(b'synthetic video fixture')
+        self.prepare()
+        with self.assertRaisesRegex(AssertionError, 'Unreviewed binary'):
+            self.verify()
+
+    def test_manifest_does_not_bless_modified_approved_video(self):
+        video = self.root / check_snapshot.REVIEWED_VIDEO[0]
+        video.parent.mkdir(parents=True)
+        video.write_bytes(b'modified synthetic video fixture')
+        self.prepare()
+        with self.assertRaisesRegex(AssertionError, 'Unreviewed binary'):
+            self.verify()
+
     def test_reviewed_snapshot_passes(self):
         self.verify()
 
